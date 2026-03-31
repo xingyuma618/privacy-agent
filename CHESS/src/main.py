@@ -50,8 +50,8 @@ def main():
     """
     args = parse_arguments()
     dataset = load_dataset(args.data_path)
-    indices = [2992, 2999, 3010, 3011]
-    dataset = [dataset[i] for i in indices]
+    # indices = [2992, 2999, 3010, 3011]
+    # dataset = [dataset[i] for i in indices]
 
     run_manager = RunManager(args)
     run_manager.initialize_tasks(dataset)

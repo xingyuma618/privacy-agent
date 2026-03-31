@@ -8,7 +8,8 @@ from database_utils.db_info import get_db_schema
 from database_utils.schema import DatabaseSchema, get_primary_keys
 import sqlglot
 from openai import OpenAI
-
+import json 
+import os 
 # client = OpenAI(api_key="sk-533b918073e141ee9857ebf7d78598ec", base_url="https://api.deepseek.com/v1")
 client = OpenAI(api_key="sk-533b918073e141ee9857ebf7d78598ec", base_url= "http://127.0.0.1:2333/v1")
 
@@ -393,7 +394,7 @@ class  DatabaseSchemaGenerator:
             joint_string = ""
         return joint_string.replace("\n", " ") if joint_string else ""
 
-    def generate_schema_string(self, include_value_description: bool = True, shuffle_cols: bool = True, shuffle_tables: bool = True) -> str:
+    def generate_schema_string(self, include_value_description: bool = True, shuffle_cols: bool = True, shuffle_tables: bool = True, save_schema=False, question='', evidence='') -> str:
         """
         Generates a schema string with descriptions and examples.
         
@@ -409,7 +410,15 @@ class  DatabaseSchemaGenerator:
             random.shuffle(ddl_tables)
             ddl_commands = {table_name: ddl_commands[table_name] for table_name in ddl_tables}
             # ddl_commands = dict(random.sample(ddl_commands.items(), len(ddl_commands)))
+        structured_db_schema = {}
         for table_name, ddl_command in ddl_commands.items():
+            # 初始化该表的所有结构化信息，包括表级的各类约束
+            structured_db_schema[table_name] = {
+                "columns": [],
+                "table_primary_keys": [],   # 表级主键定义，如: PRIMARY KEY (`id`, `name`)
+                "table_foreign_keys": [],   # 表级外键定义，如: FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
+                "unique_constraints": []    # 唯一性约束，如: UNIQUE (`email`)
+            }
             ddl_command = re.sub(r'\s+', ' ', ddl_command.strip())
             # print(ddl_command)
             create_table_match = re.match(r'CREATE TABLE \'?"?`?([\w -]+)`?"?\'?\s*\((.*)\)', ddl_command, re.DOTALL)
@@ -428,11 +437,13 @@ class  DatabaseSchemaGenerator:
                     if "primary key" in column_def.lower():
                         new_column_def = f"\t{column_def},"
                         schema_lines.append(new_column_def)
+                        structured_db_schema[table_name]["table_primary_keys"].append(column_def)
                     if "foreign key" in column_def.lower():
                         for t_name in self.schema_structure.tables.keys():
                             if t_name.lower() in column_def.lower():
                                 new_column_def = f"\t{column_def},"
                                 schema_lines.append(new_column_def)
+                                structured_db_schema[table_name]["table_foreign_keys"].append(column_def)
                 else:
                     if column_def.startswith('--'):
                         continue
@@ -444,14 +455,48 @@ class  DatabaseSchemaGenerator:
                         column_name = column_def.split(' ')[0]
                         
                     if (column_name in targeted_columns) or self._is_connection(table_name, column_name):
+                        # 1. 拼接成字符串形式的 Schema
                         new_column_def = f"\t{column_def},"
                         new_column_def += self._get_example_column_name_description(table_name, column_name, include_value_description)
                         schema_lines.append(new_column_def)
+
+                        # 2. # 在字典中保留该列的类型、主外键等元数据
+                        col_info = self.schema_structure.get_column_info(table_name, column_name)
+                        col_data = {
+                            "column_name": column_name,
+                            "column_definition": column_def,  # 原始的 DDL 列定义字符串 (例如 'id INTEGER NOT NULL')
+                            "data_type": col_info.type if col_info and hasattr(col_info, 'type') else "",
+                            "is_primary_key": col_info.primary_key if col_info and hasattr(col_info, 'primary_key') else False,
+                            "foreign_keys_info": col_info.foreign_keys if col_info and hasattr(col_info, 'foreign_keys') else [],
+                            "referenced_by": col_info.referenced_by if col_info and hasattr(col_info, 'referenced_by') else [],
+                            "examples": col_info.examples if col_info and col_info.examples else [],
+                            "column_description": col_info.column_description if col_info and col_info.column_description else "",
+                            "value_description": col_info.value_description if (col_info and col_info.value_description and include_value_description) else "",
+                            # "value_statics": col_info.value_statics if col_info and col_info.value_statics else ""
+                        }
+                        structured_db_schema[table_name]["columns"].append(col_data)
+
                     elif column_def.lower().startswith("unique"):
                         new_column_def = f"\t{column_def},"
                         schema_lines.append(new_column_def)
+                        # 记录 UNIQUE 唯一性约束
+                        structured_db_schema[table_name]["unique_constraints"].append(column_def)
             schema_lines.append(");")
+            
             ddl_commands[table_name] = '\n'.join(schema_lines)
+            if save_schema:
+                sc_data_save_path = '/mnt/wh_intern/MXY/paper/privacy-agent/CHESS/results/sc.jsonl'
+                with open(sc_data_save_path, 'a', encoding='utf-8') as f:
+                    schema_record = {
+                        "db_id": self.db_id,
+                        "question": question,
+                        "evidence": evidence,
+                        "db_schema": "\n\n".join(ddl_commands.values()),
+                        "structured_db_schema": structured_db_schema
+                    }
+                    json_line = json.dumps(schema_record, ensure_ascii=False)
+                    f.write(json_line + '\n')
+
         return "\n\n".join(ddl_commands.values())
 
     def get_column_profiles(self, with_keys: bool = False, with_references: bool = False) -> Dict[str, Dict[str, str]]:

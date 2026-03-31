@@ -32,7 +32,7 @@ class RetrieveEntity(Tool):
     def __init__(self):
         super().__init__()
         # self.embedding_function = OpenAIEmbeddings(model="text-embedding-3-small")
-        self.embedding_function = OpenAIEmbeddings(model="/mnt/intern/MXY/models/bge-m3",openai_api_base="http://127.0.0.1:2335/v1",openai_api_key="EMPTY")
+        self.embedding_function = OpenAIEmbeddings(model="/mnt/wh_intern/MXY/models/bge-m3",openai_api_base="http://127.0.0.1:8000/v1",openai_api_key="EMPTY")
         self.edit_distance_threshold = 0.3
         self.embedding_similarity_threshold = 0.6
         

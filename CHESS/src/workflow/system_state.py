@@ -94,7 +94,8 @@ class SystemState(BaseModel):
         
     def get_schema_string(self,
                           schema_type: str = "tentative",
-                          include_value_description: bool = True) -> str:
+                          include_value_description: bool = True,
+                          save_schema=False, question='', evidence='') -> str:
         print('===================')
         print(self.tentative_schema)
         print('===================')
@@ -109,7 +110,10 @@ class SystemState(BaseModel):
             schema,
             self.schema_with_examples,
             self.schema_with_descriptions,
-            include_value_description=include_value_description
+            include_value_description=include_value_description,
+            save_schema=save_schema,
+            question=question,
+            evidence=evidence
         )
     
     def get_database_schema_for_queries(

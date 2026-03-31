@@ -203,7 +203,8 @@ class DatabaseManager:
     def get_database_schema_string(self, tentative_schema: Dict[str, List[str]], 
                                    schema_with_examples: Dict[str, List[str]], 
                                    schema_with_descriptions: Dict[str, Dict[str, Dict[str, Any]]], 
-                                   include_value_description: bool) -> str:
+                                   include_value_description: bool,
+                                   save_schema=False, question='', evidence='') -> str:
         """
         Generates a schema string for the database.
 
@@ -223,7 +224,7 @@ class DatabaseManager:
             db_id=self.db_id,
             db_path=self.db_path,
         )
-        schema_string = schema_generator.generate_schema_string(include_value_description=include_value_description)
+        schema_string = schema_generator.generate_schema_string(include_value_description=include_value_description, save_schema=save_schema, question=question, evidence=evidence)
         return schema_string
     
     def add_connections_to_tentative_schema(self, tentative_schema: Dict[str, List[str]]) -> Dict[str, List[str]]:
