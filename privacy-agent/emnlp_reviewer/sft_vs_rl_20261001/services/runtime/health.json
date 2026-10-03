@@ -1,0 +1,55 @@
+{
+  "checked_at_utc": "2026-09-30T17:29:20Z",
+  "supervisor": {
+    "session_id": 11136,
+    "pid": 115387,
+    "state": "running"
+  },
+  "environment": {
+    "lmdeploy": "0.12.2",
+    "torch": "2.10.0+cu128",
+    "transformers": "5.4.0"
+  },
+  "services": {
+    "rewrite": {
+      "gpu": 0,
+      "port": 18336,
+      "pid": 115471,
+      "gpu_worker_pid": 1150112,
+      "gpu_memory_mib": 35116,
+      "model_id": "query-rewrite-checkpoint-50",
+      "models_http_status": 200,
+      "chat_completion": "passed"
+    },
+    "entity": {
+      "gpu": 1,
+      "port": 18337,
+      "pid": 115620,
+      "gpu_worker_pid": 1150310,
+      "gpu_memory_mib": 35116,
+      "model_id": "entity-extract-checkpoint-25",
+      "models_http_status": 200,
+      "chat_completion": "passed"
+    },
+    "sft": {
+      "gpu": 2,
+      "port": 18340,
+      "pid": 115696,
+      "gpu_worker_pid": 1150412,
+      "gpu_memory_mib": 35116,
+      "model_id": "PrivAgent-R1-SFT-checkpoint-40",
+      "models_http_status": 200,
+      "chat_completion": "passed_exact_hello"
+    },
+    "rl": {
+      "gpu": 3,
+      "port": 18341,
+      "pid": 115768,
+      "gpu_worker_pid": 1150551,
+      "gpu_memory_mib": 35116,
+      "model_id": "PrivAgent-R1-RL-step10",
+      "models_http_status": 200,
+      "chat_completion": "passed_exact_hello"
+    }
+  }
+}

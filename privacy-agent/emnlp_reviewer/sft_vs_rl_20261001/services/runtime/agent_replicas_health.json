@@ -1,0 +1,45 @@
+{
+  "checked_at_utc": "2026-10-01T09:03:01Z",
+  "status": "ready",
+  "supervisor_session_id": 65068,
+  "serving": {
+    "tp": 1,
+    "session_len": 32768,
+    "cache_max_entry_count": 0.35,
+    "backend": "lmdeploy default (same command flags as primary SFT/RL)",
+    "dtype": "lmdeploy/model default (same command flags as primary SFT/RL)"
+  },
+  "replicas": {
+    "sft": {
+      "gpu": 6,
+      "port": 18346,
+      "pid": 230907,
+      "base_url": "http://127.0.0.1:18346/v1",
+      "served_model_name": "PrivAgent-R1-SFT-checkpoint-40",
+      "model_path": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/agent_v2_deepseek_pro/checkpoint-40",
+      "models_health": "ok",
+      "tiny_completion_health": "ok",
+      "metadata_sha256": {
+        "config.json": "1df4243a0286f77145c3befa0ac27a2a4d543ead0d3dcacaf7a3c428ea97e1df",
+        "model.safetensors.index.json": "7a487b18f5c2c64efada003845be17ce6ac7e324cac65ebc507c23c4f0860344",
+        "tokenizer_config.json": "bcab9fe0f4f56a0cffba7c916f943c376810d32c08f2cebf01f8b15849039d35"
+      }
+    },
+    "rl": {
+      "gpu": 7,
+      "port": 18347,
+      "pid": 230976,
+      "base_url": "http://127.0.0.1:18347/v1",
+      "served_model_name": "PrivAgent-R1-RL-step10",
+      "model_path": "/mnt/wh_intern/MXY/paper/privacy-agent/verl/output/models/qwen/Qwen3-4B-Instruct/reward_ablation_1/checkpoint-30",
+      "models_health": "ok",
+      "tiny_completion_health": "ok",
+      "metadata_sha256": {
+        "config.json": "1df4243a0286f77145c3befa0ac27a2a4d543ead0d3dcacaf7a3c428ea97e1df",
+        "model.safetensors.index.json": "fa98dc77b0338cdd146d7f6d5b7a6af5e92172a7437e52a45b9fd063615e36b8",
+        "tokenizer_config.json": "bcab9fe0f4f56a0cffba7c916f943c376810d32c08f2cebf01f8b15849039d35",
+        "merge_info.json": "49da7ad1102a30e199d25ca927f25d23cfbaa48fa49a3c152622b80e6ff015b9"
+      }
+    }
+  }
+}

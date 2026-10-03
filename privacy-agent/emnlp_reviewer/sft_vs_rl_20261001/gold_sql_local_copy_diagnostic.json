@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "case_id": "bird_101",
+  "db_id": "financial",
+  "timeout_seconds": 20,
+  "source_db": "/mnt/wh_intern/MXY/paper/privacy-agent/CHESS/data/dev/dev_databases/financial/financial.sqlite",
+  "local_copy": "/tmp/sft-rl-dbdiag.I5pEhL/financial.sqlite",
+  "source_size": 71294976,
+  "source_sha256": "d15d89cdb068a202b6f2b99342af44dffc1d52545b39ceaf62efdc0ba570101e",
+  "local_sha256": "d15d89cdb068a202b6f2b99342af44dffc1d52545b39ceaf62efdc0ba570101e",
+  "hashes_equal": true,
+  "local_elapsed_seconds": 2.328011,
+  "local_ok": true,
+  "local_error": null,
+  "nas_prior_elapsed_seconds": 20.00308
+}

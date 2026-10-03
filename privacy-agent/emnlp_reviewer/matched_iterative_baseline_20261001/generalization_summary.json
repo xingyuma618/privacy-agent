@@ -1,0 +1,129 @@
+{
+  "status": "complete",
+  "runs_per_dataset": 1,
+  "note": "EX_all_cases keeps infrastructure failures in the denominator; privacy metrics are surface-term metrics, not semantic leakage metrics.",
+  "datasets": {
+    "bird_dev_full": {
+      "one_pass_fixed": {
+        "num_cases": 1534,
+        "num_valid": 1490,
+        "infrastructure_failures": 44,
+        "failure_kinds": {
+          "gold_or_database": 44
+        },
+        "EX_all_cases": 0.5423728813559322,
+        "EX_valid_cases": 0.5583892617449664,
+        "bounded_MP_valid_cases": 0.45738294703059823,
+        "bounded_MR_valid_cases": 0.6897648101339374,
+        "bounded_MF1_valid_cases": 0.49320845794522755,
+        "tokens_per_case": 1048.8428943937417,
+        "tool_calls_per_case": 5.827900912646675,
+        "sql_attempts_per_case": 0.9713168187744459,
+        "retry_rate": 0.0
+      },
+      "iterative_fixed": {
+        "num_cases": 1534,
+        "num_valid": 1500,
+        "infrastructure_failures": 34,
+        "failure_kinds": {
+          "gold_or_database": 34
+        },
+        "EX_all_cases": 0.5488917861799217,
+        "EX_valid_cases": 0.5613333333333334,
+        "bounded_MP_valid_cases": 0.45647057202057234,
+        "bounded_MR_valid_cases": 0.6881671717171713,
+        "bounded_MF1_valid_cases": 0.49242473839855705,
+        "tokens_per_case": 1089.1219035202087,
+        "tool_calls_per_case": 6.134941329856584,
+        "sql_attempts_per_case": 1.0671447196870925,
+        "retry_rate": 0.08930899608865711
+      },
+      "common_valid_comparison": {
+        "n": 1485,
+        "one_pass_EX": 0.5595959595959596,
+        "iterative_EX": 0.560942760942761,
+        "iterative_minus_one_pass_EX": 0.0013468013468013185
+      }
+    },
+    "spider_dev": {
+      "one_pass_fixed": {
+        "num_cases": 1034,
+        "num_valid": 1032,
+        "infrastructure_failures": 2,
+        "failure_kinds": {
+          "gold_or_database": 2
+        },
+        "EX_all_cases": 0.5715667311411993,
+        "EX_valid_cases": 0.5726744186046512,
+        "bounded_MP_valid_cases": 0.5578253526569176,
+        "bounded_MR_valid_cases": 0.7504914174972303,
+        "bounded_MF1_valid_cases": 0.6202083292008314,
+        "tokens_per_case": 1299.3694390715668,
+        "tool_calls_per_case": 5.988394584139265,
+        "sql_attempts_per_case": 0.9980657640232108,
+        "retry_rate": 0.0
+      },
+      "iterative_fixed": {
+        "num_cases": 1034,
+        "num_valid": 1032,
+        "infrastructure_failures": 2,
+        "failure_kinds": {
+          "gold_or_database": 2
+        },
+        "EX_all_cases": 0.5773694390715667,
+        "EX_valid_cases": 0.5784883720930233,
+        "bounded_MP_valid_cases": 0.5571925713555319,
+        "bounded_MR_valid_cases": 0.7497808231819847,
+        "bounded_MF1_valid_cases": 0.6196356774021936,
+        "tokens_per_case": 1345.4284332688587,
+        "tool_calls_per_case": 6.153771760154739,
+        "sql_attempts_per_case": 1.053191489361702,
+        "retry_rate": 0.0551257253384913
+      },
+      "common_valid_comparison": {
+        "n": 1032,
+        "one_pass_EX": 0.5726744186046512,
+        "iterative_EX": 0.5784883720930233,
+        "iterative_minus_one_pass_EX": 0.005813953488372103
+      }
+    },
+    "spider_test": {
+      "one_pass_fixed": {
+        "num_cases": 2147,
+        "num_valid": 2147,
+        "infrastructure_failures": 0,
+        "failure_kinds": {},
+        "EX_all_cases": 0.5384257102934327,
+        "EX_valid_cases": 0.5384257102934327,
+        "bounded_MP_valid_cases": 0.5747953752686755,
+        "bounded_MR_valid_cases": 0.7652438618670578,
+        "bounded_MF1_valid_cases": 0.6321647000158163,
+        "tokens_per_case": 1230.4368886818818,
+        "tool_calls_per_case": 6.0,
+        "sql_attempts_per_case": 1.0,
+        "retry_rate": 0.0
+      },
+      "iterative_fixed": {
+        "num_cases": 2147,
+        "num_valid": 2147,
+        "infrastructure_failures": 0,
+        "failure_kinds": {},
+        "EX_all_cases": 0.5412203074056824,
+        "EX_valid_cases": 0.5412203074056824,
+        "bounded_MP_valid_cases": 0.5761795187628045,
+        "bounded_MR_valid_cases": 0.7654612194202326,
+        "bounded_MF1_valid_cases": 0.6332826489819255,
+        "tokens_per_case": 1266.318118304611,
+        "tool_calls_per_case": 6.142524452724732,
+        "sql_attempts_per_case": 1.047508150908244,
+        "retry_rate": 0.04750815090824406
+      },
+      "common_valid_comparison": {
+        "n": 2147,
+        "one_pass_EX": 0.5384257102934327,
+        "iterative_EX": 0.5412203074056824,
+        "iterative_minus_one_pass_EX": 0.0027945971122497193
+      }
+    }
+  }
+}

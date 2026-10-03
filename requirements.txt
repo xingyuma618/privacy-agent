@@ -1,0 +1,13 @@
+# Synthesis and evaluation dependencies. Install GPU training frameworks separately.
+openai
+json-repair
+sqlglot
+func-timeout
+tqdm
+numpy
+pandas
+pyyaml
+datasets
+pyarrow
+requests
+scipy

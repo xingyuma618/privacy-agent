@@ -1,0 +1,72 @@
+{
+  "experiment_id": "matched_iterative_baseline_20261001",
+  "datasets": {
+    "masksql300": {
+      "loader": "masksql_subset",
+      "source": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/bird_dev_sc.jsonl",
+      "masksql_annotations": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/masksql_test.json",
+      "runtime_db_root": "/tmp/sft_rl_runtime_dbs_20261001",
+      "match_mode": "auto",
+      "expected_cases": 300
+    },
+    "bird_dev_full": {
+      "loader": "bird_full",
+      "source": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/bird_dev_sc.jsonl",
+      "privacy_annotations": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/bird_dev_full_masksql_generated.jsonl",
+      "runtime_db_root": "/mnt/wh_intern/MXY/paper/privacy-agent/CHESS/data/dev/dev_databases",
+      "expected_cases": 1534
+    },
+    "spider_dev": {
+      "loader": "enriched_jsonl",
+      "source": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/spider_dev_sc_masksql_fullschema.jsonl",
+      "runtime_db_root": "/mnt/wh_intern/MXY/paper/privacy-agent/CHESS/spider/dev/dev_databases",
+      "expected_cases": 1034
+    },
+    "spider_test": {
+      "loader": "enriched_jsonl",
+      "source": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/spider_test_sc_masksql_fullschema.jsonl",
+      "runtime_db_root": "/mnt/wh_intern/MXY/paper/privacy-agent/CHESS/spider/test/test_databases",
+      "expected_cases": 2147
+    }
+  },
+  "models": {
+    "query_rewrite": {
+      "path": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/query_rewrite_v2/checkpoint-50",
+      "served_model_name": "query-rewrite-checkpoint-50",
+      "endpoints": [
+        "http://127.0.0.1:18436/v1",
+        "http://127.0.0.1:18446/v1"
+      ]
+    },
+    "entity_extract": {
+      "path": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/entity_extract_v1/checkpoint-25",
+      "served_model_name": "entity-extract-checkpoint-25",
+      "endpoints": [
+        "http://127.0.0.1:18437/v1",
+        "http://127.0.0.1:18447/v1"
+      ]
+    },
+    "sql_generator": {
+      "path": "/mnt/wh_intern/MXY/models/Qwen3.8-27B",
+      "served_model_name": "Qwen3.8-27B-local",
+      "endpoints": [
+        "http://127.0.0.1:18442/v1",
+        "http://127.0.0.1:18452/v1"
+      ]
+    }
+  },
+  "inference": {
+    "temperature": 0,
+    "query_rewrite_max_tokens": 512,
+    "entity_extract_max_tokens": 512,
+    "sql_generate_max_tokens": 1024,
+    "max_sql_attempts": 2,
+    "execution_timeout_sec": 15,
+    "final_eval_timeout_sec": 30
+  },
+  "repetitions": 3,
+  "variants": [
+    "one_pass_fixed",
+    "iterative_fixed"
+  ]
+}

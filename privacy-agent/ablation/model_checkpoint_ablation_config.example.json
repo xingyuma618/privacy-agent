@@ -1,0 +1,49 @@
+{
+  "paths": {
+    "data_path": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/bird_dev_sc.jsonl",
+    "db_root_path": "/root/data/nl2sql/bird/databases",
+    "output_dir": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/inference/checkpoint_ablation_output",
+    "inference_data_name": "bird_dev_sc",
+    "diff_json_path": "/mnt/wh_intern/MXY/paper/rl/ours/open-r1/data/bird/diff.json",
+    "data_mode": "dev",
+    "ground_truth_path": "/mnt/wh_intern/MXY/paper/rl/ours/CHESS/data/dev/dev.sql",
+    "masksql_test_path": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/masksql_test.json",
+    "masksql_match_mode": "auto"
+  },
+  "options": {
+    "max_workers": 8,
+    "run_official_bird_eval": true
+  },
+  "variants": [
+    {
+      "name": "No_SFT_base_Qwen3_4B",
+      "base_url": "http://127.0.0.1:2337/v1",
+      "model_name": "/mnt/wh_intern/MXY/models/Qwen3-4B-Instruct",
+      "api_key": "EMPTY"
+    },
+    {
+      "name": "One_shot_SFT",
+      "base_url": "http://127.0.0.1:2337/v1",
+      "model_name": "填入你的 one-shot SFT checkpoint 路径",
+      "api_key": "EMPTY"
+    },
+    {
+      "name": "Fixed_pipeline_traj_SFT",
+      "base_url": "http://127.0.0.1:2337/v1",
+      "model_name": "填入你的 fixed-pipeline trajectory SFT checkpoint 路径",
+      "api_key": "EMPTY"
+    },
+    {
+      "name": "MCTS_traj_SFT",
+      "base_url": "http://127.0.0.1:2337/v1",
+      "model_name": "填入你的 MCTS trajectory SFT checkpoint 路径",
+      "api_key": "EMPTY"
+    },
+    {
+      "name": "MCTS_plus_reward_training_full",
+      "base_url": "http://127.0.0.1:2337/v1",
+      "model_name": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/agent_v2_mcts/checkpoint-40",
+      "api_key": "EMPTY"
+    }
+  ]
+}

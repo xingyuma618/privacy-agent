@@ -1,0 +1,2702 @@
+[
+    {
+        "sql_idx": 0,
+        "original_idx": 89,
+        "pred_key": "89",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 1,
+        "original_idx": 90,
+        "pred_key": "90",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 2,
+        "original_idx": 91,
+        "pred_key": "91",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 3,
+        "original_idx": 92,
+        "pred_key": "92",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 4,
+        "original_idx": 93,
+        "pred_key": "93",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 5,
+        "original_idx": 94,
+        "pred_key": "94",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "challenging"
+    },
+    {
+        "sql_idx": 6,
+        "original_idx": 95,
+        "pred_key": "95",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 7,
+        "original_idx": 96,
+        "pred_key": "96",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 8,
+        "original_idx": 97,
+        "pred_key": "97",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 9,
+        "original_idx": 99,
+        "pred_key": "99",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 10,
+        "original_idx": 100,
+        "pred_key": "100",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 11,
+        "original_idx": 101,
+        "pred_key": "101",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 12,
+        "original_idx": 102,
+        "pred_key": "102",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 13,
+        "original_idx": 103,
+        "pred_key": "103",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 14,
+        "original_idx": 104,
+        "pred_key": "104",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 15,
+        "original_idx": 106,
+        "pred_key": "106",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 16,
+        "original_idx": 107,
+        "pred_key": "107",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 17,
+        "original_idx": 108,
+        "pred_key": "108",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 18,
+        "original_idx": 109,
+        "pred_key": "109",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 19,
+        "original_idx": 110,
+        "pred_key": "110",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 20,
+        "original_idx": 111,
+        "pred_key": "111",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 21,
+        "original_idx": 112,
+        "pred_key": "112",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 22,
+        "original_idx": 113,
+        "pred_key": "113",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 23,
+        "original_idx": 114,
+        "pred_key": "114",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 24,
+        "original_idx": 120,
+        "pred_key": "120",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 25,
+        "original_idx": 121,
+        "pred_key": "121",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 26,
+        "original_idx": 122,
+        "pred_key": "122",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 27,
+        "original_idx": 123,
+        "pred_key": "123",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 28,
+        "original_idx": 124,
+        "pred_key": "124",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 29,
+        "original_idx": 126,
+        "pred_key": "126",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 30,
+        "original_idx": 128,
+        "pred_key": "128",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 31,
+        "original_idx": 132,
+        "pred_key": "132",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 32,
+        "original_idx": 133,
+        "pred_key": "133",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 33,
+        "original_idx": 134,
+        "pred_key": "134",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 34,
+        "original_idx": 138,
+        "pred_key": "138",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 35,
+        "original_idx": 139,
+        "pred_key": "139",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 36,
+        "original_idx": 140,
+        "pred_key": "140",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 37,
+        "original_idx": 141,
+        "pred_key": "141",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 38,
+        "original_idx": 143,
+        "pred_key": "143",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 39,
+        "original_idx": 147,
+        "pred_key": "147",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 40,
+        "original_idx": 148,
+        "pred_key": "148",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 41,
+        "original_idx": 150,
+        "pred_key": "150",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 42,
+        "original_idx": 151,
+        "pred_key": "151",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 43,
+        "original_idx": 152,
+        "pred_key": "152",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 44,
+        "original_idx": 153,
+        "pred_key": "153",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 45,
+        "original_idx": 154,
+        "pred_key": "154",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 46,
+        "original_idx": 155,
+        "pred_key": "155",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 47,
+        "original_idx": 156,
+        "pred_key": "156",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 48,
+        "original_idx": 157,
+        "pred_key": "157",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 49,
+        "original_idx": 158,
+        "pred_key": "158",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 50,
+        "original_idx": 160,
+        "pred_key": "160",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 51,
+        "original_idx": 161,
+        "pred_key": "161",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 52,
+        "original_idx": 162,
+        "pred_key": "162",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 53,
+        "original_idx": 164,
+        "pred_key": "164",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 54,
+        "original_idx": 165,
+        "pred_key": "165",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 55,
+        "original_idx": 166,
+        "pred_key": "166",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 56,
+        "original_idx": 167,
+        "pred_key": "167",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 57,
+        "original_idx": 168,
+        "pred_key": "168",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 58,
+        "original_idx": 170,
+        "pred_key": "170",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 59,
+        "original_idx": 171,
+        "pred_key": "171",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 60,
+        "original_idx": 174,
+        "pred_key": "174",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 61,
+        "original_idx": 176,
+        "pred_key": "176",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 62,
+        "original_idx": 177,
+        "pred_key": "177",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 63,
+        "original_idx": 178,
+        "pred_key": "178",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 64,
+        "original_idx": 179,
+        "pred_key": "179",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 65,
+        "original_idx": 180,
+        "pred_key": "180",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 66,
+        "original_idx": 181,
+        "pred_key": "181",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 67,
+        "original_idx": 183,
+        "pred_key": "183",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 68,
+        "original_idx": 184,
+        "pred_key": "184",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 69,
+        "original_idx": 187,
+        "pred_key": "187",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 70,
+        "original_idx": 188,
+        "pred_key": "188",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 71,
+        "original_idx": 189,
+        "pred_key": "189",
+        "db_id": "financial",
+        "res": 0,
+        "error": "timeout",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 72,
+        "original_idx": 190,
+        "pred_key": "190",
+        "db_id": "financial",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 73,
+        "original_idx": 191,
+        "pred_key": "191",
+        "db_id": "financial",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 74,
+        "original_idx": 717,
+        "pred_key": "717",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 75,
+        "original_idx": 718,
+        "pred_key": "718",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 76,
+        "original_idx": 720,
+        "pred_key": "720",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 77,
+        "original_idx": 721,
+        "pred_key": "721",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 78,
+        "original_idx": 722,
+        "pred_key": "722",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 79,
+        "original_idx": 723,
+        "pred_key": "723",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 80,
+        "original_idx": 725,
+        "pred_key": "725",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 81,
+        "original_idx": 726,
+        "pred_key": "726",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 82,
+        "original_idx": 727,
+        "pred_key": "727",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 83,
+        "original_idx": 729,
+        "pred_key": "729",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 84,
+        "original_idx": 731,
+        "pred_key": "731",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 85,
+        "original_idx": 733,
+        "pred_key": "733",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 86,
+        "original_idx": 734,
+        "pred_key": "734",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 87,
+        "original_idx": 735,
+        "pred_key": "735",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 88,
+        "original_idx": 739,
+        "pred_key": "739",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 89,
+        "original_idx": 741,
+        "pred_key": "741",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 90,
+        "original_idx": 742,
+        "pred_key": "742",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 91,
+        "original_idx": 745,
+        "pred_key": "745",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 92,
+        "original_idx": 747,
+        "pred_key": "747",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 93,
+        "original_idx": 748,
+        "pred_key": "748",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 94,
+        "original_idx": 749,
+        "pred_key": "749",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 95,
+        "original_idx": 750,
+        "pred_key": "750",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 96,
+        "original_idx": 751,
+        "pred_key": "751",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 97,
+        "original_idx": 752,
+        "pred_key": "752",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 98,
+        "original_idx": 753,
+        "pred_key": "753",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 99,
+        "original_idx": 755,
+        "pred_key": "755",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 100,
+        "original_idx": 757,
+        "pred_key": "757",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 101,
+        "original_idx": 758,
+        "pred_key": "758",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "OperationalError: no such column: t3.race",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 102,
+        "original_idx": 759,
+        "pred_key": "759",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 103,
+        "original_idx": 760,
+        "pred_key": "760",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "challenging"
+    },
+    {
+        "sql_idx": 104,
+        "original_idx": 761,
+        "pred_key": "761",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 105,
+        "original_idx": 763,
+        "pred_key": "763",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 106,
+        "original_idx": 764,
+        "pred_key": "764",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 107,
+        "original_idx": 765,
+        "pred_key": "765",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 108,
+        "original_idx": 767,
+        "pred_key": "767",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 109,
+        "original_idx": 770,
+        "pred_key": "770",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 110,
+        "original_idx": 772,
+        "pred_key": "772",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "challenging"
+    },
+    {
+        "sql_idx": 111,
+        "original_idx": 773,
+        "pred_key": "773",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "challenging"
+    },
+    {
+        "sql_idx": 112,
+        "original_idx": 774,
+        "pred_key": "774",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 113,
+        "original_idx": 776,
+        "pred_key": "776",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 114,
+        "original_idx": 777,
+        "pred_key": "777",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 115,
+        "original_idx": 779,
+        "pred_key": "779",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 116,
+        "original_idx": 780,
+        "pred_key": "780",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 117,
+        "original_idx": 781,
+        "pred_key": "781",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 118,
+        "original_idx": 782,
+        "pred_key": "782",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 119,
+        "original_idx": 783,
+        "pred_key": "783",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 120,
+        "original_idx": 784,
+        "pred_key": "784",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "OperationalError: unrecognized token: \"{\"",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 121,
+        "original_idx": 787,
+        "pred_key": "787",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 122,
+        "original_idx": 789,
+        "pred_key": "789",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 123,
+        "original_idx": 792,
+        "pred_key": "792",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 124,
+        "original_idx": 794,
+        "pred_key": "794",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 125,
+        "original_idx": 795,
+        "pred_key": "795",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 126,
+        "original_idx": 797,
+        "pred_key": "797",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 127,
+        "original_idx": 798,
+        "pred_key": "798",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 128,
+        "original_idx": 799,
+        "pred_key": "799",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 129,
+        "original_idx": 800,
+        "pred_key": "800",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 130,
+        "original_idx": 801,
+        "pred_key": "801",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 131,
+        "original_idx": 802,
+        "pred_key": "802",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 132,
+        "original_idx": 803,
+        "pred_key": "803",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 133,
+        "original_idx": 804,
+        "pred_key": "804",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 134,
+        "original_idx": 805,
+        "pred_key": "805",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 135,
+        "original_idx": 806,
+        "pred_key": "806",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 136,
+        "original_idx": 808,
+        "pred_key": "808",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 137,
+        "original_idx": 809,
+        "pred_key": "809",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 138,
+        "original_idx": 810,
+        "pred_key": "810",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 139,
+        "original_idx": 811,
+        "pred_key": "811",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 140,
+        "original_idx": 812,
+        "pred_key": "812",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 141,
+        "original_idx": 815,
+        "pred_key": "815",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 142,
+        "original_idx": 816,
+        "pred_key": "816",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 143,
+        "original_idx": 818,
+        "pred_key": "818",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "challenging"
+    },
+    {
+        "sql_idx": 144,
+        "original_idx": 821,
+        "pred_key": "821",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 145,
+        "original_idx": 822,
+        "pred_key": "822",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 146,
+        "original_idx": 823,
+        "pred_key": "823",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 147,
+        "original_idx": 824,
+        "pred_key": "824",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 148,
+        "original_idx": 827,
+        "pred_key": "827",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 149,
+        "original_idx": 828,
+        "pred_key": "828",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 150,
+        "original_idx": 829,
+        "pred_key": "829",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "challenging"
+    },
+    {
+        "sql_idx": 151,
+        "original_idx": 831,
+        "pred_key": "831",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 152,
+        "original_idx": 832,
+        "pred_key": "832",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 153,
+        "original_idx": 833,
+        "pred_key": "833",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 154,
+        "original_idx": 836,
+        "pred_key": "836",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 155,
+        "original_idx": 837,
+        "pred_key": "837",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 156,
+        "original_idx": 838,
+        "pred_key": "838",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 157,
+        "original_idx": 839,
+        "pred_key": "839",
+        "db_id": "superhero",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 158,
+        "original_idx": 840,
+        "pred_key": "840",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 159,
+        "original_idx": 841,
+        "pred_key": "841",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 160,
+        "original_idx": 842,
+        "pred_key": "842",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 161,
+        "original_idx": 845,
+        "pred_key": "845",
+        "db_id": "superhero",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 162,
+        "original_idx": 1020,
+        "pred_key": "1020",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 163,
+        "original_idx": 1021,
+        "pred_key": "1021",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 164,
+        "original_idx": 1022,
+        "pred_key": "1022",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 165,
+        "original_idx": 1023,
+        "pred_key": "1023",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 166,
+        "original_idx": 1027,
+        "pred_key": "1027",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 167,
+        "original_idx": 1029,
+        "pred_key": "1029",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 168,
+        "original_idx": 1030,
+        "pred_key": "1030",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 169,
+        "original_idx": 1032,
+        "pred_key": "1032",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 170,
+        "original_idx": 1033,
+        "pred_key": "1033",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 171,
+        "original_idx": 1035,
+        "pred_key": "1035",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 172,
+        "original_idx": 1039,
+        "pred_key": "1039",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "OperationalError: near \"Samir\": syntax error",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 173,
+        "original_idx": 1043,
+        "pred_key": "1043",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 174,
+        "original_idx": 1046,
+        "pred_key": "1046",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 175,
+        "original_idx": 1047,
+        "pred_key": "1047",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 176,
+        "original_idx": 1048,
+        "pred_key": "1048",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 177,
+        "original_idx": 1049,
+        "pred_key": "1049",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 178,
+        "original_idx": 1050,
+        "pred_key": "1050",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 179,
+        "original_idx": 1051,
+        "pred_key": "1051",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 180,
+        "original_idx": 1052,
+        "pred_key": "1052",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 181,
+        "original_idx": 1055,
+        "pred_key": "1055",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 182,
+        "original_idx": 1056,
+        "pred_key": "1056",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 183,
+        "original_idx": 1057,
+        "pred_key": "1057",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 184,
+        "original_idx": 1059,
+        "pred_key": "1059",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 185,
+        "original_idx": 1060,
+        "pred_key": "1060",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 186,
+        "original_idx": 1061,
+        "pred_key": "1061",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 187,
+        "original_idx": 1062,
+        "pred_key": "1062",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 188,
+        "original_idx": 1063,
+        "pred_key": "1063",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 189,
+        "original_idx": 1065,
+        "pred_key": "1065",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 190,
+        "original_idx": 1067,
+        "pred_key": "1067",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 191,
+        "original_idx": 1069,
+        "pred_key": "1069",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 192,
+        "original_idx": 1070,
+        "pred_key": "1070",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 193,
+        "original_idx": 1072,
+        "pred_key": "1072",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 194,
+        "original_idx": 1074,
+        "pred_key": "1074",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 195,
+        "original_idx": 1077,
+        "pred_key": "1077",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 196,
+        "original_idx": 1078,
+        "pred_key": "1078",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 197,
+        "original_idx": 1079,
+        "pred_key": "1079",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 198,
+        "original_idx": 1080,
+        "pred_key": "1080",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 199,
+        "original_idx": 1081,
+        "pred_key": "1081",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 200,
+        "original_idx": 1082,
+        "pred_key": "1082",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 201,
+        "original_idx": 1083,
+        "pred_key": "1083",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 202,
+        "original_idx": 1085,
+        "pred_key": "1085",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 203,
+        "original_idx": 1086,
+        "pred_key": "1086",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 204,
+        "original_idx": 1088,
+        "pred_key": "1088",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 205,
+        "original_idx": 1089,
+        "pred_key": "1089",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 206,
+        "original_idx": 1090,
+        "pred_key": "1090",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 207,
+        "original_idx": 1091,
+        "pred_key": "1091",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 208,
+        "original_idx": 1092,
+        "pred_key": "1092",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 209,
+        "original_idx": 1093,
+        "pred_key": "1093",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 210,
+        "original_idx": 1095,
+        "pred_key": "1095",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 211,
+        "original_idx": 1096,
+        "pred_key": "1096",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 212,
+        "original_idx": 1097,
+        "pred_key": "1097",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 213,
+        "original_idx": 1098,
+        "pred_key": "1098",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 214,
+        "original_idx": 1099,
+        "pred_key": "1099",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 215,
+        "original_idx": 1100,
+        "pred_key": "1100",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 216,
+        "original_idx": 1103,
+        "pred_key": "1103",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 217,
+        "original_idx": 1104,
+        "pred_key": "1104",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 218,
+        "original_idx": 1105,
+        "pred_key": "1105",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 219,
+        "original_idx": 1107,
+        "pred_key": "1107",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 220,
+        "original_idx": 1108,
+        "pred_key": "1108",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 221,
+        "original_idx": 1109,
+        "pred_key": "1109",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 222,
+        "original_idx": 1110,
+        "pred_key": "1110",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 223,
+        "original_idx": 1112,
+        "pred_key": "1112",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 224,
+        "original_idx": 1113,
+        "pred_key": "1113",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 225,
+        "original_idx": 1116,
+        "pred_key": "1116",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 226,
+        "original_idx": 1117,
+        "pred_key": "1117",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 227,
+        "original_idx": 1118,
+        "pred_key": "1118",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 228,
+        "original_idx": 1119,
+        "pred_key": "1119",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 229,
+        "original_idx": 1120,
+        "pred_key": "1120",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 230,
+        "original_idx": 1121,
+        "pred_key": "1121",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 231,
+        "original_idx": 1122,
+        "pred_key": "1122",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 232,
+        "original_idx": 1123,
+        "pred_key": "1123",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 233,
+        "original_idx": 1124,
+        "pred_key": "1124",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "timeout",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 234,
+        "original_idx": 1126,
+        "pred_key": "1126",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 235,
+        "original_idx": 1131,
+        "pred_key": "1131",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 236,
+        "original_idx": 1132,
+        "pred_key": "1132",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 237,
+        "original_idx": 1134,
+        "pred_key": "1134",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 238,
+        "original_idx": 1136,
+        "pred_key": "1136",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 239,
+        "original_idx": 1137,
+        "pred_key": "1137",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 240,
+        "original_idx": 1138,
+        "pred_key": "1138",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 241,
+        "original_idx": 1139,
+        "pred_key": "1139",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "challenging"
+    },
+    {
+        "sql_idx": 242,
+        "original_idx": 1140,
+        "pred_key": "1140",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 243,
+        "original_idx": 1141,
+        "pred_key": "1141",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 244,
+        "original_idx": 1142,
+        "pred_key": "1142",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 245,
+        "original_idx": 1143,
+        "pred_key": "1143",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 246,
+        "original_idx": 1146,
+        "pred_key": "1146",
+        "db_id": "european_football_2",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 247,
+        "original_idx": 1147,
+        "pred_key": "1147",
+        "db_id": "european_football_2",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 248,
+        "original_idx": 1150,
+        "pred_key": "1150",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 249,
+        "original_idx": 1154,
+        "pred_key": "1154",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 250,
+        "original_idx": 1155,
+        "pred_key": "1155",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 251,
+        "original_idx": 1158,
+        "pred_key": "1158",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "OperationalError: no such function: YEAR",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 252,
+        "original_idx": 1159,
+        "pred_key": "1159",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 253,
+        "original_idx": 1163,
+        "pred_key": "1163",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "OperationalError: no such column: Patient.First Date",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 254,
+        "original_idx": 1166,
+        "pred_key": "1166",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 255,
+        "original_idx": 1172,
+        "pred_key": "1172",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 256,
+        "original_idx": 1177,
+        "pred_key": "1177",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 257,
+        "original_idx": 1178,
+        "pred_key": "1178",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 258,
+        "original_idx": 1184,
+        "pred_key": "1184",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 259,
+        "original_idx": 1186,
+        "pred_key": "1186",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "OperationalError: no such function: YEAR",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 260,
+        "original_idx": 1188,
+        "pred_key": "1188",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "OperationalError: no such function: YEAR",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 261,
+        "original_idx": 1196,
+        "pred_key": "1196",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 262,
+        "original_idx": 1198,
+        "pred_key": "1198",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 263,
+        "original_idx": 1199,
+        "pred_key": "1199",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "OperationalError: no such function: YEAR",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 264,
+        "original_idx": 1201,
+        "pred_key": "1201",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "OperationalError: no such function: YEAR",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 265,
+        "original_idx": 1203,
+        "pred_key": "1203",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 266,
+        "original_idx": 1205,
+        "pred_key": "1205",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 267,
+        "original_idx": 1210,
+        "pred_key": "1210",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 268,
+        "original_idx": 1213,
+        "pred_key": "1213",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 269,
+        "original_idx": 1214,
+        "pred_key": "1214",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 270,
+        "original_idx": 1216,
+        "pred_key": "1216",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 271,
+        "original_idx": 1217,
+        "pred_key": "1217",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "OperationalError: no such function: YEAR",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 272,
+        "original_idx": 1218,
+        "pred_key": "1218",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 273,
+        "original_idx": 1220,
+        "pred_key": "1220",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 274,
+        "original_idx": 1222,
+        "pred_key": "1222",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 275,
+        "original_idx": 1224,
+        "pred_key": "1224",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 276,
+        "original_idx": 1228,
+        "pred_key": "1228",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 277,
+        "original_idx": 1230,
+        "pred_key": "1230",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 278,
+        "original_idx": 1234,
+        "pred_key": "1234",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 279,
+        "original_idx": 1235,
+        "pred_key": "1235",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 280,
+        "original_idx": 1237,
+        "pred_key": "1237",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 281,
+        "original_idx": 1240,
+        "pred_key": "1240",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 282,
+        "original_idx": 1248,
+        "pred_key": "1248",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 283,
+        "original_idx": 1251,
+        "pred_key": "1251",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 284,
+        "original_idx": 1253,
+        "pred_key": "1253",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 285,
+        "original_idx": 1261,
+        "pred_key": "1261",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 286,
+        "original_idx": 1278,
+        "pred_key": "1278",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 287,
+        "original_idx": 1280,
+        "pred_key": "1280",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 288,
+        "original_idx": 1283,
+        "pred_key": "1283",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 289,
+        "original_idx": 1286,
+        "pred_key": "1286",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 290,
+        "original_idx": 1288,
+        "pred_key": "1288",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 291,
+        "original_idx": 1289,
+        "pred_key": "1289",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 292,
+        "original_idx": 1290,
+        "pred_key": "1290",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 293,
+        "original_idx": 1291,
+        "pred_key": "1291",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 294,
+        "original_idx": 1293,
+        "pred_key": "1293",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 295,
+        "original_idx": 1300,
+        "pred_key": "1300",
+        "db_id": "thrombosis_prediction",
+        "res": 0,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 296,
+        "original_idx": 1301,
+        "pred_key": "1301",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 297,
+        "original_idx": 1303,
+        "pred_key": "1303",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    },
+    {
+        "sql_idx": 298,
+        "original_idx": 1304,
+        "pred_key": "1304",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "moderate"
+    },
+    {
+        "sql_idx": 299,
+        "original_idx": 1306,
+        "pred_key": "1306",
+        "db_id": "thrombosis_prediction",
+        "res": 1,
+        "error": "",
+        "difficulty": "simple"
+    }
+]

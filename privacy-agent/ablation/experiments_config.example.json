@@ -1,0 +1,67 @@
+{
+  "paths": {
+    "data_path": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/bird_dev_sc.jsonl",
+    "db_root_path": "/root/data/nl2sql/bird/databases",
+    "output_dir": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/inference/ablation_output",
+    "inference_data_name": "bird_dev_sc",
+    "diff_json_path": "/mnt/wh_intern/MXY/paper/rl/ours/open-r1/data/bird/diff.json",
+    "data_mode": "dev",
+    "ground_truth_path": "/mnt/wh_intern/MXY/paper/rl/ours/CHESS/data/dev/dev.sql",
+    "masksql_test_path": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/masksql_test.json",
+    "masksql_match_mode": "auto"
+  },
+  "options": {
+    "max_workers": 8,
+    "run_official_bird_eval": true
+  },
+  "variants": [
+    {
+      "name": "PrivAgent-R1_full",
+      "base_url": "http://127.0.0.1:2337/v1",
+      "model_name": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/agent_v2_mcts/checkpoint-40",
+      "api_key": "EMPTY"
+    },
+    {
+      "name": "w_o_agentic_refinement_fixed_pipeline",
+      "base_url": "http://127.0.0.1:2337/v1",
+      "model_name": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/agent_v2_mcts/checkpoint-40",
+      "api_key": "EMPTY",
+      "fixed_pipeline": true
+    },
+    {
+      "name": "w_o_query_rewrite",
+      "base_url": "http://127.0.0.1:2337/v1",
+      "model_name": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/agent_v2_mcts/checkpoint-40",
+      "api_key": "EMPTY",
+      "disable_query_rewrite": true
+    },
+    {
+      "name": "w_o_execution_check",
+      "base_url": "http://127.0.0.1:2337/v1",
+      "model_name": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/agent_v2_mcts/checkpoint-40",
+      "api_key": "EMPTY",
+      "disable_execution_check": true
+    },
+    {
+      "name": "privacy_strength_low",
+      "base_url": "http://127.0.0.1:2337/v1",
+      "model_name": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/agent_v2_mcts/checkpoint-40",
+      "api_key": "EMPTY",
+      "privacy_level": "low"
+    },
+    {
+      "name": "privacy_strength_medium",
+      "base_url": "http://127.0.0.1:2337/v1",
+      "model_name": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/agent_v2_mcts/checkpoint-40",
+      "api_key": "EMPTY",
+      "privacy_level": "medium"
+    },
+    {
+      "name": "privacy_strength_full",
+      "base_url": "http://127.0.0.1:2337/v1",
+      "model_name": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/agent_v2_mcts/checkpoint-40",
+      "api_key": "EMPTY",
+      "privacy_level": "full"
+    }
+  ]
+}

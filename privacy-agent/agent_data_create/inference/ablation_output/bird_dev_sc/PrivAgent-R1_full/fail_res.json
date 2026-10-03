@@ -1,0 +1,1056 @@
+[
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `account` WHERE `account`.`district_id` IN (SELECT `account`.`district_id` FROM `district` WHERE `district`.`A3` = 'Prague');",
+        "gold_sql": "SELECT COUNT(T1.account_id) FROM account AS T1 INNER JOIN loan AS T2 ON T1.account_id = T2.account_id INNER JOIN district AS T3 ON T1.district_id = T3.district_id WHERE T3.A3 = 'Prague'",
+        "exec_acc": 0,
+        "eval_original_idx": 90,
+        "eval_pred_key": "90",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT AVG(`district`.`A12`) AS avg_unemployment_1995, AVG(`district`.`A13`) AS avg_unemployment_1996, CASE WHEN AVG(`district`.`A12`) > AVG(`district`.`A13`) THEN '1995' WHEN AVG(`district`.`A13`) > AVG(`district`.`A12`) THEN '1996' ELSE 'Equal' END AS higher_percentage_year FROM `district`;",
+        "gold_sql": "SELECT DISTINCT IIF(AVG(A13) > AVG(A12), '1996', '1995') FROM district",
+        "exec_acc": 0,
+        "eval_original_idx": 91,
+        "eval_pred_key": "91",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(DISTINCT t2.`district_id`) FROM `district` t2 JOIN `client` t1 ON t2.`district_id` = t1.`district_id` WHERE t1.`gender` = 'F' GROUP BY t2.`district_id` HAVING AVG(t2.`A11`) BETWEEN 6000 AND 10000;",
+        "gold_sql": "SELECT DISTINCT T2.district_id FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T1.gender = 'F' AND T2.A11 BETWEEN 6000 AND 10000",
+        "exec_acc": 0,
+        "eval_original_idx": 92,
+        "eval_pred_key": "92",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "WITH avg_salary_data AS (SELECT t2.`birth_date`, t4.`account_id`, SUM(t1.`A11`) / COUNT(*) AS avg_salary FROM `district` t1 JOIN `client` t2 ON t1.`district_id` = t2.`district_id` JOIN `disp` t4 ON t2.`client_id` = t4.`client_id` WHERE t2.`gender` = 'F' GROUP BY t2.`birth_date`, t4.`account_id`), max_min_diff AS (SELECT `account_id`, MAX(avg_salary) - MIN(avg_salary) AS salary_diff FROM avg_salary_data GROUP BY `account_id`) SELECT a.`account_id`, a.salary_diff FROM max_min_diff a JOIN (SELECT `account_id`, MAX(`birth_date`) AS max_col_5 FROM avg_salary_data GROUP BY `account_id`) b ON a.`account_id` = b.`account_id` ORDER BY b.max_col_5 DESC LIMIT 1;",
+        "gold_sql": "SELECT T1.account_id , ( SELECT MAX(A11) - MIN(A11) FROM district ) FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.district_id = ( SELECT district_id FROM client WHERE gender = 'F' ORDER BY birth_date ASC LIMIT 1 ) ORDER BY T2.A11 DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 94,
+        "eval_pred_key": "94",
+        "difficulty": "challenging"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t3.`account` FROM `client` t4 JOIN `district` t1 ON t4.`district_id` = t1.`district_id` JOIN `trans` t3 ON t4.`client_id` = t3.`account_id` WHERE t4.`birth_date` = (SELECT MIN(`client`.`birth_date`) FROM `client`) ORDER BY t1.`A11` DESC LIMIT 1;",
+        "gold_sql": "SELECT T1.account_id FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.district_id = ( SELECT district_id FROM client ORDER BY birth_date DESC LIMIT 1 ) ORDER BY T2.A11 DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 95,
+        "eval_pred_key": "95",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `disp` t1 JOIN `account` t2 ON t1.`account_id` = t2.`account_id` WHERE t2.`frequency` = 'POPLATEK TYDNE' AND t1.`type` = 'OWNER'",
+        "gold_sql": "SELECT COUNT(T1.account_id) FROM account AS T1 INNER JOIN disp AS T2 ON T1.account_id = T2.account_id WHERE T2.type = 'Owner' AND T1.frequency = 'POPLATEK TYDNE'",
+        "exec_acc": 0,
+        "eval_original_idx": 96,
+        "eval_pred_key": "96",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.* FROM `account` t2 JOIN `loan` t1 ON t2.`account_id` = t1.`account_id` WHERE t1.`duration` > 12 AND t2.`date` = '1993' AND t1.`amount` = (SELECT MAX(t1_inner.`amount`) FROM `loan` t1_inner JOIN `account` t2_inner ON t1_inner.`account_id` = t2_inner.`account_id` WHERE t1_inner.`duration` > 12 AND t2_inner.`date` = '1993');",
+        "gold_sql": "SELECT T1.account_id FROM loan AS T1 INNER JOIN disp AS T2 ON T1.account_id = T2.account_id WHERE STRFTIME('%Y', T1.date) = '1993' AND T1.duration = 12 ORDER BY T1.amount DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 99,
+        "eval_pred_key": "99",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT DISTINCT t2.* FROM `account` t2 JOIN `trans` t1 ON t2.`account_id` = t1.`account_id` WHERE t2.`date` < 1997 AND t1.`balance` > 3000;",
+        "gold_sql": "SELECT DISTINCT T2.account_id FROM trans AS T1 INNER JOIN account AS T2 ON T1.account_id = T2.account_id WHERE STRFTIME('%Y', T2.date) < '1997' AND T1.amount > 3000",
+        "exec_acc": 0,
+        "eval_original_idx": 102,
+        "eval_pred_key": "102",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`date` AS opened_time FROM `trans` t1 JOIN `account` t2 ON t1.`account_id` = t2.`account_id` WHERE t1.`amount` = 840 AND t2.`date` = '19981014';",
+        "gold_sql": "SELECT T1.date FROM account AS T1 INNER JOIN trans AS T2 ON T1.account_id = T2.account_id WHERE T2.amount = 840 AND T2.date = '1998-10-14'",
+        "exec_acc": 0,
+        "eval_original_idx": 104,
+        "eval_pred_key": "104",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT MAX(t2.amount) AS max_amount FROM card t1 JOIN disp t3 ON t1.disp_id = t3.disp_id JOIN trans t2 ON t2.account_id = t3.account_id WHERE t1.issued = '1996/10/21'",
+        "gold_sql": "SELECT T2.amount FROM account AS T1 INNER JOIN trans AS T2 ON T1.account_id = T2.account_id WHERE T1.date = '1996-10-21' ORDER BY T2.amount DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 106,
+        "eval_pred_key": "106",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t4.`gender` FROM `client` t4 JOIN `disp` t2 ON t4.`client_id` = t2.`client_id` JOIN `account` t3 ON t2.`account_id` = t3.`account_id` JOIN `district` t1 ON t3.`district_id` = t1.`district_id` WHERE t1.`district_id` = (SELECT t1_inner.`district_id` FROM `client` t4_inner JOIN `disp` t2_inner ON t4_inner.`client_id` = t2_inner.`client_id` JOIN `account` t3_inner ON t2_inner.`account_id` = t3_inner.`account_id` JOIN `district` t1_inner ON t3_inner.`district_id` = t1_inner.`district_id` GROUP BY t1_inner.`district_id` ORDER BY AVG(t1_inner.`A11`) DESC LIMIT 1) ORDER BY t4.`birth_date` ASC LIMIT 1;",
+        "gold_sql": "SELECT T2.gender FROM district AS T1 INNER JOIN client AS T2 ON T1.district_id = T2.district_id ORDER BY T1.A11 DESC, T2.birth_date ASC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 107,
+        "eval_pred_key": "107",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t3.`birth_date` FROM `client` t3 JOIN `disp` t1 ON t3.`client_id` = t1.`client_id` JOIN `loan` t2 ON t1.`account_id` = t2.`account_id` WHERE t2.`date` = '1996-01-03' AND t2.`amount` = 98832",
+        "gold_sql": "SELECT T3.birth_date FROM loan AS T1 INNER JOIN account AS T2 ON T1.account_id = T2.account_id INNER JOIN client AS T3 ON T2.district_id = T3.district_id WHERE T1.date = '1996-01-03' AND T1.amount = 98832",
+        "exec_acc": 0,
+        "eval_original_idx": 113,
+        "eval_pred_key": "113",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.account_id AS table_2_id FROM `account` t2 JOIN `district` t1 ON t2.`district_id` = t1.`district_id` WHERE t1.`A3` = 'Prague' ORDER BY t2.account_id ASC LIMIT 1;",
+        "gold_sql": "SELECT T1.account_id FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.A3 = 'Prague' ORDER BY T1.date ASC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 114,
+        "eval_pred_key": "114",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`account_id`, t2.`frequency`, t3.`type` FROM `account` t2 JOIN `disp` t3 ON t2.`account_id` = t3.`account_id` JOIN `district` t1 ON t2.`district_id` = t1.`district_id` WHERE t2.`date` BETWEEN '1995-01-01' AND '2000-12-31' AND t1.`A3` = 'east Bohemia';",
+        "gold_sql": "SELECT T1.account_id, T1.frequency FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.A3 = 'east Bohemia' AND STRFTIME('%Y', T1.date) BETWEEN '1995' AND '2000'",
+        "exec_acc": 0,
+        "eval_original_idx": 120,
+        "eval_pred_key": "120",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`loan_id`, t1.`A3`, t1.`A11` FROM `loan` t2 JOIN `account` t3 ON t2.`account_id` = t3.`account_id` JOIN `district` t1 ON t3.`district_id` = t1.`district_id` WHERE t2.`duration` = 60;",
+        "gold_sql": "SELECT T3.loan_id, T2.A2, T2.A11 FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN loan AS T3 ON T1.account_id = T3.account_id WHERE T3.duration = 60",
+        "exec_acc": 0,
+        "eval_original_idx": 124,
+        "eval_pred_key": "124",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`A2`, COUNT(t1.`client_id`) AS female_count FROM `client` t1 JOIN `district` t2 ON t1.`district_id` = t2.`district_id` WHERE t1.`gender` = 'F' GROUP BY t2.`A2`, t1.`district_id` ORDER BY female_count DESC LIMIT 10;",
+        "gold_sql": "SELECT T2.A2, COUNT(T1.client_id) FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T1.gender = 'F' GROUP BY T2.district_id, T2.A2 ORDER BY COUNT(T1.client_id) DESC LIMIT 10",
+        "exec_acc": 0,
+        "eval_original_idx": 128,
+        "eval_pred_key": "128",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t1.`client_id`, AVG(t2.`amount`) AS avg_amount FROM `client` t1 JOIN `loan` t2 ON t1.`client_id` = t2.loan_id WHERE t1.`gender` = 'M' GROUP BY t1.`client_id`;",
+        "gold_sql": "SELECT AVG(T3.amount) FROM client AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id INNER JOIN loan AS T3 ON T2.account_id = T3.account_id WHERE T1.gender = 'M'",
+        "exec_acc": 0,
+        "eval_original_idx": 132,
+        "eval_pred_key": "132",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT A2 AS district_name, A13 AS unemployment_rate FROM district WHERE A13 = (SELECT MAX(A13) FROM district)",
+        "gold_sql": "SELECT district_id, A2 FROM district ORDER BY A13 DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 133,
+        "eval_pred_key": "133",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) AS opened_table_1_count FROM `account` WHERE `account`.`district_id` = (SELECT `account`.`district_id` FROM `district` ORDER BY `district`.`A16` DESC LIMIT 1);",
+        "gold_sql": "SELECT COUNT(T2.account_id) FROM district AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id GROUP BY T1.A16 ORDER BY T1.A16 DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 134,
+        "eval_pred_key": "134",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) AS val_1_count FROM `client` WHERE `client`.`gender` = 'M' AND `client`.`district_id` = (SELECT `client`.`district_id` FROM (SELECT `client`.`district_id`, ROW_NUMBER() OVER (ORDER BY `district`.`A15` DESC) AS rn FROM `district` WHERE `district`.`A15` IS NOT NULL) ranked WHERE rn = 2);",
+        "gold_sql": "SELECT COUNT(T1.client_id) FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T1.gender = 'M' AND T2.A15 = (SELECT T3.A15 FROM district AS T3 ORDER BY T3.A15 DESC LIMIT 1, 1)",
+        "exec_acc": 0,
+        "eval_original_idx": 138,
+        "eval_pred_key": "138",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`A2` FROM `district` t2 JOIN `account` t1 ON t2.`district_id` = t1.`district_id` JOIN `trans` t3 ON t1.`account_id` = t3.`account_id` WHERE t3.`amount` > 10000 AND strftime('%Y', t3.`date`) = 1997",
+        "gold_sql": "SELECT T1.district_id FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN trans AS T3 ON T1.account_id = T3.account_id WHERE STRFTIME('%Y', T3.date) = '1997' GROUP BY T1.district_id HAVING SUM(T3.amount) > 10000",
+        "exec_acc": 0,
+        "eval_original_idx": 141,
+        "eval_pred_key": "141",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`account_id` FROM `disp` t2 INNER JOIN `card` t1 ON t2.`disp_id` = t1.`disp_id` WHERE t1.`type` = 'gold' INTERSECT SELECT t2.`account_id` FROM `disp` t2 INNER JOIN `card` t1 ON t2.`disp_id` = t1.`disp_id` WHERE t1.`type` = 'junior';",
+        "gold_sql": "SELECT T2.account_id FROM card AS T1 INNER JOIN disp AS T2 ON T1.disp_id = T2.disp_id WHERE T1.type IN ('gold', 'junior')",
+        "exec_acc": 0,
+        "eval_original_idx": 143,
+        "eval_pred_key": "143",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT DISTINCT t3.* FROM `account` t3 JOIN `district` t1 ON t3.`district_id` = t1.`district_id` JOIN `disp` t2 ON t3.`account_id` = t2.`account_id` WHERE t1.`A2` = 'Tabor' AND t2.`type` = 'OWNER';",
+        "gold_sql": "SELECT T2.account_id FROM district AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id INNER JOIN disp AS T3 ON T2.account_id = T3.account_id WHERE T3.type = 'OWNER' AND T1.A2 = 'Tabor'",
+        "exec_acc": 0,
+        "eval_original_idx": 148,
+        "eval_pred_key": "148",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(DISTINCT t3.`account_id`) FROM `account` t3 JOIN `district` t1 ON t3.`district_id` = t1.`district_id` JOIN `trans` t2 ON t3.`account_id` = t2.`account_id` WHERE t1.`A3` = 'North Bohemia' AND t2.`bank` = 'AB';",
+        "gold_sql": "SELECT COUNT(T2.account_id) FROM district AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id INNER JOIN trans AS T3 ON T2.account_id = T3.account_id WHERE T3.bank = 'AB' AND T1.A3 = 'north Bohemia'",
+        "exec_acc": 0,
+        "eval_original_idx": 150,
+        "eval_pred_key": "150",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT AVG(t2.`A15`) FROM `district` t2 WHERE t2.`A15` > 4000 AND t2.`district_id` IN (SELECT t1.`district_id` FROM `account` t1 WHERE t1.`date` >= '19970101');",
+        "gold_sql": "SELECT AVG(T1.A15) FROM district AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id WHERE STRFTIME('%Y', T2.date) >= '1997' AND T1.A15 > 4000",
+        "exec_acc": 0,
+        "eval_original_idx": 152,
+        "eval_pred_key": "152",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(DISTINCT t2.card_id) AS eligible_card_count FROM `disp` t1 JOIN `card` t2 ON t1.`disp_id` = t2.`disp_id` WHERE t2.`type` = 'classic' AND t1.`type` = 'OWNER';",
+        "gold_sql": "SELECT COUNT(T1.card_id) FROM card AS T1 INNER JOIN disp AS T2 ON T1.disp_id = T2.disp_id WHERE T1.type = 'classic' AND T2.type = 'Owner'",
+        "exec_acc": 0,
+        "eval_original_idx": 153,
+        "eval_pred_key": "153",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT (COUNT(CASE WHEN `card`.`type` = 'gold' AND `card`.`issued` < '1998' THEN 1 END) * 100.0) / COUNT(*) AS percent_val_1 FROM `card`;",
+        "gold_sql": "SELECT CAST(SUM(type = 'gold') AS REAL) * 100 / COUNT(card_id) FROM card WHERE STRFTIME('%Y', issued) < '1998'",
+        "exec_acc": 0,
+        "eval_original_idx": 155,
+        "eval_pred_key": "155",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`type` FROM `disp` t2 JOIN `loan` t1 ON t2.`account_id` = t1.`account_id` GROUP BY t1.`account_id` ORDER BY t1.`amount` DESC LIMIT 1",
+        "gold_sql": "SELECT T1.client_id FROM disp AS T1 INNER JOIN loan AS T2 ON T1.account_id = T2.account_id WHERE T1.type = 'OWNER' ORDER BY T2.amount DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 156,
+        "eval_pred_key": "156",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`A3` FROM `district` t2 JOIN `client` t1 ON t2.`district_id` = t1.`district_id` WHERE t1.`client_id` = 3541;",
+        "gold_sql": "SELECT T2.district_id, T1.A3 FROM district AS T1 INNER JOIN client AS T2 ON T1.district_id = T2.district_id WHERE T2.client_id = 3541",
+        "exec_acc": 0,
+        "eval_original_idx": 162,
+        "eval_pred_key": "162",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT d.client_id FROM \"order\" o JOIN \"disp\" d ON o.account_id = d.account_id WHERE o.order_id = 32423;",
+        "gold_sql": "SELECT T3.client_id FROM `order` AS T1 INNER JOIN account AS T2 ON T1.account_id = T2.account_id INNER JOIN client AS T3 ON T2.district_id = T3.district_id WHERE T1.order_id = 32423",
+        "exec_acc": 0,
+        "eval_original_idx": 164,
+        "eval_pred_key": "164",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t1.* FROM `trans` t1 JOIN `account` t2 ON t1.`account_id` = t2.`account_id` WHERE t2.`district_id` = 5;",
+        "gold_sql": "SELECT T3.trans_id FROM district AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id INNER JOIN trans AS T3 ON T2.account_id = T3.account_id WHERE T1.district_id = 5",
+        "exec_acc": 0,
+        "eval_original_idx": 165,
+        "eval_pred_key": "165",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT (SELECT `district`.`A16` FROM `district` WHERE `district`.`A3` = 'East Bohemia') - (SELECT `district`.`A16` FROM `district` WHERE `district`.`A3` = 'North Bohemia') AS difference;",
+        "gold_sql": "SELECT SUM(IIF(A3 = 'East Bohemia', A16, 0)) - SUM(IIF(A3 = 'North Bohemia', A16, 0)) FROM district",
+        "exec_acc": 0,
+        "eval_original_idx": 171,
+        "eval_pred_key": "171",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT strftime('%Y', t2.birth_date) FROM disp t1 JOIN client t2 ON t1.client_id = t2.client_id WHERE t1.type = 'OWNER' AND t1.disp_id = 130",
+        "gold_sql": "SELECT STRFTIME('%Y', T1.birth_date) FROM client AS T1 INNER JOIN disp AS T3 ON T1.client_id = T3.client_id INNER JOIN account AS T2 ON T3.account_id = T2.account_id WHERE T2.account_id = 130",
+        "exec_acc": 0,
+        "eval_original_idx": 174,
+        "eval_pred_key": "174",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT l.amount, l.payments, l.status FROM loan l JOIN disp d ON l.loan_id = d.disp_id WHERE d.client_id = 992",
+        "gold_sql": "SELECT T3.amount, T3.status FROM client AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id INNER JOIN loan AS T3 ON T2.account_id = T3.account_id WHERE T1.client_id = 992",
+        "exec_acc": 0,
+        "eval_original_idx": 176,
+        "eval_pred_key": "176",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.balance, t3.gender FROM trans t2 JOIN client t3 ON t2.account_id = (SELECT account_id FROM disp WHERE client_id = 4) WHERE t2.trans_id = 851;",
+        "gold_sql": "SELECT T3.balance, T1.gender FROM client AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id INNER JOIN trans AS T3 ON T2.account_id = T3.account_id WHERE T1.client_id = 4 AND T3.trans_id = 851",
+        "exec_acc": 0,
+        "eval_original_idx": 177,
+        "eval_pred_key": "177",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT SUM(t1.amount) FROM trans t1 JOIN disp t2 ON t1.account = t2.account_id WHERE t1.date BETWEEN '1998-01-01' AND '1998-12-31' AND t2.client_id = 617;",
+        "gold_sql": "SELECT SUM(T3.amount) FROM client AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id INNER JOIN trans AS T3 ON T2.account_id = T3.account_id WHERE STRFTIME('%Y', T3.date)= '1998' AND T1.client_id = 617",
+        "exec_acc": 0,
+        "eval_original_idx": 179,
+        "eval_pred_key": "179",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`client_id` FROM `client` t2 JOIN `district` t1 ON t2.`district_id` = t1.`district_id` WHERE t2.`birth_date` BETWEEN '1983' AND '1987' AND t1.`A3` = 'East Bohemia';",
+        "gold_sql": "SELECT T1.client_id, T3.account_id FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN account AS T3 ON T2.district_id = T3.district_id WHERE T2.A3 = 'east Bohemia' AND STRFTIME('%Y', T1.birth_date) BETWEEN '1983' AND '1987'",
+        "exec_acc": 0,
+        "eval_original_idx": 180,
+        "eval_pred_key": "180",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t1.client_id FROM client t1 JOIN disp t2 ON t1.client_id = t2.client_id JOIN loan t3 ON t2.account_id = t3.account_id WHERE t1.gender = 'F' ORDER BY t3.amount DESC LIMIT 3;",
+        "gold_sql": "SELECT T1.client_id FROM client AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id INNER JOIN loan AS T3 ON T2.account_id = T3.account_id WHERE T1.gender = 'F' ORDER BY T3.amount DESC LIMIT 3",
+        "exec_acc": 0,
+        "eval_original_idx": 181,
+        "eval_pred_key": "181",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `account` t2 JOIN `district` t1 ON t2.`district_id` = t1.`district_id` WHERE t1.`A2` = 'Beroun' AND t2.`date` > '1996';",
+        "gold_sql": "SELECT COUNT(account_id) FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE STRFTIME('%Y', T1.date) > '1996' AND T2.A2 = 'Beroun'",
+        "exec_acc": 0,
+        "eval_original_idx": 183,
+        "eval_pred_key": "183",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(DISTINCT client_id) FROM `disp` JOIN `account` ON `disp`.`account_id` = `account`.`account_id` WHERE `account`.`frequency` = 'POPLATEK TYDNE' AND `disp`.`type` = 'OWNER'",
+        "gold_sql": "SELECT COUNT(T2.account_id) FROM account AS T1 INNER JOIN disp AS T2 ON T2.account_id = T1.account_id WHERE T1.frequency = 'POPLATEK TYDNE' AND T2.type = 'USER'",
+        "exec_acc": 0,
+        "eval_original_idx": 187,
+        "eval_pred_key": "187",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t1.* FROM `account` t1 JOIN `loan` t2 ON t1.`account_id` = t2.`account_id` WHERE t2.`duration` > 24 AND t1.`date` < 1997 AND t2.`amount` = (SELECT MIN(t2_inner.`amount`) FROM `loan` t2_inner JOIN `account` t1_inner ON t1_inner.`account_id` = t2_inner.`account_id` WHERE t2_inner.`duration` > 24 AND t1_inner.`date` < 1997);",
+        "gold_sql": "SELECT T1.account_id FROM loan AS T1 INNER JOIN account AS T2 ON T1.account_id = T2.account_id WHERE T1.duration > 24 AND STRFTIME('%Y', T2.date) < '1997' ORDER BY T1.amount ASC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 188,
+        "eval_pred_key": "188",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `client` t2 JOIN `district` t1 ON t2.`district_id` = t1.`district_id` WHERE t1.`A3` = 'east Bohemia' AND t2.`birth_date` = '1920';",
+        "gold_sql": "SELECT COUNT(T1.client_id) FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE STRFTIME('%Y', T1.birth_date) = '1920' AND T2.A3 = 'east Bohemia'",
+        "exec_acc": 0,
+        "eval_original_idx": 190,
+        "eval_pred_key": "190",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`full_name` FROM `superhero` t2 JOIN `hero_power` t1 ON t2.id = t1.`hero_id` GROUP BY t2.id, t2.`full_name` HAVING COUNT(t1.`hero_id`) > 15;",
+        "gold_sql": "SELECT DISTINCT T1.full_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id GROUP BY T1.full_name HAVING COUNT(T2.power_id) > 15",
+        "exec_acc": 0,
+        "eval_original_idx": 720,
+        "eval_pred_key": "720",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `superhero` t3 JOIN `colour` t1 ON t3.`skin_colour_id` = t1.id OR t3.`hair_colour_id` = t1.id OR t3.`eye_colour_id` = t1.id JOIN `publisher` t2 ON t3.`publisher_id` = t2.id WHERE t1.`colour` = 'Gold' AND t2.`publisher_name` = 'Marvel Comics';",
+        "gold_sql": "SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id INNER JOIN colour AS T3 ON T1.eye_colour_id = T3.id WHERE T2.publisher_name = 'Marvel Comics' AND T3.colour = 'Gold'",
+        "exec_acc": 0,
+        "eval_original_idx": 733,
+        "eval_pred_key": "733",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`superhero_name` FROM `superhero` t1 JOIN `hero_power` t2 ON t1.id = t2.`hero_id` GROUP BY t1.id, t1.`superhero_name` ORDER BY COUNT(t2.`hero_id`) DESC LIMIT 1;",
+        "gold_sql": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id GROUP BY T1.superhero_name ORDER BY COUNT(T2.hero_id) DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 741,
+        "eval_pred_key": "741",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`colour` FROM `colour` t1 JOIN `superhero` t3 ON t1.`id` = t3.`hair_colour_id` JOIN `race` t2 ON t3.`id` = t2.`id` WHERE t3.`height_cm` = 185 AND t2.`race` = 'Human';",
+        "gold_sql": "SELECT DISTINCT T3.colour FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id INNER JOIN colour AS T3 ON T1.hair_colour_id = T3.id WHERE T1.height_cm = 185 AND T2.race = 'Human'",
+        "exec_acc": 0,
+        "eval_original_idx": 758,
+        "eval_pred_key": "758",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `hero_power` JOIN `superpower` ON `hero_power`.`power_id` = `superpower`.id WHERE `superpower`.`power_name` = 'stealth';",
+        "gold_sql": "SELECT COUNT(T1.hero_id) FROM hero_power AS T1 INNER JOIN superpower AS T2 ON T1.power_id = T2.id WHERE T2.power_name = 'Stealth'",
+        "exec_acc": 0,
+        "eval_original_idx": 765,
+        "eval_pred_key": "765",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT (SELECT COUNT(*) FROM superhero WHERE superhero.skin_colour_id != 1) / (SELECT COUNT(*) FROM superhero WHERE superhero.skin_colour_id = 1) AS result;",
+        "gold_sql": "SELECT CAST(COUNT(*) AS REAL) / SUM(CASE WHEN T2.id = 1 THEN 1 ELSE 0 END) FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.skin_colour_id = T2.id",
+        "exec_acc": 0,
+        "eval_original_idx": 767,
+        "eval_pred_key": "767",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.* FROM `colour` t1 JOIN `superhero` t2 ON t1.id = t2.`eye_colour_id` WHERE t2.`full_name` = 'Abraham Sapien';",
+        "gold_sql": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.full_name = 'Abraham Sapien'",
+        "exec_acc": 0,
+        "eval_original_idx": 770,
+        "eval_pred_key": "770",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`eye_colour_id` FROM `superhero` t1 JOIN `colour` t2 ON t1.`skin_colour_id` = t2.id WHERE t2.`colour` = 'Gold'",
+        "gold_sql": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id INNER JOIN colour AS T3 ON T1.skin_colour_id = T3.id WHERE T3.colour = 'Gold'",
+        "exec_acc": 0,
+        "eval_original_idx": 783,
+        "eval_pred_key": "783",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `superhero` WHERE `superhero`.`publisher_id` IS NULL OR `superhero`.`publisher_id` != 1;",
+        "gold_sql": "SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T2.id = 1",
+        "exec_acc": 0,
+        "eval_original_idx": 799,
+        "eval_pred_key": "799",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT `superhero`.`superhero_name` FROM `superhero` WHERE `superhero`.`height_cm` = (SELECT MAX(`superhero`.`height_cm`) FROM `superhero`);",
+        "gold_sql": "SELECT superhero_name FROM superhero ORDER BY height_cm DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 802,
+        "eval_pred_key": "802",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT id FROM superpower WHERE superpower.power_name = 'cryokinesis';",
+        "gold_sql": "SELECT id FROM superpower WHERE power_name = 'Cryokinesis'",
+        "exec_acc": 0,
+        "eval_original_idx": 803,
+        "eval_pred_key": "803",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`alignment`, t4.`power_name` FROM `superhero` t1 JOIN `alignment` t2 ON t1.`alignment_id` = t2.id JOIN `hero_power` t3 ON t3.`hero_id` = t1.id JOIN `superpower` t4 ON t3.`power_id` = t4.id WHERE t1.`superhero_name` = 'Atom IV';",
+        "gold_sql": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T3.id = T2.power_id WHERE T1.superhero_name = 'Atom IV'",
+        "exec_acc": 0,
+        "eval_original_idx": 811,
+        "eval_pred_key": "811",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`full_name` FROM `superhero` t2 JOIN `colour` t1 ON t2.`eye_colour_id` = t1.id WHERE t1.`colour` = 'Blue';",
+        "gold_sql": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T2.colour = 'Blue' LIMIT 5",
+        "exec_acc": 0,
+        "eval_original_idx": 812,
+        "eval_pred_key": "812",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `hero_attribute` JOIN `attribute` ON `hero_attribute`.`attribute_id` = `attribute`.`id` WHERE `hero_attribute`.`attribute_value` = 100 AND `attribute`.`attribute_name` = 'Speed';",
+        "gold_sql": "SELECT COUNT(T3.superhero_name) FROM hero_attribute AS T1 INNER JOIN attribute AS T2 ON T1.attribute_id = T2.id INNER JOIN superhero AS T3 ON T1.hero_id = T3.id WHERE T2.attribute_name = 'Speed' ORDER BY T1.attribute_value DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 828,
+        "eval_pred_key": "828",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT `superhero`.`superhero_name` FROM `superhero` WHERE `superhero`.`height_cm` = (SELECT MAX(`superhero`.`height_cm`) FROM `superhero`);",
+        "gold_sql": "SELECT superhero_name FROM superhero ORDER BY height_cm DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 832,
+        "eval_pred_key": "832",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT `superhero`.`full_name` FROM `superhero` JOIN `colour` ON `superhero`.`eye_colour_id` = `colour`.`id` WHERE `superhero`.`weight_kg` < 100 AND `colour`.`colour` = 'brown';",
+        "gold_sql": "SELECT T1.full_name FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.weight_kg < 100 AND T2.colour = 'Brown'",
+        "exec_acc": 0,
+        "eval_original_idx": 839,
+        "eval_pred_key": "839",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Player`.`height`, `Player`.`player_name` FROM `Player` WHERE `Player`.`height` = (SELECT MAX(`Player`.`height`) FROM `Player`);",
+        "gold_sql": "SELECT player_name FROM Player ORDER BY height DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1021,
+        "eval_pred_key": "1021",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT COUNT(*) FROM `Player_Attributes` WHERE `Player_Attributes`.`overall_rating` >= 60 AND `Player_Attributes`.`overall_rating` < 65 AND `Player_Attributes`.`defensive_work_rate` = 'low';",
+        "gold_sql": "SELECT COUNT(id) FROM Player_Attributes WHERE overall_rating BETWEEN 60 AND 65 AND defensive_work_rate = 'low'",
+        "exec_acc": 0,
+        "eval_original_idx": 1023,
+        "eval_pred_key": "1023",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`player_name` AS full_name FROM `Player_Attributes` t1 JOIN `Player` t2 ON t1.`player_api_id` = t2.`player_api_id` GROUP BY t2.`player_name` ORDER BY MAX(t1.`penalties`) DESC LIMIT 10;",
+        "gold_sql": "SELECT t2.player_name FROM Player_Attributes AS t1 INNER JOIN Player AS t2 ON t1.id = t2.id ORDER BY t1.penalties DESC LIMIT 10",
+        "exec_acc": 0,
+        "eval_original_idx": 1027,
+        "eval_pred_key": "1027",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Team_Attributes`.`buildUpPlaySpeed` AS speed_in_which_attacks_are_put_together FROM `Team_Attributes` ORDER BY `Team_Attributes`.`buildUpPlaySpeed` DESC LIMIT 4;",
+        "gold_sql": "SELECT t1.buildUpPlaySpeed FROM Team_Attributes AS t1 INNER JOIN Team AS t2 ON t1.team_api_id = t2.team_api_id ORDER BY t1.buildUpPlayDribbling ASC LIMIT 4",
+        "exec_acc": 0,
+        "eval_original_idx": 1029,
+        "eval_pred_key": "1029",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`name`, COUNT(t2.`league_id`) AS table_2_count FROM `League` t1 LEFT JOIN `Match` t2 ON t1.id = t2.`league_id` GROUP BY t1.id, t1.`name` ORDER BY COUNT(t2.`league_id`) DESC LIMIT 1",
+        "gold_sql": "SELECT t2.name, COUNT(t1.id) FROM Match AS t1 INNER JOIN League AS t2 ON t1.league_id = t2.id GROUP BY t2.name ORDER BY COUNT(t1.id) DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1032,
+        "eval_pred_key": "1032",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.* FROM `Player` t2 JOIN `Player_Attributes` t1 ON t2.`player_fifa_api_id` = t1.`player_fifa_api_id` OR t2.`player_api_id` = t1.`player_api_id` WHERE t1.`potential` = (SELECT MAX(`Player_Attributes`.`potential`) FROM `Player_Attributes`)",
+        "gold_sql": "SELECT DISTINCT(t1.player_name) FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t2.potential = (SELECT MAX(potential) FROM Player_Attributes)",
+        "exec_acc": 0,
+        "eval_original_idx": 1051,
+        "eval_pred_key": "1051",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT COUNT(*) FROM `Player` t1 JOIN `Player_Attributes` t2 ON t1.`player_api_id` = t2.`player_api_id` OR t1.`player_fifa_api_id` = t2.`player_fifa_api_id` WHERE t1.`weight` < 130 AND t2.`preferred_foot` = 'left';",
+        "gold_sql": "SELECT COUNT(DISTINCT t1.id) FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.weight < 130 AND t2.preferred_foot = 'left'",
+        "exec_acc": 0,
+        "eval_original_idx": 1052,
+        "eval_pred_key": "1052",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT COUNT(*) FROM `Player` WHERE strftime('%Y', `Player`.`birthday`) = '1990';",
+        "gold_sql": "SELECT COUNT(id) FROM Player WHERE STRFTIME('%Y', birthday) > '1990'",
+        "exec_acc": 0,
+        "eval_original_idx": 1060,
+        "eval_pred_key": "1060",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT COUNT(*) FROM Player WHERE Player.player_name = 'Adam' AND Player.weight > 170;",
+        "gold_sql": "SELECT COUNT(id) FROM Player WHERE weight > 170 AND player_name LIKE 'Adam%'",
+        "exec_acc": 0,
+        "eval_original_idx": 1061,
+        "eval_pred_key": "1061",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT DISTINCT t2.`player_name` FROM `Player_Attributes` t1 JOIN `Player` t2 ON t1.`player_fifa_api_id` = t2.`player_fifa_api_id` AND t1.`player_api_id` = t2.`player_api_id` WHERE t1.`overall_rating` > 80 AND strftime('%Y', t1.`date`) BETWEEN '2008' AND '2010';",
+        "gold_sql": "SELECT DISTINCT t1.player_name FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t2.overall_rating > 80 AND SUBSTR(t2.`date`, 1, 4) BETWEEN '2008' AND '2010'",
+        "exec_acc": 0,
+        "eval_original_idx": 1062,
+        "eval_pred_key": "1062",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT * FROM Player ORDER BY Player.height ASC LIMIT 1;",
+        "gold_sql": "SELECT player_name FROM player ORDER BY height ASC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1069,
+        "eval_pred_key": "1069",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.* FROM `League` t1 JOIN `Country` t2 ON t1.`country_id` = t2.id WHERE t1.`name` = 'Italy Serie A';",
+        "gold_sql": "SELECT t1.name FROM Country AS t1 INNER JOIN League AS t2 ON t1.id = t2.country_id WHERE t2.name = 'Italy Serie A'",
+        "exec_acc": 0,
+        "eval_original_idx": 1070,
+        "eval_pred_key": "1070",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT * FROM Player ORDER BY Player.height DESC LIMIT 1;",
+        "gold_sql": "SELECT player_name FROM Player ORDER BY height DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1079,
+        "eval_pred_key": "1079",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `League`.* FROM `League` JOIN `Country` ON `League`.`country_id` = `Country`.id WHERE `Country`.`name` = 'Germany';",
+        "gold_sql": "SELECT t2.name FROM Country AS t1 INNER JOIN League AS t2 ON t1.id = t2.country_id WHERE t1.name = 'Germany'",
+        "exec_acc": 0,
+        "eval_original_idx": 1082,
+        "eval_pred_key": "1082",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.* FROM `Player` t2 JOIN `Player_Attributes` t1 ON t2.`player_fifa_api_id` = t1.`player_fifa_api_id` OR t2.`player_api_id` = t1.`player_api_id` WHERE t1.`overall_rating` = (SELECT MAX(`Player_Attributes`.`overall_rating`) FROM `Player_Attributes`) LIMIT 1;",
+        "gold_sql": "SELECT t1.player_name FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id ORDER BY t2.overall_rating DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1083,
+        "eval_pred_key": "1083",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`player_name` FROM `Player` t2 JOIN `Player_Attributes` t1 ON t2.`player_api_id` = t1.`player_api_id` AND t2.`player_fifa_api_id` = t1.`player_fifa_api_id` WHERE t2.`player_name` IN ('Alexis', 'Ariel Borysiuk', 'Arouna Kone') ORDER BY t1.`crossing` DESC LIMIT 1",
+        "gold_sql": "SELECT t1.player_name, t2.crossing FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name IN ('Alexis', 'Ariel Borysiuk', 'Arouna Kone') ORDER BY t2.crossing DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1085,
+        "eval_pred_key": "1085",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT COUNT(*) FROM `Match` JOIN `League` ON `Match`.`league_id` = `League`.id WHERE `League`.`name` = 'Belgium Jupiler League' AND strftime('%Y', `Match`.`date`) = '2009' AND strftime('%m', `Match`.`date`) = '04';",
+        "gold_sql": "SELECT COUNT(t2.id) FROM League AS t1 INNER JOIN Match AS t2 ON t1.id = t2.league_id WHERE t1.name = 'Belgium Jupiler League' AND SUBSTR(t2.`date`, 1, 4) = '2009'",
+        "exec_acc": 0,
+        "eval_original_idx": 1091,
+        "eval_pred_key": "1091",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT AVG(t2.`overall_rating`) AS average_col_4 FROM `Player` t1 JOIN `Player_Attributes` t2 ON t1.`player_fifa_api_id` = t2.`player_fifa_api_id` OR t1.`player_api_id` = t2.`player_api_id` WHERE strftime('%Y', t1.`birthday`) < '1986';",
+        "gold_sql": "SELECT SUM(t2.overall_rating) / COUNT(t1.id) FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE SUBSTR(t1.birthday, 1, 4) < '1986'",
+        "exec_acc": 0,
+        "eval_original_idx": 1093,
+        "eval_pred_key": "1093",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`date` FROM `Player_Attributes` t2 JOIN `Player` t1 ON t2.`player_api_id` = t1.`player_api_id` OR t2.`player_fifa_api_id` = t1.`player_fifa_api_id` WHERE t1.`player_name` = 'Kevin Constant' AND t2.`crossing` = (SELECT MAX(t2_inner.`crossing`) FROM `Player_Attributes` t2_inner JOIN `Player` t1_inner ON t2_inner.`player_api_id` = t1_inner.`player_api_id` OR t2_inner.`player_fifa_api_id` = t1_inner.`player_fifa_api_id` WHERE t1_inner.`player_name` = 'Kevin Constant') ORDER BY t2.id ASC LIMIT 1;",
+        "gold_sql": "SELECT `date` FROM ( SELECT t2.crossing, t2.`date` FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_fifa_api_id = t2.player_fifa_api_id WHERE t1.player_name = 'Kevin Constant' ORDER BY t2.crossing DESC) ORDER BY date DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1107,
+        "eval_pred_key": "1107",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`buildUpPlaySpeedClass` FROM `Team_Attributes` t1 JOIN `Team` t2 ON t1.`team_fifa_api_id` = t2.`team_fifa_api_id` OR t1.`team_api_id` = t2.`team_api_id` WHERE t2.`team_long_name` = 'Willem II' AND t1.`date` = '2012-02-22 00:00:00';",
+        "gold_sql": "SELECT t2.buildUpPlaySpeedClass FROM Team AS t1 INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t1.team_long_name = 'Willem II' AND SUBSTR(t2.`date`, 1, 10) = '2011-02-22'",
+        "exec_acc": 0,
+        "eval_original_idx": 1108,
+        "eval_pred_key": "1108",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`buildUpPlayPassingClass` FROM `Team_Attributes` t1 JOIN `Team` t2 ON t1.`team_fifa_api_id` = t2.`team_fifa_api_id` AND t1.`team_api_id` = t2.`team_api_id` WHERE t2.`team_long_name` = 'FC Lorient' AND t1.`date` = '2010-02-22';",
+        "gold_sql": "SELECT t2.buildUpPlayPassingClass FROM Team AS t1 INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t1.team_long_name = 'FC Lorient' AND SUBSTR(t2.`date`, 1, 10) = '2010-02-22'",
+        "exec_acc": 0,
+        "eval_original_idx": 1110,
+        "eval_pred_key": "1110",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`defenceAggressionClass` FROM `Team` t1 JOIN `Team_Attributes` t2 ON t1.`team_fifa_api_id` = t2.`team_fifa_api_id` WHERE t1.`team_long_name` = 'Hannover 96' AND t2.`date` = '2015-09-10 00:00:00'",
+        "gold_sql": "SELECT t2.chanceCreationShootingClass FROM Team AS t1 INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t1.team_long_name = 'Hannover 96' AND SUBSTR(t2.`date`, 1, 10) = '2015-09-10'",
+        "exec_acc": 0,
+        "eval_original_idx": 1113,
+        "eval_pred_key": "1113",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Player`.`player_name` FROM `Player` WHERE (julianday(CURRENT_TIMESTAMP) - julianday(`Player`.`birthday`)) / 365.25 >= 35;",
+        "gold_sql": "SELECT player_name FROM Player WHERE CAST((JULIANDAY('now') - JULIANDAY(birthday)) AS REAL) / 365 >= 35",
+        "exec_acc": 0,
+        "eval_original_idx": 1118,
+        "eval_pred_key": "1118",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT COUNT(`Match`.`home_team_goal`) FROM `Match` WHERE `Match`.`home_team_goal` IS NOT NULL AND (`Match`.`home_player_1` = (SELECT `Player`.`player_api_id` FROM `Player` WHERE `Player`.`player_name` = 'Aaron Lennon') OR `Match`.`home_player_2` = (SELECT `Player`.`player_api_id` FROM `Player` WHERE `Player`.`player_name` = 'Aaron Lennon') OR `Match`.`home_player_3` = (SELECT `Player`.`player_api_id` FROM `Player` WHERE `Player`.`player_name` = 'Aaron Lennon') OR `Match`.`home_player_4` = (SELECT `Player`.`player_api_id` FROM `Player` WHERE `Player`.`player_name` = 'Aaron Lennon') OR `Match`.`home_player_5` = (SELECT `Player`.`player_api_id` FROM `Player` WHERE `Player`.`player_name` = 'Aaron Lennon') OR `Match`.`home_player_6` = (SELECT `Player`.`player_api_id` FROM `Player` WHERE `Player`.`player_name` = 'Aaron Lennon') OR `Match`.`home_player_7` = (SELECT `Player`.`player_api_id` FROM `Player` WHERE `Player`.`player_name` = 'Aaron Lennon') OR `Match`.`home_player_8` = (SELECT `Player`.`player_api_id` FROM `Player` WHERE `Player`.`player_name` = 'Aaron Lennon') OR `Match`.`home_player_9` = (SELECT `Player`.`player_api_id` FROM `Player` WHERE `Player`.`player_name` = 'Aaron Lennon') OR `Match`.`home_player_10` = (SELECT `Player`.`player_api_id` FROM `Player` WHERE `Player`.`player_name` = 'Aaron Lennon') OR `Match`.`home_player_11` = (SELECT `Player`.`player_api_id` FROM `Player` WHERE `Player`.`player_name` = 'Aaron Lennon'));",
+        "gold_sql": "SELECT SUM(t2.home_team_goal) FROM Player AS t1 INNER JOIN match AS t2 ON t1.player_api_id = t2.away_player_9 WHERE t1.player_name = 'Aaron Lennon'",
+        "exec_acc": 0,
+        "eval_original_idx": 1119,
+        "eval_pred_key": "1119",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT SUM(t1.`away_team_goal`) FROM `Match` t1 JOIN `Player` t2 ON t1.`away_player_6` = t2.`player_api_id` WHERE t2.`player_name` IN ('Daan Smith', 'Filipe Ferreira')",
+        "gold_sql": "SELECT SUM(t2.away_team_goal) FROM Player AS t1 INNER JOIN match AS t2 ON t1.player_api_id = t2.away_player_5 WHERE t1.player_name IN ('Daan Smith', 'Filipe Ferreira')",
+        "exec_acc": 0,
+        "eval_original_idx": 1120,
+        "eval_pred_key": "1120",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT SUM(t2.`home_team_goal`) AS total_col_6 FROM `Player` t1 JOIN `Match` t2 ON t1.`player_api_id` = t2.`home_player_2` WHERE (julianday('now') - julianday(t1.`birthday`)) / 365.25 < 31",
+        "gold_sql": "SELECT SUM(t2.home_team_goal) FROM Player AS t1 INNER JOIN match AS t2 ON t1.player_api_id = t2.away_player_1 WHERE datetime(CURRENT_TIMESTAMP, 'localtime') - datetime(T1.birthday) < 31",
+        "exec_acc": 0,
+        "eval_original_idx": 1121,
+        "eval_pred_key": "1121",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`player_name` FROM `Player_Attributes` t1 JOIN `Player` t2 ON t1.`player_api_id` = t2.`player_api_id` AND t1.`player_fifa_api_id` = t2.`player_fifa_api_id` WHERE t1.`overall_rating` = (SELECT MAX(`Player_Attributes`.`overall_rating`) FROM `Player_Attributes`) LIMIT 10;",
+        "gold_sql": "SELECT DISTINCT t1.player_name FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id ORDER BY t2.overall_rating DESC LIMIT 10",
+        "exec_acc": 0,
+        "eval_original_idx": 1122,
+        "eval_pred_key": "1122",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT DISTINCT t1.`player_name` FROM `Player` t1 JOIN `Player_Attributes` t2 ON t1.`player_api_id` = t2.`player_api_id` OR t1.`player_fifa_api_id` = t2.`player_fifa_api_id` WHERE t2.`attacking_work_rate` = 'high';",
+        "gold_sql": "SELECT DISTINCT t1.player_name FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t2.attacking_work_rate = 'high'",
+        "exec_acc": 0,
+        "eval_original_idx": 1124,
+        "eval_pred_key": "1124",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT DISTINCT p.player_name FROM Player p JOIN Match m ON p.player_api_id = m.home_player_1 OR p.player_api_id = m.away_player_1 OR p.player_api_id = m.away_player_2 OR p.player_api_id = m.away_player_3 OR p.player_api_id = m.away_player_4 OR p.player_api_id = m.away_player_5 OR p.player_api_id = m.away_player_6 OR p.player_api_id = m.away_player_7 OR p.player_api_id = m.away_player_8 OR p.player_api_id = m.away_player_9 OR p.player_api_id = m.away_player_10 OR p.player_api_id = m.away_player_11 OR p.player_api_id = m.home_player_2 OR p.player_api_id = m.home_player_3 OR p.player_api_id = m.home_player_4 OR p.player_api_id = m.home_player_5 OR p.player_api_id = m.home_player_6 OR p.player_api_id = m.home_player_7 OR p.player_api_id = m.home_player_8 OR p.player_api_id = m.home_player_9 OR p.player_api_id = m.home_player_10 OR p.player_api_id = m.home_player_11 JOIN Country c ON m.country_id = c.id WHERE c.name = 'Belgium';",
+        "gold_sql": "SELECT t3.player_name FROM Country AS t1 INNER JOIN Match AS t2 ON t1.id = t2.country_id INNER JOIN Player AS t3 ON t2.home_player_1 = t3.player_api_id WHERE t1.name = 'Belgium'",
+        "exec_acc": 0,
+        "eval_original_idx": 1126,
+        "eval_pred_key": "1126",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "{\"error\": \"Agent timeout\"}",
+        "gold_sql": "SELECT CAST(SUM(T1.height) AS REAL) / COUNT(T1.id) FROM Player AS T1 INNER JOIN Match AS T2 ON T1.id = T2.id INNER JOIN Country AS T3 ON T2.country_id = T3.ID WHERE T3.NAME = 'Italy'",
+        "exec_acc": 0,
+        "eval_original_idx": 1131,
+        "eval_pred_key": "1131",
+        "difficulty": "simple",
+        "exec_error": "OperationalError: unrecognized token: \"{\""
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Country`.* FROM `League` JOIN `Country` ON `League`.`country_id` = `Country`.id WHERE `League`.`name` = 'Poland Ekstraklasa';",
+        "gold_sql": "SELECT name FROM Country WHERE id IN ( SELECT country_id FROM League WHERE name = 'Poland Ekstraklasa' )",
+        "exec_acc": 0,
+        "eval_original_idx": 1138,
+        "eval_pred_key": "1138",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`home_team_goal`, t2.`away_team_goal` FROM `Match` t2 JOIN `League` t1 ON t2.`league_id` = t1.id WHERE t2.`date` = '2008-09-24' AND t1.`name` = 'Belgium Jupiler League';",
+        "gold_sql": "SELECT t2.home_team_goal, t2.away_team_goal FROM League AS t1 INNER JOIN Match AS t2 ON t1.id = t2.league_id WHERE t1.name = 'Belgium Jupiler League' AND SUBSTR(t2.`date`, 1, 10) = '2008-09-24'",
+        "exec_acc": 0,
+        "eval_original_idx": 1139,
+        "eval_pred_key": "1139",
+        "difficulty": "challenging"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.* FROM `Player` t2 JOIN `Player_Attributes` t1 ON t2.`player_api_id` = t1.`player_api_id` AND t2.`player_fifa_api_id` = t1.`player_fifa_api_id` ORDER BY t1.`overall_rating` DESC LIMIT 1;",
+        "gold_sql": "SELECT DISTINCT t1.player_name FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t2.overall_rating = ( SELECT MAX(overall_rating) FROM Player_Attributes)",
+        "exec_acc": 0,
+        "eval_original_idx": 1147,
+        "eval_pred_key": "1147",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.* FROM `Patient` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE strftime('%Y', t1.`Birthday`) = '1937' AND t2.`T-CHO` >= '250';",
+        "gold_sql": "SELECT DISTINCT T1.ID FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE STRFTIME('%Y', T1.Birthday) = '1937' AND T2.`T-CHO` >= 250",
+        "exec_acc": 0,
+        "eval_original_idx": 1158,
+        "eval_pred_key": "1158",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT MIN(CAST(strftime('%Y', `Patient`.`Birthday`) AS INTEGER) - CAST(strftime('%Y', `Patient`.`First Date`) AS INTEGER)) AS youngest_age FROM `Patient`;",
+        "gold_sql": "SELECT MIN(STRFTIME('%Y', `First Date`) - STRFTIME('%Y', Birthday)) FROM Patient",
+        "exec_acc": 0,
+        "eval_original_idx": 1163,
+        "eval_pred_key": "1163",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`Symptoms`, t1.`Diagnosis` FROM `Examination` t1 JOIN `Patient` t2 ON t1.`ID` = t2.`ID` WHERE t2.`Birthday` = (SELECT MIN(`Patient`.`Birthday`) FROM `Patient` WHERE `ID` IN (SELECT DISTINCT `ID` FROM `Examination`));",
+        "gold_sql": "SELECT T2.Symptoms, T1.Diagnosis FROM Patient AS T1 INNER JOIN Examination AS T2 ON T1.ID = T2.ID WHERE T2.Symptoms IS NOT NULL ORDER BY T1.Birthday DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1166,
+        "eval_pred_key": "1166",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(DISTINCT t2.`ID`) FROM `Patient` t2 JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t2.`SEX` = 'M' AND t1.`T-BIL` > 2.0",
+        "gold_sql": "SELECT COUNT(DISTINCT T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.`T-BIL` >= 2.0 AND T1.SEX = 'M'",
+        "exec_acc": 0,
+        "eval_original_idx": 1172,
+        "eval_pred_key": "1172",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT CASE WHEN `Laboratory`.`T-CHO` < 250 THEN '正常' ELSE '非正常' END AS col_1_status FROM `Laboratory` WHERE `Laboratory`.`ID` = 2927464 AND `Laboratory`.`Date` = '1995-09-04';",
+        "gold_sql": "SELECT CASE WHEN `T-CHO` < 250 THEN 'Normal' ELSE 'Abnormal' END FROM Laboratory WHERE ID = 2927464 AND Date = '1995-09-04'",
+        "exec_acc": 0,
+        "eval_original_idx": 1177,
+        "eval_pred_key": "1177",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT `Patient`.`SEX` FROM `Patient` WHERE `Patient`.`Diagnosis` = 'AORTITIS' ORDER BY `Patient`.`First Date` ASC LIMIT 1",
+        "gold_sql": "SELECT SEX FROM Patient WHERE Diagnosis = 'AORTITIS' AND `First Date` IS NOT NULL ORDER BY `First Date` ASC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1178,
+        "eval_pred_key": "1178",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t2.`Symptoms` FROM `Patient` t1 JOIN `Examination` t2 ON t1.`ID` = t2.`ID` WHERE t1.`Birthday` = '1959/3/1' AND t2.`Examination Date` = '1993/9/27';",
+        "gold_sql": "SELECT T2.Symptoms FROM Patient AS T1 INNER JOIN Examination AS T2 ON T1.ID = T2.ID WHERE T1.Birthday = '1959-03-01' AND T2.`Examination Date` = '1993-09-27'",
+        "exec_acc": 0,
+        "eval_original_idx": 1184,
+        "eval_pred_key": "1184",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT * FROM `Examination` WHERE `Examination`.`Diagnosis` = 'Behcet' AND strftime('%Y-%m-%d', `Examination`.`Examination Date`) >= '01/01/1997' AND strftime('%Y-%m-%d', `Examination`.`Examination Date`) <= '12/31/1997' ORDER BY `Examination`.`ID`;",
+        "gold_sql": "SELECT ID FROM Examination WHERE `Examination Date` BETWEEN '1997-01-01' AND '1997-12-31' AND Diagnosis = 'Behcet'",
+        "exec_acc": 0,
+        "eval_original_idx": 1186,
+        "eval_pred_key": "1186",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT `Examination`.`Symptoms` AS most_common_sign FROM `Examination` WHERE `Examination`.`Diagnosis` = 'SLE' GROUP BY `Examination`.`Symptoms` ORDER BY COUNT(*) DESC LIMIT 1;",
+        "gold_sql": "SELECT Symptoms FROM Examination WHERE Diagnosis = 'SLE' GROUP BY Symptoms ORDER BY COUNT(Symptoms) DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1196,
+        "eval_pred_key": "1196",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(*) AS count FROM `Laboratory` WHERE strftime('%Y', `Laboratory`.`Date`) = '1997' AND (`Laboratory`.`TP` <= 6 OR `Laboratory`.`TP` >= 8.5);",
+        "gold_sql": "SELECT COUNT(ID) FROM Laboratory WHERE ALB <= 6.0 OR ALB >= 8.5 AND STRFTIME('%Y', Date) = '1997'",
+        "exec_acc": 0,
+        "eval_original_idx": 1199,
+        "eval_pred_key": "1199",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(DISTINCT t1.`ID`) FROM `Patient` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t1.`SEX` = 'F' AND t2.`WBC` < 3.5;",
+        "gold_sql": "SELECT COUNT(T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.WBC < 3.5 AND T1.SEX = 'F'",
+        "exec_acc": 0,
+        "eval_original_idx": 1203,
+        "eval_pred_key": "1203",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`UA`, t2.`SEX`, CASE WHEN t2.`SEX` = 'M' AND t1.`UA` > 8.0 THEN '正常' WHEN t2.`SEX` = 'F' AND t1.`UA` > 6.5 THEN '正常' ELSE '异常' END AS status FROM `Laboratory` t1 JOIN `Patient` t2 ON t1.`ID` = t2.`ID` WHERE t2.`ID` = 57266;",
+        "gold_sql": "SELECT CASE WHEN (T1.SEX = 'F' AND T2.UA > 6.5) OR (T1.SEX = 'M' AND T2.UA < 8.0) THEN true ELSE false END FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T1.ID = 57266",
+        "exec_acc": 0,
+        "eval_original_idx": 1205,
+        "eval_pred_key": "1205",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`ID`, CASE WHEN t2.`ALP` < 300 THEN 'Yes' ELSE 'No' END AS is_ALP_within_normal_range FROM `Patient` t1 INNER JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t1.`Birthday` = '1982-04-01';",
+        "gold_sql": "SELECT T1.ID , CASE WHEN T2.ALP < 300 THEN 'normal' ELSE 'abNormal' END FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T1.Birthday = '1982-04-01'",
+        "exec_acc": 0,
+        "eval_original_idx": 1213,
+        "eval_pred_key": "1213",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.* FROM `Patient` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t1.`SEX` = 'M' AND (t2.`ALB` <= 3.5 OR t2.`ALB` >= 5.5) ORDER BY t1.`Birthday` DESC;",
+        "gold_sql": "SELECT DISTINCT T1.ID FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T1.SEX = 'M' AND (T2.ALB <= 3.5 OR T2.ALB >= 5.5) ORDER BY T1.Birthday",
+        "exec_acc": 0,
+        "eval_original_idx": 1216,
+        "eval_pred_key": "1216",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t2.`ID`, t2.`Birthday`, t1.`ALB`, CASE WHEN t1.`ALB` BETWEEN 3.5 AND 5.5 THEN 'Yes' ELSE 'No' END AS is_within_normal_range FROM `Patient` t2 LEFT JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE strftime('%Y', t2.`Birthday`) = '1982';",
+        "gold_sql": "SELECT CASE WHEN T2.ALB >= 3.5 AND T2.ALB <= 5.5 THEN 'normal' ELSE 'abnormal' END FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE STRFTIME('%Y', T1.Birthday) = '1982'",
+        "exec_acc": 0,
+        "eval_original_idx": 1217,
+        "eval_pred_key": "1217",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT (COUNT(CASE WHEN t1.`UA` > 6.5 AND t2.`SEX` = 'F' THEN 1 END) * 100.0 / COUNT(*)) AS percentage FROM `Patient` t2 LEFT JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID`;",
+        "gold_sql": "SELECT CAST(SUM(CASE WHEN T2.UA > 6.5 THEN 1 ELSE 0 END) AS REAL) * 100 / COUNT(T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T1.SEX = 'F'",
+        "exec_acc": 0,
+        "eval_original_idx": 1218,
+        "eval_pred_key": "1218",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`ID`, t1.`SEX`, t1.`Birthday` FROM `Patient` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t2.`T-BIL` = (SELECT MAX(`Laboratory`.`T-BIL`) FROM `Laboratory`)",
+        "gold_sql": "SELECT T2.`T-BIL`, T1.ID, T1.SEX, T1.Birthday FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID ORDER BY T2.`T-BIL` DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1224,
+        "eval_pred_key": "1224",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`Diagnosis`, t1.`ID` FROM `Patient` t1 INNER JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t2.`TG` > 300;",
+        "gold_sql": "SELECT T1.ID, T1.Diagnosis FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.TG > 300",
+        "exec_acc": 0,
+        "eval_original_idx": 1228,
+        "eval_pred_key": "1228",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(DISTINCT t1.`ID`) FROM `Patient` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t1.`Birthday` > '1980-01-01' AND (t2.`FG` < 150 OR t2.`FG` > 450)",
+        "gold_sql": "SELECT COUNT(DISTINCT T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.FG <= 150 OR T2.FG >= 450 AND T1.Birthday > '1980-01-01'",
+        "exec_acc": 0,
+        "eval_original_idx": 1248,
+        "eval_pred_key": "1248",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(DISTINCT t1.`ID`) AS patient_count FROM `Laboratory` t1 LEFT JOIN `Examination` t2 ON t1.`ID` = t2.`ID` WHERE t1.`RF` < 20 AND (t2.`Thrombosis` IS NULL OR t2.`Thrombosis` = '0');",
+        "gold_sql": "SELECT COUNT(DISTINCT T1.ID) FROM Examination AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.RF < 20 AND T1.Thrombosis = 0",
+        "exec_acc": 0,
+        "eval_original_idx": 1261,
+        "eval_pred_key": "1261",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(DISTINCT t2.`ID`) FROM `Patient` t2 JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t2.`SEX` = 'M' AND t1.`GOT` < 60;",
+        "gold_sql": "SELECT COUNT(T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.GOT < 60 AND T1.SEX = 'M'",
+        "exec_acc": 0,
+        "eval_original_idx": 1280,
+        "eval_pred_key": "1280",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(DISTINCT t2.`ID`) AS male_count FROM `Patient` t2 JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t2.`SEX` = 'M' AND t1.`GOT` < 60;",
+        "gold_sql": "SELECT COUNT(T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.GOT < 60 AND T1.SEX = 'M'",
+        "exec_acc": 0,
+        "eval_original_idx": 1283,
+        "eval_pred_key": "1283",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(*) FROM `Patient` t2 JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t2.`Diagnosis` = 'SJS' AND t1.`TP` BETWEEN 6.0 AND 8.5",
+        "gold_sql": "SELECT COUNT(T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T1.Diagnosis = 'SJS' AND T2.TP > 6.0 AND T2.TP < 8.5",
+        "exec_acc": 0,
+        "eval_original_idx": 1289,
+        "eval_pred_key": "1289",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`Examination Date` FROM `Examination` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t2.`ALB` > 3.5 AND t2.`ALB` < 5.5 ORDER BY t2.`ALB` DESC LIMIT 1",
+        "gold_sql": "SELECT Date FROM Laboratory WHERE ALB BETWEEN 3.5 AND 5.5 ORDER BY ALB DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1290,
+        "eval_pred_key": "1290",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(DISTINCT t2.`ID`) FROM `Patient` t2 JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t2.`SEX` = 'M' AND t1.`ALB` > 3.5 AND t1.`ALB` < 5.5 AND t1.`TP` BETWEEN 6.0 AND 8.5;",
+        "gold_sql": "SELECT COUNT(T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T1.SEX = 'M' AND T2.ALB BETWEEN 3.5 AND 5.5 AND T2.TP BETWEEN 6.0 AND 8.5",
+        "exec_acc": 0,
+        "eval_original_idx": 1291,
+        "eval_pred_key": "1291",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t2.`Diagnosis` FROM `Patient` t2 JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t1.`TG` < 200 ORDER BY t1.`TG` DESC LIMIT 1",
+        "gold_sql": "SELECT T1.Diagnosis FROM Examination AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.TG < 200 ORDER BY T2.TG DESC LIMIT 1",
+        "exec_acc": 0,
+        "eval_original_idx": 1300,
+        "eval_pred_key": "1300",
+        "difficulty": "moderate"
+    }
+]

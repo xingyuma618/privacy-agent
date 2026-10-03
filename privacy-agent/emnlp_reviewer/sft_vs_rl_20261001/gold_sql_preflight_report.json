@@ -1,0 +1,381 @@
+{
+  "status": "blocked",
+  "cases": 300,
+  "passed": 278,
+  "failed": 22,
+  "timeout_seconds_per_query": 20,
+  "timing_seconds": {
+    "max": 20.031938,
+    "mean": 2.10565773,
+    "p95": 20.004013
+  },
+  "slow_cases_over_5s": [
+    {
+      "case_id": "bird_101",
+      "db_id": "financial",
+      "elapsed_seconds": 20.00308
+    },
+    {
+      "case_id": "bird_165",
+      "db_id": "financial",
+      "elapsed_seconds": 20.019412
+    },
+    {
+      "case_id": "bird_141",
+      "db_id": "financial",
+      "elapsed_seconds": 20.031938
+    },
+    {
+      "case_id": "bird_1142",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 17.203555
+    },
+    {
+      "case_id": "bird_1143",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 17.450955
+    },
+    {
+      "case_id": "bird_150",
+      "db_id": "financial",
+      "elapsed_seconds": 20.004013
+    },
+    {
+      "case_id": "bird_1049",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 15.680102
+    },
+    {
+      "case_id": "bird_151",
+      "db_id": "financial",
+      "elapsed_seconds": 20.013712
+    },
+    {
+      "case_id": "bird_1120",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 19.610739
+    },
+    {
+      "case_id": "bird_104",
+      "db_id": "financial",
+      "elapsed_seconds": 20.022961
+    },
+    {
+      "case_id": "bird_1092",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 18.964472
+    },
+    {
+      "case_id": "bird_1032",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.004512
+    },
+    {
+      "case_id": "bird_1091",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 19.746779
+    },
+    {
+      "case_id": "bird_1074",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.008563
+    },
+    {
+      "case_id": "bird_1146",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.003391
+    },
+    {
+      "case_id": "bird_1030",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.003272
+    },
+    {
+      "case_id": "bird_1121",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.005725
+    },
+    {
+      "case_id": "bird_1057",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.00354
+    },
+    {
+      "case_id": "bird_1139",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.006568
+    },
+    {
+      "case_id": "bird_179",
+      "db_id": "financial",
+      "elapsed_seconds": 20.011861
+    },
+    {
+      "case_id": "bird_110",
+      "db_id": "financial",
+      "elapsed_seconds": 20.003885
+    },
+    {
+      "case_id": "bird_106",
+      "db_id": "financial",
+      "elapsed_seconds": 20.005487
+    },
+    {
+      "case_id": "bird_1089",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.015765
+    },
+    {
+      "case_id": "bird_1119",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.009447
+    },
+    {
+      "case_id": "bird_1131",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 13.567682
+    },
+    {
+      "case_id": "bird_1126",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.004318
+    },
+    {
+      "case_id": "bird_170",
+      "db_id": "financial",
+      "elapsed_seconds": 20.009615
+    },
+    {
+      "case_id": "bird_102",
+      "db_id": "financial",
+      "elapsed_seconds": 20.003364
+    },
+    {
+      "case_id": "bird_108",
+      "db_id": "financial",
+      "elapsed_seconds": 20.004585
+    }
+  ],
+  "failures": [
+    {
+      "case_id": "bird_101",
+      "db_id": "financial",
+      "elapsed_seconds": 20.00308,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_165",
+      "db_id": "financial",
+      "elapsed_seconds": 20.019412,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_141",
+      "db_id": "financial",
+      "elapsed_seconds": 20.031938,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_150",
+      "db_id": "financial",
+      "elapsed_seconds": 20.004013,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_151",
+      "db_id": "financial",
+      "elapsed_seconds": 20.013712,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_104",
+      "db_id": "financial",
+      "elapsed_seconds": 20.022961,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_1032",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.004512,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_1074",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.008563,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_1146",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.003391,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_1030",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.003272,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_1121",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.005725,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_1057",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.00354,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_1139",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.006568,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_179",
+      "db_id": "financial",
+      "elapsed_seconds": 20.011861,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_110",
+      "db_id": "financial",
+      "elapsed_seconds": 20.003885,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_106",
+      "db_id": "financial",
+      "elapsed_seconds": 20.005487,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_1089",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.015765,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_1119",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.009447,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_1126",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 20.004318,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_170",
+      "db_id": "financial",
+      "elapsed_seconds": 20.009615,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_102",
+      "db_id": "financial",
+      "elapsed_seconds": 20.003364,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    },
+    {
+      "case_id": "bird_108",
+      "db_id": "financial",
+      "elapsed_seconds": 20.004585,
+      "ok": false,
+      "error": {
+        "type": "OperationalError",
+        "summary": "interrupted"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2112 @@
+{
+  "status": "ready",
+  "runtime_db_root": "/tmp/sft_rl_runtime_dbs_20261001",
+  "hash_manifest": "/mnt/wh_intern/MXY/paper/privacy-agent/reviewer/sft_vs_rl_20261001/runtime_db_hashes.json",
+  "cases_expected": 300,
+  "cases_completed": 300,
+  "timeout_seconds_per_query": 20,
+  "passed": 300,
+  "failed": 0,
+  "results": [
+    {
+      "case_id": "bird_164",
+      "db_id": "financial",
+      "elapsed_seconds": 0.004077,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_174",
+      "db_id": "financial",
+      "elapsed_seconds": 0.004006,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1086",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.075189,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_795",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.003619,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_838",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001328,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_143",
+      "db_id": "financial",
+      "elapsed_seconds": 0.00174,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_183",
+      "db_id": "financial",
+      "elapsed_seconds": 0.006387,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_166",
+      "db_id": "financial",
+      "elapsed_seconds": 0.00188,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1138",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001286,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_178",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001575,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_842",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001212,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_840",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001418,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1059",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.009438,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_156",
+      "db_id": "financial",
+      "elapsed_seconds": 0.002862,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_161",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001025,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1079",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.003473,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_101",
+      "db_id": "financial",
+      "elapsed_seconds": 0.69478,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_165",
+      "db_id": "financial",
+      "elapsed_seconds": 0.086213,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_141",
+      "db_id": "financial",
+      "elapsed_seconds": 0.789727,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_745",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.00078,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_717",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001291,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_725",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000915,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_187",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001463,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_751",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000742,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_720",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.0039,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1147",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.0448,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1155",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.004668,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_190",
+      "db_id": "financial",
+      "elapsed_seconds": 0.005869,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1020",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.027279,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_752",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000831,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_160",
+      "db_id": "financial",
+      "elapsed_seconds": 0.00099,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_750",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000788,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1196",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.000833,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1159",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.004249,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1078",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.003511,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_139",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001128,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1048",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.263031,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_124",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001355,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_718",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001755,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_776",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001071,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_794",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001409,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1090",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.069643,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1099",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.069364,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_180",
+      "db_id": "financial",
+      "elapsed_seconds": 0.00692,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1261",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001346,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1142",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.020536,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_735",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001196,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_126",
+      "db_id": "financial",
+      "elapsed_seconds": 0.007307,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1288",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.003949,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_147",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001748,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_749",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001389,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_836",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000947,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_841",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000959,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1177",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.000813,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1116",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.029245,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1143",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.020972,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_123",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001386,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_839",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001093,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1163",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.004118,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1251",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.006324,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_804",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000907,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_808",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000948,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_823",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001073,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1039",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.070142,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_134",
+      "db_id": "financial",
+      "elapsed_seconds": 0.002847,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1097",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.069894,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_150",
+      "db_id": "financial",
+      "elapsed_seconds": 0.062394,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1083",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.067645,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1051",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.045673,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_833",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001184,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_155",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001762,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_112",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001224,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1103",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.032774,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1049",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.020753,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1096",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.06948,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_831",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001104,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_783",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000855,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_91",
+      "db_id": "financial",
+      "elapsed_seconds": 0.000693,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_770",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000803,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_722",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000801,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_97",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001251,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1109",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001995,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1118",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.00801,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_109",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001368,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_191",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001054,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_92",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001522,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_157",
+      "db_id": "financial",
+      "elapsed_seconds": 0.000605,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_759",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000807,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1137",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.034091,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1055",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.069333,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1203",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.004615,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1205",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.000938,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1303",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.00356,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1108",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001634,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_151",
+      "db_id": "financial",
+      "elapsed_seconds": 0.160103,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_188",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001392,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_148",
+      "db_id": "financial",
+      "elapsed_seconds": 0.0017,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1222",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.00117,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1217",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.008597,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1100",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.067667,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1110",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.002003,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1085",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.076153,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1065",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001522,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1253",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.002784,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_107",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001431,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_189",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001868,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1224",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.003068,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1105",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.028673,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_128",
+      "db_id": "financial",
+      "elapsed_seconds": 0.002233,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_133",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001021,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1134",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.023161,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_93",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001085,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1112",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.000932,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1216",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.00201,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1304",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.000701,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_741",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001858,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1120",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.034114,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_824",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001384,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1213",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001224,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1022",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.028438,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1061",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.002772,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_103",
+      "db_id": "financial",
+      "elapsed_seconds": 0.000685,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_832",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000611,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1063",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.068012,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_162",
+      "db_id": "financial",
+      "elapsed_seconds": 0.000566,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_132",
+      "db_id": "financial",
+      "elapsed_seconds": 0.002032,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_158",
+      "db_id": "financial",
+      "elapsed_seconds": 0.000421,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1117",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001789,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1082",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.000486,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_104",
+      "db_id": "financial",
+      "elapsed_seconds": 0.054074,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_767",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000461,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1154",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.000422,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1050",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.064708,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1027",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.036964,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1113",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001265,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1237",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.002008,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1283",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001375,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1141",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001413,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1092",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.03156,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1220",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001659,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1104",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.033683,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_812",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000486,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_739",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001257,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1306",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001311,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1278",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001941,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1062",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.025903,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1280",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001099,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1132",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.002017,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_89",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001116,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_822",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000464,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1214",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.002704,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_120",
+      "db_id": "financial",
+      "elapsed_seconds": 0.00417,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1047",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.035221,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1172",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.00117,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1032",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.019659,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1091",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.01673,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1043",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.000814,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_138",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001663,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1228",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.00188,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1107",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.068991,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1230",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.00173,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_781",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000486,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1052",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.039051,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_816",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001222,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1074",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.015775,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_100",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001745,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1146",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.021152,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1067",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.000758,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_729",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000454,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1030",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.014368,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_800",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000566,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1121",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.039804,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1095",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001108,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1035",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001437,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_806",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000463,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1290",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.002503,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_758",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000499,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1188",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.000768,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1286",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001752,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1301",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.003465,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1289",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.000739,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1124",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.064144,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1088",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.038336,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_168",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001398,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_733",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000507,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_753",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000514,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1093",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.080941,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_827",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000547,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1291",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001101,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_801",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000498,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_95",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001122,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_723",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.00125,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1234",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.004187,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1218",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.003022,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_782",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.00055,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1199",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.006237,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_99",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001383,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_726",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001963,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1300",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001376,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1293",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001631,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1158",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001712,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1057",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.015659,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_797",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.002159,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1033",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.002359,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1248",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.003482,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1046",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001533,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1029",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.000947,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_798",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000478,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1098",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001667,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1166",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.000521,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1235",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.005668,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1201",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.00094,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_845",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001899,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1210",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.002083,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_818",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001422,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_152",
+      "db_id": "financial",
+      "elapsed_seconds": 0.00415,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1186",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.000763,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1136",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.050396,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1150",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.001397,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_761",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000742,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1240",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.002743,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_773",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000834,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1023",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.025263,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_829",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000498,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_772",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000566,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1080",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.024933,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_760",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000594,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_171",
+      "db_id": "financial",
+      "elapsed_seconds": 0.00063,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1139",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.017685,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_94",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001547,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_140",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001563,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_765",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001365,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_184",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001195,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_113",
+      "db_id": "financial",
+      "elapsed_seconds": 0.002689,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_179",
+      "db_id": "financial",
+      "elapsed_seconds": 2.705939,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1069",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.002486,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_784",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000604,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_779",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001525,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_110",
+      "db_id": "financial",
+      "elapsed_seconds": 0.086553,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_742",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000615,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_777",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000561,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_809",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000446,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_757",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000482,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1021",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.00252,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1123",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.105884,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1060",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.007036,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_90",
+      "db_id": "financial",
+      "elapsed_seconds": 0.000878,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_815",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000594,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_176",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001155,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_811",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000982,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_181",
+      "db_id": "financial",
+      "elapsed_seconds": 0.002658,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_106",
+      "db_id": "financial",
+      "elapsed_seconds": 2.588241,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_799",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001458,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_802",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000693,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1122",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.043999,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_828",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001087,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_721",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000797,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_153",
+      "db_id": "financial",
+      "elapsed_seconds": 0.000917,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_821",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001753,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1089",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.024557,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1070",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.000889,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_734",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000705,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_787",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000637,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_755",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000707,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_763",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000997,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1119",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.037371,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1131",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.014683,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_121",
+      "db_id": "financial",
+      "elapsed_seconds": 0.002839,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1178",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.000952,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_774",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000914,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_154",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001889,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1077",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001825,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1184",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.000876,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_167",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001111,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_789",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001009,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_114",
+      "db_id": "financial",
+      "elapsed_seconds": 0.002836,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_96",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001564,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1126",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.03049,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_170",
+      "db_id": "financial",
+      "elapsed_seconds": 2.420824,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_805",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.002104,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_727",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001296,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_102",
+      "db_id": "financial",
+      "elapsed_seconds": 0.997208,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1072",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.070788,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_108",
+      "db_id": "financial",
+      "elapsed_seconds": 1.820233,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_747",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.003259,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_111",
+      "db_id": "financial",
+      "elapsed_seconds": 0.007647,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_837",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.003046,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_748",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000804,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_810",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001343,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_780",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001635,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_803",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000864,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_764",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.001208,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_731",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.000913,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_177",
+      "db_id": "financial",
+      "elapsed_seconds": 0.001236,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1056",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.001208,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_792",
+      "db_id": "superhero",
+      "elapsed_seconds": 0.00151,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1198",
+      "db_id": "thrombosis_prediction",
+      "elapsed_seconds": 0.000946,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1081",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.002252,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_1140",
+      "db_id": "european_football_2",
+      "elapsed_seconds": 0.029365,
+      "ok": true,
+      "error": null
+    },
+    {
+      "case_id": "bird_122",
+      "db_id": "financial",
+      "elapsed_seconds": 0.000776,
+      "ok": true,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,585 @@
+{
+  "status": "ready",
+  "errors": [],
+  "pending": [],
+  "artifacts": {
+    "manifest_sha256": "9d4559aba9ddf006bc7682d49ef862129ce6850dbd678078c7d8f052d1d969b2",
+    "source": {
+      "path": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/bird_dev_sc.jsonl",
+      "sha256": "8fa43e70c426b0393236740f71cad5a34b914c17eff9791e9162e5539ec5e96f",
+      "size": 4403718
+    },
+    "masksql_annotations": {
+      "path": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/masksql_test.json",
+      "sha256": "e7442d652b5f7112fe3ed5e111d9284c46e6e67c86b64504ab44b7dfa8cde174",
+      "size": 426796
+    },
+    "annotation_count": 300,
+    "canonical_case_ids": [
+      "bird_164",
+      "bird_174",
+      "bird_1086",
+      "bird_795",
+      "bird_838",
+      "bird_143",
+      "bird_183",
+      "bird_166",
+      "bird_1138",
+      "bird_178",
+      "bird_842",
+      "bird_840",
+      "bird_1059",
+      "bird_156",
+      "bird_161",
+      "bird_1079",
+      "bird_101",
+      "bird_165",
+      "bird_141",
+      "bird_745",
+      "bird_717",
+      "bird_725",
+      "bird_187",
+      "bird_751",
+      "bird_720",
+      "bird_1147",
+      "bird_1155",
+      "bird_190",
+      "bird_1020",
+      "bird_752",
+      "bird_160",
+      "bird_750",
+      "bird_1196",
+      "bird_1159",
+      "bird_1078",
+      "bird_139",
+      "bird_1048",
+      "bird_124",
+      "bird_718",
+      "bird_776",
+      "bird_794",
+      "bird_1090",
+      "bird_1099",
+      "bird_180",
+      "bird_1261",
+      "bird_1142",
+      "bird_735",
+      "bird_126",
+      "bird_1288",
+      "bird_147",
+      "bird_749",
+      "bird_836",
+      "bird_841",
+      "bird_1177",
+      "bird_1116",
+      "bird_1143",
+      "bird_123",
+      "bird_839",
+      "bird_1163",
+      "bird_1251",
+      "bird_804",
+      "bird_808",
+      "bird_823",
+      "bird_1039",
+      "bird_134",
+      "bird_1097",
+      "bird_150",
+      "bird_1083",
+      "bird_1051",
+      "bird_833",
+      "bird_155",
+      "bird_112",
+      "bird_1103",
+      "bird_1049",
+      "bird_1096",
+      "bird_831",
+      "bird_783",
+      "bird_91",
+      "bird_770",
+      "bird_722",
+      "bird_97",
+      "bird_1109",
+      "bird_1118",
+      "bird_109",
+      "bird_191",
+      "bird_92",
+      "bird_157",
+      "bird_759",
+      "bird_1137",
+      "bird_1055",
+      "bird_1203",
+      "bird_1205",
+      "bird_1303",
+      "bird_1108",
+      "bird_151",
+      "bird_188",
+      "bird_148",
+      "bird_1222",
+      "bird_1217",
+      "bird_1100",
+      "bird_1110",
+      "bird_1085",
+      "bird_1065",
+      "bird_1253",
+      "bird_107",
+      "bird_189",
+      "bird_1224",
+      "bird_1105",
+      "bird_128",
+      "bird_133",
+      "bird_1134",
+      "bird_93",
+      "bird_1112",
+      "bird_1216",
+      "bird_1304",
+      "bird_741",
+      "bird_1120",
+      "bird_824",
+      "bird_1213",
+      "bird_1022",
+      "bird_1061",
+      "bird_103",
+      "bird_832",
+      "bird_1063",
+      "bird_162",
+      "bird_132",
+      "bird_158",
+      "bird_1117",
+      "bird_1082",
+      "bird_104",
+      "bird_767",
+      "bird_1154",
+      "bird_1050",
+      "bird_1027",
+      "bird_1113",
+      "bird_1237",
+      "bird_1283",
+      "bird_1141",
+      "bird_1092",
+      "bird_1220",
+      "bird_1104",
+      "bird_812",
+      "bird_739",
+      "bird_1306",
+      "bird_1278",
+      "bird_1062",
+      "bird_1280",
+      "bird_1132",
+      "bird_89",
+      "bird_822",
+      "bird_1214",
+      "bird_120",
+      "bird_1047",
+      "bird_1172",
+      "bird_1032",
+      "bird_1091",
+      "bird_1043",
+      "bird_138",
+      "bird_1228",
+      "bird_1107",
+      "bird_1230",
+      "bird_781",
+      "bird_1052",
+      "bird_816",
+      "bird_1074",
+      "bird_100",
+      "bird_1146",
+      "bird_1067",
+      "bird_729",
+      "bird_1030",
+      "bird_800",
+      "bird_1121",
+      "bird_1095",
+      "bird_1035",
+      "bird_806",
+      "bird_1290",
+      "bird_758",
+      "bird_1188",
+      "bird_1286",
+      "bird_1301",
+      "bird_1289",
+      "bird_1124",
+      "bird_1088",
+      "bird_168",
+      "bird_733",
+      "bird_753",
+      "bird_1093",
+      "bird_827",
+      "bird_1291",
+      "bird_801",
+      "bird_95",
+      "bird_723",
+      "bird_1234",
+      "bird_1218",
+      "bird_782",
+      "bird_1199",
+      "bird_99",
+      "bird_726",
+      "bird_1300",
+      "bird_1293",
+      "bird_1158",
+      "bird_1057",
+      "bird_797",
+      "bird_1033",
+      "bird_1248",
+      "bird_1046",
+      "bird_1029",
+      "bird_798",
+      "bird_1098",
+      "bird_1166",
+      "bird_1235",
+      "bird_1201",
+      "bird_845",
+      "bird_1210",
+      "bird_818",
+      "bird_152",
+      "bird_1186",
+      "bird_1136",
+      "bird_1150",
+      "bird_761",
+      "bird_1240",
+      "bird_773",
+      "bird_1023",
+      "bird_829",
+      "bird_772",
+      "bird_1080",
+      "bird_760",
+      "bird_171",
+      "bird_1139",
+      "bird_94",
+      "bird_140",
+      "bird_765",
+      "bird_184",
+      "bird_113",
+      "bird_179",
+      "bird_1069",
+      "bird_784",
+      "bird_779",
+      "bird_110",
+      "bird_742",
+      "bird_777",
+      "bird_809",
+      "bird_757",
+      "bird_1021",
+      "bird_1123",
+      "bird_1060",
+      "bird_90",
+      "bird_815",
+      "bird_176",
+      "bird_811",
+      "bird_181",
+      "bird_106",
+      "bird_799",
+      "bird_802",
+      "bird_1122",
+      "bird_828",
+      "bird_721",
+      "bird_153",
+      "bird_821",
+      "bird_1089",
+      "bird_1070",
+      "bird_734",
+      "bird_787",
+      "bird_755",
+      "bird_763",
+      "bird_1119",
+      "bird_1131",
+      "bird_121",
+      "bird_1178",
+      "bird_774",
+      "bird_154",
+      "bird_1077",
+      "bird_1184",
+      "bird_167",
+      "bird_789",
+      "bird_114",
+      "bird_96",
+      "bird_1126",
+      "bird_170",
+      "bird_805",
+      "bird_727",
+      "bird_102",
+      "bird_1072",
+      "bird_108",
+      "bird_747",
+      "bird_111",
+      "bird_837",
+      "bird_748",
+      "bird_810",
+      "bird_780",
+      "bird_803",
+      "bird_764",
+      "bird_731",
+      "bird_177",
+      "bird_1056",
+      "bird_792",
+      "bird_1198",
+      "bird_1081",
+      "bird_1140",
+      "bird_122"
+    ],
+    "db_root": {
+      "path": "/mnt/wh_intern/MXY/paper/privacy-agent/CHESS/data/dev/dev_databases",
+      "required_unique_dbs": 4
+    },
+    "runtime_db_hash_manifest": {
+      "path": "/mnt/wh_intern/MXY/paper/privacy-agent/reviewer/sft_vs_rl_20261001/runtime_db_hashes.json",
+      "sha256": "1ae69f4fedb6793af295cf69ecc9f23ab6bdd20638bf83ef7de5fc4f15623824",
+      "status": "verified"
+    },
+    "evaluator": {
+      "path": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/ineference/agent_eval_multi_checkpoint_lmdeploy_token_usage_privacy_f1.py",
+      "sha256": "19657299893eaf2d7d36da05dc4b80f2465af454569a5722df5c1ca7ed829bf4"
+    },
+    "sql_generator_model": {
+      "path": "/mnt/wh_intern/MXY/models/Qwen3.8-27B",
+      "exists": true,
+      "metadata": [
+        {
+          "path": "config.json",
+          "size": 4312,
+          "mtime_ns": 1790837366507315965,
+          "sha256": "191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab"
+        },
+        {
+          "path": "generation_config.json",
+          "size": 202,
+          "mtime_ns": 1790837366342632745,
+          "sha256": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size": 112216,
+          "mtime_ns": 1790838360036757870,
+          "sha256": "77042094076611b69791a610065f28b7013b8c621795fa86ddccc8bac7d1b9df"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 17928,
+          "mtime_ns": 1790838362122605906,
+          "sha256": "b11349aafa7cdc6a320767cf7ceb29ed82f7eda5d65e8e0819e76f0ce947bf27"
+        }
+      ],
+      "weights": [
+        {
+          "path": "model-00001-of-00018.safetensors",
+          "size": 3966730552,
+          "mtime_ns": 1790838297517751320
+        },
+        {
+          "path": "model-00002-of-00018.safetensors",
+          "size": 3043080328,
+          "mtime_ns": 1790838297719799329
+        },
+        {
+          "path": "model-00003-of-00018.safetensors",
+          "size": 2542796952,
+          "mtime_ns": 1790838297434062276
+        },
+        {
+          "path": "model-00004-of-00018.safetensors",
+          "size": 3988973152,
+          "mtime_ns": 1790838297641862725
+        },
+        {
+          "path": "model-00005-of-00018.safetensors",
+          "size": 2099339864,
+          "mtime_ns": 1790838279418479884
+        },
+        {
+          "path": "model-00006-of-00018.safetensors",
+          "size": 3979553696,
+          "mtime_ns": 1790838298084329306
+        },
+        {
+          "path": "model-00007-of-00018.safetensors",
+          "size": 2108759344,
+          "mtime_ns": 1790838288951754573
+        },
+        {
+          "path": "model-00008-of-00018.safetensors",
+          "size": 3979553696,
+          "mtime_ns": 1790838296581360412
+        },
+        {
+          "path": "model-00009-of-00018.safetensors",
+          "size": 2108759344,
+          "mtime_ns": 1790838282162639914
+        },
+        {
+          "path": "model-00010-of-00018.safetensors",
+          "size": 3979553696,
+          "mtime_ns": 1790838296808424588
+        },
+        {
+          "path": "model-00011-of-00018.safetensors",
+          "size": 2108759344,
+          "mtime_ns": 1790838282556595117
+        },
+        {
+          "path": "model-00012-of-00018.safetensors",
+          "size": 3979553696,
+          "mtime_ns": 1790838296769821749
+        },
+        {
+          "path": "model-00013-of-00018.safetensors",
+          "size": 2108759344,
+          "mtime_ns": 1790838282657065683
+        },
+        {
+          "path": "model-00014-of-00018.safetensors",
+          "size": 3979553696,
+          "mtime_ns": 1790838297968921178
+        },
+        {
+          "path": "model-00015-of-00018.safetensors",
+          "size": 2108759344,
+          "mtime_ns": 1790838287702693970
+        },
+        {
+          "path": "model-00016-of-00018.safetensors",
+          "size": 3979564040,
+          "mtime_ns": 1790838296515096148
+        },
+        {
+          "path": "model-00017-of-00018.safetensors",
+          "size": 2108759344,
+          "mtime_ns": 1790838373620162398
+        },
+        {
+          "path": "model-00018-of-00018.safetensors",
+          "size": 3392197344,
+          "mtime_ns": 1790838375156202583
+        }
+      ]
+    }
+  },
+  "models": {
+    "sft": {
+      "path": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/agent_v2_deepseek_pro/checkpoint-40",
+      "exists": true,
+      "metadata": [
+        {
+          "path": "config.json",
+          "size": 1538,
+          "mtime_ns": 1779076251806474635,
+          "sha256": "1df4243a0286f77145c3befa0ac27a2a4d543ead0d3dcacaf7a3c428ea97e1df"
+        },
+        {
+          "path": "generation_config.json",
+          "size": 187,
+          "mtime_ns": 1779076251811652882,
+          "sha256": "82df762ff06f18d1895b09f7d218bc113ebbd5466ce822ebed1d38bc01c19278"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size": 32913,
+          "mtime_ns": 1779076270884739341,
+          "sha256": "7a487b18f5c2c64efada003845be17ce6ac7e324cac65ebc507c23c4f0860344"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 5432,
+          "mtime_ns": 1779076270896231552,
+          "sha256": "bcab9fe0f4f56a0cffba7c916f943c376810d32c08f2cebf01f8b15849039d35"
+        },
+        {
+          "path": "trainer_state.json",
+          "size": 1475,
+          "mtime_ns": 1779076381308901991,
+          "sha256": "2af87e18d616880c3efab27ceeb3c3f815b69bb4291a745d8b77f4aa9d8c3f01"
+        },
+        {
+          "path": "training_args.bin",
+          "size": 7825,
+          "mtime_ns": 1779076271087597551,
+          "sha256": "bb9ef155cb59815464d3a17d7fe587490db3dd090ac54a50cfc9affb8b47fefb"
+        }
+      ],
+      "weights": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "size": 4967215360,
+          "mtime_ns": 1779076262641829528
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "size": 3855679144,
+          "mtime_ns": 1779076270864984674
+        },
+        {
+          "path": "rng_state_0.pth",
+          "size": 15429,
+          "mtime_ns": 1779076381303376478
+        },
+        {
+          "path": "rng_state_1.pth",
+          "size": 15429,
+          "mtime_ns": 1779076381304323726
+        },
+        {
+          "path": "rng_state_2.pth",
+          "size": 15429,
+          "mtime_ns": 1779076381298652043
+        },
+        {
+          "path": "rng_state_3.pth",
+          "size": 15429,
+          "mtime_ns": 1779076381296380938
+        },
+        {
+          "path": "scheduler.pt",
+          "size": 1465,
+          "mtime_ns": 1779076381293370474
+        }
+      ]
+    },
+    "rl": {
+      "path": "/mnt/wh_intern/MXY/paper/privacy-agent/verl/output/models/qwen/Qwen3-4B-Instruct/reward_ablation_1/checkpoint-30",
+      "exists": true,
+      "metadata": [
+        {
+          "path": "config.json",
+          "size": 1538,
+          "mtime_ns": 1779630084517222162,
+          "sha256": "1df4243a0286f77145c3befa0ac27a2a4d543ead0d3dcacaf7a3c428ea97e1df"
+        },
+        {
+          "path": "generation_config.json",
+          "size": 187,
+          "mtime_ns": 1779630084521906390,
+          "sha256": "82df762ff06f18d1895b09f7d218bc113ebbd5466ce822ebed1d38bc01c19278"
+        },
+        {
+          "path": "merge_info.json",
+          "size": 360,
+          "mtime_ns": 1779630106794294852,
+          "sha256": "49da7ad1102a30e199d25ca927f25d23cfbaa48fa49a3c152622b80e6ff015b9"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size": 32913,
+          "mtime_ns": 1779630104525479325,
+          "sha256": "fa98dc77b0338cdd146d7f6d5b7a6af5e92172a7437e52a45b9fd063615e36b8"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 5432,
+          "mtime_ns": 1779630105313447332,
+          "sha256": "bcab9fe0f4f56a0cffba7c916f943c376810d32c08f2cebf01f8b15849039d35"
+        }
+      ],
+      "weights": [
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "size": 4958670640,
+          "mtime_ns": 1779630095839415566
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "size": 3864223816,
+          "mtime_ns": 1779630104497054135
+        }
+      ]
+    }
+  }
+}

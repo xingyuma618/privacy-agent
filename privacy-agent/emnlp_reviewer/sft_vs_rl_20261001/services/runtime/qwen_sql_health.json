@@ -1,0 +1,45 @@
+{
+  "checked_at_utc": "2026-10-01T07:28:21Z",
+  "state": "ready",
+  "supervisor": {
+    "session_id": 6825,
+    "pid": 206905
+  },
+  "server": {
+    "pid": 206984,
+    "base_url": "http://127.0.0.1:18342/v1",
+    "port": 18342,
+    "model_id": "Qwen3.8-27B-local"
+  },
+  "model": {
+    "path": "/mnt/wh_intern/MXY/models/Qwen3.8-27B",
+    "directory_name": "Qwen3.8-27B",
+    "architecture": "Qwen3_5ForConditionalGeneration",
+    "model_type": "qwen3_5",
+    "note": "The directory name differs from the architecture declared by config.json; deployment uses the declared Qwen3.5 architecture without renaming the source model."
+  },
+  "deployment": {
+    "lmdeploy": "0.12.2",
+    "torch": "2.10.0+cu128",
+    "transformers": "5.4.0",
+    "backend": "turbomind",
+    "tensor_parallel_size": 2,
+    "gpu_indices": [4, 5],
+    "session_length": 32768,
+    "cache_max_entry_count": 0.3,
+    "gpu_memory_mib_each_at_check": 46083
+  },
+  "health_checks": {
+    "models_http_status": 200,
+    "models_returned_id": "Qwen3.8-27B-local",
+    "chat_completions_http_status": 200,
+    "thinking_disabled_request": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    },
+    "sql_probe_content": "```sql\nSELECT 1 + 1 AS result;\n```",
+    "reasoning_content": null,
+    "result": "passed"
+  }
+}

@@ -1,0 +1,107 @@
+SFT-before-RL vs RL-step-10 supplementary evaluation results
+============================================================
+
+Status and scope
+----------------
+
+All six formal inference runs completed with 300/300 valid cases and no
+infrastructure errors. The strict report is results_local_qwen/summary.json
+(SHA-256 91d3d5493b9d45e9448cceafea681649ad0b9d50123583759295707ff346a9eb).
+The worker schedule was [8, 16, 16], paired within each repetition. These are
+three inference repetitions at temperature zero, not three training seeds.
+
+SFT run 1 was assembled by the audited same-repetition 299+1 recovery: 299
+persisted JSON case objects were retained exactly from the interrupted source
+archive and only missing case bird_122 was newly inferred. The strict summary
+verified the source, metadata, and recovery-driver hashes and exposes this in
+recovery_notes. Interrupted or redundant attempts are not counted in formal
+token means.
+
+Main results (mean +/- sample SD across three run means)
+--------------------------------------------------------
+
+Metric                  SFT                         RL step 10
+EX                      0.670000 +/- 0.005774       0.653333 +/- 0.026458
+legacy MR               0.814488 +/- 0.005384       0.813030 +/- 0.002294
+bounded MP              0.891768 +/- 0.007578       0.891368 +/- 0.004622
+bounded MR              0.764320 +/- 0.005956       0.762095 +/- 0.001215
+bounded MF1             0.808435 +/- 0.006458       0.807675 +/- 0.002072
+tokens/case             39674.924 +/- 1206.050      38152.179 +/- 363.458
+
+Raw EX counts were SFT [203, 200, 200] and RL [202, 187, 199], each out of
+300. Bounded privacy metrics use normalized, deduplicated terms and maximum
+one-to-one surface matching; they are not semantic privacy-correctness scores.
+
+Paired case-cluster bootstrap (RL minus SFT)
+---------------------------------------------
+
+The cluster unit is the canonical question: the three repetitions are first
+averaged within each of 300 questions, then the 300 questions are resampled.
+The analysis does not treat 900 observations as independent. It used 10,000
+draws and seed 20261001.
+
+Metric          Delta          95% CI
+EX              -0.016667      [-0.032222, -0.001111]
+legacy MR       -0.001459      [-0.010233,  0.007229]
+bounded MP      -0.000400      [-0.010020,  0.009557]
+bounded MR      -0.002226      [-0.011923,  0.007747]
+bounded MF1     -0.000760      [-0.009853,  0.008207]
+tokens/case     -1522.746      [-3443.444, 411.081]
+
+Thus this local evaluation provides no evidence of an accuracy or surface
+privacy-metric gain from the retained RL step-10 checkpoint. EX is lower by
+1.67 percentage points and its bootstrap interval is narrowly below zero.
+The privacy-metric intervals all include zero. Overall token use is lower in
+point estimate only; its interval includes zero.
+
+Model calls and tokens per case (mean +/- sample SD across run means)
+---------------------------------------------------------------------
+
+Role                 SFT calls        RL calls         SFT total tokens       RL total tokens
+agent                7.5433 +/- .0935 7.4833 +/- .0153 38741.92 +/- 1169.34  37223.26 +/- 366.76
+query rewrite        .4689 +/- .0638  .4911 +/- .0217  171.27 +/- 22.11       174.40 +/- 9.81
+entity extract       1.1544 +/- .0389 1.1322 +/- .0184 495.85 +/- 14.83       489.06 +/- 8.59
+SQL generator        1.0144 +/- .0069 1.0156 +/- .0038 265.88 +/- 1.85        265.45 +/- 1.06
+
+Agent prompt tokens were 35166.72 +/- 1095.31 for SFT and
+33848.09 +/- 326.89 for RL. Agent completion tokens were
+3575.20 +/- 74.43 for SFT and 3375.17 +/- 44.83 for RL. The paired agent
+completion-token delta was -200.03, 95% CI [-305.72, -91.55]; the paired
+total-agent-token interval [-3380.33, 367.75] included zero.
+
+Independent integrity audit
+---------------------------
+
+An independent implementation reproduced every per-run metric, every
+across-run mean and sample SD, and every bootstrap delta/interval in the strict
+report to absolute tolerance 1e-12. All 12 summary tests passed.
+
+Current-file SHA-256 values independently matched the frozen run metadata or
+preflight records for the manifest (9d4559aba9dd...), runner (4ef6da872827...),
+legacy evaluator (19657299893e...), three prompt templates
+(a8ef5de52053..., 6c66ef5adca6..., 8f73d57e1fcc...), source dataset
+(8fa43e70c426...), and MaskSQL annotations (e7442d652b5f...). Routing checks
+also verified direct primary endpoints for runs 1/3, approved same-checkpoint
+local replicas for run 2, exact served aliases, and local-only tool endpoints.
+
+Interpretation limits
+---------------------
+
+This is a new local-Qwen-backend supplementary comparison. The RL artifact is
+the verified global_step_10 intermediate checkpoint stored under the
+historically misleading checkpoint-30 directory; it is not established as the
+paper-final or converged RL model. The local results must not be compared as
+absolute reproduction values against the paper's cloud-backed evaluation.
+
+Concise rebuttal wording
+------------------------
+
+“We added a controlled supplementary comparison between the verified SFT
+parent and the surviving RL global-step-10 intermediate checkpoint, using the
+same 300 cases and local Qwen SQL-generation backend over three inference
+repetitions. The RL checkpoint did not improve execution accuracy in this
+setting (RL-SFT: -1.67 percentage points; paired question-cluster bootstrap
+95% CI [-3.22, -0.11]) and showed no detectable change in the reported surface
+privacy metrics. We therefore do not present this intermediate checkpoint as
+the paper-final RL model or as a reproduction of the paper's cloud-backed
+absolute score.”

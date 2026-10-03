@@ -1,0 +1,9 @@
+{
+  "status": "running",
+  "source_20s_failure_count": 22,
+  "cases_completed": 0,
+  "timeout_seconds_per_query": 120,
+  "passed": 0,
+  "failed": 0,
+  "results": []
+}

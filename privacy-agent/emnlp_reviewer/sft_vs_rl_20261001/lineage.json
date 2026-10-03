@@ -1,0 +1,61 @@
+{
+  "status": "verified_parent_child_pair_with_mislabeled_output_directory",
+  "intended_use": "new supplementary SFT-vs-RL evaluation pair",
+  "not_claimed": [
+    "reproduction of the 65.00% EX reported in the paper",
+    "reward_ablation checkpoint 30",
+    "a completed one-epoch RL run"
+  ],
+  "sft_parent": {
+    "path": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/agent_v2_deepseek_pro/checkpoint-40",
+    "trainer_global_step": 40,
+    "trainer_epoch": 1.1779425393883225,
+    "trainer_max_steps": 68,
+    "trainer_num_train_epochs": 2
+  },
+  "rl_child": {
+    "merged_model_path": "/mnt/wh_intern/MXY/paper/privacy-agent/verl/output/models/qwen/Qwen3-4B-Instruct/reward_ablation_1/checkpoint-30",
+    "true_experiment_name": "qwen3-4b_function_rm-gsm8k-sgl-multi-w-tool-verify-n16_2",
+    "true_global_step": 10,
+    "source_component": "actor",
+    "source_fsdp_path": "/mnt/wh_intern/MXY/paper/privacy-agent/verl/checkpoints/gsm8k_async_rl/qwen3-4b_function_rm-gsm8k-sgl-multi-w-tool-verify-n16_2/global_step_10",
+    "fsdp_world_size": 8,
+    "algorithm": "grpo",
+    "actor_learning_rate": 1e-6,
+    "rollout_n": 16,
+    "train_batch_size": 64,
+    "planned_training_steps": 125,
+    "observed_progress_before_sigterm": "13/125",
+    "checkpoint_status": "intermediate checkpoint from a substantive run; run did not finish"
+  },
+  "reward": {
+    "implementation_at_run": "/mnt/wh_intern/MXY/paper/privacy-agent/verl/verl/utils/reward_score/nl2sql.py",
+    "historical_config_overrides_in_run_record": null,
+    "historical_weight_values": "not independently recoverable from the retained command/config; do not substitute current source defaults as historical proof",
+    "observed_components_in_train_log": [
+      "Execution Score",
+      "privacy_reward",
+      "normalized_length_reward",
+      "reward_turns"
+    ]
+  },
+  "external_model_identity": {
+    "historical_sql_generator_provider_model_id": "not retained in the inspected log evidence",
+    "current_default_alias": "deepseek-chat",
+    "warning": "an alias is not a stable provider model identity; a new supplementary run must record the provider-returned response model id without recording credentials"
+  },
+  "evidence": {
+    "merge_info": "verl/output/models/qwen/Qwen3-4B-Instruct/reward_ablation_1/checkpoint-30/merge_info.json:2-6",
+    "launch_command": "verl/train.log:7",
+    "resolved_parent_path": "verl/train.log:450",
+    "resolved_experiment_name": "verl/train.log:650,976",
+    "privacy_agent_rollout_format": "verl/train.log:584",
+    "privacy_tool_config": "verl/train.log:591,845",
+    "privacy_agent_train_and_validation_data": "verl/train.log:847,853",
+    "nl2sql_reward_implementation": "verl/train.log:931",
+    "checkpoint_save": "verl/train.log:7475-7483",
+    "termination": "verl/train.log:7487-7506",
+    "sft_state": "../LlamaFactory/saves/agent_v2_deepseek_pro/checkpoint-40/trainer_state.json:5-7,38,42,44",
+    "fsdp_metadata": "verl/checkpoints/gsm8k_async_rl/qwen3-4b_function_rm-gsm8k-sgl-multi-w-tool-verify-n16_2/global_step_10/actor/fsdp_config.json:2-3"
+  }
+}

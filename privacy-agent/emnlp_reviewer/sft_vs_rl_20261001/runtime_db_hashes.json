@@ -1,0 +1,85 @@
+{
+  "status": "verified",
+  "source_root": "/mnt/wh_intern/MXY/paper/privacy-agent/CHESS/data/dev/dev_databases",
+  "runtime_root": "/tmp/sft_rl_runtime_dbs_20261001",
+  "required_unique_dbs": 4,
+  "completed_dbs": 4,
+  "databases": [
+    {
+      "db_id": "european_football_2",
+      "files": [
+        {
+          "name": ".DS_Store",
+          "size": 6148,
+          "sha256": "794f305b3de5d03e7baa681d745584d11e51d2f60c0f67aa814293a06bf445f0",
+          "copy_sha256": "794f305b3de5d03e7baa681d745584d11e51d2f60c0f67aa814293a06bf445f0",
+          "match": true
+        },
+        {
+          "name": "european_football_2.sqlite",
+          "size": 597754880,
+          "sha256": "e4d361dbeec6591a4b315877c0c481da05c8ff5a3d389b34d6e17b6f15bee4e0",
+          "copy_sha256": "e4d361dbeec6591a4b315877c0c481da05c8ff5a3d389b34d6e17b6f15bee4e0",
+          "match": true
+        }
+      ]
+    },
+    {
+      "db_id": "financial",
+      "files": [
+        {
+          "name": ".DS_Store",
+          "size": 6148,
+          "sha256": "fb5ba1a29e5dbac18b95b1736778a02860311e75e90561df6a1ba140f3338a8b",
+          "copy_sha256": "fb5ba1a29e5dbac18b95b1736778a02860311e75e90561df6a1ba140f3338a8b",
+          "match": true
+        },
+        {
+          "name": "financial.sqlite",
+          "size": 71294976,
+          "sha256": "d15d89cdb068a202b6f2b99342af44dffc1d52545b39ceaf62efdc0ba570101e",
+          "copy_sha256": "d15d89cdb068a202b6f2b99342af44dffc1d52545b39ceaf62efdc0ba570101e",
+          "match": true
+        }
+      ]
+    },
+    {
+      "db_id": "superhero",
+      "files": [
+        {
+          "name": ".DS_Store",
+          "size": 6148,
+          "sha256": "507543a05e213a6c12fe4ce28d4e1c677c88afd19911b04c52975b288e47d4e3",
+          "copy_sha256": "507543a05e213a6c12fe4ce28d4e1c677c88afd19911b04c52975b288e47d4e3",
+          "match": true
+        },
+        {
+          "name": "superhero.sqlite",
+          "size": 237568,
+          "sha256": "75e94a2c3236ee3bb2c01fb97a1c4b4c1c269bcefd4eab1d04be323d2d0825b1",
+          "copy_sha256": "75e94a2c3236ee3bb2c01fb97a1c4b4c1c269bcefd4eab1d04be323d2d0825b1",
+          "match": true
+        }
+      ]
+    },
+    {
+      "db_id": "thrombosis_prediction",
+      "files": [
+        {
+          "name": ".DS_Store",
+          "size": 6148,
+          "sha256": "25fa01fd5a407d17e059b7d91a8c27ea80c8ac9b6b599b5ecb1a4f4bcb0ad6b7",
+          "copy_sha256": "25fa01fd5a407d17e059b7d91a8c27ea80c8ac9b6b599b5ecb1a4f4bcb0ad6b7",
+          "match": true
+        },
+        {
+          "name": "thrombosis_prediction.sqlite",
+          "size": 7327744,
+          "sha256": "e7e16d74b4731b4b8d33fdbe8c29cd5622620788ce8d1f335631f65fc7cf1db9",
+          "copy_sha256": "e7e16d74b4731b4b8d33fdbe8c29cd5622620788ce8d1f335631f65fc7cf1db9",
+          "match": true
+        }
+      ]
+    }
+  ]
+}

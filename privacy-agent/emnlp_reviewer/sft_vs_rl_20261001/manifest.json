@@ -1,0 +1,78 @@
+{
+  "experiment_id": "sft_vs_rl_20261001",
+  "status": "ready_for_supplementary_evaluation",
+  "models": {
+    "sft": {
+      "path": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/agent_v2_deepseek_pro/checkpoint-40",
+      "served_model_name": "PrivAgent-R1-SFT-checkpoint-40",
+      "base_url": "http://127.0.0.1:18340/v1",
+      "role": "SFT-before-RL",
+      "parent_chain_status": "verified"
+    },
+    "rl": {
+      "path": "/mnt/wh_intern/MXY/paper/privacy-agent/verl/output/models/qwen/Qwen3-4B-Instruct/reward_ablation_1/checkpoint-30",
+      "artifact_identity": "merged artifact named checkpoint-30; merge_info source global_step_10",
+      "served_model_name": "PrivAgent-R1-RL-step10",
+      "base_url": "http://127.0.0.1:18341/v1",
+      "role": "RL-after step 10 supplemental checkpoint (not claimed as paper-final RL)",
+      "parent_chain_status": "verified"
+    }
+  },
+  "dataset": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/bird_dev_sc.jsonl",
+    "masksql_annotations": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/masksql_test.json",
+    "db_root": "/mnt/wh_intern/MXY/paper/privacy-agent/CHESS/data/dev/dev_databases",
+    "runtime_db_root": "/tmp/sft_rl_runtime_dbs_20261001",
+    "runtime_db_hash_manifest": "/mnt/wh_intern/MXY/paper/privacy-agent/reviewer/sft_vs_rl_20261001/runtime_db_hashes.json",
+    "match_mode": "auto",
+    "expected_cases": 300
+  },
+  "evaluator": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/ineference/agent_eval_multi_checkpoint_lmdeploy_token_usage_privacy_f1.py",
+  "repetitions": 3,
+  "inference": {
+    "temperature": 0,
+    "agent_max_tokens": 2048,
+    "query_rewrite_max_tokens": 512,
+    "entity_extract_max_tokens": 512,
+    "sql_generate_max_tokens": 1024,
+    "turn_limit": 20,
+    "tools_checkpoint": {
+      "query_rewrite_base_url": "http://127.0.0.1:18336/v1",
+      "query_rewrite_model": "query-rewrite-checkpoint-50",
+      "query_rewrite_checkpoint_path": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/query_rewrite_v2/checkpoint-50",
+      "entity_extract_base_url": "http://127.0.0.1:18337/v1",
+      "entity_extract_model": "entity-extract-checkpoint-25",
+      "entity_extract_checkpoint_path": "/mnt/wh_intern/MXY/paper/LlamaFactory/saves/entity_extract_v1/checkpoint-25"
+    },
+    "cloud_generator": {
+      "base_url": "http://127.0.0.1:18342/v1",
+      "model_name": "Qwen3.8-27B-local",
+      "deployment": "local-only",
+      "checkpoint_path": "/mnt/wh_intern/MXY/models/Qwen3.8-27B",
+      "checkpoint_metadata": {
+        "config_sha256": "191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab",
+        "model_index_sha256": "77042094076611b69791a610065f28b7013b8c621795fa86ddccc8bac7d1b9df",
+        "tokenizer_config_sha256": "b11349aafa7cdc6a320767cf7ceb29ed82f7eda5d65e8e0819e76f0ce947bf27"
+      },
+      "service": {
+        "port": 18342,
+        "tensor_parallel": 2,
+        "gpus": [4, 5],
+        "backend": "lmdeploy-0.12.2-TurboMind",
+        "session_len": 32768,
+        "cache_max_entry_count": 0.30,
+        "model_type": "qwen3_5",
+        "enable_thinking": false
+      }
+    },
+    "prompt_identity": "evaluator_file_sha256"
+  },
+  "policy": {
+    "no_training": true,
+    "no_checkpoint_selection_after_results": true,
+    "run_ri_attack": false,
+    "require_distinct_run_directories": true,
+    "require_actual_generator_request_log": true,
+    "require_verified_rl_parent_chain": true
+  }
+}

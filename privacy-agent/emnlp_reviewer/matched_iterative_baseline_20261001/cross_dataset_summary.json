@@ -1,0 +1,75 @@
+{
+  "status": "complete",
+  "cases_per_dataset": 300,
+  "runs": 1,
+  "datasets": {
+    "spider_dev": {
+      "adaptive_sft": {
+        "n": 300,
+        "valid": 300,
+        "EX": 0.6533333333333333,
+        "bounded_MP": 0.8599761904761904,
+        "bounded_MR": 0.9517460317460316,
+        "bounded_MF1": 0.8884203574203582,
+        "tokens_per_case": 43136.7,
+        "tool_calls_per_case": 6.676666666666667,
+        "sql_attempts_per_case": 1.0566666666666666
+      },
+      "iterative_fixed": {
+        "n": 300,
+        "valid": 300,
+        "EX": 0.58,
+        "bounded_MP": 0.6399561087061091,
+        "bounded_MR": 0.8414999999999999,
+        "bounded_MF1": 0.706007344507345,
+        "tokens_per_case": 1077.3066666666666,
+        "tool_calls_per_case": 6.19,
+        "sql_attempts_per_case": 1.0633333333333332
+      },
+      "common_valid_comparison": {
+        "n": 300,
+        "adaptive_EX": 0.6533333333333333,
+        "iterative_fixed_EX": 0.58,
+        "adaptive_minus_fixed_EX": 0.07333333333333336,
+        "paired_question_bootstrap_95ci": [
+          0.02,
+          0.12666666666666668
+        ]
+      }
+    },
+    "spider_test": {
+      "adaptive_sft": {
+        "n": 300,
+        "valid": 300,
+        "EX": 0.8066666666666666,
+        "bounded_MP": 0.8264365079365078,
+        "bounded_MR": 0.9265555555555557,
+        "bounded_MF1": 0.8484950789950794,
+        "tokens_per_case": 40462.543333333335,
+        "tool_calls_per_case": 5.8933333333333335,
+        "sql_attempts_per_case": 1.0233333333333334
+      },
+      "iterative_fixed": {
+        "n": 300,
+        "valid": 300,
+        "EX": 0.6666666666666666,
+        "bounded_MP": 0.5125195545195549,
+        "bounded_MR": 0.6944444444444442,
+        "bounded_MF1": 0.5645175380175383,
+        "tokens_per_case": 1416.3866666666668,
+        "tool_calls_per_case": 6.12,
+        "sql_attempts_per_case": 1.04
+      },
+      "common_valid_comparison": {
+        "n": 300,
+        "adaptive_EX": 0.8066666666666666,
+        "iterative_fixed_EX": 0.6666666666666666,
+        "adaptive_minus_fixed_EX": 0.14,
+        "paired_question_bootstrap_95ci": [
+          0.09,
+          0.19333333333333333
+        ]
+      }
+    }
+  }
+}

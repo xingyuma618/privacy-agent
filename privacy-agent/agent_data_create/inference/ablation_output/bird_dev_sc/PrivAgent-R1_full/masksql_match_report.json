@@ -1,0 +1,14 @@
+{
+  "masksql_test_path": "/mnt/wh_intern/MXY/paper/privacy-agent/agent_data_create/data/masksql_test.json",
+  "match_mode": "auto",
+  "input_rows": 1534,
+  "masksql_rows": 300,
+  "selected_rows": 300,
+  "matched_masksql_rows": 300,
+  "match_counter": {
+    "strict": 19,
+    "relaxed": 2,
+    "id": 279,
+    "unmatched": 1234
+  }
+}

@@ -1,0 +1,651 @@
+{
+  "status": "complete",
+  "n_cases": 300,
+  "runs": 3,
+  "definitions": {
+    "comparison_unit": "Each question is averaged over three inference repetitions before bootstrap resampling.",
+    "iterative_rule": "A second SQL generation/unmask/execution pass runs only after the first local execution check fails.",
+    "budget_scope": "The fixed and adaptive methods use the same rewrite, entity and SQL-generator checkpoints. Actual calls and tokens are reported; controller-model tokens are not artificially added to the fixed workflow.",
+    "privacy_metrics": "Surface-term matching only; these metrics do not measure semantic leakage."
+  },
+  "per_run": {
+    "one_pass_fixed": [
+      {
+        "EX": 0.6033333333333334,
+        "legacy_MR": 0.6999058441558442,
+        "bounded_MP": 0.7764801587301589,
+        "bounded_MR": 0.6414277296777297,
+        "bounded_MF1": 0.6845564174387702,
+        "cost_tokens": 1014.7533333333333,
+        "tool_calls": 6.0,
+        "sql_attempts": 1.0,
+        "calls_agent": 0.0,
+        "calls_query_rewrite": 1.0,
+        "calls_entity_extract": 1.0,
+        "calls_sql_generator": 1.0
+      },
+      {
+        "EX": 0.5966666666666667,
+        "legacy_MR": 0.7010790043290044,
+        "bounded_MP": 0.7767976190476192,
+        "bounded_MR": 0.6426008898508899,
+        "bounded_MF1": 0.6856395730745575,
+        "cost_tokens": 1014.86,
+        "tool_calls": 6.0,
+        "sql_attempts": 1.0,
+        "calls_agent": 0.0,
+        "calls_query_rewrite": 1.0,
+        "calls_entity_extract": 1.0,
+        "calls_sql_generator": 1.0
+      },
+      {
+        "EX": 0.6,
+        "legacy_MR": 0.6986785714285714,
+        "bounded_MP": 0.7760753968253972,
+        "bounded_MR": 0.6402004569504569,
+        "bounded_MF1": 0.6837721690074631,
+        "cost_tokens": 1014.3,
+        "tool_calls": 6.0,
+        "sql_attempts": 1.0,
+        "calls_agent": 0.0,
+        "calls_query_rewrite": 1.0,
+        "calls_entity_extract": 1.0,
+        "calls_sql_generator": 1.0
+      }
+    ],
+    "iterative_fixed": [
+      {
+        "EX": 0.61,
+        "legacy_MR": 0.697396584896585,
+        "bounded_MP": 0.7747777777777779,
+        "bounded_MR": 0.639474025974026,
+        "bounded_MF1": 0.6827817754141282,
+        "cost_tokens": 1036.4966666666667,
+        "tool_calls": 6.21,
+        "sql_attempts": 1.07,
+        "calls_agent": 0.0,
+        "calls_query_rewrite": 1.0,
+        "calls_entity_extract": 1.0,
+        "calls_sql_generator": 1.07
+      },
+      {
+        "EX": 0.61,
+        "legacy_MR": 0.7004058441558442,
+        "bounded_MP": 0.7768452380952382,
+        "bounded_MR": 0.6419277296777297,
+        "bounded_MF1": 0.6851754095577625,
+        "cost_tokens": 1038.8933333333334,
+        "tool_calls": 6.21,
+        "sql_attempts": 1.07,
+        "calls_agent": 0.0,
+        "calls_query_rewrite": 1.0,
+        "calls_entity_extract": 1.0,
+        "calls_sql_generator": 1.07
+      },
+      {
+        "EX": 0.6033333333333334,
+        "legacy_MR": 0.7002907647907648,
+        "bounded_MP": 0.77884126984127,
+        "bounded_MR": 0.6418126503126503,
+        "bounded_MF1": 0.6857581951931795,
+        "cost_tokens": 1037.73,
+        "tool_calls": 6.21,
+        "sql_attempts": 1.07,
+        "calls_agent": 0.0,
+        "calls_query_rewrite": 1.0,
+        "calls_entity_extract": 1.0,
+        "calls_sql_generator": 1.07
+      }
+    ],
+    "adaptive_sft": [
+      {
+        "EX": 0.6766666666666666,
+        "legacy_MR": 0.809218133718134,
+        "bounded_MP": 0.8864470899470906,
+        "bounded_MR": 0.7583959836459838,
+        "bounded_MF1": 0.8033914568690108,
+        "cost_tokens": 40844.636666666665,
+        "tool_calls": 6.6466666666666665,
+        "sql_attempts": 1.0066666666666666,
+        "calls_agent": 7.64,
+        "calls_query_rewrite": 0.5366666666666666,
+        "calls_entity_extract": 1.1966666666666668,
+        "calls_sql_generator": 1.0066666666666666
+      },
+      {
+        "EX": 0.6666666666666666,
+        "legacy_MR": 0.8199784752284756,
+        "bounded_MP": 0.9004440836940841,
+        "bounded_MR": 0.7703074795574798,
+        "bounded_MF1": 0.8157132479426864,
+        "cost_tokens": 38435.556666666664,
+        "tool_calls": 6.453333333333333,
+        "sql_attempts": 1.0166666666666666,
+        "calls_agent": 7.453333333333333,
+        "calls_query_rewrite": 0.41,
+        "calls_entity_extract": 1.12,
+        "calls_sql_generator": 1.0166666666666666
+      },
+      {
+        "EX": 0.6666666666666666,
+        "legacy_MR": 0.8142677970177975,
+        "bounded_MP": 0.8884122174122179,
+        "bounded_MR": 0.7642579365079367,
+        "bounded_MF1": 0.8061999114862889,
+        "cost_tokens": 39744.58,
+        "tool_calls": 6.54,
+        "sql_attempts": 1.02,
+        "calls_agent": 7.536666666666667,
+        "calls_query_rewrite": 0.46,
+        "calls_entity_extract": 1.1466666666666667,
+        "calls_sql_generator": 1.02
+      }
+    ],
+    "adaptive_rl": [
+      {
+        "EX": 0.6733333333333333,
+        "legacy_MR": 0.8113965848965854,
+        "bounded_MP": 0.888690115440116,
+        "bounded_MR": 0.7621445406445407,
+        "bounded_MF1": 0.8065009416681242,
+        "cost_tokens": 37968.18666666667,
+        "tool_calls": 6.49,
+        "sql_attempts": 1.0133333333333334,
+        "calls_agent": 7.486666666666666,
+        "calls_query_rewrite": 0.5133333333333333,
+        "calls_entity_extract": 1.1333333333333333,
+        "calls_sql_generator": 1.0133333333333334
+      },
+      {
+        "EX": 0.6233333333333333,
+        "legacy_MR": 0.8120399230399239,
+        "bounded_MP": 0.896705026455027,
+        "bounded_MR": 0.76085545935546,
+        "bounded_MF1": 0.8100674787888408,
+        "cost_tokens": 37917.50666666667,
+        "tool_calls": 6.476666666666667,
+        "sql_attempts": 1.02,
+        "calls_agent": 7.466666666666667,
+        "calls_query_rewrite": 0.49,
+        "calls_entity_extract": 1.1133333333333333,
+        "calls_sql_generator": 1.02
+      },
+      {
+        "EX": 0.6633333333333333,
+        "legacy_MR": 0.8156521164021168,
+        "bounded_MP": 0.8887086339586346,
+        "bounded_MR": 0.7632839105339108,
+        "bounded_MF1": 0.806456845785793,
+        "cost_tokens": 38570.84333333333,
+        "tool_calls": 6.5,
+        "sql_attempts": 1.0133333333333334,
+        "calls_agent": 7.496666666666667,
+        "calls_query_rewrite": 0.47,
+        "calls_entity_extract": 1.15,
+        "calls_sql_generator": 1.0133333333333334
+      }
+    ]
+  },
+  "overall_across_run_means": {
+    "one_pass_fixed": {
+      "EX": {
+        "mean": 0.6000000000000001,
+        "sample_sd": 0.003333333333333355
+      },
+      "legacy_MR": {
+        "mean": 0.6998878066378067,
+        "sample_sd": 0.0012003181000938999
+      },
+      "bounded_MP": {
+        "mean": 0.7764510582010584,
+        "sample_sd": 0.0003619894544918259
+      },
+      "bounded_MR": {
+        "mean": 0.6414096921596922,
+        "sample_sd": 0.001200318100093899
+      },
+      "bounded_MF1": {
+        "mean": 0.6846560531735969,
+        "sample_sd": 0.0009376806211024239
+      },
+      "cost_tokens": {
+        "mean": 1014.6377777777776,
+        "sample_sd": 0.29734628770985666
+      },
+      "tool_calls": {
+        "mean": 6.0,
+        "sample_sd": 0.0
+      },
+      "sql_attempts": {
+        "mean": 1.0,
+        "sample_sd": 0.0
+      },
+      "calls_agent": {
+        "mean": 0.0,
+        "sample_sd": 0.0
+      },
+      "calls_query_rewrite": {
+        "mean": 1.0,
+        "sample_sd": 0.0
+      },
+      "calls_entity_extract": {
+        "mean": 1.0,
+        "sample_sd": 0.0
+      },
+      "calls_sql_generator": {
+        "mean": 1.0,
+        "sample_sd": 0.0
+      }
+    },
+    "iterative_fixed": {
+      "EX": {
+        "mean": 0.6077777777777778,
+        "sample_sd": 0.003849001794597466
+      },
+      "legacy_MR": {
+        "mean": 0.6993643979477313,
+        "sample_sd": 0.0017051471984151979
+      },
+      "bounded_MP": {
+        "mean": 0.7768214285714287,
+        "sample_sd": 0.002031850660748435
+      },
+      "bounded_MR": {
+        "mean": 0.6410714686548019,
+        "sample_sd": 0.00138462202562301
+      },
+      "bounded_MF1": {
+        "mean": 0.6845717933883568,
+        "sample_sd": 0.001577350004044111
+      },
+      "cost_tokens": {
+        "mean": 1037.7066666666667,
+        "sample_sd": 1.1985036967449132
+      },
+      "tool_calls": {
+        "mean": 6.21,
+        "sample_sd": 0.0
+      },
+      "sql_attempts": {
+        "mean": 1.07,
+        "sample_sd": 0.0
+      },
+      "calls_agent": {
+        "mean": 0.0,
+        "sample_sd": 0.0
+      },
+      "calls_query_rewrite": {
+        "mean": 1.0,
+        "sample_sd": 0.0
+      },
+      "calls_entity_extract": {
+        "mean": 1.0,
+        "sample_sd": 0.0
+      },
+      "calls_sql_generator": {
+        "mean": 1.07,
+        "sample_sd": 0.0
+      }
+    },
+    "adaptive_sft": {
+      "EX": {
+        "mean": 0.6699999999999999,
+        "sample_sd": 0.005773502691896263
+      },
+      "legacy_MR": {
+        "mean": 0.814488135321469,
+        "sample_sd": 0.005383553573694936
+      },
+      "bounded_MP": {
+        "mean": 0.8917677970177976,
+        "sample_sd": 0.007577855524842126
+      },
+      "bounded_MR": {
+        "mean": 0.7643204665704668,
+        "sample_sd": 0.00595599414194947
+      },
+      "bounded_MF1": {
+        "mean": 0.8084348720993287,
+        "sample_sd": 0.006457779844668549
+      },
+      "cost_tokens": {
+        "mean": 39674.92444444444,
+        "sample_sd": 1206.0495569896027
+      },
+      "tool_calls": {
+        "mean": 6.546666666666667,
+        "sample_sd": 0.09683892697555967
+      },
+      "sql_attempts": {
+        "mean": 1.0144444444444445,
+        "sample_sd": 0.0069388866648871445
+      },
+      "calls_agent": {
+        "mean": 7.543333333333334,
+        "sample_sd": 0.0935117342607035
+      },
+      "calls_query_rewrite": {
+        "mean": 0.46888888888888886,
+        "sample_sd": 0.06379945431091373
+      },
+      "calls_entity_extract": {
+        "mean": 1.1544444444444446,
+        "sample_sd": 0.03892062197363776
+      },
+      "calls_sql_generator": {
+        "mean": 1.0144444444444445,
+        "sample_sd": 0.0069388866648871445
+      }
+    },
+    "adaptive_rl": {
+      "EX": {
+        "mean": 0.6533333333333333,
+        "sample_sd": 0.02645751311064593
+      },
+      "legacy_MR": {
+        "mean": 0.8130295414462086,
+        "sample_sd": 0.0022938821986287277
+      },
+      "bounded_MP": {
+        "mean": 0.8913679252845926,
+        "sample_sd": 0.004622074470567497
+      },
+      "bounded_MR": {
+        "mean": 0.7620946368446372,
+        "sample_sd": 0.0012149944746637296
+      },
+      "bounded_MF1": {
+        "mean": 0.807675088747586,
+        "sample_sd": 0.002071987860444859
+      },
+      "cost_tokens": {
+        "mean": 38152.178888888884,
+        "sample_sd": 363.4584617002054
+      },
+      "tool_calls": {
+        "mean": 6.48888888888889,
+        "sample_sd": 0.011706281947614213
+      },
+      "sql_attempts": {
+        "mean": 1.0155555555555555,
+        "sample_sd": 0.003849001794597466
+      },
+      "calls_agent": {
+        "mean": 7.483333333333333,
+        "sample_sd": 0.015275252316519529
+      },
+      "calls_query_rewrite": {
+        "mean": 0.4911111111111111,
+        "sample_sd": 0.02168802366215904
+      },
+      "calls_entity_extract": {
+        "mean": 1.1322222222222222,
+        "sample_sd": 0.018358568490953655
+      },
+      "calls_sql_generator": {
+        "mean": 1.0155555555555555,
+        "sample_sd": 0.003849001794597466
+      }
+    }
+  },
+  "paired_comparisons": {
+    "iterative_fixed_minus_one_pass_fixed": {
+      "EX": {
+        "delta": 0.007777777777777778,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.0044444444444444444,
+          0.021111111111111112
+        ]
+      },
+      "legacy_MR": {
+        "delta": -0.0005234086900753557,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.003061407728074395,
+          0.0018463604296937637
+        ]
+      },
+      "bounded_MP": {
+        "delta": 0.0003703703703703709,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.001880952380952381,
+          0.002580687830687831
+        ]
+      },
+      "bounded_MR": {
+        "delta": -0.0003382235048901706,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.0026243386243386233,
+          0.001951178451178451
+        ]
+      },
+      "bounded_MF1": {
+        "delta": -8.425978524017904e-05,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.002271751306065034,
+          0.002027859576879182
+        ]
+      },
+      "cost_tokens": {
+        "delta": 23.068888888888885,
+        "paired_question_cluster_bootstrap_95ci": [
+          14.446666666666658,
+          32.653333333333336
+        ]
+      },
+      "tool_calls": {
+        "delta": 0.21,
+        "paired_question_cluster_bootstrap_95ci": [
+          0.13,
+          0.2966666666666667
+        ]
+      },
+      "sql_attempts": {
+        "delta": 0.07,
+        "paired_question_cluster_bootstrap_95ci": [
+          0.043333333333333335,
+          0.09999999999999998
+        ]
+      },
+      "calls_agent": {
+        "delta": 0.0,
+        "paired_question_cluster_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "calls_query_rewrite": {
+        "delta": 0.0,
+        "paired_question_cluster_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "calls_entity_extract": {
+        "delta": 0.0,
+        "paired_question_cluster_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "calls_sql_generator": {
+        "delta": 0.07,
+        "paired_question_cluster_bootstrap_95ci": [
+          0.043333333333333335,
+          0.09888888888888889
+        ]
+      }
+    },
+    "iterative_fixed_minus_adaptive_sft": {
+      "EX": {
+        "delta": -0.062222222222222213,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.11222222222222221,
+          -0.012222222222222221
+        ]
+      },
+      "legacy_MR": {
+        "delta": -0.11512373737373734,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.13413031104697778,
+          -0.09640780824114158
+        ]
+      },
+      "bounded_MP": {
+        "delta": -0.11494636844636846,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.13440079365079372,
+          -0.09540844957511627
+        ]
+      },
+      "bounded_MR": {
+        "delta": -0.12324899791566458,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.14259704184704192,
+          -0.10457367324033985
+        ]
+      },
+      "bounded_MF1": {
+        "delta": -0.12386307871097205,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.1419184014204654,
+          -0.10645092306260251
+        ]
+      },
+      "cost_tokens": {
+        "delta": -38637.21777777777,
+        "paired_question_cluster_bootstrap_95ci": [
+          -40817.52888888888,
+          -36655.80333333335
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.33666666666666667,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.5177777777777778,
+          -0.16333333333333339
+        ]
+      },
+      "sql_attempts": {
+        "delta": 0.055555555555555546,
+        "paired_question_cluster_bootstrap_95ci": [
+          0.027777777777777787,
+          0.08555555555555555
+        ]
+      },
+      "calls_agent": {
+        "delta": -7.543333333333335,
+        "paired_question_cluster_bootstrap_95ci": [
+          -7.716666666666665,
+          -7.383333333333334
+        ]
+      },
+      "calls_query_rewrite": {
+        "delta": 0.5311111111111111,
+        "paired_question_cluster_bootstrap_95ci": [
+          0.43666666666666665,
+          0.6155555555555555
+        ]
+      },
+      "calls_entity_extract": {
+        "delta": -0.1544444444444445,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.19000000000000009,
+          -0.12111111111111104
+        ]
+      },
+      "calls_sql_generator": {
+        "delta": 0.055555555555555546,
+        "paired_question_cluster_bootstrap_95ci": [
+          0.027777777777777773,
+          0.08555555555555557
+        ]
+      }
+    },
+    "iterative_fixed_minus_adaptive_rl": {
+      "EX": {
+        "delta": -0.04555555555555555,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.09444444444444441,
+          0.003333333333333327
+        ]
+      },
+      "legacy_MR": {
+        "delta": -0.11366514349847674,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.1330860189193523,
+          -0.09411936828603491
+        ]
+      },
+      "bounded_MP": {
+        "delta": -0.11454649671316339,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.13580002405002403,
+          -0.09373280423280418
+        ]
+      },
+      "bounded_MR": {
+        "delta": -0.12102316818983481,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.14097418630751957,
+          -0.10153687670354335
+        ]
+      },
+      "bounded_MF1": {
+        "delta": -0.12310329535922931,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.14167387202294335,
+          -0.10515453259235501
+        ]
+      },
+      "cost_tokens": {
+        "delta": -37114.47222222221,
+        "paired_question_cluster_bootstrap_95ci": [
+          -39297.83444444444,
+          -35132.35888888887
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.2788888888888888,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.46111111111111125,
+          -0.11111111111111109
+        ]
+      },
+      "sql_attempts": {
+        "delta": 0.05444444444444444,
+        "paired_question_cluster_bootstrap_95ci": [
+          0.02444444444444444,
+          0.08666666666666664
+        ]
+      },
+      "calls_agent": {
+        "delta": -7.483333333333335,
+        "paired_question_cluster_bootstrap_95ci": [
+          -7.64777777777778,
+          -7.326666666666668
+        ]
+      },
+      "calls_query_rewrite": {
+        "delta": 0.5088888888888888,
+        "paired_question_cluster_bootstrap_95ci": [
+          0.42666666666666636,
+          0.5855555555555557
+        ]
+      },
+      "calls_entity_extract": {
+        "delta": -0.1322222222222223,
+        "paired_question_cluster_bootstrap_95ci": [
+          -0.16666666666666677,
+          -0.09999999999999996
+        ]
+      },
+      "calls_sql_generator": {
+        "delta": 0.05444444444444444,
+        "paired_question_cluster_bootstrap_95ci": [
+          0.024444444444444442,
+          0.08555555555555557
+        ]
+      }
+    }
+  }
+}

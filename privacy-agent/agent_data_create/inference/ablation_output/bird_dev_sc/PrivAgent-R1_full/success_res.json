@@ -1,0 +1,1649 @@
+[
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `account` t2 JOIN `district` t1 ON t2.`district_id` = t1.`district_id` WHERE t1.`A3` = 'East Bohemia' AND t2.`frequency` = 'POPLATEK PO OBRATU';",
+        "gold_sql": "SELECT COUNT(T1.district_id) FROM district AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id WHERE T1.A3 = 'East Bohemia' AND T2.frequency = 'POPLATEK PO OBRATU'",
+        "exec_acc": 1,
+        "eval_original_idx": 89,
+        "eval_pred_key": "89",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(DISTINCT t2.`client_id`) AS male_customer_count FROM `district` t1 JOIN `client` t2 ON t1.`district_id` = t2.`district_id` WHERE t1.`A3` = 'North Bohemia' AND t2.`gender` = 'M' AND t1.`A11` > 8000;",
+        "gold_sql": "SELECT COUNT(T1.client_id) FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T1.gender = 'M' AND T2.A3 = 'North Bohemia' AND T2.A11 > 8000",
+        "exec_acc": 1,
+        "eval_original_idx": 93,
+        "eval_pred_key": "93",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`client_id` FROM `disp` t2 JOIN `account` t1 ON t2.`account_id` = t1.`account_id` WHERE t2.`type` = 'DISPONENT' AND t1.`frequency` = 'POPLATEK PO OBRATU'",
+        "gold_sql": "SELECT T2.client_id FROM account AS T1 INNER JOIN disp AS T2 ON T1.account_id = T2.account_id WHERE T1.frequency = 'POPLATEK PO OBRATU' AND T2.type = 'DISPONENT'",
+        "exec_acc": 1,
+        "eval_original_idx": 97,
+        "eval_pred_key": "97",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `client` t1 JOIN `district` t2 ON t1.`district_id` = t2.`district_id` WHERE t1.`gender` = 'F' AND t1.`birth_date` < '1950' AND t2.`A2` = 'Slokolov';",
+        "gold_sql": "SELECT COUNT(T2.client_id) FROM district AS T1 INNER JOIN client AS T2 ON T1.district_id = T2.district_id WHERE T2.gender = 'F' AND STRFTIME('%Y', T2.birth_date) < '1950' AND T1.A2 = 'Slokolov'",
+        "exec_acc": 1,
+        "eval_original_idx": 100,
+        "eval_pred_key": "100",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT account_id FROM trans WHERE strftime('%Y', date) = '1995' ORDER BY date ASC LIMIT 1;",
+        "gold_sql": "SELECT account_id FROM trans WHERE STRFTIME('%Y', date) = '1995' ORDER BY date ASC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 101,
+        "eval_pred_key": "101",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t1.`client_id` FROM `disp` t1 JOIN `card` t2 ON t1.`disp_id` = t2.`disp_id` WHERE t2.`issued` = '1994-03-03'",
+        "gold_sql": "SELECT T2.client_id FROM client AS T1 INNER JOIN disp AS T2 ON T1.client_id = T2.client_id INNER JOIN card AS T3 ON T2.disp_id = T3.disp_id WHERE T3.issued = '1994-03-03'",
+        "exec_acc": 1,
+        "eval_original_idx": 103,
+        "eval_pred_key": "103",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "WITH client_with_biggest_loan AS (SELECT l.account_id, l.amount AS max_loan_amount FROM loan l WHERE l.amount = (SELECT MAX(amount) FROM loan)), first_transaction AS (SELECT t.amount, t.trans_id, t.date FROM trans t JOIN client_with_biggest_loan c ON t.account_id = c.account_id JOIN account a ON t.account_id = a.account_id WHERE t.date >= a.date ORDER BY t.trans_id ASC LIMIT 1) SELECT first_transaction.amount FROM first_transaction;",
+        "gold_sql": "SELECT T2.amount FROM loan AS T1 INNER JOIN trans AS T2 ON T1.account_id = T2.account_id ORDER BY T1.amount DESC, T2.date ASC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 108,
+        "eval_pred_key": "108",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `client` JOIN `district` ON `client`.`district_id` = `district`.`district_id` WHERE `district`.`A2` = 'Jesenik' AND `client`.`gender` = 'F';",
+        "gold_sql": "SELECT COUNT(T1.client_id) FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T1.gender = 'F' AND T2.A2 = 'Jesenik'",
+        "exec_acc": 1,
+        "eval_original_idx": 109,
+        "eval_pred_key": "109",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT d.disp_id FROM disp d JOIN trans t ON d.account_id = t.account_id WHERE t.amount = 5100 AND t.date = '1998-09-02';",
+        "gold_sql": "SELECT T1.disp_id FROM disp AS T1 INNER JOIN trans AS T2 ON T1.account_id = T2.account_id WHERE T2.date = '1998-09-02' AND T2.amount = 5100",
+        "exec_acc": 1,
+        "eval_original_idx": 110,
+        "eval_pred_key": "110",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `account` t1 JOIN `district` t2 ON t1.`district_id` = t2.`district_id` WHERE t2.`A2` = 'Litomerice' AND strftime('%Y', t1.`date`) = '1996';",
+        "gold_sql": "SELECT COUNT(T2.account_id) FROM district AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id WHERE STRFTIME('%Y', T2.date) = '1996' AND T1.A2 = 'Litomerice'",
+        "exec_acc": 1,
+        "eval_original_idx": 111,
+        "eval_pred_key": "111",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`A2` FROM `client` t1 JOIN `district` t2 ON t1.`district_id` = t2.`district_id` WHERE t1.`gender` = 'F' AND t1.`birth_date` = '1976-01-29';",
+        "gold_sql": "SELECT T1.A2 FROM district AS T1 INNER JOIN client AS T2 ON T1.district_id = T2.district_id WHERE T2.birth_date = '1976-01-29' AND T2.gender = 'F'",
+        "exec_acc": 1,
+        "eval_original_idx": 112,
+        "eval_pred_key": "112",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.account_id, t2.`date` FROM `account` t2 JOIN `district` t1 ON t2.`district_id` = t1.`district_id` WHERE t1.`A2` = 'Prachatice';",
+        "gold_sql": "SELECT T1.account_id, T1.date FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.A2 = 'Prachatice'",
+        "exec_acc": 1,
+        "eval_original_idx": 121,
+        "eval_pred_key": "121",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`A2`, t2.`A3` FROM `loan` t3 JOIN `account` t1 ON t3.`account_id` = t1.`account_id` JOIN `district` t2 ON t1.`district_id` = t2.`district_id` WHERE t3.`loan_id` = 4990",
+        "gold_sql": "SELECT T2.A2, T2.A3 FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN loan AS T3 ON T1.account_id = T3.account_id WHERE T3.loan_id = 4990",
+        "exec_acc": 1,
+        "eval_original_idx": 122,
+        "eval_pred_key": "122",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t1.`account_id`, t2.`A2`, t2.`A3` FROM `account` t1 JOIN `district` t2 ON t1.`district_id` = t2.`district_id` JOIN `loan` t3 ON t1.`account_id` = t3.`account_id` WHERE t3.`amount` > 300000",
+        "gold_sql": "SELECT T1.account_id, T2.A2, T2.A3 FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN loan AS T3 ON T1.account_id = T3.account_id WHERE T3.amount > 300000",
+        "exec_acc": 1,
+        "eval_original_idx": 123,
+        "eval_pred_key": "123",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT (COUNT(CASE WHEN t2.`A2` = 'Decin' THEN 1 END) * 100.0 / COUNT(*)) AS percentage FROM `account` t1 LEFT JOIN `district` t2 ON t1.`district_id` = t2.`district_id` WHERE strftime('%Y', t1.`date`) = '1993';",
+        "gold_sql": "SELECT CAST(SUM(T1.A2 = 'Decin') AS REAL) * 100 / COUNT(account_id) FROM district AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id WHERE STRFTIME('%Y', T2.date) = '1993'",
+        "exec_acc": 1,
+        "eval_original_idx": 126,
+        "eval_pred_key": "126",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM card JOIN disp ON card.disp_id = disp.disp_id WHERE card.type = 'gold' AND disp.type = 'DISPONENT';",
+        "gold_sql": "SELECT COUNT(T1.card_id) FROM card AS T1 INNER JOIN disp AS T2 ON T1.disp_id = T2.disp_id WHERE T1.type = 'gold' AND T2.type = 'DISPONENT'",
+        "exec_acc": 1,
+        "eval_original_idx": 139,
+        "eval_pred_key": "139",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(t2.account_id) AS count FROM `district` t1 JOIN `account` t2 ON t1.`district_id` = t2.`district_id` WHERE t1.`A2` = 'Pisek';",
+        "gold_sql": "SELECT COUNT(T1.account_id) FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.A2 = 'Pisek'",
+        "exec_acc": 1,
+        "eval_original_idx": 140,
+        "eval_pred_key": "140",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(DISTINCT t1.`client_id`) AS female_client_count FROM `client` t1 JOIN `district` t2 ON t1.`district_id` = t2.`district_id` WHERE t1.`gender` = 'F' AND t2.`A3` LIKE '%south Bohemia%';",
+        "gold_sql": "SELECT COUNT(T1.client_id) FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T1.gender = 'F' AND T2.A3 = 'south Bohemia'",
+        "exec_acc": 1,
+        "eval_original_idx": 147,
+        "eval_pred_key": "147",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`A2` FROM `trans` t1 JOIN `account` t3 ON t1.`account_id` = t3.`account_id` JOIN `district` t2 ON t3.`district_id` = t2.`district_id` WHERE t1.`type` = 'VYDAJ';",
+        "gold_sql": "SELECT DISTINCT T1.A2 FROM district AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id INNER JOIN trans AS T3 ON T2.account_id = T3.account_id WHERE T3.type = 'VYDAJ'",
+        "exec_acc": 1,
+        "eval_original_idx": 151,
+        "eval_pred_key": "151",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `client` JOIN `district` ON `client`.`district_id` = `district`.`district_id` WHERE `client`.`gender` = 'M' AND `district`.`A2` = 'Hl.m. Praha';",
+        "gold_sql": "SELECT COUNT(T1.client_id) FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T1.gender = 'M' AND T2.A2 = 'Hl.m. Praha'",
+        "exec_acc": 1,
+        "eval_original_idx": 154,
+        "eval_pred_key": "154",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`A15` FROM `account` t1 JOIN `district` t2 ON t1.`district_id` = t2.`district_id` WHERE t1.account_id = 532;",
+        "gold_sql": "SELECT T1.A15 FROM district AS T1 INNER JOIN `account` AS T2 ON T1.district_id = T2.district_id WHERE T2.account_id = 532",
+        "exec_acc": 1,
+        "eval_original_idx": 157,
+        "eval_pred_key": "157",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t1.`district_id` FROM `account` t1 JOIN `order` t2 ON t1.`account_id` = t2.`account_id` WHERE t2.order_id = 33333;",
+        "gold_sql": "SELECT T3.district_id FROM `order` AS T1 INNER JOIN account AS T2 ON T1.account_id = T2.account_id INNER JOIN district AS T3 ON T2.district_id = T3.district_id WHERE T1.order_id = 33333",
+        "exec_acc": 1,
+        "eval_original_idx": 158,
+        "eval_pred_key": "158",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `account` JOIN `loan` ON `account`.`account_id` = `loan`.`account_id` WHERE `account`.`frequency` = 'POPLATEK TYDNE' AND `loan`.`amount` < 200000",
+        "gold_sql": "SELECT COUNT(T1.account_id) FROM loan AS T1 INNER JOIN account AS T2 ON T1.account_id = T2.account_id WHERE T2.frequency = 'POPLATEK TYDNE' AND T1.amount < 200000",
+        "exec_acc": 1,
+        "eval_original_idx": 160,
+        "eval_pred_key": "160",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`type` FROM `card` t2 JOIN `disp` t1 ON t2.`disp_id` = t1.`disp_id` JOIN `client` t3 ON t1.`client_id` = t3.`client_id` WHERE t3.`client_id` = 13539;",
+        "gold_sql": "SELECT T3.type FROM disp AS T1 INNER JOIN client AS T2 ON T1.client_id = T2.client_id INNER JOIN card AS T3 ON T1.disp_id = T3.disp_id WHERE T2.client_id = 13539",
+        "exec_acc": 1,
+        "eval_original_idx": 161,
+        "eval_pred_key": "161",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `account` t1 JOIN `district` t2 ON t1.`district_id` = t2.`district_id` WHERE t2.`A2` = 'Jesenik';",
+        "gold_sql": "SELECT COUNT(T2.account_id) FROM district AS T1 INNER JOIN account AS T2 ON T1.district_id = T2.district_id WHERE T1.A2 = 'Jesenik'",
+        "exec_acc": 1,
+        "eval_original_idx": 166,
+        "eval_pred_key": "166",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t2.`client_id` FROM `disp` t2 JOIN `card` t1 ON t2.`disp_id` = t1.`disp_id` WHERE t1.`type` = 'junior' AND t1.`issued` >= '1997-01-01'",
+        "gold_sql": "SELECT T2.client_id FROM card AS T1 INNER JOIN disp AS T2 ON T1.disp_id = T2.disp_id WHERE T1.type = 'junior' AND T1.issued >= '1997-01-01'",
+        "exec_acc": 1,
+        "eval_original_idx": 167,
+        "eval_pred_key": "167",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT (COUNT(CASE WHEN t2.`gender` = 'F' THEN 1 END) * 100.0 / COUNT(*)) AS percentage FROM `client` t2 JOIN `district` t1 ON t2.`district_id` = t1.`district_id` WHERE t1.`A11` > 10000;",
+        "gold_sql": "SELECT CAST(SUM(T2.gender = 'F') AS REAL) * 100 / COUNT(T2.client_id) FROM district AS T1 INNER JOIN client AS T2 ON T1.district_id = T2.district_id WHERE T1.A11 > 10000",
+        "exec_acc": 1,
+        "eval_original_idx": 168,
+        "eval_pred_key": "168",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `trans` WHERE `trans`.`operation` = 'VYBER KARTOU' AND `trans`.`date` > '1995-12-31';",
+        "gold_sql": "SELECT COUNT(account_id) FROM trans WHERE STRFTIME('%Y', date) > '1995' AND operation = 'VYBER KARTOU'",
+        "exec_acc": 1,
+        "eval_original_idx": 170,
+        "eval_pred_key": "170",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t1.`type` FROM `card` t1 JOIN `disp` t2 ON t1.`disp_id` = t2.`disp_id` WHERE t2.`client_id` = 9;",
+        "gold_sql": "SELECT T3.type FROM client AS T1 INNER JOIN disp AS T2 ON T1.client_id = T2.client_id INNER JOIN card AS T3 ON T2.disp_id = T3.disp_id WHERE T1.client_id = 9",
+        "exec_acc": 1,
+        "eval_original_idx": 178,
+        "eval_pred_key": "178",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(DISTINCT t3.`client_id`) FROM `client` t3 JOIN `disp` t1 ON t3.`client_id` = t1.`client_id` JOIN `card` t2 ON t1.`disp_id` = t2.`disp_id` WHERE t3.`gender` = 'F' AND t2.`type` = 'junior';",
+        "gold_sql": "SELECT COUNT(T1.client_id) FROM client AS T1 INNER JOIN disp AS T2 ON T1.client_id = T2.client_id INNER JOIN card AS T3 ON T2.disp_id = T3.disp_id WHERE T1.gender = 'F' AND T3.type = 'junior'",
+        "exec_acc": 1,
+        "eval_original_idx": 184,
+        "eval_pred_key": "184",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT t4.`account_id` FROM `account` t4 JOIN `client` t3 ON t4.`district_id` = t3.`district_id` JOIN `district` t2 ON t3.`district_id` = t2.`district_id` WHERE t3.`gender` = 'F' ORDER BY t3.`birth_date` ASC, t2.`A11` ASC LIMIT 1;",
+        "gold_sql": "SELECT T3.account_id FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN account AS T3 ON T2.district_id = T3.district_id WHERE T1.gender = 'F' ORDER BY T1.birth_date ASC, T2.A11 ASC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 189,
+        "eval_pred_key": "189",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "financial",
+        "pred_sql": "SELECT COUNT(*) FROM `loan` JOIN `account` ON `loan`.`account_id` = `account`.`account_id` WHERE `loan`.`duration` = 24 AND `account`.`frequency` = 'POPLATEK TYDNE';",
+        "gold_sql": "SELECT COUNT(T2.account_id) FROM account AS T1 INNER JOIN loan AS T2 ON T1.account_id = T2.account_id WHERE T2.duration = 24 AND T1.frequency = 'POPLATEK TYDNE'",
+        "exec_acc": 1,
+        "eval_original_idx": 191,
+        "eval_pred_key": "191",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t3.`power_name` FROM `superpower` t3 JOIN `hero_power` t1 ON t3.id = t1.`power_id` JOIN `superhero` t2 ON t1.`hero_id` = t2.id WHERE t2.`superhero_name` = '3-D Man';",
+        "gold_sql": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = '3-D Man'",
+        "exec_acc": 1,
+        "eval_original_idx": 717,
+        "eval_pred_key": "717",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `hero_power` JOIN `superpower` ON `hero_power`.`power_id` = `superpower`.id WHERE `superpower`.`power_name` = 'Super Strength';",
+        "gold_sql": "SELECT COUNT(T1.hero_id) FROM hero_power AS T1 INNER JOIN superpower AS T2 ON T1.power_id = T2.id WHERE T2.power_name = 'Super Strength'",
+        "exec_acc": 1,
+        "eval_original_idx": 718,
+        "eval_pred_key": "718",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `superhero` t2 JOIN `colour` t1 ON t2.`eye_colour_id` = t1.id WHERE t1.`colour` = 'Blue';",
+        "gold_sql": "SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T2.colour = 'Blue'",
+        "exec_acc": 1,
+        "eval_original_idx": 721,
+        "eval_pred_key": "721",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`colour` FROM `superhero` t1 JOIN `colour` t2 ON t1.`skin_colour_id` = t2.id WHERE t1.`superhero_name` = 'Apocalypse'",
+        "gold_sql": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.skin_colour_id = T2.id WHERE T1.superhero_name = 'Apocalypse'",
+        "exec_acc": 1,
+        "eval_original_idx": 722,
+        "eval_pred_key": "722",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(DISTINCT t4.id) FROM `superhero` t4 JOIN `colour` t1 ON t4.`eye_colour_id` = t1.id JOIN `hero_power` t2 ON t2.`hero_id` = t4.id JOIN `superpower` t3 ON t2.`power_id` = t3.id WHERE t1.`colour` = 'Blue' AND t3.`power_name` = 'Agility';",
+        "gold_sql": "SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id INNER JOIN colour AS T4 ON T1.eye_colour_id = T4.id WHERE T3.power_name = 'Agility' AND T4.colour = 'Blue'",
+        "exec_acc": 1,
+        "eval_original_idx": 723,
+        "eval_pred_key": "723",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `superhero` t2 JOIN `publisher` t1 ON t2.`publisher_id` = t1.`id` WHERE t1.`publisher_name` = 'Marvel Comics';",
+        "gold_sql": "SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T2.publisher_name = 'Marvel Comics'",
+        "exec_acc": 1,
+        "eval_original_idx": 725,
+        "eval_pred_key": "725",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`full_name` FROM `superhero` t2 JOIN `publisher` t1 ON t2.`publisher_id` = t1.id WHERE t1.`publisher_name` = 'Marvel Comics' ORDER BY t2.`height_cm` DESC LIMIT 1;",
+        "gold_sql": "SELECT T1.full_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T2.publisher_name = 'Marvel Comics' ORDER BY T1.height_cm DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 726,
+        "eval_pred_key": "726",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`publisher_name` FROM `publisher` t1 JOIN `superhero` t2 ON t1.id = t2.`publisher_id` WHERE t2.`superhero_name` = 'Sauron';",
+        "gold_sql": "SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name = 'Sauron'",
+        "exec_acc": 1,
+        "eval_original_idx": 727,
+        "eval_pred_key": "727",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT AVG(t2.`height_cm`) AS avg_col_3 FROM `superhero` t2 JOIN `publisher` t1 ON t2.`publisher_id` = t1.id WHERE t1.`publisher_name` = 'Marvel Comics';",
+        "gold_sql": "SELECT AVG(T1.height_cm) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T2.publisher_name = 'Marvel Comics'",
+        "exec_acc": 1,
+        "eval_original_idx": 729,
+        "eval_pred_key": "729",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `superhero` t1 JOIN `publisher` t2 ON t1.`publisher_id` = t2.id WHERE t2.`publisher_name` = 'DC Comics';",
+        "gold_sql": "SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T2.publisher_name = 'DC Comics'",
+        "exec_acc": 1,
+        "eval_original_idx": 731,
+        "eval_pred_key": "731",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`publisher_name` FROM `superhero` t1 JOIN `publisher` t2 ON t1.`publisher_id` = t2.id WHERE t1.`superhero_name` = 'Blue Beetle II';",
+        "gold_sql": "SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name = 'Blue Beetle II'",
+        "exec_acc": 1,
+        "eval_original_idx": 734,
+        "eval_pred_key": "734",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `superhero` t1 JOIN `colour` t2 ON t1.`hair_colour_id` = t2.id WHERE t2.`colour` = 'Blond';",
+        "gold_sql": "SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.hair_colour_id = T2.id WHERE T2.colour = 'Blond'",
+        "exec_acc": 1,
+        "eval_original_idx": 735,
+        "eval_pred_key": "735",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`superhero_name` FROM `superhero` t1 JOIN `hero_power` t3 ON t1.id = t3.`hero_id` JOIN `superpower` t2 ON t2.id = t3.`power_id` WHERE t2.`power_name` = 'Death Touch';",
+        "gold_sql": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Death Touch'",
+        "exec_acc": 1,
+        "eval_original_idx": 739,
+        "eval_pred_key": "739",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `superhero` JOIN `race` ON `superhero`.`race_id` = `race`.`id` WHERE `race`.`race` = 'Vampire';",
+        "gold_sql": "SELECT COUNT(T1.superhero_name) FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'Vampire'",
+        "exec_acc": 1,
+        "eval_original_idx": 742,
+        "eval_pred_key": "742",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT id FROM publisher WHERE publisher.publisher_name = 'Star Trek';",
+        "gold_sql": "SELECT id FROM publisher WHERE publisher_name = 'Star Trek'",
+        "exec_acc": 1,
+        "eval_original_idx": 745,
+        "eval_pred_key": "745",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) AS total_count FROM `superhero` WHERE `superhero`.`full_name` IS NULL;",
+        "gold_sql": "SELECT COUNT(id) FROM superhero WHERE full_name IS NULL",
+        "exec_acc": 1,
+        "eval_original_idx": 747,
+        "eval_pred_key": "747",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`colour` FROM `superhero` t1 JOIN `colour` t2 ON t1.`eye_colour_id` = t2.id WHERE t1.id = 75;",
+        "gold_sql": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.id = 75",
+        "exec_acc": 1,
+        "eval_original_idx": 748,
+        "eval_pred_key": "748",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`power_name` FROM `superpower` t2 JOIN `hero_power` t3 ON t2.id = t3.`power_id` JOIN `superhero` t1 ON t1.id = t3.`hero_id` WHERE t1.`superhero_name` = 'Deathlok';",
+        "gold_sql": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Deathlok'",
+        "exec_acc": 1,
+        "eval_original_idx": 749,
+        "eval_pred_key": "749",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT AVG(`superhero`.`weight_kg`) AS avg_col_2 FROM `superhero` WHERE `superhero`.`gender_id` = 2;",
+        "gold_sql": "SELECT AVG(T1.weight_kg) FROM superhero AS T1 INNER JOIN gender AS T2 ON T1.gender_id = T2.id WHERE T2.gender = 'Female'",
+        "exec_acc": 1,
+        "eval_original_idx": 750,
+        "eval_pred_key": "750",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`power_name` FROM `superpower` t2 JOIN `hero_power` t4 ON t2.id = t4.`power_id` JOIN `superhero` t3 ON t4.`hero_id` = t3.id JOIN `gender` t1 ON t3.`gender_id` = t1.id WHERE t1.`gender` = 'Male' LIMIT 5;",
+        "gold_sql": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T3.id = T2.power_id INNER JOIN gender AS T4 ON T4.id = T1.gender_id WHERE T4.gender = 'Male' LIMIT 5",
+        "exec_acc": 1,
+        "eval_original_idx": 751,
+        "eval_pred_key": "751",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`superhero_name` FROM `superhero` t2 JOIN `race` t1 ON t2.`race_id` = t1.`id` WHERE t1.`race` = 'Alien';",
+        "gold_sql": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'Alien'",
+        "exec_acc": 1,
+        "eval_original_idx": 752,
+        "eval_pred_key": "752",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT `superhero`.`superhero_name` FROM `superhero` WHERE `superhero`.`height_cm` BETWEEN 170 AND 190 AND `superhero`.`eye_colour_id` = 1",
+        "gold_sql": "SELECT DISTINCT T1.superhero_name FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.height_cm BETWEEN 170 AND 190 AND T2.colour LIKE 'No Colour'",
+        "exec_acc": 1,
+        "eval_original_idx": 753,
+        "eval_pred_key": "753",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`full_name` FROM `superhero` t1 JOIN `race` t2 ON t1.`race_id` = t2.`id` WHERE t2.`race` = 'Demi-God' LIMIT 5;",
+        "gold_sql": "SELECT T1.full_name FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'Demi-God'",
+        "exec_acc": 1,
+        "eval_original_idx": 755,
+        "eval_pred_key": "755",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`race` FROM `superhero` t2 JOIN `race` t1 ON t2.`race_id` = t1.`id` WHERE t2.`weight_kg` = 169;",
+        "gold_sql": "SELECT T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.weight_kg = 169",
+        "exec_acc": 1,
+        "eval_original_idx": 757,
+        "eval_pred_key": "757",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`colour` FROM `superhero` t1 JOIN `colour` t2 ON t1.`eye_colour_id` = t2.id WHERE t1.`weight_kg` = (SELECT MAX(`superhero`.`weight_kg`) FROM `superhero`)",
+        "gold_sql": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id ORDER BY T1.weight_kg DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 759,
+        "eval_pred_key": "759",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT (SUM(CASE WHEN `superhero`.`publisher_id` = 13 THEN 1 ELSE 0 END) * 100.0 / COUNT(*)) AS percentage FROM `superhero` WHERE `superhero`.`height_cm` BETWEEN 150 AND 180;",
+        "gold_sql": "SELECT CAST(COUNT(CASE WHEN T2.publisher_name = 'Marvel Comics' THEN 1 ELSE NULL END) AS REAL) * 100 / COUNT(T1.id) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.height_cm BETWEEN 150 AND 180",
+        "exec_acc": 1,
+        "eval_original_idx": 760,
+        "eval_pred_key": "760",
+        "difficulty": "challenging"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`full_name` FROM `superhero` t1 JOIN `gender` t2 ON t1.`gender_id` = t2.id WHERE t2.`gender` = 'Male' AND t1.`weight_kg` > 0.79 * (SELECT AVG(`superhero`.`weight_kg`) FROM `superhero`)",
+        "gold_sql": "SELECT T1.full_name FROM superhero AS T1 INNER JOIN gender AS T2 ON T1.gender_id = T2.id WHERE T2.gender = 'Male' AND T1.weight_kg * 100 > ( SELECT AVG(weight_kg) FROM superhero ) * 79",
+        "exec_acc": 1,
+        "eval_original_idx": 761,
+        "eval_pred_key": "761",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`attribute_value` FROM `superhero` t1 JOIN `hero_attribute` t2 ON t1.id = t2.`hero_id` WHERE t1.`superhero_name` = 'Abomination';",
+        "gold_sql": "SELECT T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id WHERE T1.superhero_name = 'Abomination'",
+        "exec_acc": 1,
+        "eval_original_idx": 763,
+        "eval_pred_key": "763",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`power_name` FROM `superpower` t2 JOIN `hero_power` t1 ON t2.id = t1.`power_id` WHERE t1.`hero_id` = '1';",
+        "gold_sql": "SELECT DISTINCT T2.power_name FROM hero_power AS T1 INNER JOIN superpower AS T2 ON T1.power_id = T2.id WHERE T1.hero_id = 1",
+        "exec_acc": 1,
+        "eval_original_idx": 764,
+        "eval_pred_key": "764",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`eye_colour_id`, t2.`hair_colour_id`, t2.`skin_colour_id` FROM `superhero` t2 JOIN `gender` t4 ON t2.`gender_id` = t4.id JOIN `publisher` t3 ON t2.`publisher_id` = t3.id WHERE t4.`gender` = 'Female' AND t3.`publisher_name` = 'Dark Horse Comics';",
+        "gold_sql": "SELECT T1.eye_colour_id, T1.hair_colour_id, T1.skin_colour_id FROM superhero AS T1 INNER JOIN publisher AS T2 ON T2.id = T1.publisher_id INNER JOIN gender AS T3 ON T3.id = T1.gender_id WHERE T2.publisher_name = 'Dark Horse Comics' AND T3.gender = 'Female'",
+        "exec_acc": 1,
+        "eval_original_idx": 772,
+        "eval_pred_key": "772",
+        "difficulty": "challenging"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`superhero_name`, t2.`publisher_name` FROM `superhero` t1 JOIN `publisher` t2 ON t1.`publisher_id` = t2.id WHERE t1.`hair_colour_id` = t1.`skin_colour_id` AND t1.`hair_colour_id` = t1.`eye_colour_id`;",
+        "gold_sql": "SELECT T1.superhero_name, T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.eye_colour_id = T1.hair_colour_id AND T1.eye_colour_id = T1.skin_colour_id",
+        "exec_acc": 1,
+        "eval_original_idx": 773,
+        "eval_pred_key": "773",
+        "difficulty": "challenging"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`race` AS group_name FROM `superhero` t1 JOIN `race` t2 ON t1.`race_id` = t2.`id` WHERE t1.`superhero_name` = 'A-Bomb';",
+        "gold_sql": "SELECT T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.superhero_name = 'A-Bomb'",
+        "exec_acc": 1,
+        "eval_original_idx": 774,
+        "eval_pred_key": "774",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`superhero_name`, t2.`race` FROM `superhero` t1 JOIN `race` t2 ON t1.`race_id` = t2.`id` WHERE t1.`full_name` = 'Charles Chandler';",
+        "gold_sql": "SELECT T1.superhero_name, T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.full_name = 'Charles Chandler'",
+        "exec_acc": 1,
+        "eval_original_idx": 776,
+        "eval_pred_key": "776",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`gender` FROM `gender` t1 JOIN `superhero` t2 ON t1.id = t2.`gender_id` WHERE t2.`superhero_name` = 'Agent 13';",
+        "gold_sql": "SELECT T2.gender FROM superhero AS T1 INNER JOIN gender AS T2 ON T1.gender_id = T2.id WHERE T1.superhero_name = 'Agent 13'",
+        "exec_acc": 1,
+        "eval_original_idx": 777,
+        "eval_pred_key": "777",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `hero_power` JOIN `superhero` ON `hero_power`.`hero_id` = `superhero`.id WHERE `superhero`.`superhero_name` = 'Amazo';",
+        "gold_sql": "SELECT COUNT(T1.power_id) FROM hero_power AS T1 INNER JOIN superhero AS T2 ON T1.hero_id = T2.id WHERE T2.superhero_name = 'Amazo'",
+        "exec_acc": 1,
+        "eval_original_idx": 779,
+        "eval_pred_key": "779",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t3.`power_name` FROM `superpower` t3 JOIN `hero_power` t2 ON t3.id = t2.`power_id` JOIN `superhero` t1 ON t2.`hero_id` = t1.id WHERE t1.`full_name` = 'Hunter Zolomon';",
+        "gold_sql": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.full_name = 'Hunter Zolomon'",
+        "exec_acc": 1,
+        "eval_original_idx": 780,
+        "eval_pred_key": "780",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`height_cm` FROM `superhero` t2 JOIN `colour` t1 ON t2.`eye_colour_id` = t1.id WHERE t1.`colour` = 'Amber';",
+        "gold_sql": "SELECT T1.height_cm FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T2.colour = 'Amber'",
+        "exec_acc": 1,
+        "eval_original_idx": 781,
+        "eval_pred_key": "781",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`superhero_name` FROM `superhero` t2 JOIN `colour` t1_col3 ON t2.`eye_colour_id` = t1_col3.id JOIN `colour` t1_col4 ON t2.`hair_colour_id` = t1_col4.id WHERE t1_col3.`colour` = 'Black' AND t1_col4.`colour` = 'Black';",
+        "gold_sql": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id AND T1.hair_colour_id = T2.id WHERE T2.colour = 'Black'",
+        "exec_acc": 1,
+        "eval_original_idx": 782,
+        "eval_pred_key": "782",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`full_name` FROM `superhero` t1 JOIN `race` t2 ON t1.`race_id` = t2.`id` WHERE t2.`race` = 'Vampire';",
+        "gold_sql": "SELECT T1.full_name FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'Vampire'",
+        "exec_acc": 1,
+        "eval_original_idx": 784,
+        "eval_pred_key": "784",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`race`, t3.`alignment` FROM `superhero` t2 JOIN `race` t1 ON t2.`race_id` = t1.`id` JOIN `alignment` t3 ON t2.`alignment_id` = t3.`id` WHERE t2.`superhero_name` = 'Cameron Hicks';",
+        "gold_sql": "SELECT T2.race, T3.alignment FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id INNER JOIN alignment AS T3 ON T1.alignment_id = T3.id WHERE T1.superhero_name = 'Cameron Hicks'",
+        "exec_acc": 1,
+        "eval_original_idx": 787,
+        "eval_pred_key": "787",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT AVG(t2.`weight_kg`) AS average FROM `superhero` t2 JOIN `race` t1 ON t2.`race_id` = t1.`id` WHERE t1.`race` = 'Alien';",
+        "gold_sql": "SELECT CAST(SUM(T1.weight_kg) AS REAL) / COUNT(T1.id) FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'Alien'",
+        "exec_acc": 1,
+        "eval_original_idx": 789,
+        "eval_pred_key": "789",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`power_name` FROM `superpower` t2 JOIN `hero_power` t3 ON t2.id = t3.`power_id` JOIN `superhero` t1 ON t1.id = t3.`hero_id` WHERE t1.`superhero_name` = 'Abomination';",
+        "gold_sql": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Abomination'",
+        "exec_acc": 1,
+        "eval_original_idx": 792,
+        "eval_pred_key": "792",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`superhero_name` FROM `superhero` t2 JOIN `hero_attribute` t3 ON t2.`id` = t3.`hero_id` JOIN `attribute` t1 ON t3.`attribute_id` = t1.`id` WHERE t1.`attribute_name` = 'Speed' ORDER BY t3.`attribute_value` DESC LIMIT 1;",
+        "gold_sql": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T3.attribute_name = 'Speed' ORDER BY T2.attribute_value DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 794,
+        "eval_pred_key": "794",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `superhero` WHERE `superhero`.`alignment_id` = 3;",
+        "gold_sql": "SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN alignment AS T2 ON T1.alignment_id = T2.id WHERE T2.alignment = 'Neutral'",
+        "exec_acc": 1,
+        "eval_original_idx": 795,
+        "eval_pred_key": "795",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT `superhero`.`superhero_name` FROM `superhero` WHERE `superhero`.`eye_colour_id` = 7 AND `superhero`.`hair_colour_id` = 9;",
+        "gold_sql": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id INNER JOIN colour AS T3 ON T1.hair_colour_id = T3.id WHERE T2.colour = 'Blue' AND T3.colour = 'Brown'",
+        "exec_acc": 1,
+        "eval_original_idx": 797,
+        "eval_pred_key": "797",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`publisher_name` FROM `publisher` t1 JOIN `superhero` t2 ON t1.id = t2.`publisher_id` WHERE t2.`superhero_name` IN ('Hawkman', 'Karate Kid', 'Speedy')",
+        "gold_sql": "SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name IN ('Hawkman', 'Karate Kid', 'Speedy')",
+        "exec_acc": 1,
+        "eval_original_idx": 798,
+        "eval_pred_key": "798",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT (SUM(CASE WHEN `superhero`.`eye_colour_id` = 7 THEN 1 ELSE 0 END) * 100.0 / COUNT(*)) AS percentage FROM `superhero`;",
+        "gold_sql": "SELECT CAST(COUNT(CASE WHEN T2.colour = 'Blue' THEN 1 ELSE NULL END) AS REAL) * 100 / COUNT(T1.id) FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id",
+        "exec_acc": 1,
+        "eval_original_idx": 800,
+        "eval_pred_key": "800",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT CAST(SUM(CASE WHEN `superhero`.`gender_id` = '1' THEN 1 ELSE 0 END) AS FLOAT) / NULLIF(SUM(CASE WHEN `superhero`.`gender_id` = '2' THEN 1 ELSE 0 END), 0) AS ratio FROM `superhero`;",
+        "gold_sql": "SELECT CAST(COUNT(CASE WHEN T2.gender = 'Male' THEN T1.id ELSE NULL END) AS REAL) / COUNT(CASE WHEN T2.gender = 'Female' THEN T1.id ELSE NULL END) FROM superhero AS T1 INNER JOIN gender AS T2 ON T1.gender_id = T2.id",
+        "exec_acc": 1,
+        "eval_original_idx": 801,
+        "eval_pred_key": "801",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT `superhero`.`superhero_name` FROM `superhero` WHERE id = 294;",
+        "gold_sql": "SELECT superhero_name FROM superhero WHERE id = 294",
+        "exec_acc": 1,
+        "eval_original_idx": 804,
+        "eval_pred_key": "804",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT `superhero`.`full_name` FROM `superhero` WHERE `superhero`.`weight_kg` = 0 OR `superhero`.`weight_kg` = NULL;",
+        "gold_sql": "SELECT DISTINCT full_name FROM superhero WHERE full_name IS NOT NULL AND (weight_kg IS NULL OR weight_kg = 0)",
+        "exec_acc": 1,
+        "eval_original_idx": 805,
+        "eval_pred_key": "805",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`colour` FROM `superhero` t1 JOIN `colour` t2 ON t1.`eye_colour_id` = t2.id WHERE t1.`full_name` = 'Karen Beecher-Duncan';",
+        "gold_sql": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.full_name = 'Karen Beecher-Duncan'",
+        "exec_acc": 1,
+        "eval_original_idx": 806,
+        "eval_pred_key": "806",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT `race`.`race` FROM `race` JOIN `superhero` ON `race`.`id` = `superhero`.`race_id` WHERE `superhero`.`weight_kg` = 108 AND `superhero`.`height_cm` = 188;",
+        "gold_sql": "SELECT DISTINCT T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.weight_kg = 108 AND T1.height_cm = 188",
+        "exec_acc": 1,
+        "eval_original_idx": 808,
+        "eval_pred_key": "808",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`publisher_name` FROM `publisher` t1 JOIN `superhero` t2 ON t1.`id` = t2.`publisher_id` WHERE t2.`id` = 38;",
+        "gold_sql": "SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.id = 38",
+        "exec_acc": 1,
+        "eval_original_idx": 809,
+        "eval_pred_key": "809",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`race` FROM `superhero` t1 JOIN `race` t2 ON t1.`race_id` = t2.`id` JOIN `hero_attribute` t3 ON t1.`id` = t3.`hero_id` WHERE t3.`attribute_value` = (SELECT MAX(`attribute_value`) FROM `hero_attribute`) LIMIT 1;",
+        "gold_sql": "SELECT T3.race FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN race AS T3 ON T1.race_id = T3.id ORDER BY T2.attribute_value DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 810,
+        "eval_pred_key": "810",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `superhero` WHERE `superhero`.`alignment_id` = 1 AND `superhero`.`gender_id` = 2;",
+        "gold_sql": "SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN alignment AS T2 ON T1.alignment_id = T2.id INNER JOIN gender AS T3 ON T1.gender_id = T3.id WHERE T2.alignment = 'Good' AND T3.gender = 'Female'",
+        "exec_acc": 1,
+        "eval_original_idx": 815,
+        "eval_pred_key": "815",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`superhero_name` FROM `superhero` t1 JOIN `hero_attribute` t2 ON t1.id = t2.`hero_id` WHERE t2.`attribute_value` BETWEEN 75 AND 80",
+        "gold_sql": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id WHERE T2.attribute_value BETWEEN 75 AND 80",
+        "exec_acc": 1,
+        "eval_original_idx": 816,
+        "eval_pred_key": "816",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT (SUM(CASE WHEN t3.id = 2 THEN 1 ELSE 0 END) * 100.0 / COUNT(*)) AS percentage FROM `superhero` t1 JOIN `alignment` t2 ON t1.`alignment_id` = t2.id JOIN `gender` t3 ON t1.`gender_id` = t3.id WHERE t2.id = 2;",
+        "gold_sql": "SELECT CAST(COUNT(CASE WHEN T3.gender = 'Female' THEN T1.id ELSE NULL END) AS REAL) * 100 / COUNT(T1.id) FROM superhero AS T1 INNER JOIN alignment AS T2 ON T1.alignment_id = T2.id INNER JOIN gender AS T3 ON T1.gender_id = T3.id WHERE T2.alignment = 'Bad'",
+        "exec_acc": 1,
+        "eval_original_idx": 818,
+        "eval_pred_key": "818",
+        "difficulty": "challenging"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t3.`power_name` FROM `superpower` t3 JOIN `hero_power` t2 ON t2.`power_id` = t3.id JOIN `superhero` t1 ON t1.id = t2.`hero_id` WHERE t1.`superhero_name` = 'Ajax';",
+        "gold_sql": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Ajax'",
+        "exec_acc": 1,
+        "eval_original_idx": 821,
+        "eval_pred_key": "821",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM superhero JOIN colour ON superhero.skin_colour_id = colour.id JOIN alignment ON superhero.alignment_id = alignment.id WHERE colour.colour = 'Green' AND alignment.alignment = 'Bad';",
+        "gold_sql": "SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN alignment AS T2 ON T1.alignment_id = T2.id INNER JOIN colour AS T3 ON T1.skin_colour_id = T3.id WHERE T2.alignment = 'Bad' AND T3.colour = 'Green'",
+        "exec_acc": 1,
+        "eval_original_idx": 822,
+        "eval_pred_key": "822",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) FROM `superhero` t3 JOIN `gender` t2 ON t3.`gender_id` = t2.`id` JOIN `publisher` t1 ON t3.`publisher_id` = t1.`id` WHERE t2.`gender` = 'Female' AND t1.`publisher_name` = 'Marvel Comics';",
+        "gold_sql": "SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id INNER JOIN gender AS T3 ON T1.gender_id = T3.id WHERE T2.publisher_name = 'Marvel Comics' AND T3.gender = 'Female'",
+        "exec_acc": 1,
+        "eval_original_idx": 823,
+        "eval_pred_key": "823",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`superhero_name` FROM `superhero` t2 JOIN `hero_power` t1 ON t2.id = t1.`hero_id` JOIN `superpower` t3 ON t1.`power_id` = t3.id WHERE t3.`power_name` = 'Wind Control' ORDER BY t2.`superhero_name` ASC;",
+        "gold_sql": "SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Wind Control' ORDER BY T1.superhero_name",
+        "exec_acc": 1,
+        "eval_original_idx": 824,
+        "eval_pred_key": "824",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT AVG(t1.`height_cm`) FROM `superhero` t1 JOIN `publisher` t2 ON t1.`publisher_id` = t2.`id` JOIN `race` t3 ON t1.`race_id` = t3.`id` WHERE t2.`publisher_name` = 'Dark Horse Comics' AND t3.`race` <> 'Human';",
+        "gold_sql": "SELECT AVG(T1.height_cm) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id INNER JOIN race AS T3 ON T1.race_id = T3.id WHERE T2.publisher_name = 'Dark Horse Comics' AND T3.race != 'Human'",
+        "exec_acc": 1,
+        "eval_original_idx": 827,
+        "eval_pred_key": "827",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT (SELECT COUNT(*) FROM `superhero` t2 JOIN `publisher` t1 ON t2.`publisher_id` = t1.id WHERE t1.`publisher_name` = 'DC Comics') - (SELECT COUNT(*) FROM `superhero` t2 JOIN `publisher` t1 ON t2.`publisher_id` = t1.id WHERE t1.`publisher_name` = 'Marvel Comics') AS difference;",
+        "gold_sql": "SELECT SUM(CASE WHEN T2.publisher_name = 'DC Comics' THEN 1 ELSE 0 END) - SUM(CASE WHEN T2.publisher_name = 'Marvel Comics' THEN 1 ELSE 0 END) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id",
+        "exec_acc": 1,
+        "eval_original_idx": 829,
+        "eval_pred_key": "829",
+        "difficulty": "challenging"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`colour` FROM `superhero` t1 JOIN `colour` t2 ON t1.`eye_colour_id` = t2.id WHERE t1.`superhero_name` = 'Abomination'",
+        "gold_sql": "SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.superhero_name = 'Abomination'",
+        "exec_acc": 1,
+        "eval_original_idx": 831,
+        "eval_pred_key": "831",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT `superhero`.`superhero_name` FROM `superhero` WHERE `superhero`.`full_name` = 'Charles Chandler';",
+        "gold_sql": "SELECT superhero_name FROM superhero WHERE full_name = 'Charles Chandler'",
+        "exec_acc": 1,
+        "eval_original_idx": 833,
+        "eval_pred_key": "833",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT COUNT(*) AS total_count FROM superhero WHERE superhero.full_name LIKE 'John%';",
+        "gold_sql": "SELECT COUNT(id) FROM superhero WHERE full_name LIKE 'John%'",
+        "exec_acc": 1,
+        "eval_original_idx": 836,
+        "eval_pred_key": "836",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT `hero_attribute`.`hero_id` FROM `hero_attribute` WHERE `hero_attribute`.`attribute_value` = (SELECT MIN(`hero_attribute`.`attribute_value`) FROM `hero_attribute`);",
+        "gold_sql": "SELECT hero_id FROM hero_attribute WHERE attribute_value = ( SELECT MIN(attribute_value) FROM hero_attribute )",
+        "exec_acc": 1,
+        "eval_original_idx": 837,
+        "eval_pred_key": "837",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT `superhero`.`full_name` FROM `superhero` WHERE `superhero`.`superhero_name` = 'Alien';",
+        "gold_sql": "SELECT full_name FROM superhero WHERE superhero_name = 'Alien'",
+        "exec_acc": 1,
+        "eval_original_idx": 838,
+        "eval_pred_key": "838",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`attribute_value` FROM `hero_attribute` t1 JOIN `superhero` t2 ON t1.`hero_id` = t2.id WHERE t2.`superhero_name` = 'Aquababy';",
+        "gold_sql": "SELECT T2.attribute_value FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id WHERE T1.superhero_name = 'Aquababy'",
+        "exec_acc": 1,
+        "eval_original_idx": 840,
+        "eval_pred_key": "840",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t1.`weight_kg`, t2.`race` FROM `superhero` t1 JOIN `race` t2 ON t1.`race_id` = t2.`id` WHERE t1.`id` = 40;",
+        "gold_sql": "SELECT T1.weight_kg, T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.id = 40",
+        "exec_acc": 1,
+        "eval_original_idx": 841,
+        "eval_pred_key": "841",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT AVG(t1.`height_cm`) AS avg_col_1 FROM `superhero` t1 JOIN `alignment` t2 ON t1.`alignment_id` = t2.`id` WHERE t2.`alignment` = 'Neutral';",
+        "gold_sql": "SELECT AVG(T1.height_cm) FROM superhero AS T1 INNER JOIN alignment AS T2 ON T1.alignment_id = T2.id WHERE T2.alignment = 'Neutral'",
+        "exec_acc": 1,
+        "eval_original_idx": 842,
+        "eval_pred_key": "842",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "superhero",
+        "pred_sql": "SELECT t2.`power_name` FROM `superhero` t3 JOIN `hero_power` t1 ON t3.id = t1.`hero_id` JOIN `superpower` t2 ON t1.`power_id` = t2.id WHERE t3.`height_cm` > (SELECT AVG(`superhero`.`height_cm`) * 0.8 FROM `superhero`);",
+        "gold_sql": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.height_cm * 100 > ( SELECT AVG(height_cm) FROM superhero ) * 80",
+        "exec_acc": 1,
+        "eval_original_idx": 845,
+        "eval_pred_key": "845",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Player_Attributes`.`player_api_id` FROM `Player_Attributes` WHERE `Player_Attributes`.`overall_rating` = (SELECT MAX(`Player_Attributes`.`overall_rating`) FROM `Player_Attributes`);",
+        "gold_sql": "SELECT player_api_id FROM Player_Attributes ORDER BY overall_rating DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1020,
+        "eval_pred_key": "1020",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Player_Attributes`.`preferred_foot` FROM `Player_Attributes` WHERE `Player_Attributes`.`potential` = (SELECT MIN(`Player_Attributes`.`potential`) FROM `Player_Attributes`) LIMIT 1;",
+        "gold_sql": "SELECT preferred_foot FROM Player_Attributes WHERE potential IS NOT NULL ORDER BY potential ASC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1022,
+        "eval_pred_key": "1022",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`name` FROM `League` t2 JOIN (SELECT `Match`.`league_id`, SUM(CASE WHEN `Match`.`home_team_goal` = `Match`.`away_team_goal` THEN 1 ELSE 0 END) AS sum_equal FROM `Match` WHERE `Match`.`season` = '2015/2016' GROUP BY `Match`.`league_id` ORDER BY sum_equal DESC LIMIT 1) t1 ON t2.id = t1.`league_id`",
+        "gold_sql": "SELECT t2.name FROM Match AS t1 INNER JOIN League AS t2 ON t1.league_id = t2.id WHERE t1.season = '2015/2016' AND t1.home_team_goal = t1.away_team_goal GROUP BY t2.name ORDER BY COUNT(t1.id) DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1030,
+        "eval_pred_key": "1030",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT SUM(`Player`.`height`) * 1.0 / COUNT(id) AS average_height FROM `Player` WHERE `Player`.`birthday` >= '1990-01-01 00:00:00' AND `Player`.`birthday` < '1996-01-01 00:00:00';",
+        "gold_sql": "SELECT SUM(height) / COUNT(id) FROM Player WHERE SUBSTR(birthday, 1, 4) BETWEEN '1990' AND '1995'",
+        "exec_acc": 1,
+        "eval_original_idx": 1033,
+        "eval_pred_key": "1033",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Team_Attributes`.`team_fifa_api_id` FROM `Team_Attributes` WHERE `Team_Attributes`.`buildUpPlaySpeed` BETWEEN 51 AND 59;",
+        "gold_sql": "SELECT DISTINCT team_fifa_api_id FROM Team_Attributes WHERE buildUpPlaySpeed > 50 AND buildUpPlaySpeed < 60",
+        "exec_acc": 1,
+        "eval_original_idx": 1035,
+        "eval_pred_key": "1035",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT SUM(t1.long_shots) * 1.0 / COUNT(t1.player_fifa_api_id) AS average_number_of_long_shot FROM Player_Attributes t1 JOIN Player t2 ON t1.player_fifa_api_id = t2.player_fifa_api_id AND t1.player_api_id = t2.player_api_id WHERE t2.player_name = 'Ahmed Samir Farag';",
+        "gold_sql": "SELECT CAST(SUM(t2.long_shots) AS REAL) / COUNT(t2.`date`) FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Ahmed Samir Farag'",
+        "exec_acc": 1,
+        "eval_original_idx": 1039,
+        "eval_pred_key": "1039",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Team`.`team_short_name` FROM `Team` WHERE `Team`.`team_long_name` = 'Queens Park Rangers';",
+        "gold_sql": "SELECT team_short_name FROM Team WHERE team_long_name = 'Queens Park Rangers'",
+        "exec_acc": 1,
+        "eval_original_idx": 1043,
+        "eval_pred_key": "1043",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`buildUpPlayPositioningClass` FROM `Team_Attributes` t1 JOIN `Team` t2 ON t1.`team_fifa_api_id` = t2.`team_fifa_api_id` OR t1.`team_api_id` = t2.`team_api_id` WHERE t2.`team_long_name` = 'ADO Den Haag';",
+        "gold_sql": "SELECT DISTINCT t2.buildUpPlayPositioningClass FROM Team AS t1 INNER JOIN Team_attributes AS t2 ON t1.team_fifa_api_id = t2.team_fifa_api_id WHERE t1.team_long_name = 'ADO Den Haag'",
+        "exec_acc": 1,
+        "eval_original_idx": 1046,
+        "eval_pred_key": "1046",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`heading_accuracy` FROM `Player_Attributes` t2 JOIN `Player` t1 ON t2.`player_api_id` = t1.`player_api_id` OR t2.`player_fifa_api_id` = t1.`player_fifa_api_id` WHERE t1.`player_name` = 'Francois Affolter' AND t2.`date` = '2014-09-18 00:00:00'",
+        "gold_sql": "SELECT t2.heading_accuracy FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Francois Affolter' AND SUBSTR(t2.`date`, 1, 10) = '2014-09-18'",
+        "exec_acc": 1,
+        "eval_original_idx": 1047,
+        "eval_pred_key": "1047",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`overall_rating` FROM `Player` t1 JOIN `Player_Attributes` t2 ON t1.`player_api_id` = t2.`player_api_id` OR t1.`player_fifa_api_id` = t2.`player_fifa_api_id` WHERE t1.`player_name` = 'Gabriel Tamas' AND strftime('%Y', t2.`date`) = '2011';",
+        "gold_sql": "SELECT t2.overall_rating FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Gabriel Tamas' AND SUBSTR(t2.`date`, 1, 4) = '2011'",
+        "exec_acc": 1,
+        "eval_original_idx": 1048,
+        "eval_pred_key": "1048",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT COUNT(*) FROM `Match` JOIN `League` ON `Match`.`league_id` = `League`.id WHERE `Match`.`season` = '2015/2016' AND `League`.`name` = 'Scotland Premier League';",
+        "gold_sql": "SELECT COUNT(t2.id) FROM League AS t1 INNER JOIN Match AS t2 ON t1.id = t2.league_id WHERE t2.season = '2015/2016' AND t1.name = 'Scotland Premier League'",
+        "exec_acc": 1,
+        "eval_original_idx": 1049,
+        "eval_pred_key": "1049",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT pa.preferred_foot FROM Player p JOIN Player_Attributes pa ON p.player_api_id = pa.player_api_id ORDER BY p.birthday DESC LIMIT 1",
+        "gold_sql": "SELECT t2.preferred_foot FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id ORDER BY t1.birthday DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1050,
+        "eval_pred_key": "1050",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`birthday` FROM `Player_Attributes` t1 JOIN `Player` t2 ON t1.`player_fifa_api_id` = t2.`player_fifa_api_id` AND t1.`player_api_id` = t2.`player_api_id` WHERE t1.`overall_rating` = (SELECT MAX(`Player_Attributes`.`overall_rating`) FROM `Player_Attributes`)",
+        "gold_sql": "SELECT t1.birthday FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id ORDER BY t2.overall_rating DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1055,
+        "eval_pred_key": "1055",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`name` FROM `League` t2 JOIN `Country` t1 ON t2.`country_id` = t1.id WHERE t1.`name` = 'Netherlands';",
+        "gold_sql": "SELECT t2.name FROM Country AS t1 INNER JOIN League AS t2 ON t1.id = t2.country_id WHERE t1.name = 'Netherlands'",
+        "exec_acc": 1,
+        "eval_original_idx": 1056,
+        "eval_pred_key": "1056",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT AVG(t2.`home_team_goal`) FROM `Match` t2 JOIN `Country` t1 ON t2.`country_id` = t1.id WHERE t2.`season` = '2010/2011' AND t1.`name` = 'Poland';",
+        "gold_sql": "SELECT CAST(SUM(t2.home_team_goal) AS REAL) / COUNT(t2.id) FROM Country AS t1 INNER JOIN Match AS t2 ON t1.id = t2.country_id WHERE t1.name = 'Poland' AND t2.season = '2010/2011'",
+        "exec_acc": 1,
+        "eval_original_idx": 1057,
+        "eval_pred_key": "1057",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Player`.`player_name` FROM `Player` WHERE `Player`.`height` > 180;",
+        "gold_sql": "SELECT player_name FROM Player WHERE height > 180",
+        "exec_acc": 1,
+        "eval_original_idx": 1059,
+        "eval_pred_key": "1059",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`potential` FROM `Player_Attributes` t1 JOIN `Player` t2 ON t1.`player_api_id` = t2.`player_api_id` AND t1.`player_fifa_api_id` = t2.`player_fifa_api_id` WHERE t2.`player_name` = 'Aaron Doran';",
+        "gold_sql": "SELECT t2.potential FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Aaron Doran'",
+        "exec_acc": 1,
+        "eval_original_idx": 1063,
+        "eval_pred_key": "1063",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`team_long_name` FROM `Team` t1 JOIN `Team_Attributes` t2 ON t1.`team_api_id` = t2.`team_api_id` WHERE t2.`buildUpPlaySpeedClass` = 'Fast'",
+        "gold_sql": "SELECT DISTINCT t1.team_long_name FROM Team AS t1 INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t2.buildUpPlaySpeedClass = 'Fast'",
+        "exec_acc": 1,
+        "eval_original_idx": 1065,
+        "eval_pred_key": "1065",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT DISTINCT t1.`team_short_name` FROM `Team` t1 JOIN `Team_Attributes` t2 ON t1.`team_fifa_api_id` = t2.`team_fifa_api_id` OR t1.`team_api_id` = t2.`team_api_id` WHERE t2.`buildUpPlayPassing` > 70;",
+        "gold_sql": "SELECT DISTINCT t1.team_short_name FROM Team AS t1 INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t2.buildUpPlayPassing > 70",
+        "exec_acc": 1,
+        "eval_original_idx": 1067,
+        "eval_pred_key": "1067",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT AVG(t2.`overall_rating`) AS average_col_5 FROM `Player` t1 JOIN `Player_Attributes` t2 ON t1.`player_api_id` = t2.`player_api_id` OR t1.`player_fifa_api_id` = t2.`player_fifa_api_id` WHERE t1.`player_name` = 'Aaron Doran';",
+        "gold_sql": "SELECT CAST(SUM(t2.overall_rating) AS REAL) / COUNT(t2.id) FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Aaron Doran'",
+        "exec_acc": 1,
+        "eval_original_idx": 1072,
+        "eval_pred_key": "1072",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`team_short_name` FROM `Match` t1 JOIN `Team` t2 ON t1.`home_team_api_id` = t2.`team_api_id` WHERE t1.`home_team_goal` = 10;",
+        "gold_sql": "SELECT t1.team_short_name FROM Team AS t1 INNER JOIN Match AS t2 ON t1.team_api_id = t2.home_team_api_id WHERE t2.home_team_goal = 10",
+        "exec_acc": 1,
+        "eval_original_idx": 1074,
+        "eval_pred_key": "1074",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Team`.`team_long_name` FROM `Team` WHERE `Team`.`team_short_name` = 'GEN';",
+        "gold_sql": "SELECT team_long_name FROM Team WHERE team_short_name = 'GEN'",
+        "exec_acc": 1,
+        "eval_original_idx": 1077,
+        "eval_pred_key": "1077",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Player`.`player_name` FROM `Player` WHERE `Player`.`player_name` IN ('Aaron Lennon', 'Abdelaziz Barrada') ORDER BY `Player`.`birthday` ASC LIMIT 1;",
+        "gold_sql": "SELECT player_name FROM Player WHERE player_name IN ('Aaron Lennon', 'Abdelaziz Barrada') ORDER BY birthday ASC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1078,
+        "eval_pred_key": "1078",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT COUNT(*) FROM Player_Attributes WHERE Player_Attributes.preferred_foot = 'left' AND Player_Attributes.attacking_work_rate = 'low';",
+        "gold_sql": "SELECT COUNT(player_api_id) FROM Player_Attributes WHERE preferred_foot = 'left' AND attacking_work_rate = 'low'",
+        "exec_acc": 1,
+        "eval_original_idx": 1080,
+        "eval_pred_key": "1080",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`name` FROM `Country` t1 JOIN `League` t2 ON t1.id = t2.`country_id` WHERE t2.`name` = 'Belgium Jupiler League';",
+        "gold_sql": "SELECT t1.name FROM Country AS t1 INNER JOIN League AS t2 ON t1.id = t2.country_id WHERE t2.name = 'Belgium Jupiler League'",
+        "exec_acc": 1,
+        "eval_original_idx": 1081,
+        "eval_pred_key": "1081",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`heading_accuracy` FROM `Player_Attributes` t1 JOIN `Player` t2 ON t1.`player_api_id` = t2.`player_api_id` OR t1.`player_fifa_api_id` = t2.`player_fifa_api_id` WHERE t2.`player_name` = 'Ariel Borysiuk';",
+        "gold_sql": "SELECT t2.heading_accuracy FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Ariel Borysiuk'",
+        "exec_acc": 1,
+        "eval_original_idx": 1086,
+        "eval_pred_key": "1086",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`player_name` FROM `Player` t2 JOIN `Player_Attributes` t1 ON t2.`player_api_id` = t1.`player_api_id` AND t2.`player_fifa_api_id` = t1.`player_fifa_api_id` WHERE t1.`dribbling` > 70 AND t1.`volleys` > 70",
+        "gold_sql": "SELECT DISTINCT t1.player_name FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t2.volleys > 70 AND t2.dribbling > 70",
+        "exec_acc": 1,
+        "eval_original_idx": 1088,
+        "eval_pred_key": "1088",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT COUNT(*) FROM `Match` JOIN `Country` ON `Match`.`country_id` = `Country`.id WHERE `Match`.`season` = '2008/2009' AND `Country`.`name` = 'Belgium';",
+        "gold_sql": "SELECT COUNT(t2.id) FROM Country AS t1 INNER JOIN Match AS t2 ON t1.id = t2.country_id WHERE t1.name = 'Belgium' AND t2.season = '2008/2009'",
+        "exec_acc": 1,
+        "eval_original_idx": 1089,
+        "eval_pred_key": "1089",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`long_passing` FROM `Player` t1 JOIN `Player_Attributes` t2 ON t1.`player_api_id` = t2.`player_api_id` OR t1.`player_fifa_api_id` = t2.`player_fifa_api_id` ORDER BY t1.`birthday` ASC LIMIT 1;",
+        "gold_sql": "SELECT t2.long_passing FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id ORDER BY t1.birthday ASC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1090,
+        "eval_pred_key": "1090",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`name` FROM `League` t1 JOIN `Match` t2 ON t1.id = t2.`league_id` WHERE t2.`season` = '2008/2009' GROUP BY t1.`name` ORDER BY COUNT(t2.id) DESC LIMIT 1;",
+        "gold_sql": "SELECT t1.name FROM League AS t1 INNER JOIN Match AS t2 ON t1.id = t2.league_id WHERE t2.season = '2008/2009' GROUP BY t1.name ORDER BY COUNT(t2.id) DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1092,
+        "eval_pred_key": "1092",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT AVG(t2.`buildUpPlaySpeed`) AS avg_col_5 FROM `Team_Attributes` t2 JOIN `Team` t1 ON t2.`team_fifa_api_id` = t1.`team_fifa_api_id` OR t2.`team_api_id` = t1.`team_api_id` WHERE t1.`team_long_name` = 'Heart of Midlothian';",
+        "gold_sql": "SELECT CAST(SUM(t2.buildUpPlaySpeed) AS REAL) / COUNT(t2.id) FROM Team AS t1 INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t1.team_long_name = 'Heart of Midlothian'",
+        "exec_acc": 1,
+        "eval_original_idx": 1095,
+        "eval_pred_key": "1095",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT AVG(t1.`overall_rating`) AS avg_col_2 FROM `Player_Attributes` t1 JOIN `Player` t2 ON t1.`player_api_id` = t2.`player_api_id` OR t1.`player_fifa_api_id` = t2.`player_fifa_api_id` WHERE t2.`player_name` = 'Pietro Marino';",
+        "gold_sql": "SELECT CAST(SUM(t2.overall_rating) AS REAL) / COUNT(t2.id) FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Pietro Marino'",
+        "exec_acc": 1,
+        "eval_original_idx": 1096,
+        "eval_pred_key": "1096",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT SUM(t1.`crossing`) AS total_col_3_score FROM `Player_Attributes` t1 JOIN `Player` t2 ON t1.`player_fifa_api_id` = t2.`player_fifa_api_id` OR t1.`player_api_id` = t2.`player_api_id` WHERE t2.`player_name` = 'Aaron Lennox';",
+        "gold_sql": "SELECT SUM(t2.crossing) FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Aaron Lennox'",
+        "exec_acc": 1,
+        "eval_original_idx": 1097,
+        "eval_pred_key": "1097",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT MAX(t2.`chanceCreationPassing`) AS max_col_4, t2.`chanceCreationPassingClass` FROM `Team` t1 JOIN `Team_Attributes` t2 ON t1.`team_api_id` = t2.`team_api_id` OR t1.`team_fifa_api_id` = t2.`team_fifa_api_id` WHERE t1.`team_long_name` = 'Ajax' GROUP BY t2.`chanceCreationPassingClass` ORDER BY max_col_4 DESC LIMIT 1;",
+        "gold_sql": "SELECT t2.chanceCreationPassing, t2.chanceCreationPassingClass FROM Team AS t1 INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t1.team_long_name = 'Ajax' ORDER BY t2.chanceCreationPassing DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1098,
+        "eval_pred_key": "1098",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`preferred_foot` AS preferred_foot FROM `Player_Attributes` t1 JOIN `Player` t2 ON t1.`player_fifa_api_id` = t2.`player_fifa_api_id` OR t1.`player_api_id` = t2.`player_api_id` WHERE t2.`player_name` = 'Abdou Diallo';",
+        "gold_sql": "SELECT DISTINCT t2.preferred_foot FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Abdou Diallo'",
+        "exec_acc": 1,
+        "eval_original_idx": 1099,
+        "eval_pred_key": "1099",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT MAX(t1.`overall_rating`) AS highest_col_1 FROM `Player_Attributes` t1 JOIN `Player` t2 ON t1.`player_api_id` = t2.`player_api_id` AND t1.`player_fifa_api_id` = t2.`player_fifa_api_id` WHERE t2.`player_name` = 'Dorlan Pabon';",
+        "gold_sql": "SELECT MAX(t2.overall_rating) FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Dorlan Pabon'",
+        "exec_acc": 1,
+        "eval_original_idx": 1100,
+        "eval_pred_key": "1100",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`overall_rating` FROM `Player_Attributes` t2 JOIN `Player` t1 ON t2.`player_api_id` = t1.`player_api_id` OR t2.`player_fifa_api_id` = t1.`player_fifa_api_id` WHERE t1.`player_name` = 'Aaron Mooy' AND t2.`date` = '2016-02-04 00:00:00'",
+        "gold_sql": "SELECT t2.overall_rating FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE SUBSTR(t2.`date`, 1, 10) = '2016-02-04' AND t1.player_name = 'Aaron Mooy'",
+        "exec_acc": 1,
+        "eval_original_idx": 1103,
+        "eval_pred_key": "1103",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`potential` FROM `Player_Attributes` t1 JOIN `Player` t2 ON t1.`player_api_id` = t2.`player_api_id` OR t1.`player_fifa_api_id` = t2.`player_fifa_api_id` WHERE t2.`player_name` = 'Francesco Parravicini' AND t1.`date` = '2010-08-30 00:00:00';",
+        "gold_sql": "SELECT t2.potential FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE SUBSTR(t2.`date`, 1, 10) = '2010-08-30' AND t1.player_name = 'Francesco Parravicini'",
+        "exec_acc": 1,
+        "eval_original_idx": 1104,
+        "eval_pred_key": "1104",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t2.`attacking_work_rate` FROM `Player_Attributes` t2 JOIN `Player` t1 ON t2.`player_api_id` = t1.`player_api_id` AND t2.`player_fifa_api_id` = t1.`player_fifa_api_id` WHERE t1.`player_name` = 'Francesco Migliore' AND t2.`date` = '2015-05-01 00:00:00'",
+        "gold_sql": "SELECT t2.attacking_work_rate FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE SUBSTR(t2.`date`, 1, 10) = '2015-05-01' AND t1.player_name = 'Francesco Migliore'",
+        "exec_acc": 1,
+        "eval_original_idx": 1105,
+        "eval_pred_key": "1105",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`buildUpPlayDribblingClass` FROM `Team_Attributes` t1 JOIN `Team` t2 ON t1.`team_api_id` = t2.`team_api_id` WHERE t2.`team_short_name` = 'LEI' AND t1.`date` = '2015-09-10 00:00:00';",
+        "gold_sql": "SELECT t2.buildUpPlayDribblingClass FROM Team AS t1 INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t1.team_short_name = 'LEI' AND SUBSTR(t2.`date`, 1, 10) = '2015-09-10'",
+        "exec_acc": 1,
+        "eval_original_idx": 1109,
+        "eval_pred_key": "1109",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`chanceCreationCrossingClass` FROM `Team_Attributes` t1 JOIN `Team` t2 ON t1.`team_api_id` = t2.`team_api_id` WHERE t2.`team_long_name` = 'Hull City' AND t1.`date` = '2010-02-22 00:00:00'",
+        "gold_sql": "SELECT t2.chanceCreationCrossingClass FROM Team AS t1 INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t1.team_long_name = 'Hull City' AND SUBSTR(t2.`date`, 1, 10) = '2010-02-22'",
+        "exec_acc": 1,
+        "eval_original_idx": 1112,
+        "eval_pred_key": "1112",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Player`.`player_name` FROM `Player` ORDER BY `Player`.`height` DESC LIMIT 5;",
+        "gold_sql": "SELECT player_name FROM Player ORDER BY height DESC LIMIT 5",
+        "exec_acc": 1,
+        "eval_original_idx": 1116,
+        "eval_pred_key": "1116",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Player`.`player_api_id` FROM `Player` ORDER BY `Player`.`weight` DESC LIMIT 10;",
+        "gold_sql": "SELECT player_api_id FROM Player ORDER BY weight DESC LIMIT 10",
+        "exec_acc": 1,
+        "eval_original_idx": 1117,
+        "eval_pred_key": "1117",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`player_name` FROM `Player` t1 JOIN `Player_Attributes` t2 ON t1.`player_api_id` = t2.`player_api_id` OR t1.`player_fifa_api_id` = t2.`player_fifa_api_id` GROUP BY t1.id ORDER BY MAX(t2.`potential`) DESC LIMIT 1;",
+        "gold_sql": "SELECT DISTINCT t1.player_name FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id ORDER BY t2.potential DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1123,
+        "eval_pred_key": "1123",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT `Player`.`player_name` FROM `Player` WHERE `Player`.`height` > 180 ORDER BY `Player`.`player_name` ASC LIMIT 3",
+        "gold_sql": "SELECT player_name FROM Player WHERE height > 180 ORDER BY player_name LIMIT 3",
+        "exec_acc": 1,
+        "eval_original_idx": 1132,
+        "eval_pred_key": "1132",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT (SELECT `Player_Attributes`.`jumping` FROM `Player_Attributes` WHERE id = 6) - (SELECT `Player_Attributes`.`jumping` FROM `Player_Attributes` WHERE id = 23) AS difference",
+        "gold_sql": "SELECT SUM(CASE WHEN t1.id = 6 THEN t1.jumping ELSE 0 END) - SUM(CASE WHEN t1.id = 23 THEN t1.jumping ELSE 0 END) FROM Player_Attributes AS t1",
+        "exec_acc": 1,
+        "eval_original_idx": 1134,
+        "eval_pred_key": "1134",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT COUNT(*) FROM `Player_Attributes` WHERE `Player_Attributes`.`crossing` = (SELECT MAX(`Player_Attributes`.`crossing`) FROM `Player_Attributes` WHERE `Player_Attributes`.`preferred_foot` = 'left') AND `Player_Attributes`.`preferred_foot` = 'left';",
+        "gold_sql": "SELECT COUNT(t1.id) FROM Player_Attributes AS t1 WHERE t1.preferred_foot = 'left' AND t1.crossing = ( SELECT MAX(crossing) FROM Player_Attributes)",
+        "exec_acc": 1,
+        "eval_original_idx": 1136,
+        "eval_pred_key": "1136",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT (COUNT(CASE WHEN `Player_Attributes`.`stamina` > 80 AND `Player_Attributes`.`strength` > 80 THEN 1 END) * 100.0 / COUNT(*)) AS percentage FROM `Player_Attributes`;",
+        "gold_sql": "SELECT CAST(COUNT(CASE WHEN strength > 80 AND stamina > 80 THEN id ELSE NULL END) AS REAL) * 100 / COUNT(id) FROM Player_Attributes t",
+        "exec_acc": 1,
+        "eval_original_idx": 1137,
+        "eval_pred_key": "1137",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`sprint_speed`, t1.`agility`, t1.`acceleration` FROM `Player_Attributes` t1 JOIN `Player` t2 ON t1.`player_api_id` = t2.`player_api_id` WHERE t2.`player_name` = 'Alexis Blin'",
+        "gold_sql": "SELECT sprint_speed, agility, acceleration FROM Player_Attributes WHERE player_api_id IN ( SELECT player_api_id FROM Player WHERE player_name = 'Alexis Blin' )",
+        "exec_acc": 1,
+        "eval_original_idx": 1140,
+        "eval_pred_key": "1140",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`buildUpPlaySpeedClass` FROM `Team_Attributes` t1 JOIN `Team` t2 ON t1.`team_api_id` = t2.`team_api_id` OR t1.`team_fifa_api_id` = t2.`team_fifa_api_id` WHERE t2.`team_long_name` = 'KSV Cercle Brugge';",
+        "gold_sql": "SELECT DISTINCT t1.buildUpPlaySpeedClass FROM Team_Attributes AS t1 INNER JOIN Team AS t2 ON t1.team_api_id = t2.team_api_id WHERE t2.team_long_name = 'KSV Cercle Brugge'",
+        "exec_acc": 1,
+        "eval_original_idx": 1141,
+        "eval_pred_key": "1141",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT COUNT(*) AS count FROM `Match` JOIN `League` ON `Match`.`league_id` = `League`.id WHERE `Match`.`season` = '2015/2016' AND `League`.`name` = 'Italy Serie A';",
+        "gold_sql": "SELECT COUNT(t2.id) FROM League AS t1 INNER JOIN Match AS t2 ON t1.id = t2.league_id WHERE t1.name = 'Italy Serie A' AND t2.season = '2015/2016'",
+        "exec_acc": 1,
+        "eval_original_idx": 1142,
+        "eval_pred_key": "1142",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT MAX(t2.`home_team_goal`) AS highest_home_team_score FROM `Match` t2 JOIN `League` t1 ON t2.`league_id` = t1.id WHERE t1.`name` = 'Netherlands Eredivisie';",
+        "gold_sql": "SELECT MAX(t2.home_team_goal) FROM League AS t1 INNER JOIN Match AS t2 ON t1.id = t2.league_id WHERE t1.name = 'Netherlands Eredivisie'",
+        "exec_acc": 1,
+        "eval_original_idx": 1143,
+        "eval_pred_key": "1143",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "european_football_2",
+        "pred_sql": "SELECT t1.`team_long_name` AS full_name FROM `Team` t1 JOIN `Match` t2 ON t1.`team_api_id` = t2.`away_team_api_id` ORDER BY t2.`away_team_goal` DESC LIMIT 1;",
+        "gold_sql": "SELECT t2.team_long_name FROM Match AS t1 INNER JOIN Team AS t2 ON t1.away_team_api_id = t2.team_api_id ORDER BY t1.away_team_goal DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1146,
+        "eval_pred_key": "1146",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT (COUNT(CASE WHEN strftime('%Y', `Patient`.`Birthday`) > '1930' THEN 1 END) * 100.0 / COUNT(*)) AS percentage FROM `Patient` WHERE `Patient`.`SEX` = 'F';",
+        "gold_sql": "SELECT CAST(SUM(CASE WHEN STRFTIME('%Y', Birthday) > '1930' THEN 1 ELSE 0 END) AS REAL) * 100 / COUNT(*) FROM Patient WHERE SEX = 'F'",
+        "exec_acc": 1,
+        "eval_original_idx": 1150,
+        "eval_pred_key": "1150",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`SEX`, t1.`Birthday`, t2.`Examination Date`, t2.`Symptoms` FROM `Patient` t1 JOIN `Examination` t2 ON t1.`ID` = t2.`ID` WHERE t1.`ID` = 163109",
+        "gold_sql": "SELECT T1.SEX, T1.Birthday, T2.`Examination Date`, T2.Symptoms FROM Patient AS T1 INNER JOIN Examination AS T2 ON T1.ID = T2.ID WHERE T1.ID = 163109",
+        "exec_acc": 1,
+        "eval_original_idx": 1154,
+        "eval_pred_key": "1154",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t2.`ID`, t2.`SEX`, t2.`Birthday` FROM `Patient` t2 JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t1.`LDH` > '500';",
+        "gold_sql": "SELECT DISTINCT T1.ID, T1.SEX, T1.Birthday FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.LDH > 500",
+        "exec_acc": 1,
+        "eval_original_idx": 1155,
+        "eval_pred_key": "1155",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`ID`, t1.`SEX`, t1.`Diagnosis` FROM `Patient` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t2.`ALB` < 3.5;",
+        "gold_sql": "SELECT DISTINCT T1.ID, T1.SEX, T1.Diagnosis FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.ALB < 3.5",
+        "exec_acc": 1,
+        "eval_original_idx": 1159,
+        "eval_pred_key": "1159",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT ID FROM `Patient` WHERE `Patient`.`SEX` = 'F' AND strftime('%Y', `Patient`.`Birthday`) = '1964' AND `Patient`.`Admission` = '+';",
+        "gold_sql": "SELECT ID FROM Patient WHERE STRFTIME('%Y', Birthday) = '1964' AND SEX = 'F' AND Admission = '+'",
+        "exec_acc": 1,
+        "eval_original_idx": 1188,
+        "eval_pred_key": "1188",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(*) FROM Patient WHERE Patient.Diagnosis = 'APS' AND Patient.SEX = 'F';",
+        "gold_sql": "SELECT COUNT(ID) FROM Patient WHERE SEX = 'F' AND Diagnosis = 'APS'",
+        "exec_acc": 1,
+        "eval_original_idx": 1198,
+        "eval_pred_key": "1198",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT (COUNT(CASE WHEN `Patient`.`SEX` = 'F' THEN 1 END) * 100.0) / NULLIF(COUNT(*), 0) AS percentage FROM `Patient` WHERE strftime('%Y', `Patient`.`Birthday`) = '1980' AND `Patient`.`Diagnosis` = 'RA';",
+        "gold_sql": "SELECT CAST(SUM(CASE WHEN SEX = 'F' THEN 1 ELSE 0 END) AS REAL) * 100 / COUNT(ID) FROM Patient WHERE Diagnosis = 'RA' AND STRFTIME('%Y', Birthday) = '1980'",
+        "exec_acc": 1,
+        "eval_original_idx": 1201,
+        "eval_pred_key": "1201",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT AVG(`Laboratory`.`LDH`) AS average_index FROM `Laboratory` WHERE `Laboratory`.`LDH` < 500;",
+        "gold_sql": "SELECT AVG(LDH) FROM Laboratory WHERE LDH < 500",
+        "exec_acc": 1,
+        "eval_original_idx": 1210,
+        "eval_pred_key": "1210",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`ID`, t1.`SEX`, t1.`Birthday` FROM `Patient` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t2.`TP` < 6.0;",
+        "gold_sql": "SELECT DISTINCT T1.ID, T1.SEX, T1.Birthday FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.TP < 6.0",
+        "exec_acc": 1,
+        "eval_original_idx": 1214,
+        "eval_pred_key": "1214",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`ID`, t1.`SEX`, t1.`Birthday` FROM `Patient` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t2.`UN` = 29;",
+        "gold_sql": "SELECT DISTINCT T1.ID, T1.SEX, T1.Birthday FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.UN = 29",
+        "exec_acc": 1,
+        "eval_original_idx": 1220,
+        "eval_pred_key": "1220",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(*) FROM `Patient` t2 JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t2.`SEX` = 'M' AND t1.`CRE` >= 1.5",
+        "gold_sql": "SELECT COUNT(T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.CRE >= 1.5 AND T1.SEX = 'M'",
+        "exec_acc": 1,
+        "eval_original_idx": 1222,
+        "eval_pred_key": "1222",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT DISTINCT t1.`ID` FROM `Patient` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t1.`Admission` = '-' AND t2.`CPK` < 250;",
+        "gold_sql": "SELECT DISTINCT T1.ID FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.CPK < 250 AND T1.Admission = '-'",
+        "exec_acc": 1,
+        "eval_original_idx": 1230,
+        "eval_pred_key": "1230",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`ID`, t1.`SEX`, t1.`Birthday` FROM `Patient` t1 INNER JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t2.`WBC` <= 3.5 OR t2.`WBC` >= 9.0 GROUP BY t1.`SEX`, t1.`ID`, t1.`Birthday` ORDER BY t1.`Birthday` ASC;",
+        "gold_sql": "SELECT DISTINCT T1.ID, T1.SEX, T1.Birthday FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.WBC <= 3.5 OR T2.WBC >= 9.0 GROUP BY T1.SEX,T1.ID ORDER BY T1.Birthday ASC",
+        "exec_acc": 1,
+        "eval_original_idx": 1234,
+        "eval_pred_key": "1234",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`Diagnosis`, t1.`ID`, (CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', t1.`Birthday`) AS INTEGER)) AS age FROM `Patient` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t2.`RBC` < 3.5",
+        "gold_sql": "SELECT T1.Diagnosis, T1.ID , STRFTIME('%Y', CURRENT_TIMESTAMP) -STRFTIME('%Y', T1.Birthday) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.RBC < 3.5",
+        "exec_acc": 1,
+        "eval_original_idx": 1235,
+        "eval_pred_key": "1235",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT DISTINCT t2.`ID` AS ID, t2.`SEX` FROM `Patient` t2 JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t2.`Admission` = '-' AND t1.`HGB` < 10;",
+        "gold_sql": "SELECT DISTINCT T1.ID, T1.SEX FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.HGB < 10 AND T1.Admission = '-'",
+        "exec_acc": 1,
+        "eval_original_idx": 1237,
+        "eval_pred_key": "1237",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT AVG(`Laboratory`.`HCT`) AS average_col_1_level FROM `Laboratory` WHERE `Laboratory`.`Date` LIKE '1991%' AND `Laboratory`.`HCT` < 29;",
+        "gold_sql": "SELECT AVG(T2.HCT) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.HCT < 29 AND STRFTIME('%Y', T2.Date) = '1991'",
+        "exec_acc": 1,
+        "eval_original_idx": 1240,
+        "eval_pred_key": "1240",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(DISTINCT `Examination`.`ID`) FROM `Examination` JOIN `Laboratory` ON `Examination`.`ID` = `Laboratory`.`ID` WHERE `Examination`.`Symptoms` = 'abortion' AND `Laboratory`.`IGG` < 900;",
+        "gold_sql": "SELECT COUNT(DISTINCT T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID INNER JOIN Examination AS T3 ON T3.ID = T2.ID WHERE T2.IGG < 900 AND T3.Symptoms = 'abortion'",
+        "exec_acc": 1,
+        "eval_original_idx": 1251,
+        "eval_pred_key": "1251",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t2.`Diagnosis` FROM `Patient` t2 JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t1.`IGA` BETWEEN 80 AND 500 ORDER BY t1.`IGA` DESC LIMIT 1;",
+        "gold_sql": "SELECT patientData.Diagnosis FROM Patient AS patientData INNER JOIN Laboratory AS labData ON patientData.ID = labData.ID WHERE labData.IGA BETWEEN 80 AND 500 ORDER BY labData.IGA DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1253,
+        "eval_pred_key": "1253",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(DISTINCT t2.`ID`) AS admitted_count FROM `Patient` t2 INNER JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t1.`DNA-II` >= 8 AND t2.`Admission` = '+';",
+        "gold_sql": "SELECT COUNT(T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.`DNA-II` >= 8 AND T1.Admission = '+'",
+        "exec_acc": 1,
+        "eval_original_idx": 1278,
+        "eval_pred_key": "1278",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(*) FROM `Laboratory` t1 JOIN `Patient` t2 ON t1.`ID` = t2.`ID` WHERE t1.`ALP` >= 300 AND t2.`Admission` = '+';",
+        "gold_sql": "SELECT COUNT(T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.ALP >= 300 AND T1.Admission = '+'",
+        "exec_acc": 1,
+        "eval_original_idx": 1286,
+        "eval_pred_key": "1286",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t2.`Diagnosis` FROM `Patient` t2 JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t1.`TP` < 6.0;",
+        "gold_sql": "SELECT T1.Diagnosis FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.TP < 6.0",
+        "exec_acc": 1,
+        "eval_original_idx": 1288,
+        "eval_pred_key": "1288",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT MAX(t2.`ANA`) AS highest_col_4 FROM `Laboratory` t1 JOIN `Examination` t2 ON t1.`ID` = t2.`ID` WHERE t1.`CRE` < 1.5;",
+        "gold_sql": "SELECT T2.ANA FROM Patient AS T1 INNER JOIN Examination AS T2 ON T1.ID = T2.ID INNER JOIN Laboratory AS T3 ON T1.ID = T3.ID WHERE T3.CRE < 1.5 ORDER BY T2.ANA DESC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1293,
+        "eval_pred_key": "1293",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT t1.`ID` AS patient_id FROM `Examination` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t1.`Thrombosis` = 0 AND t2.`CPK` < 250;",
+        "gold_sql": "SELECT DISTINCT T1.ID FROM Laboratory AS T1 INNER JOIN Examination AS T2 ON T1.ID = T2.ID WHERE T2.Thrombosis = 0 AND T1.CPK < 250",
+        "exec_acc": 1,
+        "eval_original_idx": 1301,
+        "eval_pred_key": "1301",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT MIN(t1.`Birthday`) AS oldest_col_1 FROM `Patient` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t2.`GLU` > 180;",
+        "gold_sql": "SELECT T1.Birthday FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.GLU > 180 ORDER BY T1.Birthday ASC LIMIT 1",
+        "exec_acc": 1,
+        "eval_original_idx": 1303,
+        "eval_pred_key": "1303",
+        "difficulty": "simple"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(*) FROM `Examination` t1 JOIN `Laboratory` t2 ON t1.`ID` = t2.`ID` WHERE t2.`GLU` < 180 AND t1.`Thrombosis` = 0;",
+        "gold_sql": "SELECT COUNT(T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID INNER JOIN Examination AS T3 ON T1.ID = T3.ID WHERE T2.GLU < 180 AND T3.Thrombosis = 0",
+        "exec_acc": 1,
+        "eval_original_idx": 1304,
+        "eval_pred_key": "1304",
+        "difficulty": "moderate"
+    },
+    {
+        "db_id": "thrombosis_prediction",
+        "pred_sql": "SELECT COUNT(*) FROM `Patient` t2 JOIN `Laboratory` t1 ON t2.`ID` = t1.`ID` WHERE t2.`Diagnosis` = 'SLE' AND t1.`WBC` BETWEEN 3.5 AND 9.0;",
+        "gold_sql": "SELECT COUNT(T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T1.Diagnosis = 'SLE' AND T2.WBC BETWEEN 3.5 AND 9",
+        "exec_acc": 1,
+        "eval_original_idx": 1306,
+        "eval_pred_key": "1306",
+        "difficulty": "simple"
+    }
+]

@@ -1,0 +1,92 @@
+{
+  "nl2sql_agent": {
+    "file_name": "agent/mcts/bird_train_sc_filtered_mcts_with_tools.jsonl",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "tools": "tools"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system",
+      "observation_tag": "tool"
+    }
+  },
+  "query_rewrite": {
+    "file_name": "query_rewrite/v2/query_rewrite_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant"
+    }
+  },
+  "schema_linking": {
+    "file_name": "entity_extract/merged_schema_linking_sharegpt.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant"
+    }
+  },
+  "nl2sql_agent_prompt": {
+    "file_name": "agent/deepseek_pro/bird_train_sc_filtered_deepseek_pro_with_tools.jsonl",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "tools": "tools"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system",
+      "observation_tag": "tool"
+    }
+  },
+  "r2_prompt_synthesis_n3101": {
+    "file_name": "../../privacy-agent/kdd_reviewer/r2_matched_controls/generated/prompt_synthesis_n3101.jsonl",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "tools": "tools"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system",
+      "observation_tag": "tool"
+    }
+  },
+  "r2_mcts_synthesis_n3101": {
+    "file_name": "../../privacy-agent/kdd_reviewer/r2_matched_controls/generated/mcts_synthesis_n3101.jsonl",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "tools": "tools"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system",
+      "observation_tag": "tool"
+    }
+  }
+}
