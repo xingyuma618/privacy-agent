@@ -1,0 +1,1812 @@
+{
+  "note": "Exact underscore-containing schema column names present in original question/evidence but not covered by any annotated surface. Conservative coverage diagnostic, not full annotation recall.",
+  "labels_scanned": 506,
+  "cases": [
+    {
+      "case_key": "book_publishing_company__173",
+      "missing_column_surfaces": [
+        "pub_name"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__174",
+      "missing_column_surfaces": [
+        "ytd_sales"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__175",
+      "missing_column_surfaces": [
+        "pub_name"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__176",
+      "missing_column_surfaces": [
+        "stor_name"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__178",
+      "missing_column_surfaces": [
+        "pub_name"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__179",
+      "missing_column_surfaces": [
+        "stor_id"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__180",
+      "missing_column_surfaces": [
+        "pub_id",
+        "pub_name",
+        "ytd_sales"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__181",
+      "missing_column_surfaces": [
+        "hire_date"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__182",
+      "missing_column_surfaces": [
+        "job_lvl"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__183",
+      "missing_column_surfaces": [
+        "emp_id"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__185",
+      "missing_column_surfaces": [
+        "job_desc"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__187",
+      "missing_column_surfaces": [
+        "job_desc",
+        "pub_name"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__188",
+      "missing_column_surfaces": [
+        "pub_name"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__189",
+      "missing_column_surfaces": [
+        "title_id"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__190",
+      "missing_column_surfaces": [
+        "pub_name"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__191",
+      "missing_column_surfaces": [
+        "job_desc",
+        "job_lvl"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__193",
+      "missing_column_surfaces": [
+        "ytd_sales"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__194",
+      "missing_column_surfaces": [
+        "ytd_sales"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__195",
+      "missing_column_surfaces": [
+        "au_fname",
+        "au_lname",
+        "ytd_sales"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__197",
+      "missing_column_surfaces": [
+        "ytd_sales"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__199",
+      "missing_column_surfaces": [
+        "pub_name"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__200",
+      "missing_column_surfaces": [
+        "job_desc"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__201",
+      "missing_column_surfaces": [
+        "hire_date",
+        "job_lvl"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__204",
+      "missing_column_surfaces": [
+        "stor_name"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__212",
+      "missing_column_surfaces": [
+        "job_desc",
+        "job_lvl",
+        "max_lvl"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__216",
+      "missing_column_surfaces": [
+        "job_lvl"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__217",
+      "missing_column_surfaces": [
+        "job_lvl"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__219",
+      "missing_column_surfaces": [
+        "job_lvl"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__220",
+      "missing_column_surfaces": [
+        "job_desc"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__221",
+      "missing_column_surfaces": [
+        "job_lvl",
+        "max_lvl"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__222",
+      "missing_column_surfaces": [
+        "ord_date"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__223",
+      "missing_column_surfaces": [
+        "ord_date"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__225",
+      "missing_column_surfaces": [
+        "pub_name"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__227",
+      "missing_column_surfaces": [
+        "ord_num"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__228",
+      "missing_column_surfaces": [
+        "ord_date"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__230",
+      "missing_column_surfaces": [
+        "job_lvl"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__232",
+      "missing_column_surfaces": [
+        "ord_date",
+        "ord_num",
+        "title_id"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__233",
+      "missing_column_surfaces": [
+        "pub_name"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__236",
+      "missing_column_surfaces": [
+        "job_desc",
+        "job_lvl"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__237",
+      "missing_column_surfaces": [
+        "pub_name"
+      ]
+    },
+    {
+      "case_key": "book_publishing_company__238",
+      "missing_column_surfaces": [
+        "ytd_sales"
+      ]
+    },
+    {
+      "case_key": "movie_platform__0",
+      "missing_column_surfaces": [
+        "movie_release_year"
+      ]
+    },
+    {
+      "case_key": "movie_platform__10",
+      "missing_column_surfaces": [
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__100",
+      "missing_column_surfaces": [
+        "movie_release_year",
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__101",
+      "missing_column_surfaces": [
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__102",
+      "missing_column_surfaces": [
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__103",
+      "missing_column_surfaces": [
+        "critic_comments"
+      ]
+    },
+    {
+      "case_key": "movie_platform__104",
+      "missing_column_surfaces": [
+        "list_creation_date_utc",
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__105",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_timestamp_utc"
+      ]
+    },
+    {
+      "case_key": "movie_platform__106",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__107",
+      "missing_column_surfaces": [
+        "critic_comments",
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__109",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score",
+        "rating_timestamp_utc"
+      ]
+    },
+    {
+      "case_key": "movie_platform__110",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__111",
+      "missing_column_surfaces": [
+        "director_name",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__112",
+      "missing_column_surfaces": [
+        "movie_release_year"
+      ]
+    },
+    {
+      "case_key": "movie_platform__113",
+      "missing_column_surfaces": [
+        "movie_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__114",
+      "missing_column_surfaces": [
+        "movie_popularity"
+      ]
+    },
+    {
+      "case_key": "movie_platform__115",
+      "missing_column_surfaces": [
+        "rating_date_utc",
+        "user_has_payment_method"
+      ]
+    },
+    {
+      "case_key": "movie_platform__117",
+      "missing_column_surfaces": [
+        "list_id",
+        "user_subscriber"
+      ]
+    },
+    {
+      "case_key": "movie_platform__118",
+      "missing_column_surfaces": [
+        "list_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__119",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__120",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__121",
+      "missing_column_surfaces": [
+        "critic_comments",
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__122",
+      "missing_column_surfaces": [
+        "rating_timestamp_utc",
+        "user_avatar_image_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__123",
+      "missing_column_surfaces": [
+        "list_title",
+        "user_avatar_image_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__125",
+      "missing_column_surfaces": [
+        "rating_score",
+        "user_avatar_image_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__126",
+      "missing_column_surfaces": [
+        "movie_popularity"
+      ]
+    },
+    {
+      "case_key": "movie_platform__127",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score",
+        "rating_timestamp_utc"
+      ]
+    },
+    {
+      "case_key": "movie_platform__128",
+      "missing_column_surfaces": [
+        "rating_score",
+        "rating_timestamp_utc"
+      ]
+    },
+    {
+      "case_key": "movie_platform__130",
+      "missing_column_surfaces": [
+        "movie_popularity",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__131",
+      "missing_column_surfaces": [
+        "movie_id",
+        "user_has_payment_method"
+      ]
+    },
+    {
+      "case_key": "movie_platform__132",
+      "missing_column_surfaces": [
+        "list_followers",
+        "user_has_payment_method"
+      ]
+    },
+    {
+      "case_key": "movie_platform__133",
+      "missing_column_surfaces": [
+        "movie_release_year",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__134",
+      "missing_column_surfaces": [
+        "movie_popularity",
+        "movie_release_year",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__135",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__136",
+      "missing_column_surfaces": [
+        "movie_title",
+        "user_subscriber"
+      ]
+    },
+    {
+      "case_key": "movie_platform__137",
+      "missing_column_surfaces": [
+        "movie_title",
+        "user_has_payment_method"
+      ]
+    },
+    {
+      "case_key": "movie_platform__138",
+      "missing_column_surfaces": [
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__140",
+      "missing_column_surfaces": [
+        "list_id",
+        "user_subscriber"
+      ]
+    },
+    {
+      "case_key": "movie_platform__142",
+      "missing_column_surfaces": [
+        "user_eligible_for_trial"
+      ]
+    },
+    {
+      "case_key": "movie_platform__145",
+      "missing_column_surfaces": [
+        "list_movie_number",
+        "user_subscriber"
+      ]
+    },
+    {
+      "case_key": "movie_platform__147",
+      "missing_column_surfaces": [
+        "list_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__148",
+      "missing_column_surfaces": [
+        "list_followers"
+      ]
+    },
+    {
+      "case_key": "movie_platform__150",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_timestamp_utc",
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__151",
+      "missing_column_surfaces": [
+        "movie_popularity",
+        "movie_release_year"
+      ]
+    },
+    {
+      "case_key": "movie_platform__153",
+      "missing_column_surfaces": [
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__154",
+      "missing_column_surfaces": [
+        "list_update_date_utc"
+      ]
+    },
+    {
+      "case_key": "movie_platform__155",
+      "missing_column_surfaces": [
+        "list_comments"
+      ]
+    },
+    {
+      "case_key": "movie_platform__156",
+      "missing_column_surfaces": [
+        "director_name",
+        "movie_popularity",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__157",
+      "missing_column_surfaces": [
+        "movie_id",
+        "movie_release_year"
+      ]
+    },
+    {
+      "case_key": "movie_platform__158",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score",
+        "rating_timestamp_utc",
+        "user_trialist"
+      ]
+    },
+    {
+      "case_key": "movie_platform__159",
+      "missing_column_surfaces": [
+        "critic_likes"
+      ]
+    },
+    {
+      "case_key": "movie_platform__160",
+      "missing_column_surfaces": [
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__161",
+      "missing_column_surfaces": [
+        "list_followers",
+        "movie_title",
+        "rating_timestamp_utc"
+      ]
+    },
+    {
+      "case_key": "movie_platform__162",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_timestamp_utc",
+        "user_eligible_for_trial"
+      ]
+    },
+    {
+      "case_key": "movie_platform__163",
+      "missing_column_surfaces": [
+        "rating_score",
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__164",
+      "missing_column_surfaces": [
+        "movie_popularity",
+        "rating_score",
+        "user_trialist"
+      ]
+    },
+    {
+      "case_key": "movie_platform__165",
+      "missing_column_surfaces": [
+        "rating_timestamp_utc",
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__166",
+      "missing_column_surfaces": [
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__17",
+      "missing_column_surfaces": [
+        "list_followers",
+        "list_update_timestamp_utc",
+        "list_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__19",
+      "missing_column_surfaces": [
+        "rating_score",
+        "user_eligible_for_trial",
+        "user_has_payment_method"
+      ]
+    },
+    {
+      "case_key": "movie_platform__2",
+      "missing_column_surfaces": [
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__20",
+      "missing_column_surfaces": [
+        "movie_popularity",
+        "movie_release_year"
+      ]
+    },
+    {
+      "case_key": "movie_platform__22",
+      "missing_column_surfaces": [
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__25",
+      "missing_column_surfaces": [
+        "movie_release_year"
+      ]
+    },
+    {
+      "case_key": "movie_platform__26",
+      "missing_column_surfaces": [
+        "critic_likes",
+        "director_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__27",
+      "missing_column_surfaces": [
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__29",
+      "missing_column_surfaces": [
+        "critic_likes"
+      ]
+    },
+    {
+      "case_key": "movie_platform__3",
+      "missing_column_surfaces": [
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__30",
+      "missing_column_surfaces": [
+        "movie_popularity",
+        "movie_release_year",
+        "rating_timestamp_utc",
+        "user_has_payment_method"
+      ]
+    },
+    {
+      "case_key": "movie_platform__31",
+      "missing_column_surfaces": [
+        "critic_likes",
+        "director_name",
+        "movie_popularity"
+      ]
+    },
+    {
+      "case_key": "movie_platform__32",
+      "missing_column_surfaces": [
+        "rating_date_utc",
+        "user_avatar_image_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__33",
+      "missing_column_surfaces": [
+        "list_followers",
+        "user_id",
+        "user_subscriber"
+      ]
+    },
+    {
+      "case_key": "movie_platform__34",
+      "missing_column_surfaces": [
+        "movie_id",
+        "movie_release_year",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__35",
+      "missing_column_surfaces": [
+        "director_name",
+        "movie_release_year",
+        "user_has_payment_method"
+      ]
+    },
+    {
+      "case_key": "movie_platform__36",
+      "missing_column_surfaces": [
+        "user_avatar_image_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__37",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score",
+        "rating_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__39",
+      "missing_column_surfaces": [
+        "rating_url",
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__40",
+      "missing_column_surfaces": [
+        "movie_release_year"
+      ]
+    },
+    {
+      "case_key": "movie_platform__41",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__42",
+      "missing_column_surfaces": [
+        "critic_likes",
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__43",
+      "missing_column_surfaces": [
+        "director_name",
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__44",
+      "missing_column_surfaces": [
+        "critic_comments"
+      ]
+    },
+    {
+      "case_key": "movie_platform__45",
+      "missing_column_surfaces": [
+        "movie_popularity",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__46",
+      "missing_column_surfaces": [
+        "critic_likes",
+        "rating_url",
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__47",
+      "missing_column_surfaces": [
+        "director_name",
+        "movie_popularity",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__48",
+      "missing_column_surfaces": [
+        "list_title",
+        "rating_score",
+        "rating_timestamp_utc"
+      ]
+    },
+    {
+      "case_key": "movie_platform__49",
+      "missing_column_surfaces": [
+        "movie_release_year",
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__5",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__52",
+      "missing_column_surfaces": [
+        "list_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__53",
+      "missing_column_surfaces": [
+        "list_followers",
+        "list_update_timestamp_utc"
+      ]
+    },
+    {
+      "case_key": "movie_platform__54",
+      "missing_column_surfaces": [
+        "user_id",
+        "user_subscriber"
+      ]
+    },
+    {
+      "case_key": "movie_platform__55",
+      "missing_column_surfaces": [
+        "movie_release_year",
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__56",
+      "missing_column_surfaces": [
+        "movie_title",
+        "movie_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__59",
+      "missing_column_surfaces": [
+        "list_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__6",
+      "missing_column_surfaces": [
+        "user_avatar_image_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__60",
+      "missing_column_surfaces": [
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__61",
+      "missing_column_surfaces": [
+        "list_movie_number",
+        "user_has_payment_method",
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__62",
+      "missing_column_surfaces": [
+        "list_followers",
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__63",
+      "missing_column_surfaces": [
+        "list_title",
+        "list_update_date_utc"
+      ]
+    },
+    {
+      "case_key": "movie_platform__64",
+      "missing_column_surfaces": [
+        "list_title",
+        "user_avatar_image_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__65",
+      "missing_column_surfaces": [
+        "list_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__66",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__67",
+      "missing_column_surfaces": [
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__68",
+      "missing_column_surfaces": [
+        "critic_likes",
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__69",
+      "missing_column_surfaces": [
+        "critic_comments",
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__7",
+      "missing_column_surfaces": [
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__70",
+      "missing_column_surfaces": [
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__71",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__72",
+      "missing_column_surfaces": [
+        "movie_title",
+        "user_trialist"
+      ]
+    },
+    {
+      "case_key": "movie_platform__73",
+      "missing_column_surfaces": [
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__74",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__76",
+      "missing_column_surfaces": [
+        "critic_comments",
+        "critic_likes",
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movie_platform__77",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score",
+        "user_trialist"
+      ]
+    },
+    {
+      "case_key": "movie_platform__78",
+      "missing_column_surfaces": [
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__79",
+      "missing_column_surfaces": [
+        "list_title",
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__8",
+      "missing_column_surfaces": [
+        "rating_timestamp_utc",
+        "user_trialist"
+      ]
+    },
+    {
+      "case_key": "movie_platform__80",
+      "missing_column_surfaces": [
+        "list_title",
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__81",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_id",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__82",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_id",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__83",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_id",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__84",
+      "missing_column_surfaces": [
+        "director_name",
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__85",
+      "missing_column_surfaces": [
+        "movie_release_year"
+      ]
+    },
+    {
+      "case_key": "movie_platform__86",
+      "missing_column_surfaces": [
+        "movie_popularity",
+        "movie_release_year"
+      ]
+    },
+    {
+      "case_key": "movie_platform__89",
+      "missing_column_surfaces": [
+        "movie_release_year",
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__90",
+      "missing_column_surfaces": [
+        "movie_title"
+      ]
+    },
+    {
+      "case_key": "movie_platform__91",
+      "missing_column_surfaces": [
+        "list_followers"
+      ]
+    },
+    {
+      "case_key": "movie_platform__92",
+      "missing_column_surfaces": [
+        "list_comments"
+      ]
+    },
+    {
+      "case_key": "movie_platform__93",
+      "missing_column_surfaces": [
+        "movie_release_year",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__94",
+      "missing_column_surfaces": [
+        "critic_likes"
+      ]
+    },
+    {
+      "case_key": "movie_platform__95",
+      "missing_column_surfaces": [
+        "list_creation_date_utc",
+        "list_followers"
+      ]
+    },
+    {
+      "case_key": "movie_platform__96",
+      "missing_column_surfaces": [
+        "movie_title",
+        "rating_score"
+      ]
+    },
+    {
+      "case_key": "movie_platform__97",
+      "missing_column_surfaces": [
+        "list_title",
+        "user_cover_image_url"
+      ]
+    },
+    {
+      "case_key": "movie_platform__98",
+      "missing_column_surfaces": [
+        "list_followers"
+      ]
+    },
+    {
+      "case_key": "movie_platform__99",
+      "missing_column_surfaces": [
+        "rating_score",
+        "user_id"
+      ]
+    },
+    {
+      "case_key": "movies_4__410",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__411",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__412",
+      "missing_column_surfaces": [
+        "person_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__414",
+      "missing_column_surfaces": [
+        "person_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__416",
+      "missing_column_surfaces": [
+        "person_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__418",
+      "missing_column_surfaces": [
+        "vote_average"
+      ]
+    },
+    {
+      "case_key": "movies_4__419",
+      "missing_column_surfaces": [
+        "release_date"
+      ]
+    },
+    {
+      "case_key": "movies_4__420",
+      "missing_column_surfaces": [
+        "movie_id",
+        "vote_average"
+      ]
+    },
+    {
+      "case_key": "movies_4__421",
+      "missing_column_surfaces": [
+        "movie_id"
+      ]
+    },
+    {
+      "case_key": "movies_4__426",
+      "missing_column_surfaces": [
+        "person_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__427",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__429",
+      "missing_column_surfaces": [
+        "keyword_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__431",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__432",
+      "missing_column_surfaces": [
+        "keyword_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__433",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__434",
+      "missing_column_surfaces": [
+        "department_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__444",
+      "missing_column_surfaces": [
+        "character_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__445",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__446",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__447",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__452",
+      "missing_column_surfaces": [
+        "release_date"
+      ]
+    },
+    {
+      "case_key": "movies_4__454",
+      "missing_column_surfaces": [
+        "genre_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__455",
+      "missing_column_surfaces": [
+        "movie_id"
+      ]
+    },
+    {
+      "case_key": "movies_4__456",
+      "missing_column_surfaces": [
+        "movie_id"
+      ]
+    },
+    {
+      "case_key": "movies_4__457",
+      "missing_column_surfaces": [
+        "department_id",
+        "movie_id"
+      ]
+    },
+    {
+      "case_key": "movies_4__458",
+      "missing_column_surfaces": [
+        "cast_order",
+        "movie_id"
+      ]
+    },
+    {
+      "case_key": "movies_4__461",
+      "missing_column_surfaces": [
+        "movie_id",
+        "person_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__462",
+      "missing_column_surfaces": [
+        "person_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__463",
+      "missing_column_surfaces": [
+        "person_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__464",
+      "missing_column_surfaces": [
+        "person_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__465",
+      "missing_column_surfaces": [
+        "genre_name",
+        "vote_average"
+      ]
+    },
+    {
+      "case_key": "movies_4__466",
+      "missing_column_surfaces": [
+        "genre_name",
+        "release_date"
+      ]
+    },
+    {
+      "case_key": "movies_4__467",
+      "missing_column_surfaces": [
+        "country_name",
+        "release_date"
+      ]
+    },
+    {
+      "case_key": "movies_4__469",
+      "missing_column_surfaces": [
+        "language_name",
+        "release_date"
+      ]
+    },
+    {
+      "case_key": "movies_4__472",
+      "missing_column_surfaces": [
+        "country_name",
+        "genre_name",
+        "movie_id",
+        "release_date"
+      ]
+    },
+    {
+      "case_key": "movies_4__473",
+      "missing_column_surfaces": [
+        "character_name",
+        "person_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__474",
+      "missing_column_surfaces": [
+        "character_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__476",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__477",
+      "missing_column_surfaces": [
+        "genre_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__478",
+      "missing_column_surfaces": [
+        "keyword_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__480",
+      "missing_column_surfaces": [
+        "keyword_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__481",
+      "missing_column_surfaces": [
+        "country_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__483",
+      "missing_column_surfaces": [
+        "person_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__484",
+      "missing_column_surfaces": [
+        "country_name",
+        "genre_name",
+        "movie_id"
+      ]
+    },
+    {
+      "case_key": "movies_4__488",
+      "missing_column_surfaces": [
+        "keyword_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__489",
+      "missing_column_surfaces": [
+        "keyword_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__491",
+      "missing_column_surfaces": [
+        "genre_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__492",
+      "missing_column_surfaces": [
+        "genre_name",
+        "movie_status"
+      ]
+    },
+    {
+      "case_key": "movies_4__493",
+      "missing_column_surfaces": [
+        "genre_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__494",
+      "missing_column_surfaces": [
+        "genre_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__495",
+      "missing_column_surfaces": [
+        "genre_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__496",
+      "missing_column_surfaces": [
+        "genre_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__498",
+      "missing_column_surfaces": [
+        "country_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__499",
+      "missing_column_surfaces": [
+        "keyword_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__500",
+      "missing_column_surfaces": [
+        "keyword_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__501",
+      "missing_column_surfaces": [
+        "vote_count"
+      ]
+    },
+    {
+      "case_key": "movies_4__503",
+      "missing_column_surfaces": [
+        "company_id"
+      ]
+    },
+    {
+      "case_key": "movies_4__504",
+      "missing_column_surfaces": [
+        "company_id",
+        "release_date"
+      ]
+    },
+    {
+      "case_key": "movies_4__505",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__506",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__507",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__510",
+      "missing_column_surfaces": [
+        "language_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__511",
+      "missing_column_surfaces": [
+        "language_name",
+        "movie_status"
+      ]
+    },
+    {
+      "case_key": "movies_4__512",
+      "missing_column_surfaces": [
+        "language_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__514",
+      "missing_column_surfaces": [
+        "language_name",
+        "movie_id"
+      ]
+    },
+    {
+      "case_key": "movies_4__515",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__521",
+      "missing_column_surfaces": [
+        "country_iso_code",
+        "country_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__523",
+      "missing_column_surfaces": [
+        "company_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__524",
+      "missing_column_surfaces": [
+        "character_name",
+        "person_name"
+      ]
+    },
+    {
+      "case_key": "movies_4__525",
+      "missing_column_surfaces": [
+        "keyword_name",
+        "release_date"
+      ]
+    },
+    {
+      "case_key": "movies_4__526",
+      "missing_column_surfaces": [
+        "language_code"
+      ]
+    },
+    {
+      "case_key": "retail_complains__258",
+      "missing_column_surfaces": [
+        "ser_time"
+      ]
+    },
+    {
+      "case_key": "retail_complains__270",
+      "missing_column_surfaces": [
+        "Client_ID",
+        "client_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__285",
+      "missing_column_surfaces": [
+        "Client_ID",
+        "client_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__286",
+      "missing_column_surfaces": [
+        "Client_ID",
+        "client_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__289",
+      "missing_column_surfaces": [
+        "ser_time"
+      ]
+    },
+    {
+      "case_key": "retail_complains__305",
+      "missing_column_surfaces": [
+        "ser_time"
+      ]
+    },
+    {
+      "case_key": "retail_complains__306",
+      "missing_column_surfaces": [
+        "ser_time"
+      ]
+    },
+    {
+      "case_key": "retail_complains__313",
+      "missing_column_surfaces": [
+        "district_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__314",
+      "missing_column_surfaces": [
+        "Client_ID",
+        "client_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__317",
+      "missing_column_surfaces": [
+        "Client_ID",
+        "client_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__322",
+      "missing_column_surfaces": [
+        "ser_time"
+      ]
+    },
+    {
+      "case_key": "retail_complains__324",
+      "missing_column_surfaces": [
+        "Client_ID",
+        "client_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__331",
+      "missing_column_surfaces": [
+        "Client_ID",
+        "client_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__332",
+      "missing_column_surfaces": [
+        "state_abbrev"
+      ]
+    },
+    {
+      "case_key": "retail_complains__333",
+      "missing_column_surfaces": [
+        "address_1",
+        "address_2"
+      ]
+    },
+    {
+      "case_key": "retail_complains__338",
+      "missing_column_surfaces": [
+        "Client_ID",
+        "client_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__342",
+      "missing_column_surfaces": [
+        "Client_ID",
+        "client_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__359",
+      "missing_column_surfaces": [
+        "ser_time"
+      ]
+    },
+    {
+      "case_key": "retail_complains__366",
+      "missing_column_surfaces": [
+        "ser_time"
+      ]
+    },
+    {
+      "case_key": "retail_complains__371",
+      "missing_column_surfaces": [
+        "ser_time"
+      ]
+    },
+    {
+      "case_key": "retail_complains__379",
+      "missing_column_surfaces": [
+        "Client_ID",
+        "client_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__381",
+      "missing_column_surfaces": [
+        "Client_ID",
+        "client_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__383",
+      "missing_column_surfaces": [
+        "Client_ID",
+        "client_id"
+      ]
+    },
+    {
+      "case_key": "retail_complains__385",
+      "missing_column_surfaces": [
+        "state_abbrev"
+      ]
+    },
+    {
+      "case_key": "retail_complains__395",
+      "missing_column_surfaces": [
+        "state_abbrev"
+      ]
+    },
+    {
+      "case_key": "retail_complains__398",
+      "missing_column_surfaces": [
+        "state_abbrev"
+      ]
+    },
+    {
+      "case_key": "retail_complains__399",
+      "missing_column_surfaces": [
+        "state_abbrev"
+      ]
+    }
+  ]
+}

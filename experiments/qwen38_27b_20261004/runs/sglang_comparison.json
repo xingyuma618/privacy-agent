@@ -1,0 +1,94 @@
+{
+  "model": "/mnt/wh_intern/MXY/models/Qwen3.8-27B",
+  "hardware": "Same GPUs 0,1: A100 80GB, TP=2",
+  "dtype": "bfloat16",
+  "context_limit": 65536,
+  "thinking": false,
+  "input_tokens": 4264,
+  "output_tokens_per_request": 512,
+  "requests_per_measurement": 96,
+  "warmup": "One full-concurrency warmup before each measurement; startup/JIT excluded",
+  "versions": {
+    "vllm": "0.17.1",
+    "vllm_torch": "2.10.0+cu128",
+    "sglang": "0.5.10",
+    "sglang_torch": "2.9.1+cu128"
+  },
+  "sglang_configuration": {
+    "mamba_scheduler_strategy": "no_buffer",
+    "disable_custom_all_reduce": true,
+    "prefix_cache": true,
+    "cuda_graph": true,
+    "max_running_requests": 48
+  },
+  "results": [
+    {
+      "concurrency": 25,
+      "vllm_output_tokens_per_second": 781.8856077874674,
+      "sglang_output_tokens_per_second": 763.8509497271106,
+      "sglang_relative_to_vllm": 0.9769344033440004,
+      "vllm_requests_ok": 96,
+      "sglang_requests_ok": 96
+    },
+    {
+      "concurrency": 48,
+      "vllm_output_tokens_per_second": 1337.0161871086395,
+      "sglang_output_tokens_per_second": 1294.3166402119668,
+      "sglang_relative_to_vllm": 0.9680635527764159,
+      "vllm_requests_ok": 96,
+      "sglang_requests_ok": 96
+    }
+  ],
+  "compatibility": {
+    "json_ok": true,
+    "n3_tool_calls_ok": true,
+    "actions": [
+      {
+        "name": "query_rewrite",
+        "argument_chars": 126
+      },
+      {
+        "name": "entity_extract",
+        "argument_chars": 126
+      },
+      {
+        "name": "entity_extract",
+        "argument_chars": 126
+      }
+    ],
+    "calls": [
+      {
+        "role": "annotation",
+        "seconds": 0.35133517801295966,
+        "seed": 1168610408,
+        "n": 1,
+        "prompt_tokens": 34,
+        "completion_tokens": 6,
+        "returned_model": "Qwen3.8-27B",
+        "finish_reasons": [
+          "stop"
+        ]
+      },
+      {
+        "role": "policy",
+        "seconds": 5.41996820399072,
+        "seed": 647955440,
+        "n": 3,
+        "prompt_tokens": 2480,
+        "completion_tokens": 348,
+        "returned_model": "Qwen3.8-27B",
+        "finish_reasons": [
+          "tool_calls",
+          "tool_calls",
+          "tool_calls"
+        ]
+      }
+    ]
+  },
+  "decision": "Retain existing vLLM; no demonstrated throughput improvement in this compatible SGLang configuration. Small differences from one measurement may be noise.",
+  "limitations": [
+    "Shared-prefix fixed-length synthetic workload, not end-to-end MCTS",
+    "The extra_buffer overlap configuration stalled on the real n=3 policy request; only successful stable configuration measured",
+    "Latest SGLang needs a different CUDA stack; results apply to installed versions only"
+  ]
+}

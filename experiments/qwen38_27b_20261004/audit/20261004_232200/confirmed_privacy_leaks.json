@@ -1,0 +1,57 @@
+{
+  "criterion": "Manually reviewed original schema column identifiers retained in outbound question/evidence, despite privacy score=1. These cases are also present in the snapshot training exports.",
+  "cases": [
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__110",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "100",
+          "basis": "gold_literal_in_original_question"
+        },
+        {
+          "value": "rating_score",
+          "basis": "gold_column_name_in_original_question"
+        },
+        {
+          "value": "movie_title",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "What percentage of users rated the movie \"Patti Smith: Dream of Life\" by more than 3?\nPatti Smith: Dream of Life' is movie_title; more than 3 refers to rating_score >3; percentage = Divide(Count(rating_score where rating_score >3), Count(rating_score))*100",
+      "outbound_query": "What percentage of users rated the movie \"val_1\" by more than val_2? Evidence: val_1' is movie_title; more than val_2 refers to rating_score >val_2; percentage = Divide(Count(rating_score where rating_score >val_2), Count(rating_score))*100",
+      "original_gold_sql": "SELECT CAST(SUM(CASE WHEN T1.rating_score > 3 THEN 1 ELSE 0 END) AS REAL) * 100 / COUNT(T1.rating_score) FROM ratings AS T1 INNER JOIN movies AS T2 ON T1.movie_id = T2.movie_id WHERE T2.movie_title LIKE 'Patti Smith: Dream of Life'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific movie title and rating value with placeholders (val_1, val_2) and anonymizes all table and column names in the schema. No sensitive business logic or specific data values are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__432",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "keyword_name",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "Give the number of movies with \"saving the world\" as the keyword.\n\"saving the world\" as the keyword refers to keyword_name = 'saving the world'",
+      "outbound_query": "Give the number of movies with \"val_1\" as the col_11.\nEvidence: \"val_1\" as the col_11 refers to keyword_name = 'val_1'",
+      "original_gold_sql": "SELECT COUNT(T2.movie_id) FROM keyword AS T1 INNER JOIN movie_keywords AS T2 ON T1.keyword_id = T2.keyword_id WHERE keyword_name = 'saving the world'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific keyword value 'saving the world' to 'val_1' and all schema identifiers to generic names. No sensitive business meaning or original schema names are exposed."
+        }
+      ]
+    }
+  ]
+}

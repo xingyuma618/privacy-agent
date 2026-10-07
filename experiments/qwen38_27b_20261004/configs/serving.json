@@ -1,0 +1,9 @@
+{
+  "tensor_parallel_size": 2,
+  "max_model_len": 65536,
+  "max_num_seqs": 48,
+  "max_num_batched_tokens": 8192,
+  "gpu_memory_utilization": 0.85,
+  "prefix_caching": true,
+  "compilation_config": {"mode": 0, "cudagraph_mode": "FULL_DECODE_ONLY", "cudagraph_capture_sizes": [1,2,4,8,12,16,24,32,40,48], "max_cudagraph_capture_size": 48}
+}

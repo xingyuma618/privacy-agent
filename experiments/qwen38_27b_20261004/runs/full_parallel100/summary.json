@@ -1,0 +1,25 @@
+{
+  "updated_unix": 1791306862.880108,
+  "methods": {
+    "prompt": {
+      "completed": 9428,
+      "accepted": 3547,
+      "rejected": 5306,
+      "infrastructure_errors": 575,
+      "seconds": 1656867.9916248568,
+      "prompt_tokens": 495108673,
+      "completion_tokens": 34167347
+    },
+    "mcts": {
+      "completed": 9428,
+      "accepted": 5417,
+      "rejected": 3382,
+      "infrastructure_errors": 629,
+      "seconds": 16610720.549198205,
+      "prompt_tokens": 4938276143,
+      "completion_tokens": 394201667
+    }
+  },
+  "label_cases": 8862,
+  "note": "Prompt and MCTS have identical inputs/acceptance criteria, but generation budgets differ; actual token costs are logged."
+}

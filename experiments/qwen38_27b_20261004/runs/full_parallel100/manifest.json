@@ -1,0 +1,52 @@
+{
+  "fingerprint": "0a492d6dedb1ee020b9a3b984404bb84fd51620d4a00f2608f834fd991da9b3e",
+  "config": {
+    "teacher_model_path": "/mnt/wh_intern/MXY/models/Qwen3.8-27B",
+    "teacher_alias": "Qwen3.8-27B",
+    "student_model_path": "/mnt/wh_intern/MXY/models/Qwen3-4B-Instruct-2507",
+    "raw_train_path": "/mnt/wh_intern/MXY/paper/privacy-agent/CHESS/data/train/train.json",
+    "database_root": "/mnt/wh_intern/MXY/paper/privacy-agent/CHESS/data/train/train_databases_1",
+    "endpoints": [
+      "http://127.0.0.1:18270/v1",
+      "http://127.0.0.1:18271/v1",
+      "http://127.0.0.1:18272/v1",
+      "http://127.0.0.1:18273/v1"
+    ],
+    "seed": 2026,
+    "timeout_seconds": 1800,
+    "max_turns": 20,
+    "mcts_simulations": 24,
+    "expansion_width": 3,
+    "ucb_coefficient": 1.414,
+    "prompt_temperature": 0.8,
+    "expansion_temperature": 0.8,
+    "rollout_temperature": 0.0,
+    "max_tokens": {
+      "policy": 2048,
+      "rewrite": 2048,
+      "extract": 4096,
+      "annotation": 4096,
+      "sql": 4096,
+      "judge": 2048
+    },
+    "workers": 100,
+    "methods": [
+      "prompt",
+      "mcts"
+    ]
+  },
+  "methods": [
+    "prompt",
+    "mcts"
+  ],
+  "requested_cases": 9428,
+  "started_unix": 1791117615.1569378,
+  "teacher_roles": [
+    "annotation",
+    "rewrite",
+    "extract",
+    "policy",
+    "sql",
+    "judge"
+  ]
+}

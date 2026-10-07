@@ -1,0 +1,3222 @@
+{
+  "snapshot_unix": 1791127320.7994869,
+  "methods": {
+    "prompt": {
+      "counts": {
+        "status_rejected": 309,
+        "rejection_privacy_judge_failed": 34,
+        "status_accepted": 185,
+        "rejection_direct_privacy_leak": 29,
+        "final_sql_edited_after_unmask": 115,
+        "rejection_execution_failed": 228,
+        "accepted_with_recovered_tool_errors": 16,
+        "masked_sql_edited_before_unmask": 16,
+        "outbound_schema_differs_from_mask_tool": 11,
+        "rejection_missing_final_sql_or_outbound": 18,
+        "status_infrastructure_error": 21,
+        "provided_unmask_map_differs_from_canonical": 3,
+        "final_sql_not_checked_in_trajectory": 1
+      },
+      "examples": {
+        "final_sql_edited_after_unmask": [
+          "book_publishing_company__170",
+          "book_publishing_company__172",
+          "book_publishing_company__186",
+          "book_publishing_company__187",
+          "book_publishing_company__189",
+          "book_publishing_company__190",
+          "book_publishing_company__192",
+          "book_publishing_company__194",
+          "book_publishing_company__195",
+          "book_publishing_company__198",
+          "book_publishing_company__205",
+          "book_publishing_company__206"
+        ],
+        "accepted_with_recovered_tool_errors": [
+          "book_publishing_company__189",
+          "book_publishing_company__192",
+          "book_publishing_company__195",
+          "book_publishing_company__235",
+          "movie_platform__110",
+          "movie_platform__119",
+          "movie_platform__122",
+          "movie_platform__161",
+          "movie_platform__57",
+          "movie_platform__82",
+          "movie_platform__96",
+          "retail_complains__249"
+        ],
+        "masked_sql_edited_before_unmask": [
+          "book_publishing_company__200",
+          "movie_platform__4",
+          "movie_platform__59",
+          "movies_4__415",
+          "movies_4__421",
+          "movies_4__433",
+          "movies_4__468",
+          "movies_4__477",
+          "movies_4__482",
+          "movies_4__493",
+          "movies_4__498",
+          "movies_4__507"
+        ],
+        "outbound_schema_differs_from_mask_tool": [
+          "book_publishing_company__205",
+          "book_publishing_company__235",
+          "movies_4__461",
+          "movies_4__475",
+          "movies_4__507",
+          "retail_complains__254",
+          "retail_complains__258",
+          "retail_complains__313",
+          "retail_complains__332",
+          "retail_complains__350",
+          "retail_complains__378"
+        ],
+        "provided_unmask_map_differs_from_canonical": [
+          "movies_4__451",
+          "movies_4__507",
+          "retail_complains__306"
+        ],
+        "final_sql_not_checked_in_trajectory": [
+          "retail_complains__246"
+        ]
+      },
+      "database_distribution": {
+        "book_publishing_company": {
+          "rejected": 49,
+          "accepted": 24
+        },
+        "movie_platform": {
+          "rejected": 132,
+          "accepted": 34
+        },
+        "movies_4": {
+          "accepted": 70,
+          "rejected": 36
+        },
+        "retail_complains": {
+          "rejected": 92,
+          "accepted": 57
+        }
+      },
+      "independent_execution": {
+        "tested": 185,
+        "passed": 179,
+        "errors": [
+          {
+            "method": "prompt",
+            "case_key": "movie_platform__110",
+            "error": "interrupted"
+          },
+          {
+            "method": "prompt",
+            "case_key": "movie_platform__119",
+            "error": "interrupted"
+          },
+          {
+            "method": "prompt",
+            "case_key": "movie_platform__122",
+            "error": "interrupted"
+          },
+          {
+            "method": "prompt",
+            "case_key": "movie_platform__161",
+            "error": "interrupted"
+          },
+          {
+            "method": "prompt",
+            "case_key": "movie_platform__82",
+            "error": "interrupted"
+          },
+          {
+            "method": "prompt",
+            "case_key": "movie_platform__96",
+            "error": "interrupted"
+          }
+        ],
+        "mismatches": [],
+        "empty_gold_cases": [
+          "retail_complains__350"
+        ]
+      }
+    },
+    "mcts": {
+      "counts": {
+        "status_rejected": 111,
+        "rejection_privacy_judge_failed": 18,
+        "status_accepted": 295,
+        "final_sql_edited_after_unmask": 214,
+        "rejection_execution_failed": 90,
+        "rejection_direct_privacy_leak": 3,
+        "accepted_with_recovered_tool_errors": 53,
+        "outbound_query_differs_from_mask_tool": 1,
+        "status_infrastructure_error": 21,
+        "masked_sql_edited_before_unmask": 7,
+        "outbound_schema_differs_from_mask_tool": 9,
+        "provided_unmask_map_differs_from_canonical": 5
+      },
+      "examples": {
+        "final_sql_edited_after_unmask": [
+          "book_publishing_company__170",
+          "book_publishing_company__171",
+          "book_publishing_company__172",
+          "book_publishing_company__179",
+          "book_publishing_company__181",
+          "book_publishing_company__183",
+          "book_publishing_company__186",
+          "book_publishing_company__187",
+          "book_publishing_company__189",
+          "book_publishing_company__190",
+          "book_publishing_company__191",
+          "book_publishing_company__192"
+        ],
+        "accepted_with_recovered_tool_errors": [
+          "book_publishing_company__181",
+          "book_publishing_company__187",
+          "book_publishing_company__192",
+          "book_publishing_company__220",
+          "book_publishing_company__221",
+          "book_publishing_company__226",
+          "book_publishing_company__228",
+          "book_publishing_company__232",
+          "movie_platform__101",
+          "movie_platform__103",
+          "movie_platform__105",
+          "movie_platform__110"
+        ],
+        "outbound_query_differs_from_mask_tool": [
+          "book_publishing_company__197"
+        ],
+        "masked_sql_edited_before_unmask": [
+          "movie_platform__156",
+          "movie_platform__79",
+          "movies_4__471",
+          "retail_complains__261",
+          "retail_complains__312",
+          "retail_complains__324",
+          "retail_complains__403"
+        ],
+        "outbound_schema_differs_from_mask_tool": [
+          "movie_platform__59",
+          "movies_4__439",
+          "retail_complains__254",
+          "retail_complains__258",
+          "retail_complains__308",
+          "retail_complains__338",
+          "retail_complains__342",
+          "retail_complains__364",
+          "retail_complains__378"
+        ],
+        "provided_unmask_map_differs_from_canonical": [
+          "movies_4__480",
+          "retail_complains__259",
+          "retail_complains__308",
+          "retail_complains__312",
+          "retail_complains__324"
+        ]
+      },
+      "database_distribution": {
+        "book_publishing_company": {
+          "rejected": 28,
+          "accepted": 44
+        },
+        "movie_platform": {
+          "rejected": 54,
+          "accepted": 100
+        },
+        "movies_4": {
+          "accepted": 66
+        },
+        "retail_complains": {
+          "accepted": 85,
+          "rejected": 29
+        }
+      },
+      "independent_execution": {
+        "tested": 295,
+        "passed": 241,
+        "errors": [
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__100",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__101",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__103",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__105",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__106",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__107",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__108",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__110",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__115",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__119",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__122",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__126",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__127",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__128",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__13",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__130",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__134",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__135",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__14",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__150",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__156",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__161",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__165",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__19",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__23",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__25",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__26",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__27",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__29",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__35",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__37",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__42",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__43",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__49",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__5",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__66",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__67",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__69",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__7",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__72",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__74",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__75",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__76",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__77",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__79",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__80",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__81",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__82",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__83",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__9",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__93",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__94",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__96",
+            "error": "interrupted"
+          },
+          {
+            "method": "mcts",
+            "case_key": "movie_platform__99",
+            "error": "interrupted"
+          }
+        ],
+        "mismatches": [],
+        "empty_gold_cases": [
+          "book_publishing_company__199",
+          "movie_platform__24",
+          "retail_complains__276",
+          "retail_complains__350",
+          "retail_complains__394"
+        ]
+      }
+    }
+  },
+  "label_errors": {
+    "movie_platform__129": "annotation: Expecting ',' delimiter: line 3 column 3121 (char 3143)",
+    "movies_4__449": "annotation: Unknown entity table: ",
+    "retail_complains__243": "annotation: Unknown column: first, middle, last",
+    "retail_complains__248": "annotation: Unknown column: first, middle, last",
+    "retail_complains__251": "annotation: Unknown column: first, middle, last",
+    "retail_complains__255": "annotation: Unknown column: first, middle, last",
+    "retail_complains__268": "annotation: Unknown column: day, month, year",
+    "retail_complains__271": "annotation: Unknown column: first, middle, last",
+    "retail_complains__273": "annotation: Unknown column: first, middle, last",
+    "retail_complains__278": "annotation: Unknown column: first, middle, last",
+    "retail_complains__282": "annotation: Unknown column: first, middle, last",
+    "retail_complains__309": "annotation: Unknown column: address_1, address_2",
+    "retail_complains__325": "annotation: Unknown column: first, middle, last",
+    "retail_complains__326": "annotation: Unknown column: year, month, day",
+    "retail_complains__330": "annotation: Unknown column: first, middle, last",
+    "retail_complains__344": "annotation: Unknown column: first, middle, last",
+    "retail_complains__349": "annotation: Unknown column: first, middle, last",
+    "retail_complains__352": "annotation: Unknown column: first, middle, last",
+    "retail_complains__361": "annotation: Unknown column: first, middle, last",
+    "retail_complains__369": "annotation: Unknown column: year, month, day",
+    "retail_complains__373": "annotation: Unknown column: first, middle, last"
+  },
+  "issues": [
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__170",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__172",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__186",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__187",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__189",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__190",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__192",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__194",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__195",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__198",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__200",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__205",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__206",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__216",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__218",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__225",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__227",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__233",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__235",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__110",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__113",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__118",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__119",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__122",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__132",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__147",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__151",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__161",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__20",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__4",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__53",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__54",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__57",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__59",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__62",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__82",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__85",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__87",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__96",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__408",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__413",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__415",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__417",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__418",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__419",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__420",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__421",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__426",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__428",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__429",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__430",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__433",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__434",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__435",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__445",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__446",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__450",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__451",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "provided_unmask_map_differs_from_canonical"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__452",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__453",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__459",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__461",
+      "issues": [
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__462",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__464",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__466",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__468",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__469",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__470",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__471",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__472",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__475",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__477",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__478",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__479",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__480",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__481",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__482",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__490",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__491",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__493",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__494",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__495",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__496",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__497",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__498",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__499",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__502",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__505",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__506",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__507",
+      "issues": [
+        "masked_sql_edited_before_unmask",
+        "outbound_schema_differs_from_mask_tool",
+        "provided_unmask_map_differs_from_canonical"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__510",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__516",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__245",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__246",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "final_sql_not_checked_in_trajectory"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__247",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__249",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__254",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__258",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__261",
+      "issues": [
+        "accepted_with_recovered_tool_errors"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__263",
+      "issues": [
+        "accepted_with_recovered_tool_errors"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__266",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__274",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__288",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__289",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__290",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__300",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__301",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__306",
+      "issues": [
+        "masked_sql_edited_before_unmask",
+        "provided_unmask_map_differs_from_canonical"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__307",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__308",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__312",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__313",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__315",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__320",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__323",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__324",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__329",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__332",
+      "issues": [
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__333",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__334",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__342",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__348",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__350",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__357",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__364",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__365",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__367",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__375",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__377",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__378",
+      "issues": [
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__381",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__382",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__388",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__391",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__393",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__403",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__407",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__170",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__171",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__172",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__179",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__181",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__183",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__186",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__187",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__189",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__190",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__191",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__192",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__194",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__196",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__197",
+      "issues": [
+        "outbound_query_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__198",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__199",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__200",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__202",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__204",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__205",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__206",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__207",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__212",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__216",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__218",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__220",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__221",
+      "issues": [
+        "accepted_with_recovered_tool_errors"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__225",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__226",
+      "issues": [
+        "accepted_with_recovered_tool_errors"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__227",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__228",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__232",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__233",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__235",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__100",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__101",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__103",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__104",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__105",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__106",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__107",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__108",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__110",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__113",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__115",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__118",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__119",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__122",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__127",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__13",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__130",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__132",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__134",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__135",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__142",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__143",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__147",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__150",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__151",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__155",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__156",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask",
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__161",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__165",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__18",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__20",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__23",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__24",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__25",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__26",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__27",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__33",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__35",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__37",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__4",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__42",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__43",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__5",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__52",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__53",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__54",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__57",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__59",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__60",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__61",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__62",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__63",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__66",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__67",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__69",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__7",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__72",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__74",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__75",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__77",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__79",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask",
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__80",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__81",
+      "issues": [
+        "accepted_with_recovered_tool_errors"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__82",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__83",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__85",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__87",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__9",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__93",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__94",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__96",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__99",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__408",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__411",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__413",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__415",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__417",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__418",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__419",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__420",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__421",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__423",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__425",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__426",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__428",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__429",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__430",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__431",
+      "issues": [
+        "accepted_with_recovered_tool_errors"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__432",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__433",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__434",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__436",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__439",
+      "issues": [
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__445",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__446",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__450",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__451",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__452",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__453",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__454",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__455",
+      "issues": [
+        "accepted_with_recovered_tool_errors"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__458",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__459",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__461",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__462",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__464",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__466",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__468",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__469",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__470",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__471",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__477",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__478",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__479",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__480",
+      "issues": [
+        "provided_unmask_map_differs_from_canonical"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__481",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__482",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__486",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__494",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__497",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__498",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__245",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__246",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__247",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__249",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__253",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__254",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__258",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__259",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "provided_unmask_map_differs_from_canonical"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__261",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__263",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__265",
+      "issues": [
+        "accepted_with_recovered_tool_errors"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__266",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__274",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__276",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__287",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__288",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__289",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__290",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__292",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__296",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__297",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__298",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__299",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__300",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__301",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__306",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__307",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__308",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask",
+        "outbound_schema_differs_from_mask_tool",
+        "provided_unmask_map_differs_from_canonical"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__311",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__312",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "masked_sql_edited_before_unmask",
+        "provided_unmask_map_differs_from_canonical"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__313",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__314",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__315",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__320",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__322",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__323",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__324",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "masked_sql_edited_before_unmask",
+        "provided_unmask_map_differs_from_canonical"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__329",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__331",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__332",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__333",
+      "issues": [
+        "accepted_with_recovered_tool_errors",
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__334",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__338",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__342",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__343",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__345",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__348",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__350",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__351",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__354",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__359",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__362",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__364",
+      "issues": [
+        "final_sql_edited_after_unmask",
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__365",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__367",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__368",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__375",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__377",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__378",
+      "issues": [
+        "outbound_schema_differs_from_mask_tool"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__381",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__382",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__388",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__390",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__392",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__393",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__394",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__395",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__403",
+      "issues": [
+        "masked_sql_edited_before_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__404",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__405",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__407",
+      "issues": [
+        "final_sql_edited_after_unmask"
+      ]
+    }
+  ],
+  "exports": {
+    "prompt": {
+      "rows": 166,
+      "chat_template_errors": [],
+      "duplicate_rows": 0,
+      "token_length_min": 6481,
+      "token_length_median": 8026.5,
+      "token_length_max": 13170,
+      "over_8192": 65,
+      "over_16384": 0,
+      "over_32768": 0
+    },
+    "mcts": {
+      "rows": 273,
+      "chat_template_errors": [],
+      "duplicate_rows": 0,
+      "token_length_min": 6331,
+      "token_length_median": 8133,
+      "token_length_max": 16919,
+      "over_8192": 129,
+      "over_16384": 1,
+      "over_32768": 0
+    }
+  },
+  "inputs_database_count": 69,
+  "unique_annotation_errors": 21,
+  "annotation_error_distribution": {
+    "annotation: Expecting ',' delimiter: line 3 column 3121 (char 3143)": 1,
+    "annotation: Unknown entity table: ": 1,
+    "annotation: Unknown column: first, middle, last": 15,
+    "annotation: Unknown column: day, month, year": 1,
+    "annotation: Unknown column: address_1, address_2": 1,
+    "annotation: Unknown column: year, month, day": 2
+  },
+  "audit_notes": [
+    "SQL provenance follow-up parsed each earlier attempted SQL independently; retail_complains__263 has a later check matching its final SQL. The original parse flag was an audit artifact and was removed.",
+    "60 SQL reruns timed out under the existing 15-second query limit. Their correctness remains unverified in this independent audit; these are not observed result mismatches.",
+    "94 privacy candidates are contextual review candidates; only 2 explicit identifier leaks are confirmed here.",
+    "Exact underscore-column coverage diagnostic found 273 affected annotations among 506. This measures a specific omission class, not overall entity recall."
+  ]
+}

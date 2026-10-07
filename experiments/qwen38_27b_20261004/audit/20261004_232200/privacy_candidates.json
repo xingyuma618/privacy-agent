@@ -1,0 +1,2272 @@
+{
+  "note": "Candidates require contextual review; common words/numbers may be false positives. Not an independent privacy proof.",
+  "empty_annotation_cases": [],
+  "candidate_exposure_calls": 98,
+  "unique_cases": 94,
+  "by_method": {
+    "prompt": 42,
+    "mcts": 56
+  },
+  "findings": [
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__194",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "authors",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "For all authors from CA who are not on contract, which title of his/hers has the most year to date sales.\nyear to date sales refers to ytd_sales; on contract refers to contract = 1",
+      "outbound_query": "For all authors from val_1 who are not on col_9, which col_56 of his/hers has the most col_62.",
+      "original_gold_sql": "SELECT T1.title FROM titles AS T1 INNER JOIN titleauthor AS T2 ON T1.title_id = T2.title_id INNER JOIN authors AS T3 ON T2.au_id = T3.au_id WHERE T3.contract = 0 AND T3.state = 'CA' ORDER BY T1.ytd_sales DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific values (like 'CA') have been successfully replaced with generic identifiers (table_1, col_1, val_1) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__195",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "authors",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Name all the authors for 'Sushi, Anyone?'.\nmost year to date sales refers to MAX(ytd_sales); on contract refers to contract = 1; name of author = au_fname, au_lname",
+      "outbound_query": "What are the first names (col_3) and last names (col_2) of the authors for the title 'val_1'?",
+      "original_gold_sql": "SELECT T3.au_fname, T3.au_lname FROM titles AS T1 INNER JOIN titleauthor AS T2 ON T1.title_id = T2.title_id INNER JOIN authors AS T3 ON T2.au_id = T3.au_id WHERE T1.title = 'Sushi, Anyone?'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific book title 'Sushi, Anyone?' to 'val_1' and replaces all original table and column names with generic identifiers (table_1, col_1, etc.), preventing the exposure of sensitive schema names or business-specific values."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__227",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "city",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "How many sales did the store in Remulade make?\nRemulade is a city; sales in the store refers to ord_num",
+      "outbound_query": "How many orders (col_40) are there in the table_8 table for stores located in the city of val_1?",
+      "original_gold_sql": "SELECT COUNT(T1.ord_num) FROM sales AS T1 INNER JOIN stores AS T2 ON T1.stor_id = T2.stor_id WHERE T2.city = 'Remulade'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific city name 'Remulade' is replaced with 'val_1', the table name 'sales' is replaced with 'table_8', and the column 'ord_num' is replaced with 'col_40'. The schema is fully anonymized with generic table and column names, and no business-sensitive meanings or original identifiers are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "book_publishing_company__233",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "titles",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "List the title name, type, and price of the titles published by New Moon Books. Arrange the list in ascending order of price.\nEric the Read Books is a publisher which refers to pub_name;",
+      "outbound_query": "List the col_56, col_57, and col_59 of the titles published by val_1. Arrange the list in ascending order of col_59.",
+      "original_gold_sql": "SELECT T1.title, T1.type, T1.price FROM titles AS T1 INNER JOIN publishers AS T2 ON T1.pub_id = T2.pub_id WHERE T2.pub_name = 'New Moon Books' ORDER BY T1.price",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (tables and columns) and specific business values (publisher name) using generic identifiers (col_X, table_X, val_1). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__110",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "100",
+          "basis": "gold_literal_in_original_question"
+        },
+        {
+          "value": "rating_score",
+          "basis": "gold_column_name_in_original_question"
+        },
+        {
+          "value": "movie_title",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "What percentage of users rated the movie \"Patti Smith: Dream of Life\" by more than 3?\nPatti Smith: Dream of Life' is movie_title; more than 3 refers to rating_score >3; percentage = Divide(Count(rating_score where rating_score >3), Count(rating_score))*100",
+      "outbound_query": "What percentage of users rated the movie \"val_1\" by more than val_2? Evidence: val_1' is movie_title; more than val_2 refers to rating_score >val_2; percentage = Divide(Count(rating_score where rating_score >val_2), Count(rating_score))*100",
+      "original_gold_sql": "SELECT CAST(SUM(CASE WHEN T1.rating_score > 3 THEN 1 ELSE 0 END) AS REAL) * 100 / COUNT(T1.rating_score) FROM ratings AS T1 INNER JOIN movies AS T2 ON T1.movie_id = T2.movie_id WHERE T2.movie_title LIKE 'Patti Smith: Dream of Life'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific movie title and rating value with placeholders (val_1, val_2) and anonymizes all table and column names in the schema. No sensitive business logic or specific data values are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movie_platform__20",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movies",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What are the movie popularity of the movies released in 2021 that were directed by Steven Spielberg? List the names of the movies and their corresponding popularity.\nmovie released in 2021 refers to movie_release_year = 2021; popularity refers to movie_popularity;",
+      "outbound_query": "What are the col_30 of the movies released in val_1 that were directed by val_2? List the col_26 and their corresponding col_30.",
+      "original_gold_sql": "SELECT movie_title, movie_popularity FROM movies WHERE movie_release_year = 2021 AND director_name = 'Steven Spielberg'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive entities including specific column names, table names, and cell values (2021, Steven Spielberg) have been successfully masked with generic identifiers (col_XX, table_X, val_X) in both the query and schema."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__413",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What was the job of Dariusz Wolski in the movie \"Pirates of the Caribbean: At World's End\"?\nmovie \"Pirates of the Caribbean: At World's End\" refers to title = 'Pirates of the Caribbean: At World''s End'",
+      "outbound_query": "What was the col_40 of val_1 in the movie \"val_2\"?",
+      "original_gold_sql": "SELECT T2.job FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T1.title LIKE 'Pirates of the Caribbean: At World%s End' AND T3.person_name = 'Dariusz Wolski'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive entities (person name, movie title, specific column names) have been successfully masked with generic identifiers (val_1, val_2, col_40, table_1, etc.) in both the query and the schema."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__415",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "How many crew members worked as producer in the movie \"Pirates of the Caribbean: At World's End\"?\nworked as producer refers to job = 'Producer'; \"Pirates of the Caribbean: At World's End\" refers to title = 'Pirates of the Caribbean: At World''s End'",
+      "outbound_query": "How many table_11 worked as val_1 in the movie \"val_2\"?",
+      "original_gold_sql": "SELECT COUNT(T3.person_id) FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T1.title LIKE 'Pirates of the Caribbean: At World%s End' AND T2.job = 'Producer'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific movie title 'Pirates of the Caribbean: At World's End' is replaced with 'val_2', the job title 'Producer' is replaced with 'val_1', and the table name 'movie_crew' is replaced with 'table_11'. The schema is fully anonymized with generic table and column names, exposing no original schema names or business-sensitive meanings."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__418",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Among the movie in which Dariusz Wolski works as the director of photography, what is the title of the one with the highest average vote?\ndirector of photography refers to job = 'Director of Photography'; highest average vote refers to max(vote_average)",
+      "outbound_query": "What is the col_18 of the movie with the highest col_28 among those where val_1 works as the val_2?",
+      "original_gold_sql": "SELECT T1.title FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T3.person_name = 'Dariusz Wolski' AND T2.job = 'Director of Photography' ORDER BY T1.vote_average DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific person name 'Dariusz Wolski' is replaced with 'val_1', the job title 'Director of Photography' is replaced with 'val_2', and all table and column names are anonymized to generic identifiers (e.g., 'table_8', 'col_18'). No original schema names, values, or business-sensitive meanings are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__419",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "When was the release date of the latest movie in which Dariusz Wolski worked as a crew member?\nrelease date of the latest movie refers to max(release_date)",
+      "outbound_query": "When was the col_23 of the latest movie in which val_1 worked as a table_11?",
+      "original_gold_sql": "SELECT T1.release_date FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T3.person_name = 'Dariusz Wolski' ORDER BY T1.release_date DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific person name 'Dariusz Wolski' to 'val_1' and the column 'release_date' to 'col_23'. The schema is fully anonymized with generic table and column names. No sensitive business meaning or original identifiers are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__420",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Among the movie in which Dariusz Wolski works as the director of photography, what is the percentage of those movie whose vote average is over 5.0?\ndirector of photography refers to job = 'Director of Photography'; vote average is over 8.0 refers to vote_average > 5; percentage = divide(sum(movie_id) when vote_average > 5, count(movie_id)) as percentage",
+      "outbound_query": "Among the movie in which val_1 works as the val_2, what is the percentage of those movie whose col_28 is over val_3?",
+      "original_gold_sql": "SELECT CAST(COUNT(CASE WHEN T1.vote_average > 5 THEN 1 ELSE NULL END) AS REAL) * 100 / COUNT(T1.vote_average) FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T3.person_name = 'Dariusz Wolski' AND T2.job = 'Director of Photography'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific person name 'Dariusz Wolski' is replaced by 'val_1', the job title 'Director of Photography' is replaced by 'val_2', the column 'vote_average' is replaced by 'col_28', and the threshold value '5.0' is replaced by 'val_3'. The schema is fully anonymized with generic table and column names, revealing no original business-sensitive structure or data."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__421",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the average revenue of the movie in which Dariusz Wolski works as the director of photography?\ndirector of photography refers to job = 'Director of Photography'; average revenue = divide(sum(revenue), count(movie_id))",
+      "outbound_query": "What is the average col_24 of the movie in which val_1 works as the val_2?",
+      "original_gold_sql": "SELECT CAST(SUM(T1.revenue) AS REAL) / COUNT(T1.movie_id) FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T3.person_name = 'Dariusz Wolski' AND T2.job = 'Director of Photography'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific person name 'Dariusz Wolski' is replaced with 'val_1', the job title 'Director of Photography' is replaced with 'val_2', and the column 'revenue' is replaced with 'col_24'. The schema is fully anonymized with generic table and column names, exposing no original business-sensitive structure or data."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__423",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What was David Rubin's job in the movie \"Days of Thunder\"?\n\"Days of Thunder\" refers to title = 'Days of Thunder'",
+      "outbound_query": "What was val_1's col_40 in the movie \"val_2\"?",
+      "original_gold_sql": "SELECT T2.job FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T3.person_name = 'David Rubin' AND T1.title = 'Days of Thunder'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. 'David Rubin' is replaced by 'val_1', 'Days of Thunder' by 'val_2', and the specific column 'job' by 'col_40'. The schema is fully anonymized with generic table and column names, revealing no original business-sensitive structure or values."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__426",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "For the movie \"Land of the Dead\", who is its director?\n\"Land of the Dead\" refers to title = 'Land of the Dead'; director refers to person_name where job = 'Director'",
+      "outbound_query": "For the movie \"val_1\", who is its col_40?",
+      "original_gold_sql": "SELECT T3.person_name FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T1.title = 'Land of the Dead' AND T2.job = 'Director'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific movie title 'Land of the Dead' to 'val_1' and the job role 'Director' to 'col_40'. The schema is fully anonymized with generic table and column names, exposing no original sensitive schema names, values, or business-sensitive meanings."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__428",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "How many female characters are there in the movie \"Spider-Man 3\"?\nfemale characters refer to gender = 'Female'; \"Spider-Man 3\" refers to title = 'Spider-Man 3'",
+      "outbound_query": "How many val_1 col_32 are there in the movie \"val_2\"?",
+      "original_gold_sql": "SELECT COUNT(*) FROM movie AS T1 INNER JOIN movie_cast AS T2 ON T1.movie_id = T2.movie_id INNER JOIN gender AS T3 ON T2.gender_id = T3.gender_id WHERE T1.title = 'Spider-Man 3' AND T3.gender = 'Female'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. 'female characters' is replaced by 'val_1 col_32' and 'Spider-Man 3' is replaced by 'val_2'. The schema uses generic table and column names (table_1, col_1, etc.), removing any business-specific identifiers."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__430",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "How many producers does the movie \"The Amityville Horror\" have?\nproducers refers to job = 'Producer'; \"The Amityville Horror\" refers to title = 'The Amityville Horror'",
+      "outbound_query": "How many val_2 does the movie \"val_1\" have?",
+      "original_gold_sql": "SELECT COUNT(T2.person_id) FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id WHERE T1.title = 'The Amityville Horror' AND T2.job = 'Producer'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific movie title and job role with generic placeholders (val_1, val_2) and replaces all schema identifiers with generic table and column names, preventing any leakage of sensitive business data or schema structure."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__431",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the production company of the movie \"Crazy Heart\"?\nmovie \"Crazy Heart\" refers to title = 'Crazy Heart'; production company refers to company_name",
+      "outbound_query": "What is the table_16 of the movie \"val_1\"?",
+      "original_gold_sql": "SELECT T1.company_name FROM production_company AS T1 INNER JOIN movie_company AS T2 ON T1.company_id = T2.company_id INNER JOIN movie AS T3 ON T2.movie_id = T3.movie_id WHERE T3.title = 'Crazy Heart'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific movie title 'Crazy Heart' to 'val_1' and the column 'company_name' to 'table_16' (referring to the table name in the query context, though technically 'production company' maps to the table 'production_company' which is 'table_16' in the masked schema). All schema names and column names are anonymized to generic identifiers (table_N, col_N). No sensitive business logic or specific data values are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__434",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "For the movie \"Reign of Fire\", which department was Marcia Ross in?\nmovie \"Reign of Fire\" refers to title = 'Reign of Fire'; which department refers to department_name",
+      "outbound_query": "For the movie \"val_1\", which col_5 was val_2 in?",
+      "original_gold_sql": "SELECT T4.department_name FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id INNER JOIN department AS T4 ON T2.department_id = T4.department_id WHERE T3.person_name = 'Marcia Ross' AND T1.title = 'Reign of Fire'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The movie title 'Reign of Fire' is replaced with 'val_1', the person name 'Marcia Ross' is replaced with 'val_2', and the column 'department_name' is replaced with 'col_5'. The schema is fully anonymized with generic table and column names, exposing no original business-sensitive structure or values."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__445",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is Walt Disney Pictures' most popular movie?\nWalt Disney Pictures refers to company_name = 'Walt Disney Pictures'; most popular movie refers to max(popularity)",
+      "outbound_query": "What is val_1' most col_22 movie?",
+      "original_gold_sql": "SELECT T3.title FROM production_company AS T1 INNER JOIN movie_company AS T2 ON T1.company_id = T2.company_id INNER JOIN movie AS T3 ON T2.movie_id = T3.movie_id WHERE T1.company_name = 'Walt Disney Pictures' ORDER BY T3.popularity DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific company name 'Walt Disney Pictures' to 'val_1' and the column 'popularity' to 'col_22'. The schema is fully anonymized with generic table and column names, exposing no original sensitive entities or business meanings."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__451",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the title of Jamie Foxx's most recent movie?\nmost recent movie refers to max(release_date)",
+      "outbound_query": "What is the col_18 of the movie with the maximum col_23 that val_1 acted in?",
+      "original_gold_sql": "SELECT T1.title FROM movie AS T1 INNER JOIN movie_cast AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T3.person_name = 'Jamie Foxx' ORDER BY T1.release_date DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. 'Jamie Foxx' is replaced by 'val_1', 'title' by 'col_18', and 'release_date' by 'col_23'. The schema uses generic table and column names, and no business-sensitive meanings or original schema names are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__453",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the title of the first crime movie ever released?\nfirst crime movie ever released refers to min(release_date) and genre_name = 'Crime'",
+      "outbound_query": "What is the col_18 of the movie with the earliest col_23 in the val_1 genre?",
+      "original_gold_sql": "SELECT T1.title FROM movie AS T1 INNER JOIN movie_genres AS T2 ON T1.movie_id = T2.movie_id INNER JOIN genre AS T3 ON T2.genre_id = T3.genre_id WHERE T3.genre_name = 'Crime' ORDER BY T1.release_date LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'movie', 'genre') and specific values (e.g., 'Crime') using generic identifiers (col_18, val_1). No original sensitive entities are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__479",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "The movie 'Gojira ni-sen mireniamu' is from which country?\nmovie 'Gojira ni-sen mireniamu' refers to title = 'Gojira ni-sen mireniamu'; which country refers to country_name",
+      "outbound_query": "The movie 'val_1' is from which col_3?",
+      "original_gold_sql": "SELECT T3.COUNTry_name FROM movie AS T1 INNER JOIN production_COUNTry AS T2 ON T1.movie_id = T2.movie_id INNER JOIN COUNTry AS T3 ON T2.COUNTry_id = T3.COUNTry_id WHERE T1.title = 'Gojira ni-sen mireniamu'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific movie title 'Gojira ni-sen mireniamu' to 'val_1' and all schema identifiers (table and column names) to generic placeholders (table_1, col_1, etc.). No sensitive business meaning or original schema names are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__481",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "10",
+          "basis": "gold_literal_in_original_question"
+        }
+      ],
+      "question": "List 10 movie titles that were produced in France.\nFrance refers to country_name = 'France'",
+      "outbound_query": "List 10 col_18 that were produced in val_1.",
+      "original_gold_sql": "SELECT T1.title FROM movie AS T1 INNER JOIN production_COUNTry AS T2 ON T1.movie_id = T2.movie_id INNER JOIN COUNTry AS T3 ON T2.COUNTry_id = T3.COUNTry_id WHERE T3.COUNTry_name = 'France' LIMIT 10",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'movie', 'country') and specific values (e.g., 'France') with generic identifiers (col_18, val_1, table_1). No original sensitive entities are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__482",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Who is the director for the movie 'Transformers?'\nthe director refers to person_name where job = 'Director'; movie 'Transformers' refers to title = 'Transformers'",
+      "outbound_query": "Who is the val_2 for the movie 'val_1?'",
+      "original_gold_sql": "SELECT T3.person_name FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T1.title = 'Transformers' AND T2.job = 'Director'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific movie title 'Transformers' is replaced with 'val_1', the column 'person_name' is replaced with 'val_2', and all table and column names in the schema are anonymized to generic identifiers (e.g., 'table_1', 'col_1'). No original schema names, values, or business-sensitive meanings are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__487",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the keyword ID of the movie with the title of \"Sin City\"?\ntitle of \"Sin City\" refers to title = 'Sin City'",
+      "outbound_query": "What is the col_10 of the movie with the col_18 of \"val_1\"?",
+      "original_gold_sql": "SELECT T2.keyword_id FROM movie AS T1 INNER JOIN movie_keywords AS T2 ON T1.movie_id = T2.movie_id WHERE T1.title = 'Sin City'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific values (like 'Sin City') have been successfully masked with generic identifiers (table_1, col_1, val_1) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__490",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Provide the genre ID of the movie with the title of \"The Dark Knight\".\nmovie with the title of \"The Dark Knight\" refers to title = 'The Dark Knight'",
+      "outbound_query": "Provide the col_8 of the movie with the col_18 of \"val_1\".",
+      "original_gold_sql": "SELECT T2.genre_id FROM movie AS T1 INNER JOIN movie_genres AS T2 ON T1.movie_id = T2.movie_id WHERE T1.title = 'The Dark Knight'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific data values (like 'The Dark Knight') have been successfully replaced with generic identifiers (table_1, col_1, val_1) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__497",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the country ID of the movie with the title of \"Pirates of the Caribbean: Dead Man's Chest\"?\ntitle of \"Pirates of the Caribbean: Dead Man's Chest\" refers to title = 'Pirates of the Caribbean: Dead Man''s Chest'",
+      "outbound_query": "What is the col_1 of the movie with the col_18 of \"val_1\"?",
+      "original_gold_sql": "SELECT T2.COUNTry_id FROM movie AS T1 INNER JOIN production_COUNTry AS T2 ON T1.movie_id = T2.movie_id WHERE T1.title LIKE 'Pirates of the Caribbean: Dead Man%s Chest'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific data values (such as the movie title) have been successfully replaced with generic placeholders (col_X, table_X, val_1) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__508",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the language ID of the movie \"Walk the Line\"?\nmovie \"Walk the Line\" refers to title = 'Walk the Line'",
+      "outbound_query": "What is the col_46 of the movie \"val_1\"?",
+      "original_gold_sql": "SELECT T2.language_id FROM movie AS T1 INNER JOIN movie_languages AS T2 ON T1.movie_id = T2.movie_id WHERE T1.title = 'Walk the Line'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (tables and columns) and specific data values (movie title) with generic identifiers (table_N, col_N, val_1). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "movies_4__510",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Tell the language of the movie \"C'era una volta il West\".\nlanguage refers to language_name; movie \"C'era una volta il West\" refers to title = 'C''era una volta il West'",
+      "outbound_query": "Tell the col_14 of the movie \"val_1\".",
+      "original_gold_sql": "SELECT T3.language_name FROM movie AS T1 INNER JOIN movie_languages AS T2 ON T1.movie_id = T2.movie_id INNER JOIN language AS T3 ON T2.language_id = T3.language_id WHERE T1.title LIKE 'C%era una volta il West'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (tables and columns) and specific data values (movie title) with generic identifiers (table_N, col_N, val_1). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__265",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Date",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "What was the review context from Jacksonville on 2017/7/22?\nJacksonville refers to city = 'Jacksonville'; on 2017/7/22 refers to Date = '2017-07-22';",
+      "outbound_query": "What was the col_53 from val_1 on val_2?",
+      "original_gold_sql": "SELECT T1.Reviews FROM reviews AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.city = 'Jacksonville' AND T1.Date = '2017-07-22'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names, column names, and specific cell values (like 'Jacksonville' and the date) with generic identifiers (col_XX, val_XX, table_XX). No original sensitive information is exposed."
+        },
+        {
+          "call": 1,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content uses generic identifiers (col_XX, table_X, val_X) and contains no original schema names, specific values like 'Jacksonville' or dates, or business-sensitive meanings."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__265",
+      "outbound_call": 1,
+      "candidates": [
+        {
+          "value": "Date",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "What was the review context from Jacksonville on 2017/7/22?\nJacksonville refers to city = 'Jacksonville'; on 2017/7/22 refers to Date = '2017-07-22';",
+      "outbound_query": "What is the col_53 for the col_53 record where the col_33 is val_1 and the col_51 is val_2?",
+      "original_gold_sql": "SELECT T1.Reviews FROM reviews AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.city = 'Jacksonville' AND T1.Date = '2017-07-22'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names, column names, and specific cell values (like 'Jacksonville' and the date) with generic identifiers (col_XX, val_XX, table_XX). No original sensitive information is exposed."
+        },
+        {
+          "call": 1,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content uses generic identifiers (col_XX, table_X, val_X) and contains no original schema names, specific values like 'Jacksonville' or dates, or business-sensitive meanings."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__266",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Date",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "Which product received a review from Indianapolis on 2016/10/7?\nIndianapolis refers to state = 'Indianapolis'; on 2016/10/7 refers to Date = '2013-04-04';",
+      "outbound_query": "Which col_54 received a table_5 from val_1 on val_2?",
+      "original_gold_sql": "SELECT T1.Product FROM reviews AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.city = 'Indianapolis' AND T1.Date = '2016-10-07'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names, table names, and specific cell values (Indianapolis, dates) with generic identifiers (col_x, table_x, val_x). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__288",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Region",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "Calculate the difference in the average age of elderly and middle-aged clients in the Northeast region.\ndifference in the average = SUBTRACT(AVG(age BETWEEN 35 AND 55), AVG( age > 65)); elderly refers to age > 65; middle-aged refers to age BETWEEN 35 AND 55;",
+      "outbound_query": "Calculate the difference between the average col_19 of clients with col_19 greater than val_1 and the average col_19 of clients with col_19 between val_2 and val_3, where the clients are located in the val_4 region.",
+      "original_gold_sql": "SELECT (CAST(SUM(CASE WHEN T1.age BETWEEN 35 AND 55 THEN T1.age ELSE 0 END) AS REAL) / SUM(CASE WHEN T1.age BETWEEN 35 AND 55 THEN 1 ELSE 0 END)) - (CAST(SUM(CASE WHEN T1.age > 65 THEN T1.age ELSE 0 END) AS REAL) / SUM(CASE WHEN T1.age > 65 THEN 1 ELSE 0 END)) AS difference FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN state AS T3 ON T2.state_abbrev = T3.StateCode WHERE T3.Region = 'Northeast'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'client', 'state') and specific values (e.g., 'Northeast', age ranges) using generic placeholders (col_19, val_1, etc.). No original sensitive entities are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__301",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Product",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "How many clients under the age of 35 gave Eagle National Mortgage 1 star?\nage < 35; Eagle National Mortgage refers to Product = 'Eagle National Mortgage';",
+      "outbound_query": "How many table_2 with col_19 less than val_1 gave a rating of val_2 to product val_3?",
+      "original_gold_sql": "SELECT COUNT(T2.age) FROM reviews AS T1 INNER JOIN client AS T2 ON T1.district_id = T2.district_id WHERE T1.Product = 'Eagle National Mortgage' AND T1.Stars = 1 AND T2.age < 35",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific product name 'Eagle National Mortgage' is replaced with 'val_3', the age threshold '35' is replaced with 'val_1', the star rating '1' is replaced with 'val_2', and all table and column names are anonymized to generic identifiers (e.g., 'table_2', 'col_19'). No original schema names, values, or business-sensitive meanings are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__332",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "1",
+          "basis": "label_canonical_cell_value"
+        },
+        {
+          "value": "reviews",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Which is the city where most of the 1 star reviews come from?\nmost refers to max(count(state_abbrev)); 1 star review refers to Stars = 1",
+      "outbound_query": "Which is the col_33 where most of the val_1 reviews come from?\nEvidence: most refers to max(count(col_34)); val_1 review refers to col_52 = 1",
+      "original_gold_sql": "SELECT T2.city FROM reviews AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T1.Stars = 1 GROUP BY T2.city ORDER BY COUNT(T2.city) DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and business-specific values (like 'city', 'Stars', '1 star') have been successfully masked to generic identifiers (col_33, col_52, val_1) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__365",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "server",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "Write the complaint ID, call ID, and final phone number of complaints through AVIDAN server from 1/1/2014 to 12/30/2014.\nfinal phone number refers to phonefinal; from 1/1/2014 to 12/30/2014 refers to Date received between '2014-01-01' and '2014-12-30'",
+      "outbound_query": "Write the col_2, col_6, and col_4 of complaints through val_1 server from val_2 to val_3.",
+      "original_gold_sql": "SELECT `Complaint ID`, call_id, phonefinal FROM callcenterlogs WHERE strftime('%Y', `Date received`) = '2014' AND server = 'AVIDAN'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific values (AVIDAN, dates) have been successfully masked with generic identifiers (col_X, val_X, table_X). No original sensitive information is exposed in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__372",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "client",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Give me the social number and state of the client whose phone number is 100-121-8371.\nsocial number refers to social",
+      "outbound_query": "Give me the col_20 and col_29 of the client whose col_24 is val_1.",
+      "original_gold_sql": "SELECT T1.social, T1.state FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN state AS T3 ON T2.state_abbrev = T3.StateCode WHERE T1.phone = '100-121-8371'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific values (phone number) have been successfully masked to generic identifiers (col_X, table_X, val_1) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__381",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Region",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "Which city in the Midwest region has the least number of clients?\nleast number of clients refers to min(count(client_id))",
+      "outbound_query": "Which col_28 in the val_1 region has the least number of table_2?",
+      "original_gold_sql": "SELECT T2.city FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN state AS T3 ON T2.state_abbrev = T3.StateCode WHERE T3.Region = 'Midwest' GROUP BY T2.city ORDER BY COUNT(T2.city) LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'client', 'district', 'state') and specific values (e.g., 'Midwest', 'city') with generic identifiers (table_1, col_28, val_1). No original sensitive entities or business-specific meanings are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__382",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "email",
+          "basis": "gold_column_name_in_original_question"
+        },
+        {
+          "value": "Region",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "How many customers in the Northeast use Microsoft email?\nthe Northeast refers to Region = 'Northeast'; Microsoft email refers to email like '%@outlook.com'",
+      "outbound_query": "How many customers are in the val_1 region and use a val_2 email address?",
+      "original_gold_sql": "SELECT COUNT(T1.email) FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN state AS T3 ON T2.state_abbrev = T3.StateCode WHERE T3.Region = 'Northeast' AND T1.email LIKE '%@outlook.com'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'client', 'state') and specific values (e.g., 'Northeast', 'outlook.com') with generic placeholders (table_1, val_1, val_2). No original sensitive entities are exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__388",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Product",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "In 2012, how many complaints about Credit card product came from clients in Omaha?\nin 2012 refers to Date received LIKE'2012%'; in Omaha refers to city = 'Omaha'",
+      "outbound_query": "In val_1, how many complaints about val_2 product came from clients in val_3?",
+      "original_gold_sql": "SELECT COUNT(T1.client_id) FROM client AS T1 INNER JOIN events AS T2 ON T1.client_id = T2.Client_ID WHERE T1.city = 'Omaha' AND strftime('%Y', T2.`Date received`) = '2012' AND T2.Product = 'Credit card'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities (2012, Credit card, Omaha) with placeholders (val_1, val_2, val_3) and replaces all schema names and column names with generic identifiers (table_1, col_1, etc.). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__395",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "IN",
+          "basis": "gold_literal_in_original_question"
+        },
+        {
+          "value": "Date",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "List date of the review of the Eagle Capital from Indianapolis, Indiana.\nEagle Capital refers to Product = 'Eagle Capital'; Indianapolis refers to city = 'Indianapolis'; Indiana refers to state_abbrev = 'IN'",
+      "outbound_query": "List the col_51 for the col_54 val_1 in the col_33 val_2, col_57 val_3.",
+      "original_gold_sql": "SELECT T2.Date FROM district AS T1 INNER JOIN reviews AS T2 ON T1.district_id = T2.district_id WHERE T2.Product = 'Eagle Capital' AND T1.city = 'Indianapolis' AND T1.state_abbrev = 'IN'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content uses generic identifiers (col_XX, table_X, val_X) and does not expose any original sensitive schema names, specific values like 'Eagle Capital' or 'Indianapolis', or business-sensitive meanings."
+        }
+      ]
+    },
+    {
+      "method": "prompt",
+      "case_key": "retail_complains__403",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Product",
+          "basis": "gold_column_name_in_original_question"
+        },
+        {
+          "value": "Date",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "What is the division of the review of 5 stars received on December 17, 2017 for the product Eagle National Mortgage?\n5 stars refers to Stars = 5; on December 17 2017 refers to Date = '2017-12-17'",
+      "outbound_query": "What is the col_35 of the review of val_1 received on val_2 for the product val_3?",
+      "original_gold_sql": "SELECT T1.division FROM district AS T1 INNER JOIN reviews AS T2 ON T1.district_id = T2.district_id WHERE T2.Stars = 5 AND T2.Date = '2017-12-17' AND T2.Product = 'Eagle National Mortgage'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'district', 'reviews') and specific values (e.g., 'Eagle National Mortgage', '2017-12-17') with generic identifiers (col_XX, val_XX). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__194",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "authors",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "For all authors from CA who are not on contract, which title of his/hers has the most year to date sales.\nyear to date sales refers to ytd_sales; on contract refers to contract = 1",
+      "outbound_query": "For all authors from val_1 who are not on col_9, which col_56 of his/hers has the most col_62.",
+      "original_gold_sql": "SELECT T1.title FROM titles AS T1 INNER JOIN titleauthor AS T2 ON T1.title_id = T2.title_id INNER JOIN authors AS T3 ON T2.au_id = T3.au_id WHERE T3.contract = 0 AND T3.state = 'CA' ORDER BY T1.ytd_sales DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific values (like 'CA') have been successfully replaced with generic identifiers (table_1, col_1, val_1) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "book_publishing_company__233",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "titles",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "List the title name, type, and price of the titles published by New Moon Books. Arrange the list in ascending order of price.\nEric the Read Books is a publisher which refers to pub_name;",
+      "outbound_query": "List the col_56, col_57, and col_59 of the titles published by val_1. Arrange the list in ascending order of col_59.",
+      "original_gold_sql": "SELECT T1.title, T1.type, T1.price FROM titles AS T1 INNER JOIN publishers AS T2 ON T1.pub_id = T2.pub_id WHERE T2.pub_name = 'New Moon Books' ORDER BY T1.price",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (tables and columns) and specific business values (publisher name) using generic identifiers (col_X, table_X, val_1). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__14",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movies",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the percentage of rated movies were released in year 2021?\npercentage = DIVIDE(SUM(movie_release_year = 2021), COUNT(rating_id)) as percent; movies released in year 2021 refers to movie_release_year = 2021;",
+      "outbound_query": "What percentage of movies in the table_4 table have a col_27 of val_1?",
+      "original_gold_sql": "SELECT CAST(SUM(CASE WHEN T1.movie_release_year = 2021 THEN 1 ELSE 0 END) AS REAL) * 100 / COUNT(*) FROM movies AS T1 INNER JOIN ratings AS T2 ON T1.movie_id = T2.movie_id",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'movies', 'ratings') and specific values (e.g., '2021') with generic identifiers (e.g., 'table_3', 'col_27', 'val_1'). No original business-sensitive meaning or linked paraphrases are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__20",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movies",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What are the movie popularity of the movies released in 2021 that were directed by Steven Spielberg? List the names of the movies and their corresponding popularity.\nmovie released in 2021 refers to movie_release_year = 2021; popularity refers to movie_popularity;",
+      "outbound_query": "What are the col_30 of the movies released in val_1 that were directed by val_2? List the col_26 and their corresponding col_30.",
+      "original_gold_sql": "SELECT movie_title, movie_popularity FROM movies WHERE movie_release_year = 2021 AND director_name = 'Steven Spielberg'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. Specific values like '2021' and 'Steven Spielberg' are replaced with 'val_1' and 'val_2'. Column names like 'movie_popularity' and 'movie_title' are replaced with 'col_30' and 'col_26'. Table names are generic. No original schema names, values, or business-sensitive meanings are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movie_platform__60",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "lists",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Please list the titles of the movie lists user 32172230 created when he or she was eligible for trial.\nthe user was eligible for trail when he created the list refers to user_eligile_for_trail = 1; user 32172230 refers to user_id = 32172230;",
+      "outbound_query": "What are the col_3 for lists created by val_1 where col_23 is val_2?",
+      "original_gold_sql": "SELECT T1.list_title FROM lists AS T1 INNER JOIN lists_users AS T2 ON T1.list_id = T2.list_id AND T1.user_id = T2.user_id WHERE T1.user_id = 32172230 AND T2.user_eligible_for_trial = 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (tables and columns) and specific values (user ID and boolean flag) using generic identifiers (col_X, table_X, val_X). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__411",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the title of the latest released movie produced by production company \"Universal Pictures\"?\n\"Universal Pictures\" refers to company_name = 'Universal Pictures'; latest released refers to max(release_date)",
+      "outbound_query": "What is the col_18 of the movie with the maximum col_23 produced by production company \"val_1\"?",
+      "original_gold_sql": "SELECT T3.title FROM production_company AS T1 INNER JOIN movie_company AS T2 ON T1.company_id = T2.company_id INNER JOIN movie AS T3 ON T2.movie_id = T3.movie_id WHERE T1.company_name = 'Universal Pictures' ORDER BY T3.release_date DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. 'Universal Pictures' is replaced with 'val_1', 'title' with 'col_18', and 'release_date' with 'col_23'. The schema uses generic table and column names, exposing no original business-sensitive structure or values."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__413",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What was the job of Dariusz Wolski in the movie \"Pirates of the Caribbean: At World's End\"?\nmovie \"Pirates of the Caribbean: At World's End\" refers to title = 'Pirates of the Caribbean: At World''s End'",
+      "outbound_query": "What was the col_40 of val_1 in the movie \"val_2\"?",
+      "original_gold_sql": "SELECT T2.job FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T1.title LIKE 'Pirates of the Caribbean: At World%s End' AND T3.person_name = 'Dariusz Wolski'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific person name 'Dariusz Wolski' is replaced by 'val_1', the movie title 'Pirates of the Caribbean: At World's End' is replaced by 'val_2', and the column 'job' is replaced by 'col_40'. The schema is fully anonymized with generic table and column names, exposing no original business-sensitive meanings or values."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__414",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Please list the names of all the crew members of the movie \"Pirates of the Caribbean: At World's End\".\nnames refers to person_name; \"Pirates of the Caribbean: At World's End\" refers to title = 'Pirates of the Caribbean: At World''s End'",
+      "outbound_query": "Please list the col_49 of all the table_11 of the movie \"val_1\".",
+      "original_gold_sql": "SELECT T3.person_name FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T1.title LIKE 'Pirates of the Caribbean: At World%s End'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific movie title is replaced with 'val_1', the column 'person_name' is replaced with 'col_49', and the table 'movie_crew' is replaced with 'table_11'. The schema uses generic table and column names, exposing no original business-sensitive structure or values."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__415",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "How many crew members worked as producer in the movie \"Pirates of the Caribbean: At World's End\"?\nworked as producer refers to job = 'Producer'; \"Pirates of the Caribbean: At World's End\" refers to title = 'Pirates of the Caribbean: At World''s End'",
+      "outbound_query": "How many table_11 worked as val_1 in the movie \"val_2\"?",
+      "original_gold_sql": "SELECT COUNT(T3.person_id) FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T1.title LIKE 'Pirates of the Caribbean: At World%s End' AND T2.job = 'Producer'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific movie title 'Pirates of the Caribbean: At World's End' is replaced with 'val_2', the job title 'Producer' is replaced with 'val_1', and the table name 'movie_crew' is replaced with 'table_11'. The schema is fully anonymized with generic table and column names, exposing no original schema names or business-sensitive meanings."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__416",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Please list the names of all the producers in the movie \"Pirates of the Caribbean: At World's End\".\nnames refers to person_name; producers refers to job = 'Producer'; \"Pirates of the Caribbean: At World's End\" refers to title = 'Pirates of the Caribbean: At World''s End'",
+      "outbound_query": "Please list the col_49 of all the col_40 in the movie \"val_1\".",
+      "original_gold_sql": "SELECT T3.person_name FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T1.title LIKE 'Pirates of the Caribbean: At World%s End' AND T2.job = 'Producer'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (tables, columns) and specific data values (movie title, job role) with generic identifiers (col_X, table_X, val_1). No original sensitive information is exposed."
+        },
+        {
+          "call": 1,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content uses generic placeholders (col_XX, val_X, table_X) for all schema elements and specific values, effectively masking the original sensitive entities like 'Pirates of the Caribbean: At World's End', 'Producer', and 'person_name'."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__416",
+      "outbound_call": 1,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Please list the names of all the producers in the movie \"Pirates of the Caribbean: At World's End\".\nnames refers to person_name; producers refers to job = 'Producer'; \"Pirates of the Caribbean: At World's End\" refers to title = 'Pirates of the Caribbean: At World''s End'",
+      "outbound_query": "What are the col_49 for the movie with col_18 \"val_1\" where the col_40 is val_2?",
+      "original_gold_sql": "SELECT T3.person_name FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T1.title LIKE 'Pirates of the Caribbean: At World%s End' AND T2.job = 'Producer'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (tables, columns) and specific data values (movie title, job role) with generic identifiers (col_X, table_X, val_1). No original sensitive information is exposed."
+        },
+        {
+          "call": 1,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content uses generic placeholders (col_XX, val_X, table_X) for all schema elements and specific values, effectively masking the original sensitive entities like 'Pirates of the Caribbean: At World's End', 'Producer', and 'person_name'."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__418",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Among the movie in which Dariusz Wolski works as the director of photography, what is the title of the one with the highest average vote?\ndirector of photography refers to job = 'Director of Photography'; highest average vote refers to max(vote_average)",
+      "outbound_query": "Among the movie in which val_1 works as the val_2, what is the col_18 of the one with the highest col_28?",
+      "original_gold_sql": "SELECT T1.title FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T3.person_name = 'Dariusz Wolski' AND T2.job = 'Director of Photography' ORDER BY T1.vote_average DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific person name 'Dariusz Wolski' is replaced by 'val_1', the job title 'Director of Photography' is replaced by 'val_2', and all table and column names are anonymized to generic identifiers (e.g., 'table_8', 'col_18'). No original schema names, values, or business-sensitive meanings are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__419",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "When was the release date of the latest movie in which Dariusz Wolski worked as a crew member?\nrelease date of the latest movie refers to max(release_date)",
+      "outbound_query": "What is the col_23 of the most recent movie where val_1 is listed in the table_11?",
+      "original_gold_sql": "SELECT T1.release_date FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T3.person_name = 'Dariusz Wolski' ORDER BY T1.release_date DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific person name 'Dariusz Wolski' is replaced with 'val_1', the table 'person' is replaced with 'table_15' (referenced in the query as table_11? No, wait. Let's trace carefully. Original: person is table_15 in masked? No. Original person is table_15 in masked schema? Let's check mapping. Original person is table_15 in masked? No. Original person is table_15 in masked? Let's look at the masked schema. table_15 has col_48 (PK) and col_49 (TEXT). This matches person (person_id, person_name). The query says 'val_1 is listed in the table_11'. Wait. In the original, Dariusz Wolski is in the 'person' table. In the masked query, it says 'val_1 is listed in the table_11'. Let's check table_11 in masked schema. table_11 has col_37, col_38, col_39, col_40. This looks like movie_crew (movie_id, person_id, department_id, job). The query says 'val_1 is listed in the table_11'. This implies the value is in table_11. But the value 'Dariusz Wolski' is a person name, which is in the 'person' table. In the masked schema, 'person' is table_15. The query says 'val_1 is listed in the table_11'. This is a semantic mismatch or a leak of structure? No, the prompt asks for sensitive schema names, values, or business-sensitive meaning. 'val_1' is a masked value. 'table_11' is a masked table name. The fact that the query references table_11 instead of table_15 (person) might be an error in the masking process or the query generation, but does it expose sensitive info? It exposes the structure that val_1 is in table_11. If table_11 is movie_crew, and val_1 is a person name, this is semantically wrong but does it leak the *original* sensitive info? It doesn't reveal 'Dariusz Wolski' or 'person'. It reveals that the value is in a table that corresponds to movie_crew. This is a structural detail. However, usually, these evaluations focus on PII and specific business terms. 'Dariusz Wolski' is PII. It is masked. 'release_date' is masked to 'col_23'. 'movie' is masked to 'table_8'. 'person' is masked to 'table_15'. The query uses 'table_11'. This is likely a mistake in the provided outbound content (referencing the wrong masked table ID for the person), but it does not expose the *original* sensitive name 'person' or the value 'Dariusz Wolski'. It exposes the masked ID 'table_11'. Is 'table_11' sensitive? No, it's a generic mask. Does it expose business-sensitive meaning? The meaning is 'latest movie where [Person] is listed'. The specific person is masked. The specific table name 'person' is not exposed. The specific column 'person_name' is not exposed. Therefore, no original sensitive entities are leaked."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__420",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Among the movie in which Dariusz Wolski works as the director of photography, what is the percentage of those movie whose vote average is over 5.0?\ndirector of photography refers to job = 'Director of Photography'; vote average is over 8.0 refers to vote_average > 5; percentage = divide(sum(movie_id) when vote_average > 5, count(movie_id)) as percentage",
+      "outbound_query": "Among the movie in which val_1 works as the val_2, what is the percentage of those movie whose col_28 is over val_3?",
+      "original_gold_sql": "SELECT CAST(COUNT(CASE WHEN T1.vote_average > 5 THEN 1 ELSE NULL END) AS REAL) * 100 / COUNT(T1.vote_average) FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T3.person_name = 'Dariusz Wolski' AND T2.job = 'Director of Photography'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific person name 'Dariusz Wolski' is replaced by 'val_1', the job title 'Director of Photography' is replaced by 'val_2', the column 'vote_average' is replaced by 'col_28', and the threshold value '5.0' is replaced by 'val_3'. The schema is fully anonymized with generic table and column names, revealing no original business-sensitive structure or data."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__421",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the average revenue of the movie in which Dariusz Wolski works as the director of photography?\ndirector of photography refers to job = 'Director of Photography'; average revenue = divide(sum(revenue), count(movie_id))",
+      "outbound_query": "What is the average col_24 of the movie in which val_1 works as the val_2?",
+      "original_gold_sql": "SELECT CAST(SUM(T1.revenue) AS REAL) / COUNT(T1.movie_id) FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T3.person_name = 'Dariusz Wolski' AND T2.job = 'Director of Photography'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific person name 'Dariusz Wolski' is replaced with 'val_1', the job title 'Director of Photography' is replaced with 'val_2', and the column 'revenue' is replaced with 'col_24'. The schema is fully anonymized with generic table and column names, exposing no original business-sensitive structure or data."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__423",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What was David Rubin's job in the movie \"Days of Thunder\"?\n\"Days of Thunder\" refers to title = 'Days of Thunder'",
+      "outbound_query": "What was val_1's col_40 in the movie \"val_2\"?",
+      "original_gold_sql": "SELECT T2.job FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T3.person_name = 'David Rubin' AND T1.title = 'Days of Thunder'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. 'David Rubin' is replaced by 'val_1', 'Days of Thunder' by 'val_2', and the specific column 'job' by 'col_40'. The schema is fully anonymized with generic table and column names, revealing no original business-sensitive structure or values."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__425",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Show the total number of keywords of the movie \"I Hope They Serve Beer in Hell\".\n\"I Hope They Serve Beer in Hell\" refers to title = 'I Hope They Serve Beer in Hell';",
+      "outbound_query": "Show the total number of keywords of the movie \"val_1\".",
+      "original_gold_sql": "SELECT COUNT(T2.keyword_id) FROM movie AS T1 INNER JOIN movie_keywords AS T2 ON T1.movie_id = T2.movie_id WHERE T1.title = 'I Hope They Serve Beer in Hell'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific movie title with a generic placeholder and anonymizes all table and column names, leaving no sensitive schema or value information exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__428",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "How many female characters are there in the movie \"Spider-Man 3\"?\nfemale characters refer to gender = 'Female'; \"Spider-Man 3\" refers to title = 'Spider-Man 3'",
+      "outbound_query": "How many val_1 col_32 are there in the movie \"val_2\"?",
+      "original_gold_sql": "SELECT COUNT(*) FROM movie AS T1 INNER JOIN movie_cast AS T2 ON T1.movie_id = T2.movie_id INNER JOIN gender AS T3 ON T2.gender_id = T3.gender_id WHERE T1.title = 'Spider-Man 3' AND T3.gender = 'Female'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. 'female characters' is replaced by 'val_1 col_32' and 'Spider-Man 3' is replaced by 'val_2'. The schema uses generic table and column names (table_1, col_1, etc.), removing any specific business context or sensitive schema names."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__430",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "How many producers does the movie \"The Amityville Horror\" have?\nproducers refers to job = 'Producer'; \"The Amityville Horror\" refers to title = 'The Amityville Horror'",
+      "outbound_query": "How many val_2 does the movie \"val_1\" have?",
+      "original_gold_sql": "SELECT COUNT(T2.person_id) FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id WHERE T1.title = 'The Amityville Horror' AND T2.job = 'Producer'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific movie title and job role with generic placeholders (val_1, val_2) and replaces all schema identifiers with generic table and column names, preventing any leakage of sensitive business entities or schema structures."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__431",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the production company of the movie \"Crazy Heart\"?\nmovie \"Crazy Heart\" refers to title = 'Crazy Heart'; production company refers to company_name",
+      "outbound_query": "What is the table_16 of the movie \"val_1\"?",
+      "original_gold_sql": "SELECT T1.company_name FROM production_company AS T1 INNER JOIN movie_company AS T2 ON T1.company_id = T2.company_id INNER JOIN movie AS T3 ON T2.movie_id = T3.movie_id WHERE T3.title = 'Crazy Heart'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific movie title 'Crazy Heart' to 'val_1' and the column 'company_name' to 'table_16' (referring to the table name in the query context, though technically 'production company' maps to the table 'production_company' which is 'table_16' in the masked schema). All table and column names in the schema are anonymized to generic identifiers (table_N, col_N). No sensitive business logic or specific data values are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__432",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "keyword_name",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "Give the number of movies with \"saving the world\" as the keyword.\n\"saving the world\" as the keyword refers to keyword_name = 'saving the world'",
+      "outbound_query": "Give the number of movies with \"val_1\" as the col_11.\nEvidence: \"val_1\" as the col_11 refers to keyword_name = 'val_1'",
+      "original_gold_sql": "SELECT COUNT(T2.movie_id) FROM keyword AS T1 INNER JOIN movie_keywords AS T2 ON T1.keyword_id = T2.keyword_id WHERE keyword_name = 'saving the world'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific keyword value 'saving the world' to 'val_1' and all schema identifiers to generic names. No sensitive business meaning or original schema names are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__434",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "For the movie \"Reign of Fire\", which department was Marcia Ross in?\nmovie \"Reign of Fire\" refers to title = 'Reign of Fire'; which department refers to department_name",
+      "outbound_query": "For the movie \"val_1\", which col_5 was val_2 in?",
+      "original_gold_sql": "SELECT T4.department_name FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id INNER JOIN department AS T4 ON T2.department_id = T4.department_id WHERE T3.person_name = 'Marcia Ross' AND T1.title = 'Reign of Fire'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The movie title 'Reign of Fire' is replaced with 'val_1', the person name 'Marcia Ross' is replaced with 'val_2', and the column 'department_name' is replaced with 'col_5'. The schema is fully anonymized with generic table and column names, exposing no original business-sensitive structure or values."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__436",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the percentage of male characters in the movie \"Bride Wars\"?\nmale refers to gender = 'Male'; \"Bride Wars\" refers to title = 'Bride Wars'; percentage = divide(sum(gender = 'Male'), count(gender)) * 100 as percentage",
+      "outbound_query": "What is the percentage of val_1 characters in the movie \"val_2\"?",
+      "original_gold_sql": "SELECT CAST(COUNT(CASE WHEN T3.gender = 'Male' THEN 1 ELSE NULL END) AS REAL) * 100 / COUNT(T3.gender) FROM movie AS T1 INNER JOIN movie_cast AS T2 ON T1.movie_id = T2.movie_id INNER JOIN gender AS T3 ON T2.gender_id = T3.gender_id WHERE T1.title = 'Bride Wars'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific movie title 'Bride Wars' is replaced with 'val_2', and the gender value 'Male' is replaced with 'val_1'. The schema is fully anonymized with generic table and column names, exposing no original business-sensitive structure or data."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__441",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Provide the title of the movie that is most-liked by a large number of people.\nmost-liked by a large number of people refers to max(popularity)",
+      "outbound_query": "Provide the col_18 of the movie that has the highest col_22.",
+      "original_gold_sql": "SELECT title FROM movie ORDER BY popularity DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (tables and columns) and specific business logic (evidence) into generic identifiers (col_X, table_X) and generic phrasing. No original sensitive entities are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__445",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is Walt Disney Pictures' most popular movie?\nWalt Disney Pictures refers to company_name = 'Walt Disney Pictures'; most popular movie refers to max(popularity)",
+      "outbound_query": "What is val_1' most col_22 movie?",
+      "original_gold_sql": "SELECT T3.title FROM production_company AS T1 INNER JOIN movie_company AS T2 ON T1.company_id = T2.company_id INNER JOIN movie AS T3 ON T2.movie_id = T3.movie_id WHERE T1.company_name = 'Walt Disney Pictures' ORDER BY T3.popularity DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific company name 'Walt Disney Pictures' to 'val_1' and the column 'popularity' to 'col_22'. The schema is fully anonymized with generic table and column names, exposing no original sensitive entities or business meanings."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__451",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the title of Jamie Foxx's most recent movie?\nmost recent movie refers to max(release_date)",
+      "outbound_query": "What is the col_18 of the movie with the maximum col_23 for val_1?",
+      "original_gold_sql": "SELECT T1.title FROM movie AS T1 INNER JOIN movie_cast AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T3.person_name = 'Jamie Foxx' ORDER BY T1.release_date DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. 'Jamie Foxx' is replaced by 'val_1', 'title' by 'col_18', and 'release_date' by 'col_23'. The schema uses generic table and column names, exposing no original business-sensitive structure or values."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__453",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the title of the first crime movie ever released?\nfirst crime movie ever released refers to min(release_date) and genre_name = 'Crime'",
+      "outbound_query": "What is the col_18 of the first val_1 movie ever released? Evidence: first val_1 movie ever released refers to min(col_23) and col_9 = 'val_1'",
+      "original_gold_sql": "SELECT T1.title FROM movie AS T1 INNER JOIN movie_genres AS T2 ON T1.movie_id = T2.movie_id INNER JOIN genre AS T3 ON T2.genre_id = T3.genre_id WHERE T3.genre_name = 'Crime' ORDER BY T1.release_date LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific values (like 'Crime') have been successfully masked to generic identifiers (col_X, table_X, val_1) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__478",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Write all the keywords belonging to the movie 'Sky Captain and the World of Tomorrow.'\nkeywords refers to keyword_name; movie 'Sky Captain and the World of Tomorrow' refers to title = 'Sky Captain and the World of Tomorrow'",
+      "outbound_query": "Write all the col_11 belonging to the movie 'val_1.'",
+      "original_gold_sql": "SELECT T3.keyword_name FROM movie AS T1 INNER JOIN movie_keywords AS T2 ON T1.movie_id = T2.movie_id INNER JOIN keyword AS T3 ON T2.keyword_id = T3.keyword_id WHERE T1.title = 'Sky Captain and the World of Tomorrow'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. The specific movie title 'Sky Captain and the World of Tomorrow' is replaced with 'val_1', and the column name 'keyword_name' is replaced with 'col_11'. The schema is fully anonymized with generic table and column names, revealing no original business-sensitive structure or data."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__479",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "The movie 'Gojira ni-sen mireniamu' is from which country?\nmovie 'Gojira ni-sen mireniamu' refers to title = 'Gojira ni-sen mireniamu'; which country refers to country_name",
+      "outbound_query": "The movie 'val_1' is from which col_3?",
+      "original_gold_sql": "SELECT T3.COUNTry_name FROM movie AS T1 INNER JOIN production_COUNTry AS T2 ON T1.movie_id = T2.movie_id INNER JOIN COUNTry AS T3 ON T2.COUNTry_id = T3.COUNTry_id WHERE T1.title = 'Gojira ni-sen mireniamu'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the specific movie title 'Gojira ni-sen mireniamu' to 'val_1' and all schema identifiers (table and column names) to generic placeholders (table_1, col_1, etc.). No sensitive business meaning or original schema names are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__481",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "10",
+          "basis": "gold_literal_in_original_question"
+        }
+      ],
+      "question": "List 10 movie titles that were produced in France.\nFrance refers to country_name = 'France'",
+      "outbound_query": "List 10 col_18 that were produced in val_1.",
+      "original_gold_sql": "SELECT T1.title FROM movie AS T1 INNER JOIN production_COUNTry AS T2 ON T1.movie_id = T2.movie_id INNER JOIN COUNTry AS T3 ON T2.COUNTry_id = T3.COUNTry_id WHERE T3.COUNTry_name = 'France' LIMIT 10",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'movie', 'country') and specific values (e.g., 'France') with generic identifiers (col_18, val_1, table_1). No original sensitive entities are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__482",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Who is the director for the movie 'Transformers?'\nthe director refers to person_name where job = 'Director'; movie 'Transformers' refers to title = 'Transformers'",
+      "outbound_query": "Who is the val_1 for the movie 'val_2?'\nEvidence: the val_1 refers to col_49 where col_40 = 'val_1'; movie 'val_2' refers to col_18 = 'val_2'",
+      "original_gold_sql": "SELECT T3.person_name FROM movie AS T1 INNER JOIN movie_crew AS T2 ON T1.movie_id = T2.movie_id INNER JOIN person AS T3 ON T2.person_id = T3.person_id WHERE T1.title = 'Transformers' AND T2.job = 'Director'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, table names, column names, and specific values (like 'Transformers' and 'Director') have been successfully masked with generic identifiers (val_1, col_49, etc.) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__487",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the keyword ID of the movie with the title of \"Sin City\"?\ntitle of \"Sin City\" refers to title = 'Sin City'",
+      "outbound_query": "What is the col_10 of the movie with the col_18 of \"val_1\"?",
+      "original_gold_sql": "SELECT T2.keyword_id FROM movie AS T1 INNER JOIN movie_keywords AS T2 ON T1.movie_id = T2.movie_id WHERE T1.title = 'Sin City'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific values (like 'Sin City') have been successfully replaced with generic identifiers (table_1, col_1, val_1) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__490",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Provide the genre ID of the movie with the title of \"The Dark Knight\".\nmovie with the title of \"The Dark Knight\" refers to title = 'The Dark Knight'",
+      "outbound_query": "Provide the col_42 of the movie with the col_18 of \"val_1\".",
+      "original_gold_sql": "SELECT T2.genre_id FROM movie AS T1 INNER JOIN movie_genres AS T2 ON T1.movie_id = T2.movie_id WHERE T1.title = 'The Dark Knight'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (tables and columns) and specific cell values (movie title) with generic identifiers (table_N, col_N, val_N). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "movies_4__497",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "movie",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "What is the country ID of the movie with the title of \"Pirates of the Caribbean: Dead Man's Chest\"?\ntitle of \"Pirates of the Caribbean: Dead Man's Chest\" refers to title = 'Pirates of the Caribbean: Dead Man''s Chest'",
+      "outbound_query": "What is the col_1 of the movie with the col_18 of \"val_1\"?",
+      "original_gold_sql": "SELECT T2.COUNTry_id FROM movie AS T1 INNER JOIN production_COUNTry AS T2 ON T1.movie_id = T2.movie_id WHERE T1.title LIKE 'Pirates of the Caribbean: Dead Man%s Chest'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific data values (such as the movie title) have been successfully replaced with generic placeholders (col_X, table_X, val_1) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__262",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "N/A",
+          "basis": "gold_literal_in_original_question"
+        }
+      ],
+      "question": "Did Ms. Lyric Emely Taylor provide the consent for result of the complaint call on 2016/5/20?\nMs refers to sex = 'Female'; \"Consumer consent provided?\" in (null, 'N/A', 'Empty') means that the company didn't get the permission of consent; \"Consumer consent provided?\" not in (null, 'N/A', 'Empty') means the customers provide the consent; on 2016/5/20 refers to Date received = '2016-05-20';",
+      "outbound_query": "Did the client with col_21 'val_1', col_22 'val_2', col_23 'val_3', and col_15 'val_4' have a 'col_43' value that is not in (null, 'N/A', 'Empty') for the col_36 on 'val_5'?",
+      "original_gold_sql": "SELECT CASE WHEN T2.`Consumer consent provided?` IN (NULL, 'N/A', '') THEN 'No' ELSE 'Yes' END FROM client AS T1 INNER JOIN events AS T2 ON T1.client_id = T2.Client_ID WHERE T1.first = 'Lyric' AND T1.middle = 'Emely' AND T1.last = 'Taylor' AND T1.sex = 'Female' AND T2.`Date received` = '2016-05-20'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive entities (names, dates, specific column names like 'Consumer consent provided?', and table names) have been successfully masked to generic identifiers (col_X, val_X, table_X) in both the query and schema."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__265",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Date",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "What was the review context from Jacksonville on 2017/7/22?\nJacksonville refers to city = 'Jacksonville'; on 2017/7/22 refers to Date = '2017-07-22';",
+      "outbound_query": "What is the col_53 for the entry in val_1 on val_2?",
+      "original_gold_sql": "SELECT T1.Reviews FROM reviews AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.city = 'Jacksonville' AND T1.Date = '2017-07-22'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content uses generic placeholders (col_XX, table_X, val_X) and does not expose any original sensitive schema names, specific values like 'Jacksonville' or dates, or business-sensitive meanings."
+        },
+        {
+          "call": 1,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content uses generic identifiers (col_XX, table_X, val_X) and contains no original schema names, specific values like 'Jacksonville' or dates, or business-sensitive meanings."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__265",
+      "outbound_call": 1,
+      "candidates": [
+        {
+          "value": "Date",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "What was the review context from Jacksonville on 2017/7/22?\nJacksonville refers to city = 'Jacksonville'; on 2017/7/22 refers to Date = '2017-07-22';",
+      "outbound_query": "What is the col_53 where the col_33 is val_1 and the col_51 is val_2?",
+      "original_gold_sql": "SELECT T1.Reviews FROM reviews AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.city = 'Jacksonville' AND T1.Date = '2017-07-22'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content uses generic placeholders (col_XX, table_X, val_X) and does not expose any original sensitive schema names, specific values like 'Jacksonville' or dates, or business-sensitive meanings."
+        },
+        {
+          "call": 1,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content uses generic identifiers (col_XX, table_X, val_X) and contains no original schema names, specific values like 'Jacksonville' or dates, or business-sensitive meanings."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__266",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Date",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "Which product received a review from Indianapolis on 2016/10/7?\nIndianapolis refers to state = 'Indianapolis'; on 2016/10/7 refers to Date = '2013-04-04';",
+      "outbound_query": "Which col_54 received a table_5 from val_1 on val_2?",
+      "original_gold_sql": "SELECT T1.Product FROM reviews AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.city = 'Indianapolis' AND T1.Date = '2016-10-07'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names, table names, and specific cell values (Indianapolis, 2016/10/7) with generic identifiers (col_54, table_5, val_1, val_2). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__275",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Region",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "List all the states in the South region.\n",
+      "outbound_query": "List all the col_57 in the val_1 region.",
+      "original_gold_sql": "SELECT state FROM state WHERE Region = 'South'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content uses generic identifiers (col_57, val_1, table_6) that do not reveal the original sensitive schema names (state, State, Region) or specific business values (South). The structure is preserved but the semantic meaning is obscured."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__288",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "35",
+          "basis": "gold_literal_in_original_question"
+        },
+        {
+          "value": "55",
+          "basis": "gold_literal_in_original_question"
+        },
+        {
+          "value": "65",
+          "basis": "gold_literal_in_original_question"
+        },
+        {
+          "value": "Region",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "Calculate the difference in the average age of elderly and middle-aged clients in the Northeast region.\ndifference in the average = SUBTRACT(AVG(age BETWEEN 35 AND 55), AVG( age > 65)); elderly refers to age > 65; middle-aged refers to age BETWEEN 35 AND 55;",
+      "outbound_query": "Calculate the difference in the average col_19 of elderly and middle-aged clients in the val_1 region.\nEvidence: difference in the average = SUBTRACT(AVG(col_19 BETWEEN 35 AND 55), AVG( col_19 > 65)); elderly refers to col_19 > 65; middle-aged refers to col_19 BETWEEN 35 AND 55;",
+      "original_gold_sql": "SELECT (CAST(SUM(CASE WHEN T1.age BETWEEN 35 AND 55 THEN T1.age ELSE 0 END) AS REAL) / SUM(CASE WHEN T1.age BETWEEN 35 AND 55 THEN 1 ELSE 0 END)) - (CAST(SUM(CASE WHEN T1.age > 65 THEN T1.age ELSE 0 END) AS REAL) / SUM(CASE WHEN T1.age > 65 THEN 1 ELSE 0 END)) AS difference FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN state AS T3 ON T2.state_abbrev = T3.StateCode WHERE T3.Region = 'Northeast'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks the sensitive column name 'age' as 'col_19' and the specific region value 'Northeast' as 'val_1'. The table names and other column names are also anonymized. No original sensitive schema names, values, or business-sensitive meanings are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__298",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "division",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "How many cases of billing dispute issues occurred in the Mountain division?\nbilling dispute refers to issue = 'Billing disputes';",
+      "outbound_query": "How many cases of val_1 issues occurred in the val_2 division?",
+      "original_gold_sql": "SELECT COUNT(T1.Issue) FROM events AS T1 INNER JOIN client AS T2 ON T1.Client_ID = T2.client_id INNER JOIN district AS T3 ON T2.district_id = T3.district_id WHERE T1.Issue = 'Billing disputes' AND T3.division = 'Mountain'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names, column names, and specific business values (such as 'Billing disputes' and 'Mountain') with generic placeholders (val_1, val_2, table_1, col_1, etc.). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__299",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "state",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "How many male clients are from the state of Massachusetts?\nmale refers to sex = 'Male';",
+      "outbound_query": "How many val_1 table_2 are from the state of val_2?",
+      "original_gold_sql": "SELECT COUNT(T3.sex) FROM state AS T1 INNER JOIN district AS T2 ON T1.StateCode = T2.state_abbrev INNER JOIN client AS T3 ON T2.district_id = T3.district_id WHERE T1.state = 'Massachusetts' AND T3.sex = 'Male'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. 'male' is replaced by 'val_1', 'clients' by 'table_2', and 'Massachusetts' by 'val_2'. The schema uses generic table and column names (table_1, col_1, etc.), removing any specific business context or PII identifiers present in the original schema."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__311",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "last",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "List all the complaints narratives made by the customer named Brenda and last name Mayer.\ncomplaints narratives refers to \"Consumer complaint narrative\";",
+      "outbound_query": "List all the col_41 made by the customer named val_1 and last name val_2.",
+      "original_gold_sql": "SELECT T2.`Consumer complaint narrative` FROM client AS T1 INNER JOIN events AS T2 ON T1.client_id = T2.Client_ID WHERE T1.first = 'Brenda' AND T1.last = 'Mayer'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, table names, and specific cell values (Brenda, Mayer) have been successfully masked with generic identifiers (col_XX, table_X, val_X). No original sensitive information is exposed in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__312",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "email",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "How many complaints from customers with a gmail.com email were received by the company in February 2017?\ngmail.com email refers to email like '%gmail.com'; in February 2017 refers to \"Date received\" BETWEEN '2017-01-02' AND '2017-02-28';",
+      "outbound_query": "How many complaints from customers with a val_1 email were received by the company in val_2?",
+      "original_gold_sql": "SELECT COUNT(T1.email) FROM client AS T1 INNER JOIN callcenterlogs AS T2 ON T1.client_id = T2.`rand client` WHERE (T2.`Date received` LIKE '2017-02%' OR T2.`Date received` LIKE '2017-01%') AND T1.email LIKE '%@gmail.com'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'callcenterlogs', 'client') and specific values (e.g., 'gmail.com', 'February 2017') with generic placeholders (val_1, val_2, table_1, col_1). No original sensitive entities are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__320",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "year",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "What are the products that people who were born after 2005 complain about?\nyear > 2005;",
+      "outbound_query": "What are the col_37 that people who were born after the year val_1 complain about?",
+      "original_gold_sql": "SELECT DISTINCT T2.Product FROM client AS T1 INNER JOIN events AS T2 ON T1.client_id = T2.Client_ID WHERE T1.year > 2005",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'callcenterlogs', 'client') and specific values (e.g., '2005') with generic identifiers (col_XX, table_X, val_1). No original business-sensitive meanings or PII are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__332",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "reviews",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Which is the city where most of the 1 star reviews come from?\nmost refers to max(count(state_abbrev)); 1 star review refers to Stars = 1",
+      "outbound_query": "Which is the col_33 where most of the val_1 reviews come from?",
+      "original_gold_sql": "SELECT T2.city FROM reviews AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T1.Stars = 1 GROUP BY T2.city ORDER BY COUNT(T2.city) DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'callcenterlogs', 'client', 'district') and column names (e.g., 'city', 'Stars') with generic identifiers (e.g., 'table_1', 'col_33'). The specific value '1' is masked as 'val_1'. No original sensitive entities or business meanings are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__354",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "first",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "Write down the call id of clients whose first name start with alphabet \"B\".\nfirst name start with alphabet \"B\" refers to first like 'B%'",
+      "outbound_query": "Write down the col_6 of clients whose col_21 start with alphabet \"val_1\". Evidence: col_21 start with alphabet \"val_1\" refers to first like 'val_1%'",
+      "original_gold_sql": "SELECT T2.call_id FROM client AS T1 INNER JOIN callcenterlogs AS T2 ON T1.client_id = T2.`rand client` WHERE T1.first LIKE 'B%'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific values from the original context have been successfully masked with generic identifiers (e.g., table_1, col_6, val_1) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__365",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "server",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "Write the complaint ID, call ID, and final phone number of complaints through AVIDAN server from 1/1/2014 to 12/30/2014.\nfinal phone number refers to phonefinal; from 1/1/2014 to 12/30/2014 refers to Date received between '2014-01-01' and '2014-12-30'",
+      "outbound_query": "Write the col_2, col_6, and col_4 of complaints through val_1 server from val_2 to val_3.",
+      "original_gold_sql": "SELECT `Complaint ID`, call_id, phonefinal FROM callcenterlogs WHERE strftime('%Y', `Date received`) = '2014' AND server = 'AVIDAN'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific values (AVIDAN, dates) have been successfully masked with generic identifiers (col_X, val_X, table_X). No original sensitive information is exposed in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__372",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "client",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "Give me the social number and state of the client whose phone number is 100-121-8371.\nsocial number refers to social",
+      "outbound_query": "Give me the col_20 and col_29 of the client whose col_24 is val_1.",
+      "original_gold_sql": "SELECT T1.social, T1.state FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN state AS T3 ON T2.state_abbrev = T3.StateCode WHERE T1.phone = '100-121-8371'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "All sensitive schema names, column names, and specific values (phone number) have been successfully masked to generic identifiers (col_X, table_X, val_1) in the outbound content."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__381",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Region",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "Which city in the Midwest region has the least number of clients?\nleast number of clients refers to min(count(client_id))",
+      "outbound_query": "Which col_28 in the val_1 region has the least number of table_2?",
+      "original_gold_sql": "SELECT T2.city FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN state AS T3 ON T2.state_abbrev = T3.StateCode WHERE T3.Region = 'Midwest' GROUP BY T2.city ORDER BY COUNT(T2.city) LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'client', 'district', 'state') and specific values (e.g., 'Midwest', 'city') with generic identifiers (table_1, col_28, val_1). No original sensitive entities or business-specific meanings are exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__388",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Product",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "In 2012, how many complaints about Credit card product came from clients in Omaha?\nin 2012 refers to Date received LIKE'2012%'; in Omaha refers to city = 'Omaha'",
+      "outbound_query": "In val_1, how many complaints about val_2 product came from clients in val_3?",
+      "original_gold_sql": "SELECT COUNT(T1.client_id) FROM client AS T1 INNER JOIN events AS T2 ON T1.client_id = T2.Client_ID WHERE T1.city = 'Omaha' AND strftime('%Y', T2.`Date received`) = '2012' AND T2.Product = 'Credit card'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities (2012, Credit card, Omaha) with placeholders (val_1, val_2, val_3) and replaces all schema names and column names with generic identifiers (table_1, col_1, etc.). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__395",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "IN",
+          "basis": "gold_literal_in_original_question"
+        },
+        {
+          "value": "Date",
+          "basis": "gold_column_name_in_original_question"
+        },
+        {
+          "value": "Product",
+          "basis": "gold_column_name_in_original_question"
+        },
+        {
+          "value": "city",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "List date of the review of the Eagle Capital from Indianapolis, Indiana.\nEagle Capital refers to Product = 'Eagle Capital'; Indianapolis refers to city = 'Indianapolis'; Indiana refers to state_abbrev = 'IN'",
+      "outbound_query": "List the col_51 for the product val_1 from the city val_2 in the state val_3.",
+      "original_gold_sql": "SELECT T2.Date FROM district AS T1 INNER JOIN reviews AS T2 ON T1.district_id = T2.district_id WHERE T2.Product = 'Eagle Capital' AND T1.city = 'Indianapolis' AND T1.state_abbrev = 'IN'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive entities. 'Eagle Capital', 'Indianapolis', and 'Indiana' are replaced with generic placeholders (val_1, val_2, val_3). Table and column names are anonymized to generic identifiers (table_1, col_1, etc.), preventing the exposure of the original schema structure or business-specific naming conventions."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__398",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Date",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "List the product reviewed with 1 star on March 14, 2016 from Newton, Massachusetts.\n1 star refers to Stars = 1; on March 14, 2016 refers to Date = '2016-03-14'; Newton refers to city = 'Newton'; Massachusetts refers to state_abbrev = 'MA'",
+      "outbound_query": "List the col_54 reviewed with val_1 on val_2 from val_3, val_4.",
+      "original_gold_sql": "SELECT T2.Product FROM district AS T1 INNER JOIN reviews AS T2 ON T1.district_id = T2.district_id WHERE T1.city = 'Newton' AND T1.state_abbrev = 'MA' AND T2.Date = '2016-03-14' AND T2.Stars = 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names, column names, and specific cell values (such as 'Newton', 'MA', '2016-03-14', and '1') with generic placeholders (col_X, val_X, table_X). No original sensitive information is exposed."
+        },
+        {
+          "call": 1,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content uses generic identifiers (table_5, col_54, val_1) and does not expose any original sensitive schema names, specific values (like Newton, MA, or dates), or business-sensitive meanings."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__398",
+      "outbound_call": 1,
+      "candidates": [
+        {
+          "value": "Date",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "List the product reviewed with 1 star on March 14, 2016 from Newton, Massachusetts.\n1 star refers to Stars = 1; on March 14, 2016 refers to Date = '2016-03-14'; Newton refers to city = 'Newton'; Massachusetts refers to state_abbrev = 'MA'",
+      "outbound_query": "List the col_54 from the table_5 table where col_52 is val_1, col_51 is val_2, and the associated district has col_33 val_3 and col_57 val_4.",
+      "original_gold_sql": "SELECT T2.Product FROM district AS T1 INNER JOIN reviews AS T2 ON T1.district_id = T2.district_id WHERE T1.city = 'Newton' AND T1.state_abbrev = 'MA' AND T2.Date = '2016-03-14' AND T2.Stars = 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names, column names, and specific cell values (such as 'Newton', 'MA', '2016-03-14', and '1') with generic placeholders (col_X, val_X, table_X). No original sensitive information is exposed."
+        },
+        {
+          "call": 1,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content uses generic identifiers (table_5, col_54, val_1) and does not expose any original sensitive schema names, specific values (like Newton, MA, or dates), or business-sensitive meanings."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__403",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Product",
+          "basis": "gold_column_name_in_original_question"
+        },
+        {
+          "value": "Date",
+          "basis": "gold_column_name_in_original_question"
+        }
+      ],
+      "question": "What is the division of the review of 5 stars received on December 17, 2017 for the product Eagle National Mortgage?\n5 stars refers to Stars = 5; on December 17 2017 refers to Date = '2017-12-17'",
+      "outbound_query": "What is the col_35 of the review of val_1 received on val_2 for the product val_3?",
+      "original_gold_sql": "SELECT T1.division FROM district AS T1 INNER JOIN reviews AS T2 ON T1.district_id = T2.district_id WHERE T2.Stars = 5 AND T2.Date = '2017-12-17' AND T2.Product = 'Eagle National Mortgage'",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names (e.g., 'district', 'reviews') and specific values (e.g., 'Eagle National Mortgage', '2017-12-17') with generic identifiers (col_XX, val_XX). No original sensitive information is exposed."
+        }
+      ]
+    },
+    {
+      "method": "mcts",
+      "case_key": "retail_complains__404",
+      "outbound_call": 0,
+      "candidates": [
+        {
+          "value": "Product",
+          "basis": "gold_column_name_in_original_question"
+        },
+        {
+          "value": "client",
+          "basis": "gold_table_name_in_original_question"
+        }
+      ],
+      "question": "In complaints about the credit card product, list the phone number of the oldest client.\noldest refers to max(age)",
+      "outbound_query": "In complaints about the val_1 product, list the col_24 of the col_19 client.",
+      "original_gold_sql": "SELECT T1.phone FROM client AS T1 INNER JOIN events AS T2 ON T1.client_id = T2.Client_ID WHERE T2.Product = 'Credit card' ORDER BY T1.age DESC LIMIT 1",
+      "judge": [
+        {
+          "call": 0,
+          "score": 1,
+          "leaks": [],
+          "reason": "The outbound content successfully masks all sensitive schema names, column names, and specific business values (like 'Credit card') with generic identifiers (table_1, col_1, val_1). No original sensitive entities are exposed."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "source_run": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/full",
+  "source_fingerprint": "e7774f5ab4394e066cc7d550a759a7dcf79b2c7460471d5d962d56f36bb136e6",
+  "new_fingerprint": "0a492d6dedb1ee020b9a3b984404bb84fd51620d4a00f2608f834fd991da9b3e",
+  "runtime_changes": {
+    "timeout_seconds": {
+      "before": 180,
+      "after": 1800
+    },
+    "workers": {
+      "before": 8,
+      "after": 100
+    }
+  },
+  "reused": {
+    "labels": 9,
+    "prompt/cases": 8,
+    "mcts/cases": 1
+  },
+  "note": "Original caches untouched; incomplete searches restart; seed, prompts, acceptance and model unchanged."
+}

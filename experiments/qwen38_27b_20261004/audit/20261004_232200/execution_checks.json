@@ -1,0 +1,4082 @@
+[
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__168",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__170",
+    "correct": true,
+    "gold_rows": 16,
+    "pred_rows": 16,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__172",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__179",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__182",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__186",
+    "correct": true,
+    "gold_rows": 8,
+    "pred_rows": 8,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__187",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__189",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__190",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__192",
+    "correct": true,
+    "gold_rows": 6,
+    "pred_rows": 6,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__194",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__195",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__198",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__200",
+    "correct": true,
+    "gold_rows": 4,
+    "pred_rows": 4,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__201",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__205",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__206",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__213",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__216",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__218",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__225",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__227",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__233",
+    "correct": true,
+    "gold_rows": 5,
+    "pred_rows": 5,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "prompt",
+    "case_key": "book_publishing_company__235",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__110",
+    "error": "interrupted"
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__113",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__118",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__119",
+    "error": "interrupted"
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__122",
+    "error": "interrupted"
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__132",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__138",
+    "correct": true,
+    "gold_rows": 12,
+    "pred_rows": 12,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__147",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__151",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__152",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__153",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__154",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__161",
+    "error": "interrupted"
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__18",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__20",
+    "correct": true,
+    "gold_rows": 4,
+    "pred_rows": 4,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__36",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__4",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__51",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__52",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__53",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__54",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__55",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__56",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__57",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__58",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__59",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__62",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__82",
+    "error": "interrupted"
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__84",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__85",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__87",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__90",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__91",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movie_platform__96",
+    "error": "interrupted"
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__408",
+    "correct": true,
+    "gold_rows": 2,
+    "pred_rows": 2,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__409",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__410",
+    "correct": true,
+    "gold_rows": 302,
+    "pred_rows": 302,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__413",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__415",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__417",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__418",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__419",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__420",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__421",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__422",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__423",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__425",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__426",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__427",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__428",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__429",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__430",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__431",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__433",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__434",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__435",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__436",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__439",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__443",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__445",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__446",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__450",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__451",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__452",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__453",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__459",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__460",
+    "correct": true,
+    "gold_rows": 20,
+    "pred_rows": 20,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__461",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__462",
+    "correct": true,
+    "gold_rows": 20,
+    "pred_rows": 20,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__464",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__466",
+    "correct": true,
+    "gold_rows": 574,
+    "pred_rows": 574,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__468",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__469",
+    "correct": true,
+    "gold_rows": 7,
+    "pred_rows": 7,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__470",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__471",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__472",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__474",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__475",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__477",
+    "correct": true,
+    "gold_rows": 5,
+    "pred_rows": 5,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__478",
+    "correct": true,
+    "gold_rows": 6,
+    "pred_rows": 6,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__479",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__480",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__481",
+    "correct": true,
+    "gold_rows": 10,
+    "pred_rows": 10,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__482",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__487",
+    "correct": true,
+    "gold_rows": 12,
+    "pred_rows": 12,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__490",
+    "correct": true,
+    "gold_rows": 4,
+    "pred_rows": 4,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__491",
+    "correct": true,
+    "gold_rows": 1227,
+    "pred_rows": 1227,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__493",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__494",
+    "correct": true,
+    "gold_rows": 2,
+    "pred_rows": 2,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__495",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__496",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__497",
+    "correct": true,
+    "gold_rows": 4,
+    "pred_rows": 4,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__498",
+    "correct": true,
+    "gold_rows": 250,
+    "pred_rows": 250,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__499",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__500",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__501",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__502",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__503",
+    "correct": true,
+    "gold_rows": 7,
+    "pred_rows": 7,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__505",
+    "correct": true,
+    "gold_rows": 14,
+    "pred_rows": 14,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__506",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__507",
+    "correct": true,
+    "gold_rows": 221,
+    "pred_rows": 221,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__508",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__510",
+    "correct": true,
+    "gold_rows": 2,
+    "pred_rows": 2,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "movies_4__516",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__242",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__245",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__246",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__247",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__249",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__254",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__258",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__261",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__263",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__265",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__266",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__274",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__275",
+    "correct": true,
+    "gold_rows": 16,
+    "pred_rows": 16,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__277",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__288",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__289",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__290",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__300",
+    "correct": true,
+    "gold_rows": 126,
+    "pred_rows": 126,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__301",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__306",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__307",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__308",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__312",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__313",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__315",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__320",
+    "correct": true,
+    "gold_rows": 2,
+    "pred_rows": 2,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__323",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__324",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__327",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__329",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__331",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__332",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__333",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__334",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__342",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__348",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__350",
+    "correct": true,
+    "gold_rows": 0,
+    "pred_rows": 0,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__357",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__359",
+    "correct": true,
+    "gold_rows": 1060,
+    "pred_rows": 1060,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__363",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__364",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__365",
+    "correct": true,
+    "gold_rows": 15,
+    "pred_rows": 15,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__367",
+    "correct": true,
+    "gold_rows": 5,
+    "pred_rows": 5,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__372",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__375",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__377",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__378",
+    "correct": true,
+    "gold_rows": 9,
+    "pred_rows": 9,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__380",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__381",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__382",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__385",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__388",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__391",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__393",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__395",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__403",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "prompt",
+    "case_key": "retail_complains__407",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__168",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__169",
+    "correct": true,
+    "gold_rows": 4,
+    "pred_rows": 4,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__170",
+    "correct": true,
+    "gold_rows": 16,
+    "pred_rows": 16,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__171",
+    "correct": true,
+    "gold_rows": 2,
+    "pred_rows": 2,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__172",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__179",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__181",
+    "correct": true,
+    "gold_rows": 11,
+    "pred_rows": 11,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__182",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__183",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__184",
+    "correct": true,
+    "gold_rows": 7,
+    "pred_rows": 7,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__186",
+    "correct": true,
+    "gold_rows": 8,
+    "pred_rows": 8,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__187",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__189",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__190",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__191",
+    "correct": true,
+    "gold_rows": 5,
+    "pred_rows": 5,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__192",
+    "correct": true,
+    "gold_rows": 6,
+    "pred_rows": 6,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__194",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__195",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__196",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__197",
+    "correct": true,
+    "gold_rows": 4,
+    "pred_rows": 4,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__198",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__199",
+    "correct": true,
+    "gold_rows": 0,
+    "pred_rows": 0,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__200",
+    "correct": true,
+    "gold_rows": 4,
+    "pred_rows": 4,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__201",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__202",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__203",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__204",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__205",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__206",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__207",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__212",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__213",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__214",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__216",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__218",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__220",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__221",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__225",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__226",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__227",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__228",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__232",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__233",
+    "correct": true,
+    "gold_rows": 5,
+    "pred_rows": 5,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "mcts",
+    "case_key": "book_publishing_company__235",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__1",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__100",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__101",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__103",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__104",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__105",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__106",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__107",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__108",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__110",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__112",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__113",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__114",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__115",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__116",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__118",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__119",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__122",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__124",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__126",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__127",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__128",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__13",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__130",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__132",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__134",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__135",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__138",
+    "correct": true,
+    "gold_rows": 12,
+    "pred_rows": 12,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__14",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__142",
+    "correct": true,
+    "gold_rows": 42398,
+    "pred_rows": 42398,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__143",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__147",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__15",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__150",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__151",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__152",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__153",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__154",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__155",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__156",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__16",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__161",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__165",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__18",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__19",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__20",
+    "correct": true,
+    "gold_rows": 4,
+    "pred_rows": 4,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__23",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__24",
+    "correct": true,
+    "gold_rows": 0,
+    "pred_rows": 0,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__25",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__26",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__27",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__28",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__29",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__33",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__35",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__36",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__37",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__4",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__42",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__43",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__49",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__5",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__51",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__52",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__53",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__54",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__55",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__56",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__57",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__58",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__59",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__60",
+    "correct": true,
+    "gold_rows": 5,
+    "pred_rows": 5,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__61",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__62",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__63",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__66",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__67",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__69",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__7",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__72",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__74",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__75",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__76",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__77",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__79",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__80",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__81",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__82",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__83",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__84",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__85",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__87",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__89",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__9",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__90",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__91",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__93",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__94",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__96",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movie_platform__99",
+    "error": "interrupted"
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__408",
+    "correct": true,
+    "gold_rows": 2,
+    "pred_rows": 2,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__409",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__410",
+    "correct": true,
+    "gold_rows": 302,
+    "pred_rows": 302,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__411",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__413",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__414",
+    "correct": true,
+    "gold_rows": 32,
+    "pred_rows": 32,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__415",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__416",
+    "correct": true,
+    "gold_rows": 5,
+    "pred_rows": 5,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__417",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__418",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__419",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__420",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__421",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__422",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__423",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__425",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__426",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__427",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__428",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__429",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__430",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__431",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__432",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__433",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__434",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__435",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__436",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__439",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__441",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__442",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__443",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__444",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__445",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__446",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__450",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__451",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__452",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__453",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__454",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__455",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__456",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__458",
+    "correct": true,
+    "gold_rows": 10,
+    "pred_rows": 10,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__459",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__460",
+    "correct": true,
+    "gold_rows": 20,
+    "pred_rows": 20,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__461",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__462",
+    "correct": true,
+    "gold_rows": 20,
+    "pred_rows": 20,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__464",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__466",
+    "correct": true,
+    "gold_rows": 574,
+    "pred_rows": 574,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__468",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__469",
+    "correct": true,
+    "gold_rows": 7,
+    "pred_rows": 7,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__470",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__471",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__474",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__475",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__477",
+    "correct": true,
+    "gold_rows": 5,
+    "pred_rows": 5,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__478",
+    "correct": true,
+    "gold_rows": 6,
+    "pred_rows": 6,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__479",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__480",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__481",
+    "correct": true,
+    "gold_rows": 10,
+    "pred_rows": 10,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__482",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__486",
+    "correct": true,
+    "gold_rows": 5,
+    "pred_rows": 5,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__487",
+    "correct": true,
+    "gold_rows": 12,
+    "pred_rows": 12,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__490",
+    "correct": true,
+    "gold_rows": 4,
+    "pred_rows": 4,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__494",
+    "correct": true,
+    "gold_rows": 2,
+    "pred_rows": 2,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__497",
+    "correct": true,
+    "gold_rows": 4,
+    "pred_rows": 4,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "movies_4__498",
+    "correct": true,
+    "gold_rows": 250,
+    "pred_rows": 250,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__240",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__242",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__245",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__246",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__247",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__249",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__253",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__254",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__258",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__259",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__261",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__262",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__263",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__265",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__266",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__274",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__275",
+    "correct": true,
+    "gold_rows": 16,
+    "pred_rows": 16,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__276",
+    "correct": true,
+    "gold_rows": 0,
+    "pred_rows": 0,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__277",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__287",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__288",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__289",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__290",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__292",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__294",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__296",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__297",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__298",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__299",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__300",
+    "correct": true,
+    "gold_rows": 126,
+    "pred_rows": 126,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__301",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__306",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__307",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__308",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__311",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__312",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__313",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__314",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__315",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__320",
+    "correct": true,
+    "gold_rows": 2,
+    "pred_rows": 2,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__322",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__323",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__324",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__329",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__331",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__332",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__333",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__334",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__338",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__339",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__342",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__343",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__345",
+    "correct": true,
+    "gold_rows": 798,
+    "pred_rows": 798,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__348",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__350",
+    "correct": true,
+    "gold_rows": 0,
+    "pred_rows": 0,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__351",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__353",
+    "correct": true,
+    "gold_rows": 5,
+    "pred_rows": 5,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__354",
+    "correct": true,
+    "gold_rows": 111,
+    "pred_rows": 111,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__359",
+    "correct": true,
+    "gold_rows": 1060,
+    "pred_rows": 1060,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__362",
+    "correct": true,
+    "gold_rows": 1071,
+    "pred_rows": 1071,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__363",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__364",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__365",
+    "correct": true,
+    "gold_rows": 15,
+    "pred_rows": 15,
+    "gold_cols": 3,
+    "pred_cols": 3
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__367",
+    "correct": true,
+    "gold_rows": 5,
+    "pred_rows": 5,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__368",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__372",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__375",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__377",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__378",
+    "correct": true,
+    "gold_rows": 9,
+    "pred_rows": 9,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__380",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__381",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__382",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__385",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__388",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__390",
+    "correct": true,
+    "gold_rows": 152,
+    "pred_rows": 152,
+    "gold_cols": 2,
+    "pred_cols": 2
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__391",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__392",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__393",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__394",
+    "correct": true,
+    "gold_rows": 0,
+    "pred_rows": 0,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__395",
+    "correct": true,
+    "gold_rows": 3,
+    "pred_rows": 3,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__398",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__403",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__404",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__405",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  },
+  {
+    "method": "mcts",
+    "case_key": "retail_complains__407",
+    "correct": true,
+    "gold_rows": 1,
+    "pred_rows": 1,
+    "gold_cols": 1,
+    "pred_cols": 1
+  }
+]

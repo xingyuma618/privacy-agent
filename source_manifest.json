@@ -6258,5 +6258,186 @@
   "privacy-agent/verl/verl/trainer/config/data/legacy_data.yaml": {
     "source": "jiexiang_materials/portable_project/privacy-agent/verl/verl/trainer/config/data/legacy_data.yaml",
     "published_sha256": "4097e83aa09f26908ab1e8a654c6b9de8c2c0b3e8349cb8107a3dcf606b84d13"
+  },
+  "experiments/qwen38_27b_20261004/src/common.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/src/common.py",
+    "published_sha256": "e8528e85f51748b5b8e2da585f459f6e16a6c7d3254fee7671b3baef17e1ddd5"
+  },
+  "experiments/qwen38_27b_20261004/src/database.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/src/database.py",
+    "published_sha256": "b76c50476fccad543e2baa10587acbde5d7e051b0e380e6d85411a9e51551ef5"
+  },
+  "experiments/qwen38_27b_20261004/src/masking.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/src/masking.py",
+    "published_sha256": "0ea0b6bbdaf72679ac01a880a6c317924140badd63ff2fc7a80df7f230916b17"
+  },
+  "experiments/qwen38_27b_20261004/src/prepare_inputs.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/src/prepare_inputs.py",
+    "published_sha256": "ddcca6546dc140607040a6b418961957b7a44f2cb4595d970dc2da22109d3796"
+  },
+  "experiments/qwen38_27b_20261004/src/prompts.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/src/prompts.py",
+    "published_sha256": "3071fb75243dcfc22b306aaa9fb3da28602540a00838e0ec2a4ed38e60dfaf1b"
+  },
+  "experiments/qwen38_27b_20261004/src/run_synthesis.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/src/run_synthesis.py",
+    "published_sha256": "0b6f678b7f158cfeb0e0a6d6f4fdc2396c37e2ca693672c81d511709edbde536"
+  },
+  "experiments/qwen38_27b_20261004/src/search.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/src/search.py",
+    "published_sha256": "cc61daf1e705f91e013eece4b488e910f1d119fad5c4588b13671b7d10d8625f"
+  },
+  "experiments/qwen38_27b_20261004/src/teacher.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/src/teacher.py",
+    "published_sha256": "ddb8d92931628d3a5d9f8abe0bc14f27fb02fe1eb859eec98222e2600e603ee7"
+  },
+  "experiments/qwen38_27b_20261004/tests/test_regressions.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/tests/test_regressions.py",
+    "published_sha256": "09803b8e9b46a730897d8f51fa38bb6bc4b1dc26a644c4d21d40acce26fb63c8"
+  },
+  "experiments/qwen38_27b_20261004/scripts/adopt_completed_cache.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/adopt_completed_cache.py",
+    "published_sha256": "6e3c67bfcc41fdc31a20a880d5ccdb76bc8d234b8b6197cf0c30a089d65bc77d"
+  },
+  "experiments/qwen38_27b_20261004/scripts/audit_privacy_candidates.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/audit_privacy_candidates.py",
+    "published_sha256": "da2af888810ec0d507812bd5f73e9d4e7df2a6ece0884a555d36fe8f7adfe3f1"
+  },
+  "experiments/qwen38_27b_20261004/scripts/audit_run.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/audit_run.py",
+    "published_sha256": "12a6c068b83a7166c77250ec35a7b9553dcdd190923f4b90b6e07a9f0a7a4aed"
+  },
+  "experiments/qwen38_27b_20261004/scripts/audit_synthesis.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/audit_synthesis.py",
+    "published_sha256": "20ebf2c261ebab3074d82de80384231bfb9ae66f693e8062ee532f16832aa8bc"
+  },
+  "experiments/qwen38_27b_20261004/scripts/backend_test_control.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/backend_test_control.py",
+    "published_sha256": "d7f1a8800f6cc64aedadbf2cfd8f2bd5daf2b1b12814790c7cb2605c68851b8c"
+  },
+  "experiments/qwen38_27b_20261004/scripts/benchmark_backend.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/benchmark_backend.py",
+    "published_sha256": "46cbe373c5e86118eb9b9e2000dc349192b1415493e9c673051f4e87879687c2"
+  },
+  "experiments/qwen38_27b_20261004/scripts/benchmark_concurrency.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/benchmark_concurrency.py",
+    "published_sha256": "03551c252d14f229d22121ef096122d5274576f5f2df6d8ca32cd5b4bedf1065"
+  },
+  "experiments/qwen38_27b_20261004/scripts/monitor_throughput.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/monitor_throughput.py",
+    "published_sha256": "5733b64cefd17637db8194e5857e8d13b7ab2c49f0da40741710501b3927ba27"
+  },
+  "experiments/qwen38_27b_20261004/scripts/smoke_sglang_api.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/smoke_sglang_api.py",
+    "published_sha256": "afb56ce5fece0923ae225a3cd6ee2155dfae3fdc9d0a2910fb6d5cd907755c03"
+  },
+  "experiments/qwen38_27b_20261004/scripts/start_services.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/start_services.py",
+    "published_sha256": "571cc07a55d45527d7ba540f66d0b8efb0e75503aa7a58b68f13347508e4fd1c"
+  },
+  "experiments/qwen38_27b_20261004/scripts/start_sglang_test.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/start_sglang_test.py",
+    "published_sha256": "48f1e9cc9327c9361d284665e0bd8fc77922b948cf8d905e83ebf92c3771e44d"
+  },
+  "experiments/qwen38_27b_20261004/scripts/start_synthesis.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/start_synthesis.py",
+    "published_sha256": "eca520b5f873b63c12ddeed43febe7de46b391d82979c5bc5a30bf375a1e0d69"
+  },
+  "experiments/qwen38_27b_20261004/scripts/status.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/status.py",
+    "published_sha256": "77d5e5067c2accb196acb1a3f845ac3da608a2f857a8d194aef34a7d31f5fe42"
+  },
+  "experiments/qwen38_27b_20261004/scripts/stop_services.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/stop_services.py",
+    "published_sha256": "e267b6df86a2c5dd4f780589f6b533c36ff18963693777582c25063ef337b449"
+  },
+  "experiments/qwen38_27b_20261004/scripts/stop_synthesis.py": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/scripts/stop_synthesis.py",
+    "published_sha256": "988e64518171f675b3bf76ad00bba3d0204cc7f70bbaf6acd43754507573e911"
+  },
+  "experiments/qwen38_27b_20261004/configs/serving.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/configs/serving.json",
+    "published_sha256": "71b7b63aa89e50991d59c6a39c3c2bee8711430ac6fdaaf579ad55889275b265"
+  },
+  "experiments/qwen38_27b_20261004/configs/smoke.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/configs/smoke.json",
+    "published_sha256": "80326e95e581a3fab83eb901c067ace53f2acfb83778f1f277982d36d5dbe9be"
+  },
+  "experiments/qwen38_27b_20261004/configs/synthesis.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/configs/synthesis.json",
+    "published_sha256": "5ac4038a97bdacbe57fc1f6ace3fcc925cb81bc84bd504bae6d5539dbd4971e4"
+  },
+  "experiments/qwen38_27b_20261004/configs/synthesis_parallel100.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/configs/synthesis_parallel100.json",
+    "published_sha256": "6d4f55dae3b43221b89b3cac499892ede4832a9ca0ba90646b852f1e876dcf82"
+  },
+  "experiments/qwen38_27b_20261004/README.md": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/README.md",
+    "published_sha256": "d4670dd56a820e3f0e0119142468dcaf736cf4c69291da13823c902fe3903ef9",
+    "publication_edit": "Added completion status, release/audit links; synthesis source/config unchanged."
+  },
+  "experiments/qwen38_27b_20261004/EXPERIMENT_NOTES.md": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/EXPERIMENT_NOTES.md",
+    "published_sha256": "7d643032c4ad1dbc84d4ebb24ece8fe0ea1beb5f60aa659d9621d663d9256e62"
+  },
+  "experiments/qwen38_27b_20261004/requirements.txt": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/requirements.txt",
+    "published_sha256": "d81d7955a2567f6da38c33822a93aec1f9dac823c70401c2301c6e00ba672cde"
+  },
+  "experiments/qwen38_27b_20261004/data/input_manifest.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/data/input_manifest.json",
+    "published_sha256": "f96dc387905967e1918098bede060a01bedc73d552788b4f2649fdcb335f3dcf"
+  },
+  "experiments/qwen38_27b_20261004/runs/full_parallel100/manifest.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/full_parallel100/manifest.json",
+    "published_sha256": "54e65daeeeef632736257dab067edb878884d95406ec8ae227285541d73dbcff"
+  },
+  "experiments/qwen38_27b_20261004/runs/full_parallel100/summary.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/full_parallel100/summary.json",
+    "published_sha256": "bb735cfd1373d130eb259291443f9bb6cd9db3fe62ec33c2d1eb4ab3757f8461"
+  },
+  "experiments/qwen38_27b_20261004/runs/full_parallel100/cache_provenance.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/full_parallel100/cache_provenance.json",
+    "published_sha256": "b0207a54100b0a2de7347c795d7c5f9bcbac42da1d9810b3d0573d0f4005430c"
+  },
+  "experiments/qwen38_27b_20261004/runs/sglang_comparison.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/sglang_comparison.json",
+    "published_sha256": "761398e0f7ed6fb47dacf525d8728606388df7d579ed0c71ad43a2958da1e6ea"
+  },
+  "experiments/qwen38_27b_20261004/runs/backend_test_state.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/backend_test_state.json",
+    "published_sha256": "b9645f3cc275fe7e48a06cbd4b96f5d586e3cd000ce22890db9a4f29e3c2e89d"
+  },
+  "experiments/qwen38_27b_20261004/audit/20261004_232200/REPORT.md": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/audit_20261004_232200/REPORT.md",
+    "published_sha256": "5927120ae56535ba987ad53189ca4655347793d6e700e94f1dec0e15fb3ca3dd"
+  },
+  "experiments/qwen38_27b_20261004/audit/20261004_232200/annotation_coverage_candidates.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/audit_20261004_232200/annotation_coverage_candidates.json",
+    "published_sha256": "912c932f2fc90308f36b87e7cae6348b15b0670222e411cb2864fd99ab8de198"
+  },
+  "experiments/qwen38_27b_20261004/audit/20261004_232200/confirmed_privacy_leaks.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/audit_20261004_232200/confirmed_privacy_leaks.json",
+    "published_sha256": "526f6e504065964ef829011c164dddaac0f8c0b5441a6e973df386e602ea7434"
+  },
+  "experiments/qwen38_27b_20261004/audit/20261004_232200/execution_checks.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/audit_20261004_232200/execution_checks.json",
+    "published_sha256": "c2d1f844190afb08eb61768b86ae69ece691f69383b35584a3073aa10142155d"
+  },
+  "experiments/qwen38_27b_20261004/audit/20261004_232200/mcts_export_lengths.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/audit_20261004_232200/mcts_export_lengths.json",
+    "published_sha256": "26a17c5f05a4c97581212b1abda8a503e332d84ee6995991b281d3070cd82c35"
+  },
+  "experiments/qwen38_27b_20261004/audit/20261004_232200/privacy_candidates.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/audit_20261004_232200/privacy_candidates.json",
+    "published_sha256": "f2d48e5dcf457e5ca7d673bfd2989af5b77d6ecdf4e26e82e4d35d29e7d39820"
+  },
+  "experiments/qwen38_27b_20261004/audit/20261004_232200/prompt_export_lengths.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/audit_20261004_232200/prompt_export_lengths.json",
+    "published_sha256": "a2d5bb39af4925a1309ce19f73f8c509738e92c5e831773959d6bb16a34eb6e3"
+  },
+  "experiments/qwen38_27b_20261004/audit/20261004_232200/summary.json": {
+    "source": "/mnt/wh_intern/MXY/paper/privacy-agent-restart-qwen38-27b-20261004/runs/audit_20261004_232200/summary.json",
+    "published_sha256": "6f3088f835b8bb0340334eca9c34e15d299987bc34c56c67484ae3807d631c4f"
   }
 }
